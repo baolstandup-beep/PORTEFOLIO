@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheikh Awa Balla Diop — Directeur Créatif & Designer Graphique</title>
+<meta name="description" content="Portfolio de Cheikh Awa Balla Diop, Fondateur de Baol Vision. Design graphique stratégique, identité visuelle, campagnes publicitaires et intelligence artificielle.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111111'/><text x='50%25' y='54%25' font-family='sans-serif' font-size='14' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>C</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ─── RESET & FONTES ────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color .3s ease, color .3s ease;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font-family: inherit; }
+::selection { background: #111; color: #fff; }
+
+/* ─── THÈME VARIABLES (LUZIA FRAMER STYLE) ─────────── */
+:root, [data-theme="light"] {
+  --bg:          #FFFFFF;
+  --bg-subtle:   #F8F8F9;
+  --card-bg:     #FFFFFF;
+  --card-hover:  #FAFAFA;
+  --border:      rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --text-main:   #111111;
+  --text-body:   #4B5563;
+  --text-muted:  #8E95A0;
+  --primary:     #111111;
+  --primary-inv: #FFFFFF;
+  --accent:      #7430F7;
+  --accent-soft: #F5F2FF;
+  --badge-green: #00C047;
+  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md:   0 12px 32px rgba(0, 0, 0, 0.06);
+  --shadow-lg:   0 20px 48px rgba(0, 0, 0, 0.09);
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-pill: 100px;
+}
+
+[data-theme="dark"] {
+  --bg:          #0C0C0D;
+  --bg-subtle:   #141416;
+  --card-bg:     #18181B;
+  --card-hover:  #1F1F23;
+  --border:      rgba(255, 255, 255, 0.09);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --text-main:   #F4F4F6;
+  --text-body:   #A1A1AA;
+  --text-muted:  #71717A;
+  --primary:     #FFFFFF;
+  --primary-inv: #0C0C0D;
+  --accent:      #9353D3;
+  --accent-soft: rgba(147, 83, 211, 0.15);
+  --badge-green: #10B981;
+  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md:   0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg:   0 20px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* ─── LAYOUT ────────────────────────────────────────── */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+@media (max-width: 640px) { .wrap { padding: 0 1.25rem; } }
+
+/* ─── SCROLL PROGRESS ───────────────────────────────── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--text-main);
+  z-index: 9999;
+  width: 0%;
+  transition: width .05s linear;
+}
+
+/* ─── FLOATING PILL NAVBAR ─────────────────────────── */
+.nav-wrapper {
+  position: fixed;
+  top: 1.25rem;
+  left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 1rem;
+}
+.nav-pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 0.65rem 0.5rem 1.4rem;
+  transition: box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+[data-theme="dark"] .nav-pill {
+  background-color: rgba(20, 20, 22, 0.85);
+}
+.nav-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-brand span.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--badge-green);
+  display: inline-block;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: color .2s ease;
+}
+.nav-links a:hover { color: var(--text-main); }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-body);
+  transition: background .2s, color .2s;
+}
+.theme-btn:hover { background: var(--bg-subtle); color: var(--text-main); }
+.btn-nav-cta {
+  font-size: 0.84rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: var(--primary-inv) !important;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-pill);
+  transition: transform .15s ease, opacity .15s ease;
+  white-space: nowrap;
+}
+.btn-nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.nav-mob-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  color: var(--text-main);
+}
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-mob-btn { display: flex; align-items: center; }
+  .nav-pill { padding: 0.45rem 0.6rem 0.45rem 1.1rem; gap: 0.8rem; }
+}
+
+.mob-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.mob-menu-overlay.open { opacity: 1; pointer-events: all; }
+.mob-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.mob-menu-links a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  transition: color .2s ease;
+}
+.mob-menu-links a:hover { color: var(--accent); }
+
+/* ─── HERO SECTION ──────────────────────────────────── */
+.hero-section {
+  padding: 8.5rem 0 4rem;
+  text-align: center;
+  position: relative;
+}
+.hero-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-body);
+  margin-bottom: 2rem;
+}
+.status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--badge-green);
+  position: relative;
+}
+.status-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid var(--badge-green);
+  opacity: 0.6;
+  animation: pulse 2s infinite ease-out;
+}
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--text-main);
+  max-width: 980px;
+  margin: 0 auto 1.75rem;
+}
+.hero-description {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--text-body);
+  max-width: 740px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: var(--primary-inv) !important;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg);
+  color: var(--text-main) !important;
+  border: 1px solid var(--border);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  transition: background-color .2s, border-color .2s, transform .2s;
+}
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  transform: translateY(-2px);
+}
+
+.metrics-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--text-body);
+}
+.metric-item strong {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* ─── SECTION LABELS & FILTERS ──────────────────────── */
+.section-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+.section-heading {
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+}
+
+/* Filter Bar */
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 3rem;
+}
+.filter-btn {
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.filter-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+}
+.filter-btn.active {
+  background: var(--primary);
+  color: var(--primary-inv);
+  border-color: var(--primary);
+}
+
+/* ─── FEATURED WORKS (PROJETS REDESIGN — NO CROPPING) ─ */
+.works-section {
+  padding: 4rem 0 6rem;
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+}
+@media (max-width: 860px) {
+  .works-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+[data-theme="dark"] .work-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* IMAGE SHOWCASE WRAPPER: 1:1 SQUARE WITH SOFT SHOWCASE FRAME (PAS DE ROGNAGE) */
+.work-img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: calc(var(--radius-lg) - 8px);
+  overflow: hidden;
+  background: var(--bg-subtle);
+  position: relative;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform .4s ease, opacity .25s ease;
+  display: block;
+}
+.work-card:hover .work-img {
+  transform: scale(1.02);
+}
+
+/* Image switcher tabs inside card */
+.work-image-tabs {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  gap: 0.35rem;
+  z-index: 10;
+}
+.work-tab-btn {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.work-tab-btn:hover { background: #111111; transform: scale(1.05); }
+.work-tab-btn.active {
+  background: var(--primary);
+  color: var(--primary-inv);
+  border-color: var(--primary);
+}
+
+.work-badge-count {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #111111;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+[data-theme="dark"] .work-badge-count {
+  background: rgba(20, 20, 22, 0.9);
+  color: #FFFFFF;
+}
+
+.work-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.work-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+.work-sub-text {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  margin-bottom: 0.65rem;
+}
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.work-tag {
+  font-size: 0.74rem;
+  font-weight: 500;
+  background: var(--bg-subtle);
+  color: var(--text-body);
+  border: 1px solid var(--border-subtle);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+.work-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-main);
+  transition: background-color .2s, transform .2s, color .2s;
+}
+.work-card:hover .work-arrow-btn {
+  background: var(--primary);
+  color: var(--primary-inv);
+  transform: translateX(4px);
+}
+
+/* ─── STATEMENT CARD ────────────────────────────────── */
+.statement-section { padding: 3.5rem 0; }
+.statement-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  text-align: center;
+}
+@media (max-width: 640px) { .statement-card { padding: 2rem 1.25rem; } }
+.statement-text {
+  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  max-width: 820px;
+  margin: 0 auto 1.5rem;
+}
+.statement-author { font-size: 0.95rem; color: var(--text-body); }
+.statement-author strong { color: var(--text-main); font-weight: 600; }
+
+/* ─── ABOUT SECTION ─────────────────────────────────── */
+.about-section { padding: 5rem 0; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+.about-highlight-box {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--primary);
+}
+.about-highlight-box p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+.about-highlight-box span { font-size: 0.85rem; color: var(--text-body); }
+
+/* ─── SERVICES ──────────────────────────────────────── */
+.services-section { padding: 5rem 0; background: var(--bg-subtle); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 960px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .services-grid { grid-template-columns: 1fr; } }
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.service-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.service-num { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.25rem; }
+.service-title { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); margin-bottom: 0.65rem; }
+.service-desc { font-size: 0.92rem; color: var(--text-body); line-height: 1.55; margin-bottom: 1.5rem; }
+.service-items { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); }
+.service-item-line { font-size: 0.82rem; color: var(--text-body); display: flex; align-items: center; gap: 0.5rem; }
+.service-item-line::before { content: '✓'; color: var(--badge-green); font-weight: 700; font-size: 0.8rem; }
+
+/* ─── STACK ─────────────────────────────────────────── */
+.stack-section { padding: 5rem 0; }
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 900px) { .stack-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .stack-grid { grid-template-columns: 1fr; } }
+.stack-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  transition: border-color .2s;
+}
+.stack-card:hover { border-color: rgba(0,0,0,0.2); }
+[data-theme="dark"] .stack-card:hover { border-color: rgba(255,255,255,0.25); }
+.stack-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-sm);
+  background: var(--bg-subtle); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;
+}
+.stack-name { font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; }
+.stack-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; }
+.stack-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.stack-pill {
+  font-size: 0.72rem; background: var(--bg-subtle); border: 1px solid var(--border-subtle);
+  color: var(--text-body); padding: 0.15rem 0.5rem; border-radius: var(--radius-pill);
+}
+
+/* ─── PROCESSUS ─────────────────────────────────────── */
+.process-section { padding: 5rem 0; background: var(--bg-subtle); }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .process-grid { grid-template-columns: 1fr; } }
+.process-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 1.75rem; position: relative;
+}
+.process-step-num {
+  font-size: 0.85rem; font-weight: 700; color: var(--primary); background: var(--bg-subtle);
+  width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem; border: 1px solid var(--border);
+}
+.process-step-name { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text-main); margin-bottom: 0.5rem; }
+.process-step-desc { font-size: 0.88rem; color: var(--text-body); line-height: 1.55; }
+
+/* ─── TÉMOIGNAGES (LUZIA STYLE) ─────────────────────── */
+.testimonials-section { padding: 5.5rem 0; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 960px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; } }
+.testi-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+}
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 0, 0, 0.16);
+}
+[data-theme="dark"] .testi-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.testi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.testi-stars {
+  color: #F59E0B;
+  font-size: 0.92rem;
+  letter-spacing: 2px;
+}
+.testi-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+}
+.testi-quote {
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: var(--text-body);
+  margin-bottom: 1.75rem;
+  font-style: normal;
+  position: relative;
+}
+.testi-quote::before {
+  content: '“';
+  font-size: 2.4rem;
+  line-height: 0;
+  vertical-align: -0.45rem;
+  color: var(--text-muted);
+  font-family: Georgia, serif;
+  margin-right: 0.35rem;
+  opacity: 0.5;
+}
+.testi-author-box {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-inv);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+.testi-author-info {
+  display: flex;
+  flex-direction: column;
+}
+.testi-author-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+.testi-author-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ─── FAQ ACCORDION ─────────────────────────────────── */
+.faq-section { padding: 5rem 0; }
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: 0.85rem; }
+.faq-item {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md);
+  overflow: hidden; transition: border-color .2s;
+}
+.faq-item:hover { border-color: rgba(0,0,0,0.18); }
+[data-theme="dark"] .faq-item:hover { border-color: rgba(255,255,255,0.22); }
+.faq-question {
+  width: 100%; padding: 1.35rem 1.65rem; background: none; border: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-size: 1.05rem; font-weight: 600; color: var(--text-main); cursor: pointer; text-align: left;
+}
+.faq-icon { font-size: 1.25rem; font-weight: 400; color: var(--text-muted); transition: transform .25s ease; }
+.faq-item.active .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease;
+  padding: 0 1.65rem; font-size: 0.95rem; color: var(--text-body); line-height: 1.6;
+}
+.faq-item.active .faq-answer { max-height: 250px; padding-bottom: 1.35rem; }
+
+/* ─── CTA BANNER ────────────────────────────────────── */
+.cta-banner-section { padding: 4rem 0 6rem; }
+.cta-card {
+  background: #111111; color: #FFFFFF; border-radius: var(--radius-lg);
+  padding: 4.5rem 3rem; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);
+}
+@media (max-width: 640px) { .cta-card { padding: 3rem 1.5rem; } }
+.cta-card::before {
+  content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 350px; background: radial-gradient(circle, rgba(116, 48, 247, 0.22) 0%, rgba(0,0,0,0) 70%);
+  pointer-events: none;
+}
+.cta-card-title { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; color: #FFFFFF; margin-bottom: 1rem; line-height: 1.15; }
+.cta-card-desc { font-size: 1.1rem; color: #A1A1AA; max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.6; }
+.btn-cta-light {
+  display: inline-flex; align-items: center; gap: 0.5rem; background: #FFFFFF; color: #111111 !important;
+  font-size: 0.95rem; font-weight: 600; padding: 0.9rem 2.2rem; border-radius: var(--radius-pill);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn-cta-light:hover { transform: translateY(-2px); opacity: 0.92; }
+
+/* ─── CONTACT SECTION ───────────────────────────────── */
+.contact-section { padding: 5rem 0; background: var(--bg-subtle); border-top: 1px solid var(--border); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3.5rem; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.social-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+.social-item {
+  display: flex; align-items: center; justify-content: space-between; background: var(--card-bg);
+  border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 1.25rem;
+  transition: border-color .2s, transform .2s; text-decoration: none;
+}
+.social-item:hover { border-color: var(--text-main); transform: translateX(4px); }
+.social-item-left { display: flex; align-items: center; gap: 0.85rem; }
+.social-item-icon { font-size: 1.15rem; }
+.social-item-name { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
+.social-item-val { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Form */
+.contact-form-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; }
+@media (max-width: 640px) { .contact-form-box { padding: 1.5rem; } }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.25rem; }
+.form-label { font-size: 0.82rem; font-weight: 600; color: var(--text-main); }
+.form-field {
+  width: 100%; padding: 0.85rem 1.1rem; background: var(--bg-subtle); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text-main); font-family: inherit; font-size: 0.92rem;
+  outline: none; transition: border-color .2s, background-color .2s;
+}
+.form-field:focus { border-color: var(--text-main); background: var(--card-bg); }
+textarea.form-field { resize: vertical; min-height: 120px; }
+.form-err { font-size: 0.75rem; color: #EF4444; display: none; }
+.form-group.has-err .form-err { display: block; }
+.form-group.has-err .form-field { border-color: #EF4444; }
+.form-success-banner {
+  display: none; background: rgba(0, 192, 71, 0.1); border: 1px solid rgba(0, 192, 71, 0.3);
+  color: var(--badge-green); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;
+  font-size: 0.95rem; font-weight: 600;
+}
+.form-success-banner.show { display: block; }
+.btn-form-submit {
+  width: 100%; background: var(--primary); color: var(--primary-inv); border: none; padding: 1rem;
+  font-size: 0.95rem; font-weight: 600; border-radius: var(--radius-sm); cursor: pointer;
+  transition: opacity .2s, transform .2s;
+}
+.btn-form-submit:hover { opacity: 0.92; transform: translateY(-1px); }
+
+/* ─── LIGHTBOX MODAL ────────────────────────────────── */
+.lightbox-modal {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9);
+  z-index: 99999; display: flex; align-items: center; justify-content: center;
+  padding: 2rem; opacity: 0; pointer-events: none; transition: opacity .25s ease;
+}
+.lightbox-modal.open { opacity: 1; pointer-events: all; }
+.lightbox-content { max-width: 90vw; max-height: 90vh; position: relative; }
+.lightbox-img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+.lightbox-close {
+  position: absolute; top: -2.5rem; right: 0; background: none; border: none;
+  color: #FFFFFF; font-size: 2rem; cursor: pointer;
+}
+
+/* ─── FOOTER ────────────────────────────────────────── */
+footer { padding: 4rem 0 3rem; border-top: 1px solid var(--border); background: var(--bg); }
+.footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.footer-brand p.name { font-size: 1rem; font-weight: 700; color: var(--text-main); }
+.footer-brand p.sub { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+.footer-nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.footer-nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-body); transition: color .2s; }
+.footer-nav-links a:hover { color: var(--text-main); }
+.footer-copy { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ─── ANIMATIONS ────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ─── FLOATING WHATSAPP BUTTON ─────────────────────── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: #FFFFFF !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.5);
+}
+.floating-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: #FFFFFF;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .floating-whatsapp { bottom: 1.5rem; right: 1.5rem; padding: 0.85rem; border-radius: 50%; }
+  .floating-whatsapp span { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════
+     NAVBAR FLOTTANTE
+════════════════════════════════════════════════════ -->
+<header class="nav-wrapper">
+  <nav class="nav-pill">
+    <a href="#accueil" class="nav-brand">
+      <span class="dot"></span>
+      CHEIKH AWA BALLA DIOP
+    </a>
+
+    <div class="nav-links">
+      <a href="#projets">Projets</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#stack">Stack</a>
+      <a href="#processus">Processus</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Dark / Light Theme Toggle -->
+      <button class="theme-btn" id="theme-toggle" aria-label="Changer le thème" title="Changer le thème">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="#contact" class="btn-nav-cta">Démarrer un projet</a>
+      <button class="nav-mob-btn" id="mob-btn" aria-label="Menu Mobile">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mob-menu-overlay" id="mob-overlay">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3rem;">
+    <span style="font-weight:700; font-size:1.1rem;">CHEIKH AWA BALLA DIOP</span>
+    <button id="mob-close" style="background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--text-main);">✕</button>
+  </div>
+  <div class="mob-menu-links">
+    <a href="#projets" onclick="closeMobMenu()">Projets</a>
+    <a href="#a-propos" onclick="closeMobMenu()">À propos</a>
+    <a href="#services" onclick="closeMobMenu()">Services</a>
+    <a href="#stack" onclick="closeMobMenu()">Stack & Outils</a>
+    <a href="#processus" onclick="closeMobMenu()">Processus</a>
+    <a href="#temoignages" onclick="closeMobMenu()">Témoignages</a>
+    <a href="#faq" onclick="closeMobMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMobMenu()">Contact</a>
+  </div>
+  <div style="margin-top:auto; padding-top:2rem;">
+    <a href="#contact" class="btn-primary" style="width:100%; justify-content:center;" onclick="closeMobMenu()">Démarrer un projet</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════════ -->
+<main id="accueil">
+  <section class="hero-section wrap">
+    <div class="hero-status-badge reveal">
+      <span class="status-indicator"></span>
+      <span>Disponible pour de nouveaux projets créatifs</span>
+    </div>
+
+    <h1 class="hero-title reveal">
+      Je conçois des identités visuelles stratégiques et des expériences de marque mémorables.
+    </h1>
+
+    <p class="hero-description reveal">
+      Directeur Créatif & Designer Graphique — Fondateur de <strong>Baol Vision</strong>. Je combine rigueur typographique, composition publicitaire et intelligence artificielle pour faire émerger des marques fortes au Sénégal et à l'international.
+    </p>
+
+    <div class="hero-buttons reveal">
+      <a href="#contact" class="btn-primary">Démarrer un projet →</a>
+      <a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif." target="_blank" rel="noopener" class="btn-secondary" style="display:inline-flex; align-items:center; gap:0.55rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp : 77 303 31 96
+      </a>
+      <a href="#projets" class="btn-secondary">Explorer mes réalisations</a>
+    </div>
+
+    <div class="metrics-strip reveal">
+      <div class="metric-item">
+        <strong>10+</strong>
+        <span>Projets majeurs</span>
+      </div>
+      <div class="metric-item">
+        <strong>5+</strong>
+        <span>Années d'expérience</span>
+      </div>
+      <div class="metric-item">
+        <strong>100%</strong>
+        <span>Rigueur & Impact</span>
+      </div>
+      <div class="metric-item">
+        <strong>Fondateur</strong>
+        <span>Baol Vision</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       FEATURED WORKS (REDESIGN LUZIA STYLE + FILTRES)
+  ════════════════════════════════════════════════════ -->
+  <section id="projets" class="works-section wrap">
+    <div class="reveal">
+      <span class="section-tag">SELECTED WORKS</span>
+      <h2 class="section-heading">Réalisations &amp; Projets récents</h2>
+      <p style="color:var(--text-body); font-size:1.05rem;">
+        Identités de marque, affiches publicitaires, packagings et prototypes digitaux. Cliquez sur les aperçus pour basculer entre l'affiche et le mockup en situation.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-btn active" data-filter="all">Tous (10)</button>
+        <button class="filter-btn" data-filter="branding">Branding &amp; Identité</button>
+        <button class="filter-btn" data-filter="digital">UI/UX &amp; Digital</button>
+        <button class="filter-btn" data-filter="print">Affiches &amp; Print</button>
+        <button class="filter-btn" data-filter="ai">IA &amp; Création</button>
+      </div>
+    </div>
+
+    <!-- Works Grid -->
+    <div class="works-grid" id="works-grid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       STATEMENT CARD
+  ════════════════════════════════════════════════════ -->
+  <section class="statement-section wrap">
+    <div class="statement-card reveal">
+      <p class="statement-text">
+        « Le design ne se limite pas à l'esthétique : il clarifie une vision, résout un problème complexe et crée une empreinte mémorable dans l'esprit du public. »
+      </p>
+      <p class="statement-author">
+        <strong>Cheikh Awa Balla Diop</strong> — Fondateur & Directeur Créatif, Baol Vision
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       À PROPOS & BAOL VISION
+  ════════════════════════════════════════════════════ -->
+  <section id="a-propos" class="about-section wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-tag">POSITIONNEMENT</span>
+        <h2 class="section-heading">L'alliance du design, de la créativité et de l'IA.</h2>
+        <p style="color:var(--text-body); font-size:1.05rem; line-height:1.65; margin-bottom:1.25rem;">
+          Basé au Sénégal, je me positionne comme un créatif contemporain alliant rigueur graphique, réflexion stratégique et maîtrise des outils d'intelligence artificielle de pointe.
+        </p>
+        <p style="color:var(--text-body); font-size:0.98rem; line-height:1.65;">
+          À travers <strong>Baol Vision</strong>, j'accompagne les fondateurs d'entreprises, les marques émergentes et les institutions dans la matérialisation de leur univers visuel, de la communication publicitaire aux interfaces mobiles.
+        </p>
+      </div>
+
+      <div class="about-card reveal">
+        <h3 style="font-size:1.35rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Ce qui guide mon travail</h3>
+        <p style="color:var(--text-body); font-size:0.95rem; line-height:1.6;">
+          Chaque projet fait l'objet d'un processus rigoureux : analyse du marché, exploration typographique, harmonie colorimétrique et optimisation pour tous les formats physiques et digitaux.
+        </p>
+        <div class="about-highlight-box">
+          <p>Direction Créative Personnalisée</p>
+          <span>Pas d'intermédiaires superflus ni de promesses exagérées : un accompagnement direct, réactif et sur-mesure d'égal à égal.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════════════════ -->
+  <section id="services" class="services-section">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:3.5rem;" class="reveal">
+        <span class="section-tag">SERVICES &amp; EXPERTISE</span>
+        <h2 class="section-heading">Des solutions conçues pour faire grandir votre marque.</h2>
+        <p style="color:var(--text-body); font-size:1.05rem; max-width:600px; margin:0 auto;">
+          De la première étincelle créative aux fichiers finaux prêts au déploiement.
+        </p>
+      </div>
+
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       STACK & COMPÉTENCES
+  ════════════════════════════════════════════════════ -->
+  <section id="stack" class="stack-section wrap">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <span class="section-tag">STACK &amp; OUTILS</span>
+      <h2 class="section-heading">Les outils au service de votre vision.</h2>
+    </div>
+
+    <div class="stack-grid" id="stack-grid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       PROCESSUS
+  ════════════════════════════════════════════════════ -->
+  <section id="processus" class="process-section">
+    <div class="wrap">
+      <div style="margin-bottom:3rem;" class="reveal">
+        <span class="section-tag">COMMENT ÇA MARCHE</span>
+        <h2 class="section-heading">Un processus transparent, clair et efficace.</h2>
+      </div>
+
+      <div class="process-grid" id="process-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       TÉMOIGNAGES
+  ════════════════════════════════════════════════════ -->
+  <section id="temoignages" class="testimonials-section wrap">
+    <div style="margin-bottom:3.5rem;" class="reveal">
+      <span class="section-tag">RECOMMANDATIONS & AVIS</span>
+      <h2 class="section-heading">Ce que disent les fondateurs &amp; partenaires.</h2>
+      <p style="color:var(--text-body); max-width:640px; font-size:1.02rem; margin-top:0.6rem; line-height:1.6;">
+        Retours d'expérience concrets d'entreprises et de clients accompagnés par Cheikh Awa Balla Diop sur leurs identités de marque, campagnes et produits digitaux.
+      </p>
+    </div>
+
+    <div class="testimonials-grid" id="testimonials-grid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════════════════ -->
+  <section id="faq" class="faq-section wrap">
+    <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">QUESTIONS FRÉQUENTES</span>
+      <h2 class="section-heading">Tout ce que vous devez savoir avant de commencer.</h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CALL TO ACTION BANNER
+  ════════════════════════════════════════════════════ -->
+  <section class="cta-banner-section wrap">
+    <div class="cta-card reveal">
+      <h2 class="cta-card-title">
+        Vous avez un projet ?<br>Donnons-lui vie ensemble.
+      </h2>
+      <p class="cta-card-desc">
+        Que ce soit pour une identité complète, une campagne d'affiches ou une création visuelle assistée par IA, je suis à votre écoute pour concrétiser vos ambitions.
+      </p>
+      <a href="#contact" class="btn-cta-light">Démarrer une collaboration →</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════════ -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="section-tag">ME CONTACTER</span>
+          <h2 class="section-heading">Parlons de votre prochaine étape.</h2>
+          <p style="color:var(--text-body); font-size:0.98rem; line-height:1.6; margin-bottom:2rem;">
+            Remplissez le formulaire ou contactez-moi directement sur l'une de mes plateformes préférées. Je réponds sous 24 à 48 heures.
+          </p>
+
+          <div class="social-cards" id="social-cards"></div>
+        </div>
+
+        <div class="contact-form-box reveal">
+          <div class="form-success-banner" id="form-success">
+            🎉 Merci ! Votre message a bien été envoyé. Je reviens vers vous très prochainement.
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-name">Nom complet *</label>
+                <input class="form-field" type="text" id="f-name" name="name" placeholder="Ex: Moussa Diop" required>
+                <span class="form-err">Veuillez renseigner votre nom.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-company">Entreprise / Projet</label>
+                <input class="form-field" type="text" id="f-company" name="company" placeholder="Ex: Baol Studio">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-email">Adresse email *</label>
+                <input class="form-field" type="email" id="f-email" name="email" placeholder="nom@exemple.com" required>
+                <span class="form-err">Adresse email invalide.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-phone">Téléphone / WhatsApp</label>
+                <input class="form-field" type="tel" id="f-phone" name="phone" placeholder="+221 77 000 00 00">
+                <span class="form-err">Numéro invalide.</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-type">Type de projet *</label>
+                <select class="form-field" id="f-type" name="type" required>
+                  <option value="">— Sélectionner —</option>
+                  <option value="Branding">Branding & Identité visuelle</option>
+                  <option value="Design Graphique">Design Graphique & Print</option>
+                  <option value="Packaging">Packaging & Produit</option>
+                  <option value="Vidéo">Vidéo & Montage</option>
+                  <option value="Web Design">Web Design & UI/UX</option>
+                  <option value="IA">Création Assistée par IA</option>
+                  <option value="Autre">Autre projet</option>
+                </select>
+                <span class="form-err">Veuillez choisir un type de projet.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-budget">Budget indicatif</label>
+                <select class="form-field" id="f-budget" name="budget">
+                  <option value="">— Sélectionner —</option>
+                  <option value="1">Moins de 200 000 FCFA</option>
+                  <option value="2">200 000 – 500 000 FCFA</option>
+                  <option value="3">500 000 – 1 000 000 FCFA</option>
+                  <option value="4">Plus de 1 000 000 FCFA</option>
+                  <option value="5">À définir ensemble</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-message">Votre message / Présentation du projet *</label>
+              <textarea class="form-field" id="f-message" name="message" placeholder="Décrivez vos objectifs, vos attentes et vos délais…" required></textarea>
+              <span class="form-err">Veuillez écrire au moins 10 caractères.</span>
+            </div>
+
+            <button type="submit" class="btn-form-submit">Envoyer ma demande →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">✕</button>
+    <img src="" alt="Agrandissement" class="lightbox-img" id="lightbox-img">
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="name">CHEIKH AWA BALLA DIOP</p>
+        <p class="sub">Fondateur &amp; Directeur Créatif — Baol Vision · Sénégal</p>
+      </div>
+
+      <nav class="footer-nav-links">
+        <a href="#projets">Projets</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener">Behance ↗</a>
+      </nav>
+
+      <p class="footer-copy">© <span id="yr"></span> — Cheikh Awa Balla Diop. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     JAVASCRIPT INLINE (10 PROJETS + MULTI-IMAGES + FILTRES)
+════════════════════════════════════════════════════ -->
+<script>
+const CONTACT = {
+  phone:     "+221 77 303 31 96",
+  whatsapp:  "+221 77 303 31 96",
+  email:     "contact.baolvision@gmail.com",
+  instagram: "https://instagram.com/cheikh_awa_balla_diop",
+  behance:   "https://www.behance.net/cheikhdiop16",
+  linkedin:  "https://linkedin.com/in/cheikh-awa-balla-diop",
+};
+
+/* 10 PROJETS COMPLETS AVEC MULTI-IMAGES */
+const PROJECTS = [
+  {
+    id: "prizent",
+    category: "digital",
+    title: "PRIZENT",
+    subtitle: "Système de pointage intelligent par smartphone",
+    tags: ["UI/UX Design", "Communication", "SaaS Tech"],
+    year: "2024",
+    primaryImg: "assets/images/project-prizent.png",
+    images: [
+      { label: "Affiche", src: "assets/images/project-prizent.png" },
+      { label: "Mockup Bureau", src: "assets/images/project-prizent-mockup.jpg" }
+    ]
+  },
+  {
+    id: "cass-online",
+    category: "branding",
+    title: "CASS ONLINE",
+    subtitle: "Place de marché digitale & E-commerce au Sénégal",
+    tags: ["Branding", "Campagne Pub", "E-commerce"],
+    year: "2024",
+    primaryImg: "assets/images/project-cass-online.jpg",
+    images: [
+      { label: "Affiche", src: "assets/images/project-cass-online.jpg" },
+      { label: "Panneau Dakar", src: "assets/images/project-cass-online-mockup.jpg" }
+    ]
+  },
+  {
+    id: "vacrea",
+    category: "print",
+    title: "VACREA",
+    subtitle: "Bootcamp Vacances de Créations (G3S Digital)",
+    tags: ["Event Branding", "Print & Affiche", "Formation"],
+    year: "2024",
+    primaryImg: "assets/images/project-vacrea.jpg",
+    images: [
+      { label: "Affiche", src: "assets/images/project-vacrea.jpg" },
+      { label: "Studio Design", src: "assets/images/project-vacrea-mockup.jpg" }
+    ]
+  },
+  {
+    id: "mstech",
+    category: "branding",
+    title: "MSTECH",
+    subtitle: "Al Moubarack Services — Sécurité & Génie technique",
+    tags: ["Identité Visuelle", "Print Corporate", "Technologie"],
+    year: "2024",
+    primaryImg: "assets/images/project-mstech.jpg",
+    images: [
+      { label: "Support Corporate", src: "assets/images/project-mstech.jpg" },
+      { label: "Véhicule Pro", src: "assets/images/project-mstech-mockup.jpg" }
+    ]
+  },
+  {
+    id: "darou-salam",
+    category: "digital",
+    title: "DAROU SALAM ASSURANCE",
+    subtitle: "Campagne d'assurance digitale par QR code",
+    tags: ["Campagne Digitale", "Assurtech", "Branding"],
+    year: "2024",
+    primaryImg: "assets/images/project-darou-salam.png",
+    images: [
+      { label: "Attestation", src: "assets/images/project-darou-salam.png" },
+      { label: "En Situation", src: "assets/images/project-darou-salam-mockup.jpg" }
+    ]
+  },
+  {
+    id: "demandoo",
+    category: "digital",
+    title: "DEMANDOO",
+    subtitle: "Plateforme de covoiturage en Afrique de l'Ouest",
+    tags: ["UI/UX Design", "Design System", "Mobile"],
+    year: "2024",
+    primaryImg: "assets/images/project-demandoo.jpg",
+    images: [
+      { label: "App Showcase", src: "assets/images/project-demandoo.jpg" }
+    ]
+  },
+  {
+    id: "gda",
+    category: "digital",
+    title: "GDA ARCHITECT",
+    subtitle: "Architecture contemporaine & Construction d'exception",
+    tags: ["Web Design", "UI/UX", "Direction Artistique"],
+    year: "2024",
+    primaryImg: "assets/images/project-gda.jpg",
+    images: [
+      { label: "Web Experience", src: "assets/images/project-gda.jpg" }
+    ]
+  },
+  {
+    id: "graphia",
+    category: "ai",
+    title: "GRAPHIA BOOTCAMP",
+    subtitle: "Bootcamp Infographie & Intelligence Artificielle",
+    tags: ["Branding", "Event Design", "Création IA"],
+    year: "2024",
+    primaryImg: "assets/images/project-graphia.jpg",
+    images: [
+      { label: "Key Visual", src: "assets/images/project-graphia.jpg" }
+    ]
+  },
+  {
+    id: "setrans",
+    category: "print",
+    title: "SETRANS LOGISTIQUE",
+    subtitle: "Transport multimodal, Transit & Flotte commerciale",
+    tags: ["Brand Identity", "Communication", "Print"],
+    year: "2023",
+    primaryImg: "assets/images/project-setrans.jpg",
+    images: [
+      { label: "Identité Flotte", src: "assets/images/project-setrans.jpg" }
+    ]
+  },
+  {
+    id: "salixate",
+    category: "branding",
+    title: "SALIXATE CAFÉ",
+    subtitle: "Packaging artisanal & Branding alimentaire de terroir",
+    tags: ["Packaging", "Branding", "Advertising"],
+    year: "2023",
+    primaryImg: "assets/images/project-salixate.jpg",
+    images: [
+      { label: "Packaging Luxe", src: "assets/images/project-salixate.jpg" }
+    ]
+  }
+];
+
+const SERVICES = [
+  {
+    num: "01",
+    title: "Branding & Identité",
+    desc: "Création d'univers de marque distinctifs, logos mémorables et chartes graphiques complètes pour vous démarquer durablement.",
+    items: ["Logo & Emblème", "Charte graphique", "Typographie & Couleurs", "Direction artistique"]
+  },
+  {
+    num: "02",
+    title: "Graphic Design & Print",
+    desc: "Conception de supports imprimés et digitaux à fort impact : affiches événementielles, papeterie d'affaires et signalétique.",
+    items: ["Affiches & Flyers", "Supports commerciaux", "Papeterie professionnelle", "Signalétique"]
+  },
+  {
+    num: "03",
+    title: "Packaging & Produit",
+    desc: "Habillages de produits captivants pour sublimer vos articles en rayon et susciter le coup de cœur immédiat des clients.",
+    items: ["Étiquettes produit", "Boîtes & emballages", "Visualisation 3D / Mockups", "Préparation impression"]
+  },
+  {
+    num: "04",
+    title: "Création Vidéo & Motion",
+    desc: "Montage percutant et storytelling visuel pour vos lancements, réseaux sociaux et communications d'entreprise.",
+    items: ["Montage publicitaire", "Vidéos réseaux sociaux", "Storytelling dynamique", "Clips de marque"]
+  },
+  {
+    num: "05",
+    title: "Intelligence Artificielle",
+    desc: "Intégration d'outils d'IA générative pour explorer des concepts inédits, prototyper rapidement et enrichir les visuels.",
+    items: ["Prompt Engineering", "Génération visuelle IA", "Concepts exploratoires", "Automatisation créative"]
+  },
+  {
+    num: "06",
+    title: "Digital Design & UI/UX",
+    desc: "Interfaces web et mobiles épurées, intuitives et centrées utilisateur pour transformer vos visiteurs en clients fidèles.",
+    items: ["Design de sites web", "UI/UX Mobile", "Design Systems", "Prototypes interactifs"]
+  }
+];
+
+const STACK = [
+  { icon: "🎨", name: "Adobe Photoshop", sub: "Retouche & Photomontage", pills: ["Compositions", "Social Media", "Mockups"] },
+  { icon: "📐", name: "Adobe Illustrator", sub: "Identité vectorielle & Logo", pills: ["Vecteurs", "Logo", "Typographie"] },
+  { icon: "🎬", name: "Premiere Pro", sub: "Montage audiovisuel dynamique", pills: ["Montage", "Spots", "Shorts/Reels"] },
+  { icon: "⚡", name: "IA Générative", sub: "Créativité augmentée & R&D", pills: ["Midjourney", "ChatGPT", "Runway"] }
+];
+
+const PROCESS = [
+  { num: "1", name: "Découverte", desc: "Comprendre vos ambitions, votre public cible et le marché pour poser les fondations." },
+  { num: "2", name: "Cadrage", desc: "Élaboration du brief créatif, recherche de références visuelles et définition du concept." },
+  { num: "3", name: "Conception", desc: "Création des pistes de design, itérations collaboratives et affinage millimétré." },
+  { num: "4", name: "Livraison", desc: "Export de tous les fichiers sources haute fidélité (print, web, vectoriel) avec support." }
+];
+
+const TESTIMONIALS = [
+  {
+    quote: "Cheikh a su donner une identité visuelle percutante et hautement professionnelle à notre solution SaaS Prizent. Grâce à ses affiches et supports de communication, nos demandes de démos auprès des entreprises et chantiers BTP ont décollé.",
+    author: "M. Diallo",
+    company: "Prizent / Globe Soft",
+    role: "Directeur Général",
+    avatar: "MD",
+    stars: 5,
+    projectTag: "PRIZENT"
+  },
+  {
+    quote: "La direction artistique et les visuels conçus par Cheikh ont totalement dynamisé notre marque e-commerce à Dakar. Sa réactivité et sa maîtrise des outils créatifs et de l'IA en font un partenaire indispensable.",
+    author: "M. Fall",
+    company: "Cass Online Sénégal",
+    role: "Fondateur & CEO",
+    avatar: "MF",
+    stars: 5,
+    projectTag: "CASS ONLINE"
+  },
+  {
+    quote: "Un sens du détail remarquable et une vraie compréhension des enjeux marketing. L'affiche conçue pour notre offre moto-auto-tricycle a généré un impact immédiat sur nos souscriptions d'assurance.",
+    author: "A. Ndiaye",
+    company: "Darou Salam Assurance",
+    role: "Responsable Marketing & Digital",
+    avatar: "AN",
+    stars: 5,
+    projectTag: "ASSURANCE"
+  },
+  {
+    quote: "De l'affiche commerciale aux maquettes de flocage de nos véhicules utilitaires, Cheikh a valorisé notre savoir-faire technique avec un rendu ultra-propre et moderne. Je recommande vivement Baol Vision.",
+    author: "M. Cissé",
+    company: "MSTech (Al Moubarack)",
+    role: "Directeur Technique",
+    avatar: "MC",
+    stars: 5,
+    projectTag: "MSTECH"
+  },
+  {
+    quote: "Une affiche de formation percutante qui a capté l'attention dès le premier regard et attiré de nombreux apprenants. Cheikh allie rigueur graphique, passion et respect des délais.",
+    author: "A. Sow",
+    company: "Vacrea Bootcamp",
+    role: "Coordinateur des Formations",
+    avatar: "AS",
+    stars: 5,
+    projectTag: "VACREA"
+  },
+  {
+    quote: "Collaborer avec Cheikh Awa Balla Diop est un plaisir. Il sait écouter le besoin, structurer le message visuel et apporter une touche créative unique qui fait toute la différence.",
+    author: "B. Diop",
+    company: "Partenaire Digital Baol",
+    role: "Directeur de Projet",
+    avatar: "BD",
+    stars: 5,
+    projectTag: "BRANDING"
+  }
+];
+
+const FAQS = [
+  {
+    q: "Quels sont vos délais habituels de réalisation ?",
+    a: "Les délais varient selon la complexité : une identité visuelle complète nécessite généralement 2 à 4 semaines, tandis qu'une affiche publicitaire ou un packaging peut être livré en 3 à 7 jours."
+  },
+  {
+    q: "Comment intégrez-vous l'Intelligence Artificielle dans vos créations ?",
+    a: "J'utilise l'IA comme catalyseur : pour explorer des pistes conceptuelles novatrices, enrichir les compositions et prototyper rapidement, tout en garantissant une direction artistique 100% maîtrisée et personnalisée."
+  },
+  {
+    q: "Proposez-vous des révisions sur les créations ?",
+    a: "Absolument. Chaque projet intègre plusieurs cycles de retours pour ajuster les détails, typographies et couleurs jusqu'à votre entière satisfaction."
+  },
+  {
+    q: "Dans quels formats livrez-vous les livrables finaux ?",
+    a: "Tous les formats standards indispensables : fichiers vectoriels éditables (AI, EPS, PDF HD) pour l'impression, et fichiers optimisés pour les écrans et réseaux sociaux (PNG, JPG, WebP)."
+  }
+];
+
+/* ── RENDU DES PROJETS AVEC SWITCHER D'IMAGES ─────── */
+function renderProjects(filter = 'all') {
+  const wg = document.getElementById('works-grid');
+  if (!wg) return;
+
+  const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
+
+  wg.innerHTML = filtered.map(p => `
+    <div class="work-card reveal" data-category="${p.category}" id="card-${p.id}">
+      <div class="work-img-frame">
+        <span class="work-badge-count">${p.images.length > 1 ? `${p.images.length} visuels` : '1 visuel'}</span>
+        <img class="work-img" id="img-${p.id}" src="${p.primaryImg}" alt="${p.title}" loading="lazy" onclick="openLightbox('${p.primaryImg}')" style="cursor:zoom-in;">
+        
+        ${p.images.length > 1 ? `
+          <div class="work-image-tabs">
+            ${p.images.map((img, idx) => `
+              <button class="work-tab-btn ${idx === 0 ? 'active' : ''}" 
+                      onclick="switchCardImage(event, '${p.id}', '${img.src}', this)">
+                ${img.label}
+              </button>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+
+      <div class="work-meta">
+        <div>
+          <a href="project.html?id=${p.id}"><h3 class="work-title">${p.title}</h3></a>
+          <p class="work-sub-text">${p.subtitle}</p>
+          <div class="work-tags">
+            ${p.tags.map(t => `<span class="work-tag">${t}</span>`).join('')}
+            <span class="work-tag">${p.year}</span>
+          </div>
+        </div>
+        <a href="project.html?id=${p.id}" class="work-arrow-btn" aria-label="Voir le projet ${p.title}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  `).join('');
+
+  setTimeout(initReveal, 50);
+}
+
+/* ── SWITCHER D'IMAGE INTERACTIF DANS LA CARTE ───── */
+window.switchCardImage = function(e, projectId, newSrc, btn) {
+  e.preventDefault();
+  e.stopPropagation();
+  const img = document.getElementById('img-' + projectId);
+  if (img) {
+    img.style.opacity = '0.3';
+    setTimeout(() => {
+      img.src = newSrc;
+      img.setAttribute('onclick', `openLightbox('${newSrc}')`);
+      img.style.opacity = '1';
+    }, 120);
+  }
+  const card = document.getElementById('card-' + projectId);
+  if (card) {
+    card.querySelectorAll('.work-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+};
+
+/* ── LIGHTBOX ─────────────────────────────────────── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+window.openLightbox = function(src) {
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+if (lightbox) {
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+function closeLightbox() {
+  if (lightbox) {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+/* ── GESTION DES FILTRES DE PROJETS ───────────────── */
+function initFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.getAttribute('data-filter'));
+    });
+  });
+}
+
+/* ── AUTRES RENDUS STATIQUES ──────────────────────── */
+function renderOtherSections() {
+  // Services
+  const sg = document.getElementById('services-grid');
+  if (sg) {
+    sg.innerHTML = SERVICES.map(s => `
+      <div class="service-card reveal">
+        <div>
+          <span class="service-num">${s.num}</span>
+          <h3 class="service-title">${s.title}</h3>
+          <p class="service-desc">${s.desc}</p>
+        </div>
+        <div class="service-items">
+          ${s.items.map(item => `<div class="service-item-line">${item}</div>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Stack
+  const stg = document.getElementById('stack-grid');
+  if (stg) {
+    stg.innerHTML = STACK.map(s => `
+      <div class="stack-card reveal">
+        <div class="stack-icon">${s.icon}</div>
+        <h3 class="stack-name">${s.name}</h3>
+        <p class="stack-sub">${s.sub}</p>
+        <div class="stack-pills">
+          ${s.pills.map(p => `<span class="stack-pill">${p}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Process
+  const pg = document.getElementById('process-grid');
+  if (pg) {
+    pg.innerHTML = PROCESS.map(p => `
+      <div class="process-card reveal">
+        <div class="process-step-num">${p.num}</div>
+        <h3 class="process-step-name">${p.name}</h3>
+        <p class="process-step-desc">${p.desc}</p>
+      </div>
+    `).join('');
+  }
+
+  // Testimonials
+  const tg = document.getElementById('testimonials-grid');
+  if (tg) {
+    tg.innerHTML = TESTIMONIALS.map(t => `
+      <div class="testi-card reveal">
+        <div>
+          <div class="testi-header">
+            <div class="testi-stars">${'★'.repeat(t.stars)}</div>
+            <span class="testi-tag">${t.projectTag}</span>
+          </div>
+          <p class="testi-quote">${t.quote}</p>
+        </div>
+        <div class="testi-author-box">
+          <div class="testi-avatar">${t.avatar}</div>
+          <div class="testi-author-info">
+            <strong class="testi-author-name">${t.author}</strong>
+            <span class="testi-author-role">${t.company} · ${t.role}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // FAQ
+  const fl = document.getElementById('faq-list');
+  if (fl) {
+    fl.innerHTML = FAQS.map((f, i) => `
+      <div class="faq-item reveal ${i === 0 ? 'active' : ''}">
+        <button class="faq-question" aria-expanded="${i === 0 ? 'true' : 'false'}">
+          <span>${f.q}</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>${f.a}</p></div>
+      </div>
+    `).join('');
+
+    fl.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('active');
+        fl.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isOpen) item.classList.add('active');
+      });
+    });
+  }
+
+  // Socials & Direct Contact
+  const sc = document.getElementById('social-cards');
+  if (sc) {
+    const list = [
+      { icon: '💬', name: 'WhatsApp Direct', val: '+221 77 303 31 96', href: 'https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif.' },
+      { icon: '📞', name: 'Téléphone / Appel', val: '+221 77 303 31 96', href: 'tel:+221773033196' },
+      { icon: '✉️', name: 'Email Professionnel', val: CONTACT.email || 'contact.baolvision@gmail.com', href: 'mailto:' + (CONTACT.email || 'contact.baolvision@gmail.com') },
+      { icon: '📸', name: 'Instagram', val: '@cheikh_awa_balla_diop', href: CONTACT.instagram || 'https://instagram.com' },
+      { icon: '🎨', name: 'Behance', val: 'behance.net/cheikhdiop16', href: CONTACT.behance },
+      { icon: '💼', name: 'LinkedIn', val: 'cheikh-awa-balla-diop', href: CONTACT.linkedin || 'https://linkedin.com' }
+    ];
+    sc.innerHTML = list.map(s => `
+      <a href="${s.href}" class="social-item" target="_blank" rel="noopener">
+        <div class="social-item-left">
+          <span class="social-item-icon">${s.icon}</span>
+          <span class="social-item-name">${s.name}</span>
+        </div>
+        <span class="social-item-val">${s.val} →</span>
+      </a>
+    `).join('');
+  }
+
+  const yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+}
+
+/* ── THÈME (LIGHT / DARK) ─────────────────────────── */
+const themeBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('cab_theme', theme);
+  if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+setTheme(localStorage.getItem('cab_theme') || 'light');
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    setTheme(current === 'light' ? 'dark' : 'light');
+  });
+}
+
+/* ── PROGRESS BAR ─────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  const pBar = document.getElementById('progress-bar');
+  if (pBar) pBar.style.width = (scrollTop / (scrollHeight - clientHeight) * 100) + '%';
+}, { passive: true });
+
+/* ── MENU MOBILE ──────────────────────────────────── */
+const mobBtn = document.getElementById('mob-btn');
+const mobClose = document.getElementById('mob-close');
+const mobOverlay = document.getElementById('mob-overlay');
+
+if (mobBtn && mobOverlay) {
+  mobBtn.addEventListener('click', () => {
+    mobOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+}
+if (mobClose && mobOverlay) mobClose.addEventListener('click', closeMobMenu);
+
+function closeMobMenu() {
+  if (mobOverlay) {
+    mobOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+/* ── FORMULAIRE AVEC ENVOI DIRECT WHATSAPP OPTIONNEL ── */
+function initForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const V = {
+    name:    v => v.trim().length >= 2,
+    email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+    phone:   v => v.trim() === '' || /^[\d\s\+\-\(\)]{6,20}$/.test(v.trim()),
+    type:    v => v.trim() !== '',
+    message: v => v.trim().length >= 10
+  };
+
+  function validateInput(el) {
+    const g = el.closest('.form-group');
+    if (!g) return true;
+    const ok = V[el.name] ? V[el.name](el.value) : true;
+    g.classList.toggle('has-err', !ok);
+    return ok;
+  }
+
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('blur', () => validateInput(input));
+    input.addEventListener('input', () => {
+      if (input.closest('.form-group')?.classList.contains('has-err')) validateInput(input);
+    });
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('input, select, textarea').forEach(input => {
+      if (!validateInput(input)) valid = false;
+    });
+    if (!valid) return;
+
+    const btn = form.querySelector('.btn-form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+
+    const formData = new FormData(form);
+    const nom = formData.get('name') || '';
+    const entreprise = formData.get('company') || '';
+    const type = formData.get('type') || '';
+    const msg = formData.get('message') || '';
+    const waMsg = encodeURIComponent(
+      `Bonjour Cheikh Awa Balla Diop,\nJe m'appelle ${nom}${entreprise ? ' (' + entreprise + ')' : ''}.\nProjet : ${type}\nMessage : ${msg}`
+    );
+
+    setTimeout(() => {
+      form.reset();
+      form.style.display = 'none';
+      const successBox = document.getElementById('form-success');
+      if (successBox) {
+        successBox.innerHTML = `
+          <div style="text-align:left;">
+            <p style="font-size:1.1rem; font-weight:700; margin-bottom:0.4rem; color:var(--text-main);">🎉 Merci ${nom} ! Votre demande a bien été envoyée.</p>
+            <p style="font-size:0.92rem; margin-bottom:1.25rem; color:var(--text-body);">Pour une réponse ultra-rapide, vous pouvez aussi me transmettre ce brief en 1 clic sur WhatsApp :</p>
+            <a href="https://wa.me/221773033196?text=${waMsg}" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.6rem; background:#25D366; color:#fff; text-decoration:none; padding:0.85rem 1.4rem; border-radius:var(--radius-sm); font-weight:700;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Transmettre sur WhatsApp (77 303 31 96) →
+            </a>
+          </div>
+        `;
+        successBox.classList.add('show');
+      }
+    }, 600);
+  });
+}
+
+/* ── SCROLL REVEAL ────────────────────────────────── */
+function initReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderProjects();
+  initFilters();
+  renderOtherSections();
+  initForm();
+  setTimeout(initReveal, 80);
+});
+</script>
+
+<!-- Bouton Flottant WhatsApp -->
+<a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif." 
+   target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>WhatsApp : 77 303 31 96</span>
+</a>
+</body>
+</html>

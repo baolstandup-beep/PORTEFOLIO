@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étude de cas — Cheikh Awa Balla Diop</title>
+<meta name="description" content="Étude de cas détaillée par Cheikh Awa Balla Diop, Fondateur de Baol Vision à Touba, Sénégal.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23090909'/><text x='50%25' y='55%25' font-family='sans-serif' font-size='13' fill='%23FF5E1A' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>CD</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; background-color: #080808; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #080808;
+  color: #EDEDED;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font-family: inherit; cursor: pointer; }
+::selection { background: #FF5E1A; color: #080808; }
+
+:root {
+  --bg:             #080808;
+  --bg-card:        #0E0E0E;
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-strong:  rgba(255, 255, 255, 0.18);
+  --text-main:      #EDEDED;
+  --text-muted:     #A6A6A6;
+  --text-dim:       #6E6E6E;
+  --accent:         #FF5E1A;
+  --font-display:   'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:      'IBM Plex Mono', 'Courier New', monospace;
+  --wrap-width:     1440px;
+}
+
+.wrap { width: 100%; max-width: var(--wrap-width); margin: 0 auto; padding: 0 2.5rem; }
+@media (max-width: 768px) { .wrap { padding: 0 1.25rem; } }
+
+/* Header */
+.header-nav {
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 768px) { .header-nav { padding: 1.25rem; } }
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.btn-back-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color .2s;
+}
+.btn-back-link:hover { color: var(--accent); }
+
+/* Project Hero */
+.cs-hero { padding: 6rem 0 4rem; }
+.cs-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.cs-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 76px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.98;
+  color: #EDEDED;
+  margin-bottom: 2rem;
+}
+.cs-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.2vw, 20px);
+  color: var(--text-muted);
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+/* Metadata Bar */
+.cs-specs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 4rem 0;
+}
+@media (max-width: 860px) { .cs-specs-bar { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .cs-specs-bar { grid-template-columns: 1fr; } }
+.spec-box span.lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.35rem;
+}
+.spec-box span.val {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #EDEDED;
+}
+
+/* Dual Showcase */
+.cs-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 860px) { .cs-showcase-grid { grid-template-columns: 1fr; } }
+.showcase-frame {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.showcase-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.showcase-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform .4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.showcase-frame:hover .showcase-img { transform: scale(1.02); }
+
+/* Content Blocks */
+.cs-story-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 7rem;
+}
+.cs-story-block {
+  padding: 3rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+}
+@media (max-width: 860px) {
+  .cs-story-block { grid-template-columns: 1fr; gap: 1.25rem; padding: 2rem; }
+}
+.cs-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.cs-section-name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #EDEDED;
+}
+.cs-body-text {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.05vw, 18px);
+  line-height: 1.7;
+  color: #C8C8C8;
+  max-width: 62ch;
+}
+
+/* Next banner */
+.next-project-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.next-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.next-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #EDEDED;
+  margin-bottom: 2.5rem;
+}
+.btn-monument {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 2.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #EDEDED;
+  color: #080808 !important;
+  border: 1px solid #EDEDED;
+  transition: transform .25s ease, background-color .25s ease;
+}
+.btn-monument:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: #FFFFFF !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  text-decoration: none;
+  transition: transform .25s ease;
+}
+.floating-whatsapp:hover { transform: translateY(-3px); }
+.floating-whatsapp svg { width: 22px; height: 22px; fill: #FFFFFF; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .floating-whatsapp { bottom: 1.5rem; right: 1.5rem; padding: 0.85rem; border-radius: 50%; }
+  .floating-whatsapp span { display: none; }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 99999;
+  display: none; align-items: center; justify-content: center; padding: 2rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 2rem; right: 2rem; background: none; border: none;
+  color: #fff; font-size: 2rem;
+}
+
+/* ─── THÈME BLANC & ORANGE ─── */
+body.theme-white {
+  --bg:             #FFFFFF;
+  --bg-card:        #F7F7F6;
+  --border:         rgba(0, 0, 0, 0.08);
+  --border-strong:  rgba(0, 0, 0, 0.16);
+  --text-main:      #080808;
+  --text-muted:     #666666;
+  --text-dim:       #8E8E8E;
+  --accent:         #FF5E1A;
+}
+
+body.theme-white .header-nav {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body.theme-white .btn-nav-back {
+  background: #080808;
+  color: #FFFFFF !important;
+}
+body.theme-white .btn-nav-back:hover {
+  background: var(--accent);
+  color: #FFFFFF !important;
+}
+
+body.theme-white .cs-spec-box {
+  background: #F7F7F6;
+  border-color: var(--border);
+}
+
+body.theme-white .cs-card-section {
+  background: #F7F7F6;
+  border-color: var(--border);
+}
+
+body.theme-white .next-banner {
+  background: #F7F7F6;
+  border-color: var(--border);
+}
+
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+</style>
+</head>
+<body class="theme-white">
+
+<header class="header-nav">
+  <a href="index.html" class="nav-logo">CHEIKH AWA BALLA DIOP</a>
+  <a href="index.html#projets" class="btn-back-link">← RETOUR AUX RÉALISATIONS</a>
+</header>
+
+<main class="wrap">
+  <article class="cs-hero">
+    <div class="cs-meta-top">
+      <span id="cs-num-display">[ ÉTUDE DE CAS 01 / 10 ]</span>
+      <span id="cs-cat-display">UI/UX · COMMUNICATION SAAS</span>
+    </div>
+
+    <h1 class="cs-title" id="cs-title">PRIZENT</h1>
+    <p class="cs-subtitle" id="cs-subtitle">Système de pointage intelligent par smartphone &amp; badges.</p>
+
+    <!-- Specs Bar -->
+    <div class="cs-specs-bar">
+      <div class="spec-box">
+        <span class="lbl">CLIENT</span>
+        <span class="val" id="cs-client">Globe Soft SARL</span>
+      </div>
+      <div class="spec-box">
+        <span class="lbl">RÔLE</span>
+        <span class="val" id="cs-role">Direction Artistique &amp; Design Publicitaire</span>
+      </div>
+      <div class="spec-box">
+        <span class="lbl">ANNÉE</span>
+        <span class="val" id="cs-year">2024</span>
+      </div>
+      <div class="spec-box">
+        <span class="lbl">DISCIPLINE</span>
+        <span class="val" id="cs-cat-val">Print, Mockup 3D &amp; Digital</span>
+      </div>
+    </div>
+
+    <!-- Dual Visuals -->
+    <div class="cs-showcase-grid">
+      <div class="showcase-frame">
+        <span class="showcase-badge">[ SUPPORT DE COMMUNICATION ORIGINAL ]</span>
+        <img src="assets/images/project-prizent.png" alt="Affiche" class="showcase-img" id="cs-img1" onclick="openLightbox(this.src)">
+      </div>
+      <div class="showcase-frame">
+        <span class="showcase-badge">[ MISE EN SITUATION RÉELLE / MOCKUP 3D ]</span>
+        <img src="assets/images/project-prizent-mockup.jpg" alt="Mockup" class="showcase-img" id="cs-img2" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+
+    <!-- Case Study Content -->
+    <div class="cs-story-container">
+      <section class="cs-story-block">
+        <div>
+          <div class="cs-step-num">[ 01 ]</div>
+          <h2 class="cs-section-name">Présentation</h2>
+        </div>
+        <p class="cs-body-text" id="cs-desc">
+          Conception du support visuel de promotion et mise en valeur de la solution Prizent, un logiciel de pointage moderne par smartphone et badges destiné aux entreprises, écoles, chantiers BTP et restaurants.
+        </p>
+      </section>
+
+      <section class="cs-story-block">
+        <div>
+          <div class="cs-step-num">[ 02 ]</div>
+          <h2 class="cs-section-name">Le Défi</h2>
+        </div>
+        <p class="cs-body-text" id="cs-problem">
+          Rendre accessible et immédiatement compréhensible une solution logicielle B2B dans un format publicitaire unique et percutant. Mettre en avant la simplicité d'utilisation sur smartphone, la rigueur du pointage et l'offre tarifaire accessible.
+        </p>
+      </section>
+
+      <section class="cs-story-block">
+        <div>
+          <div class="cs-step-num">[ 03 ]</div>
+          <h2 class="cs-section-name">Stratégie Visuelle</h2>
+        </div>
+        <p class="cs-body-text" id="cs-solution">
+          Direction artistique axée sur les contrastes forts : fond texturé vert profond rappelant la marque, hiérarchisation stricte des bénéfices clients (entreprises, chantiers, écoles) et mise en scène du mockup smartphone en situation réelle avec interface claire.
+        </p>
+      </section>
+
+      <section class="cs-story-block">
+        <div>
+          <div class="cs-step-num">[ 04 ]</div>
+          <h2 class="cs-section-name">Impact &amp; Résultats</h2>
+        </div>
+        <p class="cs-body-text" id="cs-result">
+          Support largement diffusé auprès de cibles décisionnaires au Sénégal. Augmentation notable des demandes de démo et clarté immédiate du positionnement produit sur le marché professionnel sénégalais.
+        </p>
+      </section>
+    </div>
+
+    <!-- Next Project -->
+    <div class="next-project-section">
+      <div class="next-tag">[ DÉCOUVRIR LE PROJET SUIVANT ]</div>
+      <h2 class="next-name" id="next-title">CASS ONLINE</h2>
+      <a href="#" class="btn-monument" id="next-link">Explorer l'étude de cas →</a>
+    </div>
+  </article>
+
+  <footer>
+    <div>© 2026 CHEIKH AWA BALLA DIOP — BAOL VISION · TOUBA, SÉNÉGAL</div>
+    <a href="https://wa.me/221773033196" target="_blank" rel="noopener" style="color:var(--accent);">WHATSAPP : +221 77 303 31 96 ↗</a>
+  </footer>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+  <button class="lightbox-close">✕</button>
+  <img src="" alt="Agrandissement" id="lightbox-img">
+</div>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif." 
+   target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>WhatsApp : 77 303 31 96</span>
+</a>
+
+<script>
+const PROJECTS_DB = [
+  {
+    id: "prizent",
+    num: "01",
+    title: "PRIZENT",
+    cat: "UI/UX · SaaS Tech",
+    sub: "Système de pointage intelligent par smartphone",
+    client: "Globe Soft SARL / Prizent.tech",
+    role: "Direction artistique & Design publicitaire",
+    year: "2024",
+    img1: "assets/images/project-prizent.png",
+    img2: "assets/images/project-prizent-mockup.jpg",
+    desc: "Conception du support visuel de promotion et mise en valeur de la solution Prizent, un logiciel de pointage moderne par smartphone et badges destiné aux entreprises, écoles, chantiers BTP et restaurants.",
+    problem: "Rendre accessible et immédiatement compréhensible une solution logicielle B2B dans un format publicitaire percutant au Sénégal.",
+    solution: "Direction artistique axée sur des contrastes forts, typographie nette et intégration du mockup smartphone en situation réelle de bureau.",
+    result: "Support largement diffusé auprès de cibles décisionnaires, générant une forte augmentation des demandes de démonstration."
+  },
+  {
+    id: "cass-online",
+    num: "02",
+    title: "CASS ONLINE",
+    cat: "Branding · E-commerce",
+    sub: "Place de marché digitale & E-commerce au Sénégal",
+    client: "Cass Online Sénégal",
+    role: "Campagne publicitaire & Branding",
+    year: "2024",
+    img1: "assets/images/project-cass-online.jpg",
+    img2: "assets/images/project-cass-online-mockup.jpg",
+    desc: "Création de la campagne promotionnelle percutante 'Comme un marché dans un téléphone' valorisant l'achat et la revente de produits high-tech et mode sans se déplacer.",
+    problem: "Capter l'attention dans un marché e-commerce très concurrentiel et transmettre la promesse de rapidité et de simplicité.",
+    solution: "Composition publicitaire énergique, intégration harmonieuse d'une multitude de produits (smartphones, son, mode) autour d'un personnage dynamique en lévitation.",
+    result: "Campagne affichée sur les réseaux et panneaux urbains avec une mémorisation record de la marque."
+  },
+  {
+    id: "darou-salam",
+    num: "03",
+    title: "DAROU SALAM",
+    cat: "Assurance Digitale · Print",
+    sub: "Campagne digitale moto - auto - tricycle",
+    client: "Darou Salam Assurance",
+    role: "Conception graphique & Campagne",
+    year: "2024",
+    img1: "assets/images/project-darou-salam.png",
+    img2: "assets/images/project-darou-salam-mockup.jpg",
+    desc: "Campagne promotionnelle pour l'assurance digitale moto, auto et tricycle avec délivrance instantanée d'attestation.",
+    problem: "Démocratiser la souscription d'assurance en ligne auprès des conducteurs et transporteurs urbains.",
+    solution: "Mise en avant claire du smartphone affichant l'attestation numérique validée, entouré des véhicules cibles (Mercedes, moto, tricycle de livraison).",
+    result: "Adhésion forte des usagers et augmentation immédiate des souscriptions en ligne."
+  },
+  {
+    id: "mstech",
+    num: "04",
+    title: "MSTECH",
+    cat: "Identité Visuelle · Corporate",
+    sub: "Al Moubarack Services Technologie",
+    client: "MSTech Sénégal",
+    role: "Direction visuelle & Print Corporate",
+    year: "2024",
+    img1: "assets/images/project-mstech.jpg",
+    img2: "assets/images/project-mstech-mockup.jpg",
+    desc: "Supports promotionnels et identité pour une entreprise experte en électricité bâtiment, climatisation et caméras de surveillance.",
+    problem: "Valoriser la rigueur technique et le professionnalisme d'une entreprise multi-services techniques.",
+    solution: "Palette bleu et rouge technique, composition structurée en vignettes pour chaque corps de métier et maquette de covering utilitaire.",
+    result: "Supports commerciaux de référence pour les réponses aux appels d'offres et démarchages B2B."
+  },
+  {
+    id: "vacrea",
+    num: "05",
+    title: "VACREA",
+    cat: "Événementiel · Formation Design",
+    sub: "Vacances de création — Graphisme & Web",
+    client: "Vacrea / Baol Vision",
+    role: "Branding événementiel & Affiche",
+    year: "2024",
+    img1: "assets/images/project-vacrea.jpg",
+    img2: "assets/images/project-vacrea-mockup.jpg",
+    desc: "Affiche promotionnelle pour la session de formation intensive aux métiers du design graphique (Photoshop, Illustrator, Premiere Pro, WordPress).",
+    problem: "Susciter des vocations et remplir les sessions de formation en moins de deux semaines.",
+    solution: "Composition chaleureuse et dynamique mettant en avant le formateur, les modules clés et les badges logiciels officiels.",
+    result: "Session complète avant la date limite d'inscription."
+  },
+  {
+    id: "demandoo",
+    num: "06",
+    title: "DEMANDOO",
+    cat: "UI/UX · Mobilité",
+    sub: "Plateforme de covoiturage urbain",
+    client: "Demandoo Mobility",
+    role: "Identité visuelle & UI Design",
+    year: "2024",
+    img1: "assets/images/project-demandoo.png",
+    img2: "assets/images/project-demandoo.png",
+    desc: "Création de la marque et de l'expérience utilisateur d'une application de transport partagé reliant notamment Touba et Dakar.",
+    problem: "Créer une identité fraîche et sécurisante pour une mobilité collaborative avec réservation et trajet transparents.",
+    solution: "Contraste vert électrique et bleu profond, typographie moderne et design system réutilisable pour application mobile.",
+    result: "Déploiement complet des écrans mobiles et kit marketing."
+  },
+  {
+    id: "reine-dior",
+    num: "07",
+    title: "REINE DIOR & CO",
+    cat: "Affiche · Beauté & Formation",
+    sub: "Formation Professionnelle Make Up & Coiffure",
+    client: "GIE Reine Dior and Co",
+    role: "Direction artistique & Conception Affiche",
+    year: "2024",
+    img1: "assets/images/project-reine-dior.jpg",
+    img2: "assets/images/project-reine-dior.jpg",
+    desc: "Conception de l'affiche publicitaire haute définition pour la formation professionnelle en esthétique, maquillage et coiffure de luxe.",
+    problem: "Positionner la marque dans un univers premium, élégant et sélectif pour attirer les apprenantes passionnées.",
+    solution: "Typographie dorée texturée avec ombres portées douces, mise en valeur photographique sublime de modèles avec un travail minutieux des lumières et contrastes.",
+    result: "Impact visuel marquant, adhésion forte et valorisation du savoir-faire du GIE."
+  },
+  {
+    id: "layene-115",
+    num: "08",
+    title: "115e APPEL SEYDINA LIMAMOU LAYE",
+    cat: "Affiche · Célébration Spirituelle",
+    sub: "115e Anniversaire de l'Appel — Longueuil Canada",
+    client: "Daara Diamalahi",
+    role: "Création visuelle & Affiche Événementielle",
+    year: "2025",
+    img1: "assets/images/project-layene-115.jpg",
+    img2: "assets/images/project-layene-115.jpg",
+    desc: "Affiche commémorative officielle pour le 115e Anniversaire de l'Appel de Seydina Limamou Laye Al Mahdi, organisée par Daara Diamalahi.",
+    problem: "Créer une affiche solennelle, empreinte de spiritualité et de respect des figures saintes, tout en assurant une lisibilité impeccable des informations pratiques.",
+    solution: "Traitement pictural en découpe papier déchiré, composition harmonieuse entre les guides spirituels, la foule de pèlerins en blanc et les détails de la conférence.",
+    result: "Large diffusion au sein de la communauté au Canada et sur les plateformes numériques."
+  },
+  {
+    id: "poroxaan",
+    num: "09",
+    title: "POROXAAN INITIATIVE VOLAILLE",
+    cat: "Affiche · Campagne Événementielle",
+    sub: "Spéciale Opération GAMOU Mawlid Al Nabi",
+    client: "Poroxaan Initiative Volaille (Touba Mbacké)",
+    role: "Direction artistique & Conception Graphique",
+    year: "2024",
+    img1: "assets/images/project-poroxaan.jpg",
+    img2: "assets/images/project-poroxaan.jpg",
+    desc: "Affiche publicitaire percutante conçue pour la vente de poulets de chair lors du grand événement religieux du Mawlid.",
+    problem: "Capter l'attention immédiate des fidèles et des familles préparant les festivités du Gamou.",
+    solution: "Contraste vert et rouge festif, intégration des symboles de la fête religieuse et mise en valeur appétissante du produit avec coordonnées d'appel claires.",
+    result: "Ruée sur les commandes avec écoulement complet des stocks avant le Gamou."
+  },
+  {
+    id: "sanofi-urgest",
+    num: "10",
+    title: "SANOFI · PROJET URGEST",
+    cat: "Affiche Médicale & Conférence",
+    sub: "Douleur aux urgences : enjeu de qualité et sécurité",
+    client: "Sanofi Sénégal / Pr Oumar Kane",
+    role: "Design visuel & Affiche Scientifique",
+    year: "2024",
+    img1: "assets/images/project-sanofi-urgest.jpg",
+    img2: "assets/images/project-sanofi-urgest.jpg",
+    desc: "Conception de l'affiche de conférence médicale de haut niveau pour le laboratoire international Sanofi et l'Hôpital FANN.",
+    problem: "Créer un support institutionnel alliant rigueur scientifique, clarté pédagogique et élégance médicale.",
+    solution: "Typographie contrastée vert clinique et blanc sur fond sombre soigné, mise en exergue du conférencier et des thématiques d'urgence.",
+    result: "Forte mobilisation des spécialistes du corps médical lors de la conférence à l'Hôtel Fleur de LYS."
+  },
+  {
+    id: "pastef-mbacke",
+    num: "11",
+    title: "PASTEF · GIGA CARAVANE MBACKÉ",
+    cat: "Affiche Politique & Campagne",
+    sub: "Législatives 2024 — Sénégal 2050",
+    client: "Section PASTEF Touba Mbacké",
+    role: "Direction artistique & Conception Graphique",
+    year: "2024",
+    img1: "assets/images/project-pastef-mbacke.jpg",
+    img2: "assets/images/project-pastef-mbacke.jpg",
+    desc: "Affiche officielle de mobilisation pour la grande caravane politique des Législatives 2024 à Mbacké et Touba.",
+    problem: "Mobiliser les militants et sympathisants avec une hiérarchie visuelle forte combinant les leaders, les candidats et le spécimen de vote.",
+    solution: "Composition percutante aux couleurs nationales et partisanes, découpe dynamique des portraits et typographie impactante 'GIGA CARAVANE'.",
+    result: "Diffusion massive sur les réseaux et lors des rassemblements populaires."
+  },
+  {
+    id: "ndigeul-zikrullah",
+    num: "12",
+    title: "NDIGEUL BISSUP ZIKRULLAH",
+    cat: "Affiche · Célébration Spirituelle",
+    sub: "Sous le Ndigeul du Khalif Général des Mourides",
+    client: "Fondation Ahfaadu Cheikh Ibrahima Faal",
+    role: "Conception visuelle & Direction artistique",
+    year: "2026",
+    img1: "assets/images/project-ndigeul-zikrullah.jpg",
+    img2: "assets/images/project-ndigeul-zikrullah.jpg",
+    desc: "Affiche solennelle pour la journée de commémoration et de Zikroulah à la Grande Mosquée de Touba.",
+    problem: "Rendre hommage aux figures vénérées de la confrérie avec une dignité spirituelle exemplaire.",
+    solution: "Finition texturée or et noir, mise en valeur du minaret de Touba et des guides spirituels avec typographie calligraphique soignée.",
+    result: "Affiche de référence partagée dans les dahiras du Sénégal et de la diaspora."
+  },
+  {
+    id: "magal-ngabou",
+    num: "13",
+    title: "MAGAL NGABOU ÉDITION 2026",
+    cat: "Affiche Événementielle & Religieuse",
+    sub: "Commémoration du retour de Serigne Touba de la mer",
+    client: "Comité d'organisation Magal Ngabou / Serigne Khalil LO",
+    role: "Direction visuelle & Affiche Officielle",
+    year: "2026",
+    img1: "assets/images/project-magal-ngabou.jpg",
+    img2: "assets/images/project-magal-ngabou.jpg",
+    desc: "Affiche de la 20e journée après la Korité commémorant l'événement historique de Serigne Touba à Ngabou.",
+    problem: "Concevoir une affiche festive et lumineuse adaptée au grand rassemblement annuel.",
+    solution: "Titre 3D en vert émeraude et or relief, médaillons des vénérables chefs religieux et repères calendaires nets.",
+    result: "Forte visibilité dans les médias religieux et affichage urbain dans le Baol."
+  },
+  {
+    id: "gamou-darou-miname",
+    num: "14",
+    title: "GAMOU DAROU MINAME PET",
+    cat: "Affiche Religieuse & Veillée",
+    sub: "Sous la présence de Serigne El Hadji Mame Thierno Mbacké",
+    client: "Dahira Hiznoul Abrare",
+    role: "Création graphique & Mise en page",
+    year: "2025",
+    img1: "assets/images/project-gamou-darou-miname.png",
+    img2: "assets/images/project-gamou-darou-miname.png",
+    desc: "Affiche officielle pour la nuit du Gamou, conférences religieuses et récitals du Saint Coran à Darou Miname Pet.",
+    problem: "Organiser un programme complexe d'activités sur 24h avec une clarté de lecture totale.",
+    solution: "Arche islamique verte centrale, découpe soignée des guides religieux et chronologie des heures d'activités parfaitement ordonnée.",
+    result: "Support validé par le comité d'organisation et imprimé en grand format pour l'événement."
+  },
+  {
+    id: "gda",
+    num: "07",
+    title: "GDA",
+    cat: "Branding & Espace",
+    sub: "Cabinet d'architecture & Construction",
+    client: "GDA Architecture",
+    role: "Branding & Direction artistique",
+    year: "2024",
+    img1: "assets/images/project-gda.jpg",
+    img2: "assets/images/project-gda.jpg",
+    desc: "Identité géométrique inspirée des lignes de plans architecturaux.",
+    problem: "Signifier la précision millimétrée et l'élégance sobre.",
+    solution: "Logo minimaliste en noir et blanc avec grille modulaire rigoureuse.",
+    result: "Image de marque installée auprès de promoteurs immobiliers."
+  },
+  {
+    id: "graphia",
+    num: "15",
+    title: "GRAPHIA · BOOTCAMPS IA & INFOGRAPHIE",
+    cat: "Infographie & Intelligence Artificielle",
+    sub: "Un nouveau chapitre s'ouvre pour les créatifs de Touba & Mbacké",
+    client: "Graphia Academy / Baol Vision",
+    role: "Direction pédagogique & Création visuelle",
+    year: "2024",
+    img1: "assets/images/project-graphia-bootcamp.jpg",
+    img2: "assets/images/project-graphia-bootcamp.jpg",
+    desc: "Affiche promotionnelle pour la session exclusive de Bootcamps alliant maîtrise des outils de référence (Illustrator, Photoshop) et des IA génératives de pointe (ChatGPT, Claude Code, Gemini, Veo 3).",
+    problem: "Faire passer les jeunes créatifs du Baol à la vitesse supérieure en intégrant l'IA dans leur workflow de graphistes.",
+    solution: "Composition innovante avec smartphone-télécommande d'outils, chiffres clés (50 talents, 5 jours, 1 ambition) et minaret de Touba en arrière-plan.",
+    result: "Impact retentissant auprès des créatifs et inscriptions saturées."
+  },
+  {
+    id: "pas-pas-tabaski",
+    num: "16",
+    title: "PAS-PAS · TABASKI CRÉATIVE",
+    cat: "Création 3D & Intelligence Artificielle",
+    sub: "Campagne décalée : 'On n'est pas la cible aujourd'hui'",
+    client: "Mouvement PAS-PAS Sénégal",
+    role: "Direction artistique 3D & Génération IA",
+    year: "2024",
+    img1: "assets/images/project-pas-pas-tabaski.jpg",
+    img2: "assets/images/project-pas-pas-tabaski.jpg",
+    desc: "Visuel humoristique et chaleureux de célébration de la fête de Tabaski mettant en scène un coq détendu dégustant un thé sénégalais.",
+    problem: "Créer un visuel de vœux mémorable qui se démarque de tous les visuels traditionnels sur les réseaux sociaux.",
+    solution: "Direction artistique 3D soignée avec rendu ultra-détaillé des plumes, du fauteuil en bois et de la tasse de thé, ton décalé et bienveillant.",
+    result: "Viralité exceptionnelle sur WhatsApp et les réseaux avec des milliers de partages."
+  },
+  {
+    id: "pas-pas-talkshow",
+    num: "17",
+    title: "PAS-PAS · TALK-SHOW WHATSAPP",
+    cat: "Affiche Digitale & Événement",
+    sub: "Contexte et historique de la naissance de PAS-PAS",
+    client: "Plateforme PAS-PAS (Mbacké Khéwar)",
+    role: "Conception graphique & Print",
+    year: "2026",
+    img1: "assets/images/project-pas-pas-talkshow.jpg",
+    img2: "assets/images/project-pas-pas-talkshow.jpg",
+    desc: "Affiche promotionnelle pour le grand Talk-show WhatsApp réunissant les figures clés du mouvement PAS-PAS.",
+    problem: "Structurer un grand nombre d'informations (intervenants, horaires, accès, coordonnées) sans surcharger la composition.",
+    solution: "Disposition aérée en triptyque pour les intervenants, ondes sonores stylisées et badge WhatsApp officiel.",
+    result: "Forte affluence lors du direct et engagement record de la communauté."
+  },
+  {
+    id: "porokhane-soow",
+    num: "18",
+    title: "POROKHANE SOOW · KHIAKRY 500G",
+    cat: "Packaging & Identité Produit",
+    sub: "Étiquette pot de Thiakry 100% Naturel — Touba Darou Khoudoss",
+    client: "Porokhane Soow Agroalimentaire",
+    role: "Design Packaging & Direction Graphique",
+    year: "2024",
+    img1: "assets/images/project-porokhane-soow.jpg",
+    img2: "assets/images/project-porokhane-soow.jpg",
+    desc: "Conception technique de l'étiquette conique pour le pot de Thiakry 500G commercialisé à Touba et au Sénégal.",
+    problem: "Réaliser une maquette en arc de cercle aux normes strictes d'impression agroalimentaire avec tableau nutritionnel et code-barres.",
+    solution: "Design frais vert laiteux, mise en valeur gourmande du bol de khiakry et logo emblématique 'Porokhane Soow'.",
+    result: "Conditionnement en rayon dans les supermarchés et boutiques de proximité."
+  },
+  {
+    id: "acis-forum",
+    num: "19",
+    title: "ACIS · FORUM WADIAL MAGAL TOUBA",
+    cat: "Affiche Économique & Forum",
+    sub: "Le Magal de Touba : levier pour une économie locale dynamique",
+    client: "ACIS (Association des Commerçants et Industriels du Sénégal)",
+    role: "Direction visuelle & Affiche Événementielle",
+    year: "2026",
+    img1: "assets/images/project-acis-forum.jpg",
+    img2: "assets/images/project-acis-forum.jpg",
+    desc: "Affiche officielle du Forum Économique 18 Safar organisé à l'Héliport de Touba dans le cadre des préparatifs du Grand Magal.",
+    problem: "Valoriser la dimension économique et industrielle du Magal auprès des décideurs institutionnels et chefs d'entreprises.",
+    solution: "Élégance institutionnelle bleue et blanche, badge emblématique avec le minaret et chapiteaux du forum en perspective.",
+    result: "Validation par les instances de l'ACIS et affichage officiel de l'événement."
+  },
+  {
+    id: "setrans",
+    num: "09",
+    title: "SETRANS SARL",
+    cat: "Transit · Transport · Logistique",
+    sub: "L'Ingénierie Logistique Globale — Fret Aérien, Maritime, Routier & Douane",
+    client: "SETRANS SARL — 52 rue Escarfait, Dakar Plateau",
+    role: "Direction Artistique, Affiche Publicitaire & Merchandising Textile",
+    year: "2024",
+    img1: "assets/images/project-setrans.jpg",
+    img2: "assets/images/project-setrans-cap.jpg",
+    gallery: [
+      { src: "assets/images/project-setrans.jpg", badge: "[ AFFICHE OFFICIELLE · INGÉNIERIE LOGISTIQUE GLOBALE ]" },
+      { src: "assets/images/project-setrans-cap.jpg", badge: "[ MOCKUP 3D · CASQUETTE BRODÉE OFFICIELLE ]" },
+      { src: "assets/images/project-setrans-polo.jpg", badge: "[ MOCKUP TEXTILE · POLO CORPORATE BRODÉ FACE / DOS ]" },
+      { src: "assets/images/project-setrans-tshirt.jpg", badge: "[ MOCKUP TEXTILE · T-SHIRT ÉQUIPE LOGISTIQUE RECTO / VERSO ]" }
+    ],
+    desc: "Conception intégrale de la campagne publicitaire corporate et de l'identité de marque pour SETRANS SARL, société d'ingénierie logistique multimodale basée à Dakar Plateau. Mise en valeur des 4 pôles stratégiques : Fret Aérien, Fret Maritime, Logistique Routière et Douane & Transit.",
+    problem: "Illustrer avec force et crédibilité l'envergure d'un acteur du transit multimodal capable d'interconnecter air, mer, fer et route, tout en concevant des tenues professionnelles et goodies de prestige pour le personnel et les partenaires.",
+    solution: "Composition publicitaire monumentale associant avion-cargo, porte-conteneurs, semi-remorque et locomotive sur le quai portuaire. Déclinaisons textiles soignées respectant la charte (bleu marine profond, blanc et typographie technique) sur casquettes brodées, polos d'entreprise et t-shirts pour les équipes terrain.",
+    result: "Campagne diffusée avec succès auprès des chargeurs, transitaires et importateurs d'Afrique de l'Ouest, renforçant le leadership de SETRANS SARL (www.set-trans.com)."
+  },
+  {
+    id: "salixate",
+    num: "10",
+    title: "SALIXATE",
+    cat: "Packaging & Produit",
+    sub: "Design packaging & Ligne produit",
+    client: "Laboratoires Salixate",
+    role: "Packaging Design & Rendu 3D",
+    year: "2023",
+    img1: "assets/images/project-salixate.jpg",
+    img2: "assets/images/project-salixate.jpg",
+    desc: "Gamme de packaging épurée pour produits de soin et santé.",
+    problem: "Créer un sentiment de pureté et d'efficacité pharmaceutique.",
+    solution: "Flaconnage minimaliste, typographie lisible et finitions dorées subtiles.",
+    result: "Commercialisation réussie en officines et boutiques spécialisées."
+  }
+];
+
+function loadProject() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || 'prizent';
+  const idx = PROJECTS_DB.findIndex(p => p.id === id);
+  const p = idx !== -1 ? PROJECTS_DB[idx] : PROJECTS_DB[0];
+
+  document.title = `${p.title} — Cheikh Awa Balla Diop`;
+  document.getElementById('cs-num-display').textContent = `[ ÉTUDE DE CAS ${p.num} / 10 ]`;
+  document.getElementById('cs-cat-display').textContent = p.cat;
+  document.getElementById('cs-title').textContent = p.title;
+  document.getElementById('cs-subtitle').textContent = p.sub;
+  document.getElementById('cs-client').textContent = p.client;
+  document.getElementById('cs-role').textContent = p.role;
+  document.getElementById('cs-year').textContent = p.year;
+  document.getElementById('cs-cat-val').textContent = p.cat;
+
+  const showcaseGrid = document.querySelector('.cs-showcase-grid');
+  if (showcaseGrid && p.gallery && p.gallery.length > 0) {
+    showcaseGrid.innerHTML = p.gallery.map(item => `
+      <div class="showcase-frame">
+        <span class="showcase-badge">${item.badge}</span>
+        <img src="${item.src}" alt="${p.title}" class="showcase-img" onclick="openLightbox(this.src)">
+      </div>
+    `).join('');
+  } else if (showcaseGrid) {
+    showcaseGrid.innerHTML = `
+      <div class="showcase-frame">
+        <span class="showcase-badge">[ SUPPORT DE COMMUNICATION ORIGINAL ]</span>
+        <img src="${p.img1}" alt="${p.title}" class="showcase-img" id="cs-img1" onclick="openLightbox(this.src)">
+      </div>
+      <div class="showcase-frame">
+        <span class="showcase-badge">[ MISE EN SITUATION RÉELLE / MOCKUP 3D ]</span>
+        <img src="${p.img2}" alt="${p.title}" class="showcase-img" id="cs-img2" onclick="openLightbox(this.src)">
+      </div>
+    `;
+  }
+  document.getElementById('cs-desc').textContent = p.desc;
+  document.getElementById('cs-problem').textContent = p.problem;
+  document.getElementById('cs-solution').textContent = p.solution;
+  document.getElementById('cs-result').textContent = p.result;
+
+  // Next Project Link
+  const nextIdx = (idx + 1) % PROJECTS_DB.length;
+  const nextP = PROJECTS_DB[nextIdx];
+  document.getElementById('next-title').textContent = nextP.title;
+  document.getElementById('next-link').href = `project.html?id=${nextP.id}`;
+}
+
+window.openLightbox = function(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  if (lb && img) {
+    img.src = src;
+    lb.classList.add('open');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', loadProject);
+
+// Gestion du Thème Blanc / Sombre
+(function initTheme() {
+  const toggle = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-toggle-icon");
+  const text = document.getElementById("theme-toggle-text");
+
+  function apply(isWhite) {
+    if (isWhite) {
+      document.body.classList.add("theme-white");
+      document.body.classList.remove("theme-dark");
+      if (icon) icon.textContent = "☀️";
+      if (text) text.textContent = "Blanc & Orange";
+      localStorage.setItem("portfolio-theme", "white");
+    } else {
+      document.body.classList.remove("theme-white");
+      document.body.classList.add("theme-dark");
+      if (icon) icon.textContent = "🌙";
+      if (text) text.textContent = "Sombre & Orange";
+      localStorage.setItem("portfolio-theme", "dark");
+    }
+  }
+
+  const saved = localStorage.getItem("portfolio-theme");
+  if (saved === "dark") {
+    apply(false);
+  } else {
+    apply(true);
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const isW = document.body.classList.contains("theme-white");
+      apply(!isW);
+    });
+  }
+})();
+
+</script>
+</body>
+</html>

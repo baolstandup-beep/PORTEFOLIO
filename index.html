@@ -1,0 +1,3396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheikh Awa Balla Diop — Directeur Artistique, Designer Graphique &amp; Créatif IA</title>
+<meta name="description" content="Portfolio officiel de Cheikh Awa Balla Diop, Fondateur de Baol Vision à Touba, Sénégal. Direction artistique d'exception, branding de marque, campagnes publicitaires, UI/UX et créativité assistée par intelligence artificielle.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text x='50%25' y='55%25' font-family='sans-serif' font-size='13' fill='%23FF5E1A' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>CD</text></svg>">
+
+<!-- Google Fonts : Plus Jakarta Sans (Titres), Inter (Corps), IBM Plex Mono (Technique) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═════════════════════════════════════════════════════════════════
+   1. RESET & VARIABLES GLOBALES — DIRECTION ARTISTIQUE APEX
+   ═════════════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main:       #080808;
+  --bg-card:       #111111;
+  --bg-card-hover: #161616;
+  --bg-surface:    #181818;
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-accent: rgba(255, 94, 26, 0.4);
+  
+  --text-main:     #F5F5F2;
+  --text-body:     #D4D4CE;
+  --text-muted:    #929292;
+  --text-dim:      #5E5E5E;
+  
+  --accent:        #FF5E1A;
+  --accent-soft:   rgba(255, 94, 26, 0.12);
+  --accent-glow:   rgba(255, 94, 26, 0.25);
+  
+  --font-title:    'Plus Jakarta Sans', 'Space Grotesk', -apple-system, sans-serif;
+  --font-body:     'Inter', -apple-system, sans-serif;
+  --font-mono:     'IBM Plex Mono', monospace;
+  
+  --wrap-max:      1380px;
+  --header-height: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent);
+  color: #080808;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   2. GRAIN CINÉMATOGRAPHIQUE & OVERLAY RADIAL
+   ═════════════════════════════════════════════════════════════════ */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.ambient-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 94, 26, 0.035) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+}
+
+/* Barre de progression du scroll */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  width: 0%;
+  z-index: 10001;
+  transition: width 0.1s ease-out;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   3. CURSEUR PERSONNALISÉ (AWWWARDS / FRAMER STYLE)
+   ═════════════════════════════════════════════════════════════════ */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease,
+              width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              height 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 94, 26, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease,
+              width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease;
+}
+
+.custom-cursor.hover {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 94, 26, 0.18);
+  border: 1px solid var(--accent);
+}
+
+.custom-cursor.view-project {
+  width: 78px;
+  height: 78px;
+  background-color: var(--accent);
+  color: #080808;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.custom-cursor.view-project::after {
+  content: 'VIEW ↗';
+}
+
+@media (pointer: coarse) {
+  .custom-cursor, .cursor-trail {
+    display: none !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   4. PRELOADER INITIAL ÉLÉGANT
+   ═════════════════════════════════════════════════════════════════ */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #080808;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  transition: opacity 0.7s cubic-bezier(0.65, 0, 0.35, 1),
+              visibility 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+}
+
+.preloader-sub {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.preloader-line {
+  width: 160px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-line-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  animation: loadProgress 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   5. CONTENEUR & GRILLE COMMUNE
+   ═════════════════════════════════════════════════════════════════ */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 860px) {
+  .wrap { padding: 0 1.5rem; }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   6. HEADER & NAVIGATION APEX
+   ═════════════════════════════════════════════════════════════════ */
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+@media (max-width: 860px) {
+  .header-nav { padding: 0 1.5rem; height: 70px; }
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.nav-badge-baol {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 4px;
+}
+
+.nav-center-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+@media (max-width: 960px) {
+  .nav-center-links { display: none; }
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .nav-status { display: none; }
+}
+
+.btn-nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-title);
+  font-size: 0.84rem;
+  font-weight: 600;
+  background: var(--text-main);
+  color: #080808 !important;
+  border-radius: 4px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.btn-nav-contact:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   7. HERO SECTION MONUMENTALE & IMMERSIVE
+   ═════════════════════════════════════════════════════════════════ */
+.hero-section {
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 4rem);
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-background-gradient {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(circle, rgba(255, 94, 26, 0.05) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+.hero-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-tag {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.hero-monumental-name {
+  font-family: var(--font-title);
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.hero-monumental-name .name-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-lead-text {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 48ch;
+}
+
+.hero-lead-text strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.hero-lead-text .highlight-word {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2rem;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: var(--text-main);
+  color: #080808 !important;
+  border-radius: 4px;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-hero-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 94, 26, 0.2);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2rem;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  transition: border-color 0.25s, color 0.25s, transform 0.25s;
+}
+
+.btn-hero-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Carte Portrait / Visuel Hero avec Parallaxe Réactive */
+.hero-visual-col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-interactive-card {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.15s ease-out;
+}
+
+.hero-interactive-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-card-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-name {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.badge-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+/* Barre de bas de Hero : indicateur de scroll & stats instantanées */
+.hero-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.5rem;
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.scroll-mouse-pill {
+  width: 18px;
+  height: 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  position: relative;
+}
+
+.scroll-wheel-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheelScroll 1.6s infinite ease-in-out;
+}
+
+@keyframes wheelScroll {
+  0% { top: 6px; opacity: 1; }
+  100% { top: 16px; opacity: 0; }
+}
+
+.hero-meta-summary {
+  display: flex;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-meta-summary { display: none; }
+}
+
+.meta-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-spec-item .k {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.meta-spec-item .v {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   8. SECTION MARQUEE DÉFILANT INFINI (AWWWARDS STYLE)
+   ═════════════════════════════════════════════════════════════════ */
+.marquee-strip {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border);
+  background: #0A0A0A;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: marqueeSlide 28s linear infinite;
+}
+
+.marquee-strip:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+  color: var(--accent);
+}
+
+.marquee-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   9. SECTION À PROPOS (MANIFESTO ÉDITORIAL)
+   ═════════════════════════════════════════════════════════════════ */
+.section-about {
+  padding: 9rem 0 8rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.section-header-block {
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title-large {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-main);
+  max-width: 22ch;
+}
+
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .about-editorial-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+}
+
+.about-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-quote-box {
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.about-quote-text {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.about-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.about-paragraph {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.75;
+  color: var(--text-body);
+}
+
+.about-paragraph strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.about-paragraph .accent-word {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   10. SECTION EXPÉRIENCE (TIMELINE APEX MODERNE)
+   ═════════════════════════════════════════════════════════════════ */
+.section-experience {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+@media (max-width: 860px) {
+  .timeline-item { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.75rem; }
+}
+
+.timeline-item:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.timeline-period {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline-year {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.timeline-status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeline-role {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.timeline-company {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.timeline-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.exp-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.65rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-body);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   11. SECTION CONCEPTIONS GRAPHIQUES (PURE MOSAÏQUE VISUELLE)
+   ═════════════════════════════════════════════════════════════════ */
+.section-works {
+  padding: 6.5rem 0 7.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.works-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.works-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.works-filter-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-pill {
+  padding: 0.5rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-pill.active {
+  background: var(--accent) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 4px 14px rgba(255, 94, 26, 0.35);
+}
+
+/* MOSAÏQUE COMPACTE PUREMENT VISUELLE */
+.pure-works-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.15rem;
+}
+
+@media (max-width: 1200px) {
+  .pure-works-mosaic {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .pure-works-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .pure-works-mosaic {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+/* ÉLÉMENT IMAGE PURE */
+.empty-gallery-box {
+  grid-column: 1 / -1;
+  border: 2px dashed var(--border-strong);
+  border-radius: 18px;
+  padding: 5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  color: var(--text-muted);
+}
+.empty-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.empty-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+.empty-sub {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.mosaic-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #101010;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+body.theme-white .mosaic-item {
+  background: #EFEFEF;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.mosaic-item:hover {
+  transform: translateY(-4px) scale(1.025);
+  border-color: var(--accent);
+  box-shadow: 0 16px 36px -6px rgba(255, 94, 26, 0.25), 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.07);
+}
+
+/* OVERLAY AU SURVOL AVEC TITRE DU PROJET */
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 75%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.mosaic-item:hover .mosaic-overlay {
+  opacity: 1;
+}
+
+.mosaic-top-pill {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+.mosaic-item:hover .mosaic-top-pill {
+  transform: translateY(0);
+}
+
+.mosaic-bottom-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(4px);
+  transition: transform 0.3s ease;
+}
+
+.mosaic-item:hover .mosaic-bottom-info {
+  transform: translateY(0);
+}
+
+.mosaic-title {
+  color: #FFFFFF;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.mosaic-zoom-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* LIGHTBOX MODAL */
+.portfolio-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(14px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 1.5rem;
+}
+
+.portfolio-lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-dialog {
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.lightbox-main-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #FFFFFF;
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 800;
+  gap: 1rem;
+}
+
+.lightbox-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: var(--accent);
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lightbox-action-btn:hover {
+  transform: translateY(-2px);
+  background: #FF7738;
+}
+
+.lightbox-exit-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 100001;
+}
+
+.lightbox-exit-btn:hover {
+  background: var(--accent);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   12. SECTION COMPÉTENCES & MARQUEE HORIZONTAL (SKILLS & EXPERTISE)
+   ═════════════════════════════════════════════════════════════════ */
+.section-skills {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skills-cloud-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+.skill-pill-large {
+  padding: 0.85rem 1.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: default;
+}
+
+.skill-pill-large:hover {
+  background: #FFFFFF;
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -4px rgba(255, 94, 26, 0.16);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   13. SECTION OUTILS & TECH STACK (GRILLE AVEC TILT 3D)
+   ═════════════════════════════════════════════════════════════════ */
+.section-tools {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 1100px) {
+  .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+}
+@media (max-width: 720px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tool-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -8px rgba(255, 94, 26, 0.15), 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.tool-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.07));
+}
+
+.tool-card:hover .tool-icon-wrapper {
+  transform: scale(1.12);
+}
+
+.tool-svg-icon {
+  width: 54px;
+  height: 54px;
+  display: block;
+}
+
+.tool-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.tool-name {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.tool-category {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 94, 26, 0.2);
+  transition: all 0.25s ease;
+}
+
+.tool-card:hover .tool-category {
+  background: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+}
+
+.tool-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-top: 0.2rem;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   14. SECTION SERVICES (ACCORDÉON INTERACTIF APEX)
+   ═════════════════════════════════════════════════════════════════ */
+.section-services {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-accordion-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.service-item {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s ease;
+}
+
+.service-header {
+  width: 100%;
+  padding: 2.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  transition: padding 0.25s ease;
+}
+
+.service-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-item:hover .service-title {
+  color: var(--accent);
+}
+
+.service-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .service-title-group { gap: 1rem; }
+}
+
+.service-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.service-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  transition: color 0.25s ease;
+}
+
+.service-toggle-icon {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-item.open .service-toggle-icon {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+
+.service-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), padding 0.3s ease;
+  padding: 0 1rem;
+}
+
+.service-item.open .service-body {
+  max-height: 250px;
+  padding: 0 1rem 2.25rem 4rem;
+}
+
+@media (max-width: 640px) {
+  .service-item.open .service-body { padding: 0 1rem 1.75rem 2.25rem; }
+}
+
+.service-body-p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   15. SECTION STATISTIQUES (COMPTEURS AU SCROLL)
+   ═════════════════════════════════════════════════════════════════ */
+.section-stats {
+  padding: 7rem 0;
+  border-bottom: 1px solid var(--border);
+  background: #0A0A0A;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 860px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-num-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.stat-value {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.stat-suffix {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   16. SECTION CONTACT PLEIN ÉCRAN ("HAVE A PROJECT?")
+   ═════════════════════════════════════════════════════════════════ */
+.section-contact-apex {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.contact-apex-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contact-monumental-heading {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.contact-monumental-heading .colored {
+  color: var(--accent);
+}
+
+.contact-apex-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .contact-apex-layout { grid-template-columns: 1fr; gap: 3.5rem; }
+}
+
+.contact-channels-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-direct-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.contact-direct-link:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.channel-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.channel-val {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.channel-arrow {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* Boîte Email Clic-to-Copy */
+.email-apex-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.email-apex-copy:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.copy-pill-toast {
+  position: absolute;
+  top: -2.2rem;
+  right: 1.5rem;
+  background: var(--accent);
+  color: #080808;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.copy-pill-toast.visible {
+  opacity: 1;
+}
+
+/* Formulaire Contact Apex */
+.contact-form-apex {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+@media (max-width: 600px) {
+  .contact-form-apex { padding: 1.75rem; }
+}
+
+.form-group-apex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label-apex {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.input-apex {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  background: #080808;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.input-apex:focus {
+  border-color: var(--accent);
+}
+
+textarea.input-apex {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-submit-apex {
+  width: 100%;
+  padding: 1.1rem;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: var(--text-main);
+  color: #080808;
+  border-radius: 4px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.btn-submit-apex:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   17. FOOTER ÉDITORIAL & BOUTON FLOTTANT
+   ═════════════════════════════════════════════════════════════════ */
+footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Bouton Flottant WhatsApp */
+.floating-whatsapp-apex {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: #FFFFFF !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+  z-index: 9990;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.floating-whatsapp-apex:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp-apex svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .floating-whatsapp-apex span { display: none; }
+  .floating-whatsapp-apex { bottom: 1.25rem; right: 1.25rem; padding: 0.85rem; }
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   18. ACCESSIBILITÉ PREFERS-REDUCED-MOTION
+   ═════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* ─── THÈME BLANC & ORANGE (MODE LUMINEUX D'ÉLITE) ─── */
+body.theme-white {
+  --bg-main:       #FBFBFA;
+  --bg-card:       #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  --bg-surface:    #F2F2F0;
+  --border:        rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
+  --border-accent: rgba(255, 94, 26, 0.45);
+  
+  --text-main:     #080808;
+  --text-body:     #2B2B2B;
+  --text-muted:    #666666;
+  --text-dim:      #8E8E8E;
+  
+  --accent:        #FF5E1A;
+  --accent-soft:   rgba(255, 94, 26, 0.10);
+  --accent-glow:   rgba(255, 94, 26, 0.22);
+  
+  --header-bg:     rgba(251, 251, 250, 0.92);
+  --marquee-bg:    #F2F2F0;
+  --stats-bg:      #F4F4F2;
+}
+
+body.theme-white .header-nav {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+body.theme-white .nav-badge-baol {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+body.theme-white .hero-card-badge {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: var(--border);
+}
+
+body.theme-white .marquee-strip {
+  background: var(--marquee-bg);
+}
+
+body.theme-white .section-stats {
+  background: var(--stats-bg);
+}
+
+body.theme-white .input-apex {
+  background: #FFFFFF;
+  border-color: var(--border);
+  color: var(--text-main);
+}
+
+body.theme-white .btn-hero-primary {
+  background: #080808;
+  color: #FFFFFF !important;
+}
+body.theme-white .btn-hero-primary:hover {
+  background: var(--accent);
+  color: #FFFFFF !important;
+}
+
+body.theme-white .btn-submit-apex {
+  background: #080808;
+  color: #FFFFFF;
+}
+body.theme-white .btn-submit-apex:hover {
+  background: var(--accent);
+  color: #FFFFFF;
+}
+
+body.theme-white .btn-nav-contact {
+  background: #080808;
+  color: #FFFFFF !important;
+}
+body.theme-white .btn-nav-contact:hover {
+  background: var(--accent);
+  color: #FFFFFF !important;
+}
+
+body.theme-white .tool-card {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+body.theme-white .tool-card:hover {
+  border-color: rgba(255, 94, 26, 0.45);
+  box-shadow: 0 20px 40px -8px rgba(255, 94, 26, 0.16), 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+body.theme-white .skill-pill-large {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  color: #080808;
+}
+body.theme-white .skill-pill-large:hover {
+  background: #FFFFFF;
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 10px 24px -4px rgba(255, 94, 26, 0.16);
+}
+
+body.theme-white .visual-work-card {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+body.theme-white .visual-work-card:hover {
+  border-color: rgba(255, 94, 26, 0.45);
+  box-shadow: 0 24px 50px -10px rgba(255, 94, 26, 0.18), 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+body.theme-white .visual-media-box {
+  background: #F2F2F0;
+}
+body.theme-white .visual-floating-badge {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--accent);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+body.theme-white .visual-floating-arrow {
+  background: rgba(255, 255, 255, 0.96);
+  color: #080808;
+}
+body.theme-white .custom-cursor {
+  background-color: var(--accent);
+}
+body.theme-white .cursor-trail {
+  border-color: rgba(255, 94, 26, 0.4);
+}
+
+/* Bouton Sélecteur de Thème */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, transform 0.25s;
+}
+.btn-theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+
+/* Tiroir Mobile Navigation UX */
+.btn-mobile-hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+  color: var(--text-main);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 990px) {
+  .btn-mobile-hamburger { display: flex; }
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 72px);
+  background: var(--bg-main);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.5rem;
+  gap: 1.5rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.3s ease,
+              visibility 0.3s ease;
+}
+
+.mobile-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer-link {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.mobile-drawer-link:hover {
+  color: var(--accent);
+}
+
+.btn-hero-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2rem;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: #25D366;
+  color: #FFFFFF !important;
+  border-radius: 4px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-hero-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+
+</style>
+</head>
+<body class="theme-white">
+
+<!-- Grain Overlay & Ambient Glow -->
+<div class="noise-overlay"></div>
+<div class="ambient-glow" id="ambient-glow"></div>
+<div class="scroll-progress-bar" id="scroll-progress"></div>
+
+<!-- Curseur Personnalisé (Desktop) -->
+<div class="custom-cursor" id="custom-cursor"></div>
+<div class="cursor-trail" id="cursor-trail"></div>
+
+<!-- Preloader Initial Élégant -->
+<div class="preloader" id="preloader">
+  <div class="preloader-title">Cheikh Awa Balla Diop</div>
+  <div class="preloader-sub">Portfolio 2026 · Baol Vision</div>
+  <div class="preloader-line">
+    <div class="preloader-line-bar"></div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     HEADER / NAVIGATION APEX
+     ═════════════════════════════════════════════════════════════════ -->
+<header class="header-nav">
+  <a href="#accueil" class="nav-brand" data-magnetic>
+    <span class="brand-dot"></span>
+    <span>CHEIKH AWA BALLA DIOP</span>
+    <span class="nav-badge-baol">BAOL VISION · TOUBA</span>
+  </a>
+
+  <nav class="nav-center-links">
+    <a href="#projets" class="nav-link">Réalisations</a>
+    <a href="#a-propos" class="nav-link">À propos</a>
+    <a href="#experience" class="nav-link">Parcours</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#outils" class="nav-link">Logiciels &amp; IA</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <div class="nav-right-actions">
+    <button id="theme-toggle" class="btn-theme-toggle" data-magnetic aria-label="Basculer entre Mode Blanc et Mode Sombre">
+      <span id="theme-toggle-icon">☀️</span>
+      <span id="theme-toggle-text">Mode Blanc</span>
+    </button>
+    <div class="nav-status">
+      <span class="brand-dot"></span>
+      <span>DISPONIBLE 2026</span>
+    </div>
+    <a href="#contact" class="btn-nav-contact" data-magnetic>Démarrer un projet</a>
+    <!-- Bouton Mobile Hamburger -->
+    <button class="btn-mobile-hamburger" id="hamburger-toggle" aria-label="Menu de navigation">
+      <span id="hamburger-icon">☰</span>
+    </button>
+  </div>
+</header>
+
+<!-- Tiroir Mobile Navigation -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="#projets" class="mobile-drawer-link">Réalisations</a>
+  <a href="#a-propos" class="mobile-drawer-link">À propos</a>
+  <a href="#experience" class="mobile-drawer-link">Parcours</a>
+  <a href="#services" class="mobile-drawer-link">Services &amp; Solutions</a>
+  <a href="#outils" class="mobile-drawer-link">Logiciels &amp; IA</a>
+  <a href="#contact" class="mobile-drawer-link" style="color:var(--accent);">Démarrer un projet →</a>
+</div>
+
+<main id="accueil">
+  <!-- ═════════════════════════════════════════════════════════════════
+       HERO SECTION MONUMENTALE
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="hero-section wrap">
+    <div class="hero-background-gradient"></div>
+
+    <div class="hero-grid">
+      <div class="hero-main-col">
+        <div class="hero-tag">Graphiste • Directeur Artistique • Créatif IA</div>
+
+        <h1 class="hero-monumental-name">
+          <span class="name-line">CHEIKH</span>
+          <span class="name-line">AWA BALLA</span>
+          <span class="name-line">DIOP</span>
+        </h1>
+
+        <p class="hero-lead-text">
+          Fondateur du studio <strong>Baol Vision</strong> à <strong>Touba</strong>. Je façonne des identités visuelles stratégiques, des campagnes publicitaires percutantes et des interfaces digitales d'exception associant <span class="highlight-word">créativité de haut niveau et intelligence artificielle</span>.
+        </p>
+
+        <div class="hero-actions-row">
+          <a href="#projets" class="btn-hero-primary" data-magnetic>
+            <span>Explorer mes réalisations</span>
+            <span>→</span>
+          </a>
+          <a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20d%C3%A9couvre%20votre%20portfolio%20et%20je%20souhaite%20collaborer%20sur%20un%20projet." 
+             target="_blank" rel="noopener" class="btn-hero-wa" data-magnetic>
+            <span>💬 WhatsApp Direct</span>
+          </a>
+          <a href="#contact" class="btn-hero-secondary" data-magnetic>
+            <span>Me contacter</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte Visuelle Interactive / Portrait avec Réactivité Souris -->
+      <div class="hero-visual-col">
+        <div class="hero-interactive-card" id="hero-card">
+          <img src="assets/images/project-vacrea-mockup.jpg" alt="Cheikh Awa Balla Diop - Baol Vision" id="hero-img">
+          <div class="hero-card-badge">
+            <div>
+              <div class="badge-name">CHEIKH AWA BALLA DIOP</div>
+              <div class="badge-sub">DIRECTEUR CRÉATIF · TOUBA</div>
+            </div>
+            <span class="brand-dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barre inférieure du Hero -->
+    <div class="hero-bottom-bar">
+      <div class="scroll-indicator">
+        <div class="scroll-mouse-pill">
+          <div class="scroll-wheel-dot"></div>
+        </div>
+        <span>Défiler pour explorer</span>
+      </div>
+
+      <div class="hero-meta-summary">
+        <div class="meta-spec-item">
+          <span class="k">Discipline</span>
+          <span class="v">Branding &amp; IA</span>
+        </div>
+        <div class="meta-spec-item">
+          <span class="k">Studio</span>
+          <span class="v">Baol Vision</span>
+        </div>
+        <div class="meta-spec-item">
+          <span class="k">Localisation</span>
+          <span class="v">Touba, Sénégal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       MARQUEE DÉFILANT INFINI
+       ═════════════════════════════════════════════════════════════════ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item">GRAPHIC DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">BRANDING <span class="marquee-dot"></span></div>
+      <div class="marquee-item">WEB DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">AI CREATIVE <span class="marquee-dot"></span></div>
+      <div class="marquee-item">MOTION DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">DIRECTION ARTISTIQUE <span class="marquee-dot"></span></div>
+      <!-- Duplication pour boucle infinie -->
+      <div class="marquee-item">GRAPHIC DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">BRANDING <span class="marquee-dot"></span></div>
+      <div class="marquee-item">WEB DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">AI CREATIVE <span class="marquee-dot"></span></div>
+      <div class="marquee-item">MOTION DESIGN <span class="marquee-dot"></span></div>
+      <div class="marquee-item">DIRECTION ARTISTIQUE <span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION À PROPOS (MANIFESTO ÉDITORIAL)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="a-propos" class="section-about wrap">
+    <div class="section-header-block">
+      <span class="section-tag">01 / À Propos</span>
+      <h2 class="section-title-large">Transformer des idées en identités fortes.</h2>
+    </div>
+
+    <div class="about-editorial-grid">
+      <div class="about-col-left">
+        <div class="about-quote-box">
+          <p class="about-quote-text">
+            « Le design n'est pas seulement esthétique : c'est un levier de crédibilité, d'autorité et de croissance pour chaque marque. »
+          </p>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">
+          Fondateur de Baol Vision · Depuis 2022
+        </div>
+      </div>
+
+      <div class="about-col-right">
+        <p class="about-paragraph">
+          Je suis <strong>Cheikh Awa Balla Diop</strong>, graphiste, directeur artistique et fondateur de <strong>Baol Vision</strong>.
+        </p>
+        <p class="about-paragraph">
+          Je combine <span class="accent-word">design</span>, <span class="accent-word">stratégie</span> et <span class="accent-word">intelligence artificielle</span> pour transformer des idées en identités fortes et expériences digitales mémorables.
+        </p>
+        <p class="about-paragraph">
+          Basé à <strong>Touba</strong> et travaillant avec des clients partout au Sénégal et à l'international, j'interviens de la genèse de marque jusqu'au déploiement de campagnes publicitaires à fort impact, d'interfaces web contemporaines et de contenus génératifs innovants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION EXPÉRIENCE (TIMELINE MODERNE)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="experience" class="section-experience wrap">
+    <div class="section-header-block">
+      <span class="section-tag">02 / Parcours</span>
+      <h2 class="section-title-large">Expérience &amp; Leadership Créatif</h2>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <div class="timeline-period">
+          <span class="timeline-year">2022 — Présent</span>
+          <span class="timeline-status">Actuel</span>
+        </div>
+        <div class="timeline-content">
+          <h3 class="timeline-role">Fondateur &amp; Directeur Créatif</h3>
+          <div class="timeline-company">Studio Baol Vision · Touba, Sénégal</div>
+          <p class="timeline-desc">
+            Direction globale de la création visuelle, élaboration de systèmes de marque exhaustifs, direction artistique pour campagnes publicitaires et intégration des technologies d'intelligence artificielle dans la production graphique.
+          </p>
+          <div class="timeline-tags">
+            <span class="exp-tag">Branding</span>
+            <span class="exp-tag">Direction artistique</span>
+            <span class="exp-tag">Design graphique</span>
+            <span class="exp-tag">Web design</span>
+            <span class="exp-tag">Intelligence artificielle</span>
+            <span class="exp-tag">Communication digitale</span>
+            <span class="exp-tag">Motion design</span>
+            <span class="exp-tag">Montage vidéo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SELECTED WORKS (RYTHME ÉDITORIAL APEX & AWWWARDS)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="projets" class="section-works wrap">
+    <div class="works-header-row">
+      <div class="works-title-group">
+        <span class="section-tag">03 / Portfolio Visuel</span>
+        <h2 class="section-title-large">Conceptions Graphiques</h2>
+      </div>
+
+      <div class="works-filter-pills">
+        <button class="filter-pill active" data-filter="all">Tous (19)</button>
+        <button class="filter-pill" data-filter="print">Affiches &amp; Print (15)</button>
+        <button class="filter-pill" data-filter="digital">Digital &amp; Marque (8)</button>
+      </div>
+    </div>
+
+    <div class="pure-works-mosaic">
+      <!-- 1. PRIZENT -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-prizent.png', 'PRIZENT · Système de Pointage Smartphone', 'project.html?id=prizent')">
+        <img src="assets/images/project-prizent.png" alt="PRIZENT Système de pointage smartphone" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Digital · App</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Prizent Pointage</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. VACREA -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-vacrea.jpg', 'VACREA · Vacances de Créations Touba', 'project.html?id=vacrea')">
+        <img src="assets/images/project-vacrea.jpg" alt="VACREA Formation Graphisme et Web Touba" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Formation</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Vacrea Touba</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. GIE REINE DIOR -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-reine-dior.jpg', 'GIE Reine Dior · Formation Make Up & Coiffure', 'project.html?id=reine-dior')">
+        <img src="assets/images/project-reine-dior.jpg" alt="GIE Reine Dior and Co Formation Professionnelle Make up et Coiffure" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Beauté</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Reine Dior & Co</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 115e ANNIVERSAIRE APPEL SEYDINA LIMAMOU LAYE -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-layene-115.jpg', '115e Anniversaire Appel · Seydina Limamou Laye', 'project.html?id=layene-115')">
+        <img src="assets/images/project-layene-115.jpg" alt="115e anniversaire L'Appel Seydina Limamou Laye" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Célébration</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">115e Appel Layène</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. DEMANDOO -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-demandoo.png', 'DEMANDOO · Solution de Covoiturage Touba - Dakar', 'project.html?id=demandoo')">
+        <img src="assets/images/project-demandoo.png" alt="Demandoo Covoiturage Touba Dakar Yombalna Sa Tukki" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">UI/UX · Covoiturage</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Demandoo Tukki</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. POROXAAN INITIATIVE VOLAILLE -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-poroxaan.jpg', 'POROXAAN · Opération Spéciale Gamou Mawlid Touba', 'project.html?id=poroxaan')">
+        <img src="assets/images/project-poroxaan.jpg" alt="Poroxaan Initiative Volaille - Spéciale Opération Gamou Mawlid" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Gamou</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Poroxaan Volaille</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. CASS ONLINE -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-cass-online.jpg', 'CASS ONLINE · Place de Marché Mobile', 'project.html?id=cass-online')">
+        <img src="assets/images/project-cass-online.jpg" alt="Cass Online - Comme un marché mais dans un téléphone" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Branding · E-Commerce</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Cass Online</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. MSTECH -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-mstech.jpg', 'MSTECH · Services Techniques & Sécurité Touba', 'project.html?id=mstech')">
+        <img src="assets/images/project-mstech.jpg" alt="MSTech Al Moubarack Services Technologie Touba" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Print · Corporate</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">MSTech Touba</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. SANOFI - PROJET URGEST -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-sanofi-urgest.jpg', 'SANOFI · Conférence Projet URGEST', 'project.html?id=sanofi-urgest')">
+        <img src="assets/images/project-sanofi-urgest.jpg" alt="Sanofi présente Projet URGEST Pr Oumar Kane" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Santé</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Sanofi URGEST</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. DAROU SALAM ASSURANCE -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-darou-salam.png', 'DAROU SALAM ASSURANCE · Moto Auto Tricycle', 'project.html?id=darou-salam')">
+        <img src="assets/images/project-darou-salam.png" alt="Darou Salam Assurance Digitale chez Maodo mou Bamba" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Campagne · Assurance</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Darou Salam</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. PASTEF GIGA CARAVANE MBACKÉ -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-pastef-mbacke.jpg', 'PASTEF · Giga Caravane Mbacké (Législatives 2024)', 'project.html?id=pastef-mbacke')">
+        <img src="assets/images/project-pastef-mbacke.jpg" alt="PASTEF Giga Caravane Mbacke - Sénégal 2050 - Législatives 2024" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Campagne</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">PASTEF Mbacké</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. FONDATION AHFAADU - NDIGEUL BISSUP ZIKRULLAH -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-ndigeul-zikrullah.jpg', 'FONDATION AHFAADU · Ndigeul Bissup Zikrullah Touba', 'project.html?id=ndigeul-zikrullah')">
+        <img src="assets/images/project-ndigeul-zikrullah.jpg" alt="Fondation Ahfaadu Cheikh Ibrahima Faal - Ndigeul Bissup Zikrullah" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Zikrullah</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Bissup Zikrullah</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. MAGAL NGABOU ÉDITION 2026 -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-magal-ngabou.jpg', 'MAGAL NGABOU · Édition 2026 (Serigne Khalil LO)', 'project.html?id=magal-ngabou')">
+        <img src="assets/images/project-magal-ngabou.jpg" alt="Magal Ngabou Édition 2026 - Serigne Khalil LO" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Magal</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Magal Ngabou</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. GAMOU DAROU MINAME PET -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-gamou-darou-miname.png', 'GAMOU DAROU MINAME PET · Dahira Hiznoul Abrare', 'project.html?id=gamou-darou-miname')">
+        <img src="assets/images/project-gamou-darou-miname.png" alt="Gamou Darou Miname Pet - Serigne El Hadji Mame Thierno Mbacke" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Gamou</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Darou Miname Pet</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. PAS-PAS TABASKI CRÉATIVE -->
+      <div class="mosaic-item" data-cat="print digital" onclick="openPortfolioModal('assets/images/project-pas-pas-tabaski.jpg', 'PAS-PAS · Tabaski Créative (Création IA & 3D)', 'project.html?id=pas-pas-tabaski')">
+        <img src="assets/images/project-pas-pas-tabaski.jpg" alt="PAS-PAS Bonne Fête de Tabaski création 3D IA" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Création 3D · IA</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">PAS-PAS Tabaski</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. PAS-PAS TALK-SHOW WHATSAPP -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-pas-pas-talkshow.jpg', 'PAS-PAS · Talk-Show WhatsApp (Mbacké Khéwar)', 'project.html?id=pas-pas-talkshow')">
+        <img src="assets/images/project-pas-pas-talkshow.jpg" alt="PAS-PAS Talk-show WhatsApp Mouvement Mbacke" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Affiche · Débat</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">PAS-PAS Talk-Show</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. POROKHANE SOOW KHIAKRY -->
+      <div class="mosaic-item" data-cat="digital print" onclick="openPortfolioModal('assets/images/project-porokhane-soow.jpg', 'POROKHANE SOOW · Packaging Khiakry 500G Touba', 'project.html?id=porokhane-soow')">
+        <img src="assets/images/project-porokhane-soow.jpg" alt="Porokhane Soow Khiakry 500G Packaging Touba Darou Khoudoss" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Packaging · Produit</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Porokhane Soow</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. GRAPHIA BOOTCAMP IA -->
+      <div class="mosaic-item" data-cat="digital print" onclick="openPortfolioModal('assets/images/project-graphia-bootcamp.jpg', 'GRAPHIA · Bootcamps Infographie & IA Touba / Mbacké', 'project.html?id=graphia')">
+        <img src="assets/images/project-graphia-bootcamp.jpg" alt="GRAPHIA Un nouveau chapitre s ouvre Bootcamps Infographie et IA" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Infographie &amp; IA</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">Graphia Bootcamp</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. ACIS FORUM WADIAL MAGAL TOUBA -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-acis-forum.jpg', 'ACIS · Forum Économique Wadial Magal Touba (18 Safar)', 'project.html?id=acis-forum')">
+        <img src="assets/images/project-acis-forum.jpg" alt="ACIS Forum Wadial Magal Touba 2026 Heliport de Touba" loading="lazy">
+        <div class="mosaic-overlay">
+          <span class="mosaic-top-pill">Forum Économique</span>
+          <div class="mosaic-bottom-info">
+            <span class="mosaic-title">ACIS Forum Touba</span>
+            <span class="mosaic-zoom-icon">↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION SKILLS & EXPERTISE
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section-skills wrap">
+    <div class="section-header-block">
+      <span class="section-tag">04 / Compétences</span>
+      <h2 class="section-title-large">Skills &amp; Expertise</h2>
+    </div>
+
+    <div class="skills-cloud-wrap">
+      <div class="skill-pill-large">Branding</div>
+      <div class="skill-pill-large">Direction artistique</div>
+      <div class="skill-pill-large">Identité visuelle</div>
+      <div class="skill-pill-large">Infographie</div>
+      <div class="skill-pill-large">Web Design</div>
+      <div class="skill-pill-large">UI/UX</div>
+      <div class="skill-pill-large">Packaging</div>
+      <div class="skill-pill-large">Motion Design</div>
+      <div class="skill-pill-large">Montage vidéo</div>
+      <div class="skill-pill-large">Communication digitale</div>
+      <div class="skill-pill-large">Prompt Engineering</div>
+      <div class="skill-pill-large">Création IA</div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION OUTILS (TECH STACK AVEC EFFET TILT)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="outils" class="section-tools wrap">
+    <div class="section-header-block">
+      <span class="section-tag">05 / Écosystème Créatif</span>
+      <h2 class="section-title-large">Outils &amp; Logiciels Maîtrisés</h2>
+    </div>
+
+    <div class="tools-grid">
+      <!-- 01 : Adobe Photoshop -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#001E36"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#31A8FF" stroke-opacity="0.35" stroke-width="1.5"/>
+            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#31A8FF" letter-spacing="-0.5">Ps</text>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Adobe Photoshop</div>
+          <span class="tool-category">Retouche &amp; Composition</span>
+          <p class="tool-desc">Compositing 4K, détourage &amp; photomanipulation</p>
+        </div>
+      </div>
+
+      <!-- 02 : Adobe Illustrator -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#330000"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#FF9A00" stroke-opacity="0.35" stroke-width="1.5"/>
+            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#FF9A00" letter-spacing="-0.5">Ai</text>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Adobe Illustrator</div>
+          <span class="tool-category">Vecteur &amp; Logos</span>
+          <p class="tool-desc">Logos vectoriels, chartes graphiques &amp; print</p>
+        </div>
+      </div>
+
+      <!-- 03 : Adobe Premiere Pro -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#00005B"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#9999FF" stroke-opacity="0.35" stroke-width="1.5"/>
+            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#9999FF" letter-spacing="-0.5">Pr</text>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Adobe Premiere Pro</div>
+          <span class="tool-category">Montage Vidéo</span>
+          <p class="tool-desc">Montage cinématique 4K, rythme &amp; sound design</p>
+        </div>
+      </div>
+
+      <!-- 04 : Figma -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#1E1E1E"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <g transform="translate(16, 9) scale(0.6)">
+              <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/>
+              <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/>
+              <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/>
+              <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/>
+              <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Figma</div>
+          <span class="tool-category">UI/UX &amp; Prototypage</span>
+          <p class="tool-desc">Design systems, wireframes &amp; interfaces web/mobiles</p>
+        </div>
+      </div>
+
+      <!-- 05 : Framer -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#050505"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <g transform="translate(15, 12) scale(1)">
+              <path d="M0 0h24v8H12zm0 8h12l12 8H0zm0 8h12v8z" fill="#0055FF"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Framer</div>
+          <span class="tool-category">Web &amp; Interactions</span>
+          <p class="tool-desc">Développement no-code immersif &amp; micro-animations</p>
+        </div>
+      </div>
+
+      <!-- 06 : Canva Pro -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="canva-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00C4CC"/>
+                <stop offset="100%" stop-color="#7D2AE8"/>
+              </linearGradient>
+            </defs>
+            <rect width="54" height="54" rx="14" fill="url(#canva-grad)"/>
+            <text x="27" y="34" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" font-style="italic">C</text>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Canva Pro</div>
+          <span class="tool-category">Social Media Fast</span>
+          <p class="tool-desc">Production agile, templates &amp; visuels sponsorisés</p>
+        </div>
+      </div>
+
+      <!-- 07 : ChatGPT -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#0A0A0C"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(16,163,127,0.35)" stroke-width="1.5"/>
+            <g transform="translate(14, 14) scale(0.68)">
+              <path d="M37.53 18.23a10.02 10.02 0 0 0-.8-7.7 10.3 10.3 0 0 0-9.67-5.07A10.15 10.15 0 0 0 22 2.65a10.28 10.28 0 0 0-9.9 6.43 10.1 10.1 0 0 0-7.3 5.3 10.27 10.27 0 0 0 .97 11.2 10.03 10.03 0 0 0 .8 7.7 10.3 10.3 0 0 0 9.67 5.07 10.17 10.17 0 0 0 5.06 2.8 10.28 10.28 0 0 0 9.9-6.42 10.1 10.1 0 0 0 7.3-5.3 10.27 10.27 0 0 0-.97-11.2z" stroke="#10A37F" stroke-width="2.6" stroke-linejoin="round" fill="none"/>
+              <path d="M20 18l5-3 5 3v6l-5 3-5-3z" fill="#10A37F"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">ChatGPT</div>
+          <span class="tool-category">Stratégie &amp; Copy</span>
+          <p class="tool-desc">Prompt engineering, storytelling de marque &amp; scripts</p>
+        </div>
+      </div>
+
+      <!-- 08 : Runway -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#111114"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <g transform="translate(15, 13)">
+              <text x="12" y="21" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" font-style="italic">R</text>
+              <circle cx="19" cy="7" r="3" fill="#FF5E1A"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Runway</div>
+          <span class="tool-category">Génération Vidéo IA</span>
+          <p class="tool-desc">Gen-2 / Gen-3 Alpha, motion brush &amp; scènes 4K</p>
+        </div>
+      </div>
+
+      <!-- 09 : Kling AI -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="kling-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF3366"/>
+                <stop offset="100%" stop-color="#FF9500"/>
+              </linearGradient>
+            </defs>
+            <rect width="54" height="54" rx="14" fill="#121216"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="url(#kling-grad)" stroke-width="1.5"/>
+            <path d="M18 16v22M18 27l14-11M22 23l11 15" stroke="url(#kling-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Kling AI</div>
+          <span class="tool-category">Animation Photoréaliste</span>
+          <p class="tool-desc">Mouvements physiques réalistes &amp; rendu cinématographique</p>
+        </div>
+      </div>
+
+      <!-- 10 : CapCut -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="54" height="54" rx="14" fill="#000000"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <g transform="translate(15, 15)" stroke="#FFFFFF" stroke-width="2.8" stroke-linejoin="round">
+              <path d="M3 4.5l12 7.5-12 7.5V4.5z" fill="#FFFFFF"/>
+              <path d="M21 4.5l-12 7.5 12 7.5V4.5z" fill="none"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">CapCut</div>
+          <span class="tool-category">Shorts &amp; Reels</span>
+          <p class="tool-desc">Sous-titres dynamiques, transitions &amp; formats viraux</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION SERVICES (ACCORDÉON INTERACTIF APEX)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="services" class="section-services wrap">
+    <div class="section-header-block">
+      <span class="section-tag">06 / Domaines d'Intervention</span>
+      <h2 class="section-title-large">Services &amp; Solutions Sur-Mesure</h2>
+    </div>
+
+    <div class="services-accordion-list">
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 01 ]</span>
+            <span class="service-title">Branding &amp; Identité Visuelle</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Création de logos distinctifs, chartes graphiques complètes, choix typographiques, palettes de couleurs et directives de marque pérennes pour asseoir votre autorité.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 02 ]</span>
+            <span class="service-title">Design Graphique &amp; Édition</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Conception d'affiches publicitaires grand format, flyers commerciaux, brochures corporate, rapports d'activité et supports de vente percutants.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 03 ]</span>
+            <span class="service-title">Direction Artistique</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Supervision du concept créatif, mise en scène de shooting, orchestration de campagnes omnicanales et harmonisation esthétique globale de vos projets.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 04 ]</span>
+            <span class="service-title">Web Design</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Création de sites vitrines, portfolios et landing pages mémorables sur Framer ou WordPress, alliant fluidité d'animation et conversions rapides.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 05 ]</span>
+            <span class="service-title">UI/UX Design</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Architecture de l'information, wireframing et maquettage haute fidélité pour applications mobiles et logiciels SaaS orientés vers l'utilisateur final.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 06 ]</span>
+            <span class="service-title">Packaging &amp; Écrins Produit</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Habillage de flacons, boîtes, étiquettes et emballages commerciaux valorisant la valeur perçue de vos produits cosmétiques, alimentaires ou manufacturés.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 07 ]</span>
+            <span class="service-title">Motion Design</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Animation de logos, typographies cinétiques et séquences visuelles dynamiques pour dynamiser vos écrans et vos réseaux sociaux.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 08 ]</span>
+            <span class="service-title">Montage Vidéo Dynamique</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Montage rythmé sous Premiere Pro et CapCut pour spots publicitaires, reels Instagram, formats TikTok et présentations d'entreprises.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <button class="service-header">
+          <div class="service-title-group">
+            <span class="service-num">[ 09 ]</span>
+            <span class="service-title">Création Assistée par IA</span>
+          </div>
+          <span class="service-toggle-icon">+</span>
+        </button>
+        <div class="service-body">
+          <p class="service-body-p">
+            Génération d'images conceptuelles complexes, retouches génératives, expérimentations visuelles sur-mesure et accélération de production grâce aux modèles de pointe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION STATISTIQUES (COMPTEURS ANIMÉS AU SCROLL)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section-stats">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num-row">
+            <span class="stat-value" data-counter="10">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Projets Réalisés</span>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-num-row">
+            <span class="stat-value" data-counter="15">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Marques Accompagnées</span>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-num-row">
+            <span class="stat-value" data-counter="4">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Années d'Expérience</span>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-num-row">
+            <span class="stat-value" data-counter="100">0</span>
+            <span class="stat-suffix">%</span>
+          </div>
+          <span class="stat-label">Solutions Sur-Mesure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       SECTION CONTACT PLEIN ÉCRAN ("HAVE A PROJECT?")
+       ═════════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="section-contact-apex wrap">
+    <div class="contact-apex-header">
+      <span class="section-tag">07 / Contact Direct &amp; Collaboration</span>
+      <h2 class="contact-monumental-heading">
+        UN PROJET EN TÊTE ?<br>
+        CRÉONS QUELQUE CHOSE<br>
+        <span class="colored">D'INOUBLIABLE.</span>
+      </h2>
+    </div>
+
+    <div class="contact-apex-layout">
+      <!-- Coordonnées & Canaux Directs -->
+      <div class="contact-channels-box">
+        <p style="font-size:1.1rem; line-height:1.7; color:var(--text-muted);">
+          Vous préparez le lancement d'une marque, une refonte d'identité ou une campagne publicitaire d'envergure ? Discutons directement de vos objectifs.
+        </p>
+
+        <!-- Boîte de copie rapide d'email -->
+        <div class="email-apex-copy" onclick="copyContactEmail()" data-magnetic>
+          <div class="copy-pill-toast" id="copy-toast">Copié dans le presse-papier ! ✓</div>
+          <div>
+            <div class="channel-label">Email Professionnel Direct</div>
+            <div class="channel-val">contact.baolvision@gmail.com</div>
+          </div>
+          <span class="channel-arrow">[ COPIER ]</span>
+        </div>
+
+        <a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif." target="_blank" rel="noopener" class="contact-direct-link" data-magnetic>
+          <div>
+            <div class="channel-label">Messagerie Instantanée</div>
+            <div class="channel-val">WhatsApp : +221 77 303 31 96</div>
+          </div>
+          <span class="channel-arrow">↗</span>
+        </a>
+
+        <a href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener" class="contact-direct-link" data-magnetic>
+          <div>
+            <div class="channel-label">Portfolio Graphique</div>
+            <div class="channel-val">Behance · cheikhdiop16</div>
+          </div>
+          <span class="channel-arrow">↗</span>
+        </a>
+
+        <a href="tel:+221773033196" class="contact-direct-link" data-magnetic>
+          <div>
+            <div class="channel-label">Ligne Téléphonique Directe</div>
+            <div class="channel-val">+221 77 303 31 96</div>
+          </div>
+          <span class="channel-arrow">📞</span>
+        </a>
+      </div>
+
+      <!-- Formulaire Contact Interactif -->
+      <form class="contact-form-apex" id="contact-form" novalidate>
+        <div class="form-group-apex">
+          <label class="label-apex" for="f-name">Votre Nom &amp; Prénom *</label>
+          <input type="text" id="f-name" class="input-apex" placeholder="Ex: Mamadou Diop" required>
+        </div>
+
+        <div class="form-group-apex">
+          <label class="label-apex" for="f-phone">Téléphone / WhatsApp *</label>
+          <input type="tel" id="f-phone" class="input-apex" placeholder="Ex: +221 77 000 00 00" required>
+        </div>
+
+        <div class="form-group-apex">
+          <label class="label-apex" for="f-service">Prestation Envisagée *</label>
+          <input type="text" id="f-service" class="input-apex" placeholder="Ex: Identité de marque, Affiches, Campagne, UI/UX..." required>
+        </div>
+
+        <div class="form-group-apex">
+          <label class="label-apex" for="f-msg">Détails de Votre Projet *</label>
+          <textarea id="f-msg" class="input-apex" placeholder="Parlez-moi de vos objectifs, vos délais et vos attentes créatives..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-apex" data-magnetic>
+          <span>Envoyer ma demande via WhatsApp →</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     FOOTER ÉDITORIAL
+     ═════════════════════════════════════════════════════════════════ -->
+<footer class="wrap">
+  <div>
+    <strong>CHEIKH AWA BALLA DIOP</strong> — Creative Designer &amp; Founder BAOL VISION · TOUBA, SÉNÉGAL © 2026
+  </div>
+  <div class="footer-nav-links">
+    <a href="#projets">Selected Works</a>
+    <a href="#a-propos">À propos</a>
+    <a href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener">Behance ↗</a>
+    <a href="https://wa.me/221773033196" target="_blank" rel="noopener">WhatsApp ↗</a>
+    <a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Haut ↑</a>
+  </div>
+</footer>
+
+<!-- Bouton Flottant WhatsApp -->
+<a href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20souhaite%20collaborer%20sur%20un%20projet%20cr%C3%A9atif." 
+   target="_blank" rel="noopener" class="floating-whatsapp-apex" aria-label="Contacter sur WhatsApp" data-magnetic>
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>WhatsApp : 77 303 31 96</span>
+</a>
+
+<!-- ═════════════════════════════════════════════════════════════════
+     SCRIPT INTERACTIF 60 FPS — APEX SYSTEM
+     ═════════════════════════════════════════════════════════════════ -->
+<script>
+/* 1. Preloader Fadeout */
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  if (pre) {
+    setTimeout(() => {
+      pre.classList.add('fade-out');
+    }, 700);
+  }
+});
+
+/* 2. Curseur Personnalisé & Suivi Fluide (Lerp) */
+(function initCursor() {
+  const cursor = document.getElementById('custom-cursor');
+  const trail = document.getElementById('cursor-trail');
+  const glow = document.getElementById('ambient-glow');
+  
+  if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+
+  let mouseX = -200, mouseY = -200;
+  let trailX = -200, trailY = -200;
+  let hasMoved = false;
+
+  document.addEventListener('mouseenter', () => {
+    if (hasMoved) {
+      cursor.style.opacity = '1';
+      if (trail) trail.style.opacity = '1';
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    if (trail) trail.style.opacity = '0';
+  });
+
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!hasMoved) {
+      hasMoved = true;
+      trailX = mouseX;
+      trailY = mouseY;
+      cursor.style.opacity = '1';
+      if (trail) trail.style.opacity = '1';
+    }
+    cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    if (glow) {
+      glow.style.left = `${mouseX}px`;
+      glow.style.top = `${mouseY}px`;
+    }
+  });
+
+  function renderCursor() {
+    if (hasMoved) {
+      trailX += (mouseX - trailX) * 0.18;
+      trailY += (mouseY - trailY) * 0.18;
+      if (trail) trail.style.transform = `translate(${trailX}px, ${trailY}px) translate(-50%, -50%)`;
+    }
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  // Hover sur cartes projets : curseur VIEW
+  document.querySelectorAll('[data-cursor="view"]').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('view-project'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('view-project'));
+  });
+
+  // Hover sur boutons et liens interactifs
+  document.querySelectorAll('a, button, [data-magnetic]').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+})();
+
+/* 3. Boutons Magnétiques Subtils */
+document.querySelectorAll('[data-magnetic]').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    btn.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0px, 0px)';
+    btn.style.transition = 'transform 0.35s ease';
+    setTimeout(() => { btn.style.transition = ''; }, 350);
+  });
+});
+
+/* 4. Barre de Progression du Scroll */
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (window.scrollY / h) * 100;
+  bar.style.width = `${pct}%`;
+});
+
+/* 5. Effet Parallaxe Souris sur la Carte Hero */
+(function initHeroParallax() {
+  const card = document.getElementById('hero-card');
+  const img = document.getElementById('hero-img');
+  if (!card || !img || window.matchMedia('(pointer: coarse)').matches) return;
+
+  window.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 16;
+    const y = (e.clientY / window.innerHeight - 0.5) * 16;
+    card.style.transform = `perspective(1000px) rotateY(${x * 0.6}deg) rotateX(${-y * 0.6}deg)`;
+    img.style.transform = `scale(1.04) translate(${-x * 0.5}px, ${-y * 0.5}px)`;
+  });
+})();
+
+/* 6. Filtre des Conceptions Graphiques */
+(function initWorksFilter() {
+  const btns = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.pure-works-mosaic [data-cat]');
+  btns.forEach(b => {
+    b.addEventListener('click', () => {
+      btns.forEach(btn => btn.classList.remove('active'));
+      b.classList.add('active');
+      const cat = b.getAttribute('data-filter');
+      cards.forEach(c => {
+        const itemCat = c.getAttribute('data-cat') || '';
+        if (cat === 'all' || itemCat.includes(cat)) {
+          c.style.display = '';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+
+/* Fonctions Lightbox Grand Format */
+function openPortfolioModal(imgSrc, title, projectUrl) {
+  const modal = document.getElementById('portfolio-lightbox-modal');
+  const img = document.getElementById('lightbox-main-img');
+  const titleEl = document.getElementById('lightbox-project-title');
+  const btnEl = document.getElementById('lightbox-project-btn');
+  if (modal && img) {
+    img.src = imgSrc;
+    if (titleEl) titleEl.textContent = title;
+    if (btnEl) btnEl.href = projectUrl || '#';
+    modal.classList.add('open');
+  }
+}
+
+function closePortfolioModal() {
+  const modal = document.getElementById('portfolio-lightbox-modal');
+  if (modal) modal.classList.remove('open');
+}
+
+/* 7. Accordéon des Services */
+document.querySelectorAll('.service-item').forEach(item => {
+  const header = item.querySelector('.service-header');
+  header.addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.service-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* 8. Compteurs Animés au Scroll (Section Statistiques) */
+(function initCounters() {
+  const statValues = document.querySelectorAll('.stat-value');
+  let animated = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        statValues.forEach(val => {
+          const target = parseInt(val.getAttribute('data-counter'), 10);
+          let current = 0;
+          const step = Math.ceil(target / 45);
+          const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              val.textContent = target;
+              clearInterval(interval);
+            } else {
+              val.textContent = current;
+            }
+          }, 25);
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+
+  const section = document.querySelector('.section-stats');
+  if (section) observer.observe(section);
+})();
+
+/* 9. Copie d'Email Interactif */
+window.copyContactEmail = function() {
+  navigator.clipboard.writeText("contact.baolvision@gmail.com").then(() => {
+    const toast = document.getElementById('copy-toast');
+    if (toast) {
+      toast.classList.add('visible');
+      setTimeout(() => toast.classList.remove('visible'), 2200);
+    }
+  });
+};
+
+/* 10. Formulaire de Contact vers WhatsApp */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById("f-name")?.value.trim() || "";
+    const phone = document.getElementById("f-phone")?.value.trim() || "";
+    const srv = document.getElementById("f-service")?.value.trim() || "";
+    const msg = document.getElementById("f-msg")?.value.trim() || "";
+    if (!name || !phone || !msg) {
+      alert("Veuillez remplir votre nom, votre numéro WhatsApp et les détails de votre besoin.");
+      return;
+    }
+    const text = encodeURIComponent(`Bonjour Cheikh Awa Balla Diop,\nJe m'appelle ${name} (${phone}).\nPrestation : ${srv}\nProjet : ${msg}`);
+    window.open(`https://wa.me/221773033196?text=${text}`, '_blank');
+  });
+}
+
+/* 11. Gestion du Thème Blanc & Orange / Sombre */
+(function initTheme() {
+  const toggle = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-toggle-icon");
+  const text = document.getElementById("theme-toggle-text");
+
+  function apply(isWhite) {
+    if (isWhite) {
+      document.body.classList.add("theme-white");
+      document.body.classList.remove("theme-dark");
+      if (icon) icon.textContent = "☀️";
+      if (text) text.textContent = "Blanc & Orange";
+      localStorage.setItem("portfolio-theme", "white");
+    } else {
+      document.body.classList.remove("theme-white");
+      document.body.classList.add("theme-dark");
+      if (icon) icon.textContent = "🌙";
+      if (text) text.textContent = "Sombre & Orange";
+      localStorage.setItem("portfolio-theme", "dark");
+    }
+  }
+
+  const saved = localStorage.getItem("portfolio-theme");
+  if (saved === "dark") {
+    apply(false);
+  } else {
+    apply(true);
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const isW = document.body.classList.contains("theme-white");
+      apply(!isW);
+    });
+  }
+})();
+
+
+/* 12. Menu Hamburger Mobile */
+(function initMobileDrawer() {
+  const toggle = document.getElementById("hamburger-toggle");
+  const icon = document.getElementById("hamburger-icon");
+  const drawer = document.getElementById("mobile-drawer");
+  if (!toggle || !drawer) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = drawer.classList.contains("open");
+    if (isOpen) {
+      drawer.classList.remove("open");
+      if (icon) icon.textContent = "☰";
+    } else {
+      drawer.classList.add("open");
+      if (icon) icon.textContent = "✕";
+    }
+  });
+
+  document.querySelectorAll(".mobile-drawer-link").forEach(link => {
+    link.addEventListener("click", () => {
+      drawer.classList.remove("open");
+      if (icon) icon.textContent = "☰";
+    });
+  });
+})();
+
+</script>
+
+<!-- Lightbox Modal Grand Format -->
+<div class="portfolio-lightbox" id="portfolio-lightbox-modal" onclick="closePortfolioModal()">
+  <button class="lightbox-exit-btn" onclick="closePortfolioModal()">✕</button>
+  <div class="lightbox-dialog" onclick="event.stopPropagation()">
+    <img src="" alt="Aperçu grand format" class="lightbox-main-img" id="lightbox-main-img">
+    <div class="lightbox-footer-bar">
+      <span id="lightbox-project-title">Titre du projet</span>
+      <a href="#" id="lightbox-project-btn" class="lightbox-action-btn">Explorer l'étude de cas →</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
