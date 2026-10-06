@@ -357,7 +357,7 @@ button {
   gap: 2.25rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1280px) {
   .nav-center-links { display: none; }
 }
 
@@ -2412,7 +2412,7 @@ body.theme-white .cursor-trail {
   cursor: pointer;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1280px) {
   .btn-mobile-hamburger { display: flex; }
 }
 
@@ -2560,6 +2560,10 @@ body.theme-white .cursor-trail {
   .hero-section { padding-top: 8rem; }
 }
 @media (max-width: 520px) { .local-seo-grid { grid-template-columns:1fr; } }
+/* En-tête : jamais de retour à la ligne, éléments secondaires masqués selon la largeur */
+.nav-link, .btn-theme-toggle, .btn-nav-contact, .nav-status { white-space: nowrap; }
+@media (min-width: 761px) { .nav-brand > span { white-space: nowrap; } }
+@media (max-width: 1480px) { .nav-badge-baol, .nav-status { display: none; } .nav-center-links { gap: 1.6rem; } }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://cabd-portfolio.vercel.app/#person","name":"Cheikh Awa Balla Diop","jobTitle":"Directeur artistique et designer graphique","url":"https://cabd-portfolio.vercel.app/","worksFor":{"@id":"https://cabd-portfolio.vercel.app/#business"},"address":{"@type":"PostalAddress","addressLocality":"Touba","addressCountry":"SN"},"sameAs":["https://www.behance.net/cheikhdiop16"]},{"@type":"ProfessionalService","@id":"https://cabd-portfolio.vercel.app/#business","name":"Baol Vision — Cheikh Awa Balla Diop","url":"https://cabd-portfolio.vercel.app/","email":"contact.baolvision@gmail.com","telephone":"+221773033196","areaServed":[{"@type":"City","name":"Touba"},{"@type":"Country","name":"Sénégal"}],"knowsAbout":["Direction artistique","Design graphique","Identité visuelle","Branding","Packaging","UI/UX"]}]}
@@ -3405,7 +3409,7 @@ body.theme-white .cursor-trail {
        ═════════════════════════════════════════════════════════════════ -->
   <section id="services" class="section-services wrap">
     <div class="section-header-block">
-      <span class="section-tag">06 / Domaines d'Intervention</span>
+      <span class="section-tag">05 / Domaines d'Intervention</span>
       <h2 class="section-title-large">Services &amp; Solutions Sur-Mesure</h2>
     </div>
 
@@ -3555,7 +3559,7 @@ body.theme-white .cursor-trail {
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-num-row">
-            <span class="stat-value" data-counter="10">10</span>
+            <span class="stat-value" data-counter="36">36</span>
             <span class="stat-suffix">+</span>
           </div>
           <span class="stat-label">Projets Réalisés</span>
