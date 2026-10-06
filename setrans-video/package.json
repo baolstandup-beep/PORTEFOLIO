@@ -5,12 +5,17 @@
   "description": "SETRANS — film de lancement institutionnel (motion design, Remotion)",
   "scripts": {
     "studio": "remotion studio",
-    "render": "remotion render SetransFilm out/setrans-lancement.mp4",
+    "render": "remotion render SetransFilm out/setrans-lancement.mp4 --crf=18",
     "render:draft": "remotion render SetransFilm out/setrans-draft.mp4 --scale=0.5",
     "still": "remotion still SetransFilm out/frame.png --frame=1500",
     "typecheck": "tsc --noEmit",
     "fetch-clips": "bash scripts/fetch-clips.sh",
-    "stills": "node scripts/stills.mjs"
+    "stills": "node scripts/stills.mjs",
+    "sfx": "node scripts/generate-sfx.mjs",
+    "prerender": "node scripts/generate-sfx.mjs",
+    "prestudio": "node scripts/generate-sfx.mjs",
+    "render:audio": "node scripts/generate-sfx.mjs && remotion render SetransFilm out/setrans-sfx.wav --codec=wav",
+    "render:muet": "remotion render SetransFilm out/setrans-muet.mp4 --crf=18 --muted"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

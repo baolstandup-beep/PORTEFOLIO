@@ -2,3 +2,5 @@ node_modules/
 out/
 # Les plans vidéo sont lourds : récupérés via scripts/fetch-clips.sh
 public/assets/videos/*.mp4
+# Effets sonores générés par `npm run sfx`
+public/assets/sfx/*.wav

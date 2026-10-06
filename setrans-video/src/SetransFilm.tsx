@@ -11,6 +11,7 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
 import { ASSETS, COLORS, SCENES, SceneId, VIDEO, VOICEOVER_SCRIPT } from './config/setrans.config';
 import { FilmFinish } from './components/Base';
+import { SfxTrack } from './components/SfxTrack';
 import { EASE, progress, sec } from './lib/anim';
 import type { SceneProps } from './scenes/types';
 import { S01Globe } from './scenes/S01Globe';
@@ -91,6 +92,8 @@ export const SetransFilm: React.FC = () => {
       })}
       <FilmFinish />
       {VOICEOVER_SCRIPT.showSubtitles && <Subtitles />}
+      {/* Effets sonores (config : SFX) */}
+      <SfxTrack />
       {/* Pistes audio séparées (activées dès qu'un chemin est renseigné dans la config) */}
       {ASSETS.music && <Audio src={staticFile(ASSETS.music)} volume={ASSETS.musicVolume} />}
       {ASSETS.voiceover && <Audio src={staticFile(ASSETS.voiceover)} volume={ASSETS.voiceoverVolume} />}

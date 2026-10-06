@@ -1,0 +1,28 @@
+// Fichier généré par scripts/generate-sfx.mjs — ne pas modifier à la main.
+export const SFX_DURATIONS: Record<string, number> = {
+  "swell-open": 8,
+  "whoosh-soft": 1.7,
+  "whoosh-deep": 2.2,
+  "whoosh-light": 1.3,
+  "riser-dive": 2.8,
+  "riser-line": 3.2,
+  "impact-soft": 5.4,
+  "impact-final": 6.7,
+  "tick": 0.42,
+  "tick-high": 0.4,
+  "pop": 0.85,
+  "pop-high": 0.85,
+  "confirm": 2.2,
+  "stamp": 1,
+  "lock": 1.1,
+  "door-slam": 3.4,
+  "shimmer": 4.7,
+  "shimmer-long": 6,
+  "data-stream": 2.6,
+  "amb-ocean": 7.2,
+  "amb-plane": 7,
+  "amb-port": 4.7,
+  "amb-truck-pass": 4.2,
+  "amb-truck-road": 6.6,
+  "amb-wind": 6.6
+};

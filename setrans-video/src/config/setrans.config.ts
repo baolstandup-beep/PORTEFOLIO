@@ -161,3 +161,123 @@ export const PLACES = {
   saoPaulo: [-46.63, -23.55] as [number, number],
   antwerp: [4.4, 51.22] as [number, number],
 };
+
+/**
+ * EFFETS SONORES
+ * ------------------------------------------------------------------
+ * Banque générée par `npm run sfx` (scripts/generate-sfx.mjs) dans
+ * public/assets/sfx/. Chaque repère : fichier, instant (s, temps global
+ * du film), volume (0–1), fondus optionnels (s) et durée max (s).
+ * Pour retirer un son : supprimer la ligne. Pour tout couper : enabled = false.
+ */
+export type SfxCue = {
+  file: string;
+  at: number;
+  volume: number;
+  fadeIn?: number;
+  fadeOut?: number;
+  maxDuration?: number;
+  note?: string;
+};
+
+export const SFX = {
+  enabled: true,
+  /** Volume général des effets (à baisser quand musique + voix off sont ajoutées). */
+  master: 0.85,
+  folder: 'assets/sfx',
+  cues: [
+    // 01 — Globe
+    { file: 'swell-open', at: 0.0, volume: 0.55, fadeIn: 1.2, note: 'Ouverture, apparition du globe' },
+    { file: 'shimmer', at: 0.9, volume: 0.3, note: 'Lignes entre continents' },
+    { file: 'tick', at: 1.0, volume: 0.18 },
+    { file: 'tick-high', at: 1.4, volume: 0.15 },
+    { file: 'tick', at: 1.8, volume: 0.15 },
+    { file: 'tick-high', at: 2.3, volume: 0.13 },
+    { file: 'tick', at: 2.8, volume: 0.12 },
+    { file: 'riser-dive', at: 3.9, volume: 0.45, note: 'Plongée vers l’océan' },
+    { file: 'whoosh-deep', at: 5.2, volume: 0.6 },
+    // 02 — Porte-conteneurs
+    { file: 'amb-ocean', at: 5.6, volume: 0.35, fadeIn: 0.8, fadeOut: 1.0, note: 'Houle' },
+    // 03 — Avion cargo
+    { file: 'whoosh-soft', at: 11.5, volume: 0.45 },
+    { file: 'amb-plane', at: 11.6, volume: 0.32, fadeIn: 0.6, fadeOut: 0.8, maxDuration: 7 },
+    // 04 — Port puis commerçant
+    { file: 'whoosh-soft', at: 17.5, volume: 0.4 },
+    { file: 'amb-port', at: 17.8, volume: 0.3, fadeIn: 0.4, fadeOut: 0.8 },
+    { file: 'whoosh-light', at: 20.9, volume: 0.3, note: 'Coupe vers le commerçant' },
+    // 05 — Douane
+    { file: 'whoosh-light', at: 23.7, volume: 0.45, note: 'Panneau bleu' },
+    { file: 'pop', at: 25.1, volume: 0.35, note: 'DOSSIER' },
+    { file: 'pop', at: 26.2, volume: 0.35, note: 'CONTRÔLE' },
+    { file: 'pop-high', at: 27.3, volume: 0.35, note: 'VALIDATION' },
+    { file: 'stamp', at: 28.4, volume: 0.6, note: 'AUTORISATION' },
+    { file: 'confirm', at: 28.7, volume: 0.3, note: 'Sceau de sécurité' },
+    // 06 — Conteneur
+    { file: 'whoosh-soft', at: 29.6, volume: 0.4 },
+    { file: 'lock', at: 31.0, volume: 0.35, note: 'Scellé posé (plan réel)' },
+    { file: 'whoosh-light', at: 32.4, volume: 0.3 },
+    { file: 'door-slam', at: 33.8, volume: 0.55, note: 'Portes fermées' },
+    { file: 'tick-high', at: 34.0, volume: 0.3, note: 'Scellé' },
+    { file: 'lock', at: 34.4, volume: 0.5, note: 'Cadenas' },
+    { file: 'data-stream', at: 34.2, volume: 0.25, note: 'Ligne de suivi numérique' },
+    { file: 'confirm', at: 34.8, volume: 0.35, note: 'Validation' },
+    // 07 — Camion → Sénégal
+    { file: 'amb-truck-pass', at: 35.8, volume: 0.4, fadeIn: 0.3, fadeOut: 0.8 },
+    { file: 'riser-line', at: 38.6, volume: 0.35, note: 'La route devient une ligne' },
+    { file: 'shimmer', at: 39.6, volume: 0.3, note: 'Contour du Sénégal' },
+    { file: 'impact-soft', at: 41.1, volume: 0.35 },
+    // 08 — SETRANS
+    { file: 'whoosh-deep', at: 41.6, volume: 0.4 },
+    { file: 'impact-soft', at: 42.9, volume: 0.6, note: 'Apparition de SETRANS' },
+    { file: 'pop', at: 43.8, volume: 0.35, note: 'TRANSIT' },
+    { file: 'pop', at: 44.5, volume: 0.35, note: 'TRANSPORT' },
+    { file: 'pop-high', at: 45.2, volume: 0.35, note: 'LOGISTIQUE' },
+    { file: 'shimmer', at: 44.2, volume: 0.22, note: 'Connexions au centre' },
+    // 09 — Chaîne logistique
+    { file: 'whoosh-light', at: 47.7, volume: 0.4 },
+    { file: 'tick', at: 48.45, volume: 0.35, note: 'NAVIRE' },
+    { file: 'tick', at: 49.3, volume: 0.35, note: 'PORT' },
+    { file: 'tick', at: 50.17, volume: 0.35, note: 'DOUANE' },
+    { file: 'tick-high', at: 51.03, volume: 0.35, note: 'CONTENEUR' },
+    { file: 'tick-high', at: 51.89, volume: 0.35, note: 'CAMION' },
+    { file: 'confirm', at: 52.75, volume: 0.35, note: 'CLIENT' },
+    // 10 — Dakar → Touba
+    { file: 'whoosh-deep', at: 53.6, volume: 0.4 },
+    { file: 'pop', at: 54.6, volume: 0.4, note: 'Dakar' },
+    { file: 'riser-line', at: 55.2, volume: 0.3, note: 'Ligne vers Touba' },
+    { file: 'impact-soft', at: 57.3, volume: 0.55, note: 'Touba' },
+    { file: 'tick-high', at: 58.7, volume: 0.15, note: 'Pulsation' },
+    // 11 — Interface de suivi
+    { file: 'whoosh-light', at: 59.8, volume: 0.45, note: 'Carte de suivi' },
+    { file: 'tick', at: 60.95, volume: 0.35, note: 'DOSSIER REÇU' },
+    { file: 'tick', at: 61.8, volume: 0.35, note: 'EN TRAITEMENT' },
+    { file: 'tick', at: 62.65, volume: 0.35, note: 'VALIDÉ' },
+    { file: 'tick-high', at: 63.5, volume: 0.35, note: 'EN TRANSPORT' },
+    { file: 'confirm', at: 64.35, volume: 0.45, note: 'LIVRÉ' },
+    // 12 — Activités & croissance
+    { file: 'whoosh-soft', at: 65.6, volume: 0.35 },
+    { file: 'whoosh-light', at: 68.7, volume: 0.25 },
+    { file: 'riser-line', at: 68.9, volume: 0.2, note: 'Courbe de croissance' },
+    { file: 'pop', at: 69.2, volume: 0.28 },
+    { file: 'pop', at: 69.65, volume: 0.28 },
+    { file: 'pop-high', at: 70.1, volume: 0.28 },
+    { file: 'pop-high', at: 70.55, volume: 0.28 },
+    { file: 'pop-high', at: 71.0, volume: 0.3 },
+    // 13 — Route vers Touba
+    { file: 'amb-truck-road', at: 71.7, volume: 0.32, fadeIn: 0.8, fadeOut: 1.0 },
+    { file: 'amb-wind', at: 71.7, volume: 0.3, fadeIn: 1.0, fadeOut: 1.0 },
+    // 14 — Touba connectée au monde
+    { file: 'whoosh-deep', at: 77.6, volume: 0.4 },
+    { file: 'shimmer-long', at: 78.3, volume: 0.4, note: 'Lignes vers le monde' },
+    { file: 'riser-line', at: 79.4, volume: 0.2 },
+    // 15 — Silence, particules
+    { file: 'shimmer-long', at: 83.0, volume: 0.28, note: 'Convergence' },
+    { file: 'riser-dive', at: 83.9, volume: 0.4, note: 'Montée avant la révélation' },
+    // 16 — Révélation finale
+    { file: 'impact-final', at: 86.0, volume: 0.85, note: 'Logo' },
+    { file: 'shimmer', at: 86.1, volume: 0.35 },
+    { file: 'tick', at: 86.7, volume: 0.2, note: 'Signature' },
+    { file: 'tick', at: 87.05, volume: 0.18 },
+    { file: 'tick-high', at: 87.4, volume: 0.16 },
+  ] as SfxCue[],
+};

@@ -22,6 +22,10 @@ npm run studio        # prévisualisation interactive (timeline, scènes nommée
 npm run render        # export final → out/setrans-lancement.mp4
 ```
 
+Le rendu inclut les effets sonores (générés automatiquement avant chaque rendu).
+`npm run render:muet` exporte l'image seule ; `npm run render:audio` exporte la piste
+d'effets seule en WAV (`out/setrans-sfx.wav`) pour la mixer avec la musique et la voix off.
+
 `npm run render:draft` produit un brouillon en demi-résolution, plus rapide.
 `npm run stills -- 90 840 2650` rend des images de contrôle dans `out/stills/`.
 
@@ -33,6 +37,7 @@ setrans-video/
 │   ├── logo/               logo SETRANS (PNG/SVG transparent)
 │   ├── images/             images complémentaires
 │   ├── videos/             plans vidéo (Higgsfield)
+│   ├── sfx/                effets sonores (générés par `npm run sfx`)
 │   ├── music/              musique
 │   └── voiceover/          voix off
 ├── src/
@@ -58,6 +63,7 @@ setrans-video/
 | `ASSETS` | chemins du logo, de la musique, de la voix off et des 12 plans |
 | `SCENES` | début et durée de chaque scène (secondes) |
 | `VOICEOVER_SCRIPT` | script wolof minuté (repère d'enregistrement, sous-titres optionnels) |
+| `SFX` | effets sonores : volume général, liste des repères (fichier, instant, volume, fondus) |
 | `PLACES` | coordonnées de Dakar, Touba et des villes reliées |
 
 ### Ajouter le logo, la musique et la voix off
@@ -95,3 +101,16 @@ mixer le son dans un logiciel de montage.
 | 14 | 78–83 s | Touba connectée au Sénégal, à l'Afrique, l'Europe, l'Asie, l'Amérique |
 | 15 | 83–86 s | Silence visuel, particules qui convergent |
 | 16 | 86–90 s | Logo, TOUBA. CONNECTÉE AU MONDE., signature — maintien ~2 s |
+
+## Effets sonores
+
+25 sons synthétisés par `scripts/generate-sfx.mjs` (libres de droits, sans dépendance) :
+whoosh, risers, impacts graves, impact final, tics et pops d'interface, confirmation,
+tampon, verrou, fermeture de porte de conteneur, scintillements, flux de données, et
+ambiances océan, avion, port, camion, vent.
+
+Ils sont posés sur les animations via le bloc `SFX` de la config (environ 80 repères).
+Pour ajuster : modifier `at` (instant), `volume`, ou supprimer une ligne. Quand la
+musique et la voix off seront ajoutées, baisser `SFX.master` (vers 0,5–0,6).
+Pour utiliser vos propres bruitages : déposer un `.wav` dans `public/assets/sfx/`,
+ajouter sa durée dans `src/config/sfx-durations.ts`, puis le référencer dans `SFX.cues`.
