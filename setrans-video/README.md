@@ -19,7 +19,8 @@ cd setrans-video
 npm install
 npm run fetch-media   # télécharge les plans Higgsfield, la musique et la voix off
 npm run studio        # prévisualisation interactive (timeline, scènes nommées)
-npm run render        # export final → out/setrans-lancement.mp4
+npm run render        # export final 16:9 → out/setrans-lancement.mp4
+npm run render:vertical  # version téléphone 9:16 (1080×1920) → out/setrans-lancement-9x16.mp4
 ```
 
 Le rendu inclut les effets sonores (générés automatiquement avant chaque rendu).
@@ -114,3 +115,11 @@ Pour ajuster : modifier `at` (instant), `volume`, ou supprimer une ligne. Quand 
 musique et la voix off seront ajoutées, baisser `SFX.master` (vers 0,5–0,6).
 Pour utiliser vos propres bruitages : déposer un `.wav` dans `public/assets/sfx/`,
 ajouter sa durée dans `src/config/sfx-durations.ts`, puis le référencer dans `SFX.cues`.
+
+## Version téléphone (9:16)
+
+La composition `SetransFilmVertical` (1080 × 1920) réutilise les mêmes scènes : chaque
+scène lit le format courant (`useLayout()` dans `src/lib/layout.ts`) et adapte sa
+mise en page — chaîne logistique verticale, interface de suivi façon application mobile,
+plan documentaire en haut et étapes douanières dessous, carte et pôles recentrés. Les plans
+vidéo sont recadrés automatiquement au centre. Son, musique et voix off sont identiques.

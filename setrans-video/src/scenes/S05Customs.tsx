@@ -4,6 +4,7 @@ import { ASSETS, COLORS, FONTS, TEXTS } from '../config/setrans.config';
 import { Clip, Label } from '../components/Base';
 import { Icon, IconName } from '../components/Icons';
 import { EASE, progress } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 const STEP_ICONS: IconName[] = ['folder', 'search', 'check', 'stamp'];
@@ -11,25 +12,37 @@ const STEP_ICONS: IconName[] = ['folder', 'search', 'check', 'stamp'];
 /** SCÈNE 05 — Univers administratif & douanier : DOSSIER → CONTRÔLE → VALIDATION → AUTORISATION. */
 export const S05Customs: React.FC<SceneProps> = () => {
   const f = useCurrentFrame();
+  const { W, H, V } = useLayout();
   const panel = progress(f, 0, 0.9, EASE.out);
-  const x = 1080;
-  const top = 250;
-  const gap = 150;
+  // Horizontal : plan à gauche, étapes à droite. Vertical : plan en haut, étapes dessous.
+  const x = V ? 130 : 1080;
+  const top = V ? 1060 : 250;
+  const gap = V ? 190 : 150;
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.night }}>
-      <AbsoluteFill style={{ width: 1200 }}>
+      <AbsoluteFill style={V ? { height: 1100 } : { width: 1200 }}>
         <Clip src={ASSETS.clips.documents} zoomFrom={1.05} zoomTo={1.12} dim={0.2} />
       </AbsoluteFill>
       {/* Panneau bleu SETRANS */}
-      <AbsoluteFill
-        style={{
-          left: 1920 - 1000 * panel,
-          width: 1000,
-          background: `linear-gradient(90deg, rgba(11,26,58,0) 0%, ${COLORS.navy} 22%, ${COLORS.navy} 100%)`,
-        }}
-      />
+      {V ? (
+        <AbsoluteFill
+          style={{
+            top: H - 1080 * panel,
+            height: 1080,
+            background: `linear-gradient(180deg, rgba(11,26,58,0) 0%, ${COLORS.navy} 18%, ${COLORS.navy} 100%)`,
+          }}
+        />
+      ) : (
+        <AbsoluteFill
+          style={{
+            left: W - 1000 * panel,
+            width: 1000,
+            background: `linear-gradient(90deg, rgba(11,26,58,0) 0%, ${COLORS.navy} 22%, ${COLORS.navy} 100%)`,
+          }}
+        />
+      )}
       {/* Ligne verticale de progression */}
-      <svg width={1920} height={1080} style={{ position: 'absolute', inset: 0 }}>
+      <svg width={W} height={H} style={{ position: 'absolute', inset: 0 }}>
         <line x1={x + 36} y1={top + 36} x2={x + 36} y2={top + 36 + gap * 3} stroke={COLORS.white} strokeOpacity={0.12} strokeWidth={2} />
         <line
           x1={x + 36}
@@ -96,7 +109,7 @@ export const S05Customs: React.FC<SceneProps> = () => {
       <div
         style={{
           position: 'absolute',
-          left: 1600,
+          left: V ? W - 190 : 1600,
           top: top + gap * 3 - 4,
           opacity: progress(f, 4.6, 5.2, EASE.out),
           transform: `scale(${0.8 + 0.2 * progress(f, 4.6, 5.2, EASE.out)})`,

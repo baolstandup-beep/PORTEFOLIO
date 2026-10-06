@@ -16,7 +16,8 @@
     "render:audio": "node scripts/generate-sfx.mjs && remotion render SetransFilm out/setrans-sfx.wav --codec=wav",
     "render:muet": "remotion render SetransFilm out/setrans-muet.mp4 --crf=18 --muted",
     "fetch-media": "bash scripts/fetch-media.sh",
-    "vo-durations": "node scripts/vo-durations.mjs"
+    "vo-durations": "node scripts/vo-durations.mjs",
+    "render:vertical": "remotion render SetransFilmVertical out/setrans-lancement-9x16.mp4 --crf=18"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

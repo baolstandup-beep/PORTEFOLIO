@@ -4,6 +4,7 @@ import { ASSETS, COLORS, TEXTS } from '../config/setrans.config';
 import { Clip, Label } from '../components/Base';
 import { Icon, IconName } from '../components/Icons';
 import { EASE, progress, sec } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 const ICONS: IconName[] = ['store', 'building', 'warehouse', 'boxes', 'chart'];
@@ -11,27 +12,32 @@ const ICONS: IconName[] = ['store', 'building', 'warehouse', 'boxes', 'chart'];
 /** Pictogrammes posés sur une courbe de progression très subtile. */
 const GrowthOverlay: React.FC = () => {
   const f = useCurrentFrame();
-  const pts: [number, number][] = [
-    [260, 870],
-    [600, 820],
-    [940, 760],
-    [1280, 680],
-    [1640, 560],
-  ];
+  const { W, H, V } = useLayout();
+  const pts: [number, number][] = V
+    ? [0, 1, 2, 3, 4].map((i) => [130 + i * ((W - 260) / 4), H - 300 - i * 110 - (i === 4 ? 60 : 0)])
+    : [
+        [260, 870],
+        [600, 820],
+        [940, 760],
+        [1280, 680],
+        [1640, 560],
+      ];
   const curve = progress(f, 0.2, 2.6, EASE.inOut);
+  const xL = pts[0][0];
+  const xR = pts[pts.length - 1][0];
   const d = `M ${pts[0][0]} ${pts[0][1]} ` + pts.slice(1).map(([x, y]) => `L ${x} ${y}`).join(' ');
-  const area = `${d} L ${pts[pts.length - 1][0]} 1080 L ${pts[0][0]} 1080 Z`;
+  const area = `${d} L ${pts[pts.length - 1][0]} ${H} L ${pts[0][0]} ${H} Z`;
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{ background: 'linear-gradient(180deg, rgba(5,11,28,0) 35%, rgba(5,11,28,0.82) 100%)' }} />
-      <svg width={1920} height={1080} style={{ position: 'absolute', inset: 0 }}>
+      <svg width={W} height={H} style={{ position: 'absolute', inset: 0 }}>
         <defs>
           <linearGradient id="growthArea" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor={COLORS.blueGlow} stopOpacity={0.22} />
             <stop offset="1" stopColor={COLORS.blueGlow} stopOpacity={0} />
           </linearGradient>
           <clipPath id="growthClip">
-            <rect x={0} y={0} width={260 + 1380 * curve} height={1080} />
+            <rect x={0} y={0} width={xL + (xR - xL) * curve} height={H} />
           </clipPath>
         </defs>
         <path d={area} fill="url(#growthArea)" clipPath="url(#growthClip)" />
@@ -44,9 +50,9 @@ const GrowthOverlay: React.FC = () => {
             key={i}
             style={{
               position: 'absolute',
-              left: x - 90,
+              left: x - (V ? 80 : 90),
               top: y - 150,
-              width: 180,
+              width: V ? 160 : 180,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -68,7 +74,7 @@ const GrowthOverlay: React.FC = () => {
             >
               <Icon name={ICONS[i]} size={46} color={COLORS.white} draw={t} />
             </div>
-            <Label size={17} weight={600} spacing="0.16em" style={{ marginTop: 10 }}>
+            <Label size={V ? 15 : 17} weight={600} spacing={V ? '0.06em' : '0.16em'} style={{ marginTop: 10 }}>
               {TEXTS.activities[i].toUpperCase()}
             </Label>
             <div style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: COLORS.white, marginTop: 14 }} />

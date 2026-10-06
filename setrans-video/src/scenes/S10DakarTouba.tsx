@@ -4,6 +4,7 @@ import { COLORS, FONTS, PLACES, TEXTS } from '../config/setrans.config';
 import { DarkBackground, Grid, Particles } from '../components/Base';
 import { SenegalMap } from '../components/Maps';
 import { EASE, progress } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 const SECONDARY = ['saintLouis', 'thies', 'kaolack', 'ziguinchor', 'tambacounda'] as const;
@@ -11,19 +12,20 @@ const SECONDARY = ['saintLouis', 'thies', 'kaolack', 'ziguinchor', 'tambacounda'
 /** SCÈNE 10 — Carte du Sénégal : Dakar, puis la ligne vers Touba (point principal). */
 export const S10DakarTouba: React.FC<SceneProps> = ({ duration }) => {
   const f = useCurrentFrame();
+  const { W, V } = useLayout();
   const intro = progress(f, 0, 1.0, EASE.soft);
   const dakar = progress(f, 0.6, 1.2, EASE.out);
   const route = progress(f, 1.4, 3.6, EASE.inOut);
   const touba = progress(f, 3.3, 4.0, EASE.out);
-  const zoom = 1 + 0.1 * progress(f, 0, duration, EASE.soft);
+  const zoom = 1 + (V ? 0.05 : 0.1) * progress(f, 0, duration, EASE.soft);
   const pulse = touba > 0 ? ((f / 30 - 3.3) % 1.4) / 1.4 : 0;
   return (
     <DarkBackground glow={0.3}>
       <Grid opacity={0.04} />
       <Particles count={30} seed={11} opacity={0.25} />
-      <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: '52% 50%', opacity: intro }}>
+      <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: V ? '62% 50%' : '52% 50%', opacity: intro }}>
         <SenegalMap
-          box={{ x: 360, y: 110, w: 1200, h: 860 }}
+          box={V ? { x: 150, y: 520, w: W - 230, h: 900 } : { x: 360, y: 110, w: 1200, h: 860 }}
           dots={SECONDARY.map((k) => ({ at: PLACES[k], r: 3, opacity: 0.45 * intro }))}
         >
           {(project) => {

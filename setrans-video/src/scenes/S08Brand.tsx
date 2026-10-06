@@ -4,29 +4,39 @@ import { ASSETS, COLORS, FONTS, TEXTS, TYPE } from '../config/setrans.config';
 import { Clip, Label, MaskReveal } from '../components/Base';
 import { Icon, IconName } from '../components/Icons';
 import { EASE, lerp, progress } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 const POLE_ICONS: IconName[] = ['customs', 'truck', 'warehouse'];
-const POLE_POS: [number, number][] = [
-  [420, 300],
-  [1500, 300],
-  [960, 880],
+// Positions des pôles en fraction de l'image (16:9 puis 9:16).
+const POLE_POS_H: [number, number][] = [
+  [420 / 1920, 300 / 1080],
+  [1500 / 1920, 300 / 1080],
+  [0.5, 880 / 1080],
+];
+const POLE_POS_V: [number, number][] = [
+  [0.26, 0.29],
+  [0.74, 0.29],
+  [0.5, 0.74],
 ];
 
 /** SCÈNE 08 — Apparition de SETRANS et de ses trois pôles. */
 export const S08Brand: React.FC<SceneProps> = () => {
   const f = useCurrentFrame();
+  const { W, H, V, cx, cy } = useLayout();
+  const POLE_POS = (V ? POLE_POS_V : POLE_POS_H).map(([px, py]) => [px * W, py * H] as [number, number]);
+  const R = 250;
   const veil = progress(f, 0.3, 2.0, EASE.soft);
   const name = progress(f, 0.9, 2.0, EASE.out);
   const ring = progress(f, 1.2, 2.6, EASE.inOut);
   return (
     <AbsoluteFill>
       <Clip src={ASSETS.clips.agent} zoomFrom={1.0} zoomTo={1.14} dim={lerp(0.1, 0.72, veil)} blur={veil * 6} tint={0.25} />
-      <svg width={1920} height={1080} style={{ position: 'absolute', inset: 0 }}>
+      <svg width={W} height={H} style={{ position: 'absolute', inset: 0 }}>
         <circle
-          cx={960}
-          cy={540}
-          r={250}
+          cx={cx}
+          cy={cy}
+          r={R}
           fill="none"
           stroke={COLORS.blueGlow}
           strokeOpacity={0.5}
@@ -34,14 +44,14 @@ export const S08Brand: React.FC<SceneProps> = () => {
           pathLength={1}
           strokeDasharray={1}
           strokeDashoffset={1 - ring}
-          transform="rotate(-90 960 540)"
+          transform={`rotate(-90 ${cx} ${cy})`}
         />
         {POLE_POS.map(([px, py], i) => {
           const l = progress(f, 2.2 + i * 0.7, 3.0 + i * 0.7, EASE.inOut);
           // Point d'arrivée sur le cercle central
-          const ang = Math.atan2(py - 540, px - 960);
-          const ex = 960 + Math.cos(ang) * 250;
-          const ey = 540 + Math.sin(ang) * 250;
+          const ang = Math.atan2(py - cy, px - cx);
+          const ex = cx + Math.cos(ang) * R;
+          const ey = cy + Math.sin(ang) * R;
           const sx = px - Math.cos(ang) * 60;
           const sy = py - Math.sin(ang) * 60;
           return (
@@ -58,7 +68,7 @@ export const S08Brand: React.FC<SceneProps> = () => {
             style={{
               fontFamily: FONTS.title,
               fontWeight: 800,
-              fontSize: TYPE.hero,
+              fontSize: V ? TYPE.hero * 0.9 : TYPE.hero,
               letterSpacing: '0.16em',
               color: COLORS.white,
               paddingLeft: '0.16em',

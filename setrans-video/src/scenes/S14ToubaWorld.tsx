@@ -4,6 +4,7 @@ import { COLORS, FONTS, PLACES, TEXTS } from '../config/setrans.config';
 import { DarkBackground, Particles } from '../components/Base';
 import { FlatWorld } from '../components/Maps';
 import { EASE, lerp, progress } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 type P = keyof typeof PLACES;
@@ -46,8 +47,9 @@ const ToubaSilhouette: React.FC<{ t: number }> = ({ t }) => (
 /** SCÈNE 14 — Touba, centre stratégique, connectée au Sénégal, à l'Afrique et au monde. */
 export const S14ToubaWorld: React.FC<SceneProps> = ({ duration }) => {
   const f = useCurrentFrame();
+  const { cx, cy, V } = useLayout();
   const zoomT = progress(f, 0.6, duration - 0.3, EASE.inOut);
-  const zoom = Math.exp(lerp(Math.log(9), Math.log(1.15), zoomT));
+  const zoom = Math.exp(lerp(Math.log(V ? 6 : 9), Math.log(V ? 0.6 : 1.15), zoomT));
   const center: [number, number] = [
     lerp(PLACES.touba[0], 5, zoomT),
     lerp(PLACES.touba[1], 22, zoomT),
@@ -93,8 +95,8 @@ export const S14ToubaWorld: React.FC<SceneProps> = ({ duration }) => {
       <div
         style={{
           position: 'absolute',
-          left: 960 - 110,
-          top: 540 - 200,
+          left: cx - 110,
+          top: cy - 200,
           opacity: sil * (1 - silOut),
           transform: `translateY(${(1 - sil) * 10}px)`,
         }}

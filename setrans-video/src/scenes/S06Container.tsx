@@ -4,15 +4,19 @@ import { ASSETS, COLORS } from '../config/setrans.config';
 import { Clip, DarkBackground, Grid } from '../components/Base';
 import { Icon } from '../components/Icons';
 import { EASE, progress, sec } from '../lib/anim';
+import { useLayout } from '../lib/layout';
 import type { SceneProps } from './types';
 
 /** Conteneur stylisé : portes qui se ferment, scellé, cadenas, validation, suivi numérique. */
 const ContainerMG: React.FC = () => {
   const f = useCurrentFrame();
-  const W = 760;
-  const H = 400;
-  const x = (1920 - W) / 2;
-  const y = (1080 - H) / 2 + 10;
+  const L = useLayout();
+  // Conteneur : 760 × 400 en 16:9, réduit en 9:16 pour garder les marges.
+  const W = L.V ? 720 : 760;
+  const H = L.V ? 380 : 400;
+  const x = (L.W - W) / 2;
+  const y = (L.H - H) / 2 + 10;
+  const cx = L.W / 2;
   const doors = progress(f, 0.2, 1.3, EASE.inOut); // 0 ouvert → 1 fermé
   const seal = progress(f, 1.3, 1.8, EASE.out);
   const lock = progress(f, 1.6, 2.2, EASE.out);
@@ -25,7 +29,7 @@ const ContainerMG: React.FC = () => {
   const dotPos = (track * 3) % 1;
   return (
     <AbsoluteFill style={{ transform: `scale(${zoom})` }}>
-      <svg width={1920} height={1080} style={{ position: 'absolute', inset: 0 }}>
+      <svg width={L.W} height={L.H} style={{ position: 'absolute', inset: 0 }}>
         <defs>
           <linearGradient id="cont" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor="#2A55AE" />
@@ -33,7 +37,7 @@ const ContainerMG: React.FC = () => {
           </linearGradient>
         </defs>
         {/* Ombre au sol */}
-        <ellipse cx={960} cy={y + H + 40} rx={W * 0.62} ry={22} fill="#000" opacity={0.35} />
+        <ellipse cx={cx} cy={y + H + 40} rx={W * 0.62} ry={22} fill="#000" opacity={0.35} />
         {/* Intérieur (visible quand les portes sont ouvertes) */}
         <rect x={x} y={y} width={W} height={H} fill="#081430" />
         {/* Porte gauche */}
@@ -95,7 +99,7 @@ const ContainerMG: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          left: 960 - 46,
+          left: cx - 46,
           top: y - 150,
           opacity: lock,
           transform: `translateY(${(1 - lock) * 20}px)`,
@@ -106,8 +110,8 @@ const ContainerMG: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          left: x + W + 70,
-          top: y - 90,
+          left: L.V ? cx - 42 : x + W + 70,
+          top: L.V ? y + H + 110 : y - 90,
           opacity: ok,
           transform: `scale(${0.7 + 0.3 * ok})`,
         }}

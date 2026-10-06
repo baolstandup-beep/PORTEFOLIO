@@ -9,6 +9,9 @@
 export const VIDEO = {
   width: 1920,
   height: 1080,
+  /** Version téléphone (9:16) : composition « SetransFilmVertical ». */
+  verticalWidth: 1080,
+  verticalHeight: 1920,
   fps: 30,
   /** Durée totale en secondes. Doit rester ≥ fin de la dernière scène. */
   durationInSeconds: 90,
