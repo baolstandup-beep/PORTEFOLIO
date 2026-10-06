@@ -1,0 +1,33 @@
+{
+  "name": "setrans-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SETRANS — film de lancement institutionnel (motion design, Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render SetransFilm out/setrans-lancement.mp4",
+    "render:draft": "remotion render SetransFilm out/setrans-draft.mp4 --scale=0.5",
+    "still": "remotion still SetransFilm out/frame.png --frame=1500",
+    "typecheck": "tsc --noEmit",
+    "fetch-clips": "bash scripts/fetch-clips.sh",
+    "stills": "node scripts/stills.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@remotion/cli": "^4.0.533",
+    "d3-geo": "^3.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.533",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.3.0",
+    "@types/topojson-client": "^3.1.5",
+    "typescript": "^7.0.2"
+  }
+}
