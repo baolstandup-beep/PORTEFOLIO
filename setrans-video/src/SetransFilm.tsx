@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Sequence, useCurrentFrame } from 'remotion';
 import '@fontsource/montserrat/300.css';
 import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/600.css';
@@ -9,7 +9,8 @@ import '@fontsource/inter/300.css';
 import '@fontsource/inter/300-italic.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
-import { ASSETS, COLORS, SCENES, SceneId, VIDEO, VOICEOVER_SCRIPT } from './config/setrans.config';
+import { COLORS, SCENES, SceneId, VIDEO, VOICEOVER_SCRIPT } from './config/setrans.config';
+import { MusicTrack, voiceLines, VoiceTrack } from './components/AudioTracks';
 import { FilmFinish } from './components/Base';
 import { SfxTrack } from './components/SfxTrack';
 import { EASE, progress, sec } from './lib/anim';
@@ -60,8 +61,7 @@ const CrossfadeIn: React.FC<{ enabled: boolean; children: React.ReactNode }> = (
 
 const Subtitles: React.FC = () => {
   const f = useCurrentFrame() / VIDEO.fps;
-  const lines = VOICEOVER_SCRIPT.lines;
-  const current = [...lines].reverse().find((l) => f >= l.start);
+  const current = voiceLines().find((l) => f >= l.at && f <= l.at + l.duration + 0.3);
   if (!current) return null;
   return (
     <AbsoluteFill style={{ justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 40 }}>
@@ -94,9 +94,9 @@ export const SetransFilm: React.FC = () => {
       {VOICEOVER_SCRIPT.showSubtitles && <Subtitles />}
       {/* Effets sonores (config : SFX) */}
       <SfxTrack />
-      {/* Pistes audio séparées (activées dès qu'un chemin est renseigné dans la config) */}
-      {ASSETS.music && <Audio src={staticFile(ASSETS.music)} volume={ASSETS.musicVolume} />}
-      {ASSETS.voiceover && <Audio src={staticFile(ASSETS.voiceover)} volume={ASSETS.voiceoverVolume} />}
+      {/* Musique (config : MUSIC) et voix off (config : VOICEOVER) */}
+      <MusicTrack />
+      <VoiceTrack />
     </AbsoluteFill>
   );
 };

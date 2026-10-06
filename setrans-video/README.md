@@ -17,7 +17,7 @@ Le film combine :
 ```bash
 cd setrans-video
 npm install
-npm run fetch-clips   # télécharge les 12 plans Higgsfield dans public/assets/videos/
+npm run fetch-media   # télécharge les plans Higgsfield, la musique et la voix off
 npm run studio        # prévisualisation interactive (timeline, scènes nommées)
 npm run render        # export final → out/setrans-lancement.mp4
 ```

@@ -4,3 +4,5 @@ out/
 public/assets/videos/*.mp4
 # Effets sonores générés par `npm run sfx`
 public/assets/sfx/*.wav
+public/assets/music/*.wav
+public/assets/voiceover/*.wav

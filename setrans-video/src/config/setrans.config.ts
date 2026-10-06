@@ -68,12 +68,6 @@ export const TEXTS = {
 export const ASSETS = {
   /** Logo final (PNG/SVG, fond transparent). null = logo typographique. */
   logo: null as string | null, // ex. 'assets/logo/setrans-logo.png'
-  /** Musique (MP3/WAV). null = pas de musique dans le rendu. */
-  music: null as string | null, // ex. 'assets/music/theme.mp3'
-  musicVolume: 0.6,
-  /** Voix off complète (un seul fichier calé sur 0 s). */
-  voiceover: null as string | null, // ex. 'assets/voiceover/voix-off.wav'
-  voiceoverVolume: 1,
   /** Plans cinéma générés avec Higgsfield (Kling 3.0 Pro, 6 s, 16:9). */
   clips: {
     ship: 'assets/videos/01-porte-conteneurs.mp4',
@@ -118,8 +112,54 @@ export const SCENES = [
 export type SceneId = (typeof SCENES)[number]['id'];
 
 /**
- * Script de voix off (wolof), à titre de repère pour l'enregistrement.
- * `start` en secondes. Non affiché à l'écran (showSubtitles = false).
+ * MUSIQUE
+ * Musique originale générée avec Artlist (Lyria 3 Pro, instrumentale,
+ * cinématique avec kora et percussions sénégalaises discrètes).
+ * Récupérée par `npm run fetch-media`. `file: null` = pas de musique.
+ */
+export const MUSIC = {
+  file: 'assets/music/setrans-theme.wav' as string | null,
+  /** Instant du film (s) où la musique démarre : cale son creux et son sommet sur la fin. */
+  startAt: 2.8,
+  volume: 0.5,
+  fadeIn: 2.0,
+  fadeOut: 2.5,
+  /** Niveau de la musique pendant la voix off (ducking automatique), 1 = pas de baisse. */
+  duckUnderVoice: 0.5,
+};
+
+/**
+ * VOIX OFF (française)
+ * Une phrase = un fichier, placé à l'instant `at` (secondes). Les fichiers
+ * vont dans public/assets/voiceover/ (vo-01.wav, vo-02.wav…). Une phrase
+ * dont le fichier manque est simplement ignorée. `enabled: false` = aucune voix.
+ * Pour une voix enregistrée : remplacer les fichiers en gardant les noms,
+ * puis relancer `npm run vo-durations` pour mettre à jour les durées.
+ */
+export const VOICEOVER = {
+  enabled: true,
+  folder: 'assets/voiceover',
+  volume: 1,
+  lines: [
+    { file: 'vo-01', at: 0.8, text: 'Le monde avance grâce aux échanges et au commerce.' },
+    { file: 'vo-02', at: 6.6, text: 'Chaque jour, des marchandises traversent les frontières, d’un pays à l’autre.' },
+    { file: 'vo-03', at: 16.2, text: 'Derrière chaque marchandise, il y a un travailleur, un commerçant, un projet… et un espoir.' },
+    { file: 'vo-04', at: 24.0, text: 'Mais transporter une marchandise, ce n’est pas seulement la déplacer d’un point à un autre.' },
+    { file: 'vo-05', at: 30.2, text: 'Il faut un suivi rigoureux, une préparation complète, et une sécurité totale.' },
+    { file: 'vo-06', at: 41.3, text: 'C’est là qu’intervient SETRANS.' },
+    { file: 'vo-07', at: 44.0, text: 'Avec son expertise en transit, transport et logistique.' },
+    { file: 'vo-08', at: 48.3, text: 'De l’arrivée de votre marchandise jusqu’à sa livraison, chaque étape compte.' },
+    { file: 'vo-09', at: 60.4, text: 'Notre mission : simplifier vos échanges, et sécuriser vos opérations.' },
+    { file: 'vo-10', at: 66.3, text: 'Des entreprises qui avancent. Des projets qui grandissent. Des espoirs qui deviennent réalité.' },
+    { file: 'vo-11', at: 73.0, text: 'Aujourd’hui, SETRANS rapproche les distances…' },
+    { file: 'vo-12', at: 78.6, text: '…entre Touba, le Sénégal, et le monde.' },
+    { file: 'vo-13', at: 86.6, text: 'Une nouvelle ère commence. Une nouvelle connexion commence.' },
+  ],
+};
+
+/**
+ * Script original en wolof (référence pour un enregistrement humain).
+ * `start` en secondes. Sous-titres désactivés (showSubtitles = false).
  */
 export const VOICEOVER_SCRIPT = {
   showSubtitles: false,
@@ -182,8 +222,8 @@ export type SfxCue = {
 
 export const SFX = {
   enabled: true,
-  /** Volume général des effets (à baisser quand musique + voix off sont ajoutées). */
-  master: 0.85,
+  /** Volume général des effets (réduit pour laisser la place à la musique et à la voix). */
+  master: 0.6,
   folder: 'assets/sfx',
   cues: [
     // 01 — Globe
