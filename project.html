@@ -5,17 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Étude de cas — Cheikh Awa Balla Diop</title>
 <meta name="description" content="Étude de cas détaillée par Cheikh Awa Balla Diop, Fondateur de Baol Vision à Touba, Sénégal.">
+<meta name="theme-color" content="#080808">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_SN">
+<meta property="og:title" content="Étude de cas — Baol Vision">
+<meta property="og:description" content="Découvrez le contexte, la démarche créative et les résultats de ce projet.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cabd-portfolio.vercel.app/project.html?id=prizent">
+<script src="assets/analytics.js" defer></script>
+<script src="assets/image-variants.js"></script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23090909'/><text x='50%25' y='55%25' font-family='sans-serif' font-size='13' fill='%23FF5E1A' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>CD</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; background-color: #080808; }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #080808;
-  color: #EDEDED;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -24,6 +33,7 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 button { font-family: inherit; cursor: pointer; }
 ::selection { background: #FF5E1A; color: #080808; }
+:focus-visible { outline: 3px solid #FF5E1A; outline-offset: 4px; }
 
 :root {
   --bg:             #080808;
@@ -32,11 +42,11 @@ button { font-family: inherit; cursor: pointer; }
   --border-strong:  rgba(255, 255, 255, 0.18);
   --text-main:      #EDEDED;
   --text-muted:     #A6A6A6;
-  --text-dim:       #6E6E6E;
+  --text-dim:       #A6A6A6;
   --accent:         #FF5E1A;
-  --font-display:   'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono:      'IBM Plex Mono', 'Courier New', monospace;
+  --font-display:   'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:      'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:      'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --wrap-width:     1440px;
 }
 
@@ -89,7 +99,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: -0.04em;
   text-transform: uppercase;
   line-height: 0.98;
-  color: #EDEDED;
+  color: var(--text-main);
   margin-bottom: 2rem;
 }
 .cs-subtitle {
@@ -125,7 +135,7 @@ button { font-family: inherit; cursor: pointer; }
   display: block;
   font-size: 0.98rem;
   font-weight: 600;
-  color: #EDEDED;
+  color: var(--text-main);
 }
 
 /* Dual Showcase */
@@ -193,13 +203,13 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #EDEDED;
+  color: var(--text-main);
 }
 .cs-body-text {
   font-family: var(--font-body);
   font-size: clamp(16px, 1.05vw, 18px);
   line-height: 1.7;
-  color: #C8C8C8;
+  color: var(--text-muted);
   max-width: 62ch;
 }
 
@@ -223,7 +233,7 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 800;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #EDEDED;
+  color: var(--text-main);
   margin-bottom: 2.5rem;
 }
 .btn-monument {
@@ -266,7 +276,7 @@ footer {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #25D366;
+  background: #15773A;
   color: #FFFFFF !important;
   display: inline-flex;
   align-items: center;
@@ -275,7 +285,7 @@ footer {
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
   z-index: 9999;
   text-decoration: none;
   transition: transform .25s ease;
@@ -307,8 +317,8 @@ body.theme-white {
   --border-strong:  rgba(0, 0, 0, 0.16);
   --text-main:      #080808;
   --text-muted:     #666666;
-  --text-dim:       #8E8E8E;
-  --accent:         #FF5E1A;
+  --text-dim:       #666666;
+  --accent:         #BB390B;
 }
 
 body.theme-white .header-nav {
@@ -359,6 +369,11 @@ body.theme-white .next-banner {
   color: var(--accent);
 }
 
+.cs-title, .next-name { overflow-wrap:anywhere; }
+[hidden] { display:none!important; }
+body.theme-white .btn-monument:hover { color:#fff!important; }
+.header-nav, .cs-meta-top, footer { gap:1rem; flex-wrap:wrap; }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto!important; transition:none!important; } }
 </style>
 </head>
 <body class="theme-white">
@@ -371,7 +386,7 @@ body.theme-white .next-banner {
 <main class="wrap">
   <article class="cs-hero">
     <div class="cs-meta-top">
-      <span id="cs-num-display">[ ÉTUDE DE CAS 01 / 10 ]</span>
+      <span id="cs-num-display">[ ÉTUDE DE CAS 01 / 22 ]</span>
       <span id="cs-cat-display">UI/UX · COMMUNICATION SAAS</span>
     </div>
 
@@ -435,16 +450,24 @@ body.theme-white .next-banner {
       <section class="cs-story-block">
         <div>
           <div class="cs-step-num">[ 03 ]</div>
-          <h2 class="cs-section-name">Stratégie Visuelle</h2>
+          <h2 class="cs-section-name">Choix créatifs</h2>
         </div>
         <p class="cs-body-text" id="cs-solution">
           Direction artistique axée sur les contrastes forts : fond texturé vert profond rappelant la marque, hiérarchisation stricte des bénéfices clients (entreprises, chantiers, écoles) et mise en scène du mockup smartphone en situation réelle avec interface claire.
         </p>
       </section>
 
+      <section class="cs-story-block" id="cs-approach-block" hidden>
+        <div><div class="cs-step-num">[ 04 ]</div><h2 class="cs-section-name">Démarche</h2></div>
+        <p class="cs-body-text" id="cs-approach"></p>
+      </section>
+      <section class="cs-story-block" id="cs-deliverables-block" hidden>
+        <div><div class="cs-step-num">[ 05 ]</div><h2 class="cs-section-name">Livrables</h2></div>
+        <p class="cs-body-text" id="cs-deliverables"></p>
+      </section>
       <section class="cs-story-block">
         <div>
-          <div class="cs-step-num">[ 04 ]</div>
+          <div class="cs-step-num">[ RÉSULTAT ]</div>
           <h2 class="cs-section-name">Impact &amp; Résultats</h2>
         </div>
         <p class="cs-body-text" id="cs-result">
@@ -470,7 +493,7 @@ body.theme-white .next-banner {
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
   <button class="lightbox-close">✕</button>
-  <img src="" alt="Agrandissement" id="lightbox-img">
+  <img src="assets/images/optimized/project-prizent-640.webp" alt="Agrandissement" id="lightbox-img">
 </div>
 
 <!-- Floating WhatsApp -->
@@ -496,7 +519,7 @@ const PROJECTS_DB = [
     desc: "Conception du support visuel de promotion et mise en valeur de la solution Prizent, un logiciel de pointage moderne par smartphone et badges destiné aux entreprises, écoles, chantiers BTP et restaurants.",
     problem: "Rendre accessible et immédiatement compréhensible une solution logicielle B2B dans un format publicitaire percutant au Sénégal.",
     solution: "Direction artistique axée sur des contrastes forts, typographie nette et intégration du mockup smartphone en situation réelle de bureau.",
-    result: "Support largement diffusé auprès de cibles décisionnaires, générant une forte augmentation des demandes de démonstration."
+    result: "Un dispositif cohérent et immédiatement lisible, prêt à être décliné sur les canaux commerciaux et les présentations de démonstration."
   },
   {
     id: "cass-online",
@@ -512,7 +535,7 @@ const PROJECTS_DB = [
     desc: "Création de la campagne promotionnelle percutante 'Comme un marché dans un téléphone' valorisant l'achat et la revente de produits high-tech et mode sans se déplacer.",
     problem: "Capter l'attention dans un marché e-commerce très concurrentiel et transmettre la promesse de rapidité et de simplicité.",
     solution: "Composition publicitaire énergique, intégration harmonieuse d'une multitude de produits (smartphones, son, mode) autour d'un personnage dynamique en lévitation.",
-    result: "Campagne affichée sur les réseaux et panneaux urbains avec une mémorisation record de la marque."
+    result: "Une campagne plus claire et plus mémorable, déclinable sur les réseaux sociaux et les supports d'affichage."
   },
   {
     id: "darou-salam",
@@ -560,7 +583,7 @@ const PROJECTS_DB = [
     desc: "Affiche promotionnelle pour la session de formation intensive aux métiers du design graphique (Photoshop, Illustrator, Premiere Pro, WordPress).",
     problem: "Susciter des vocations et remplir les sessions de formation en moins de deux semaines.",
     solution: "Composition chaleureuse et dynamique mettant en avant le formateur, les modules clés et les badges logiciels officiels.",
-    result: "Session complète avant la date limite d'inscription."
+    result: "Une identité événementielle cohérente, conçue pour faciliter la compréhension du programme et les inscriptions."
   },
   {
     id: "demandoo",
@@ -822,7 +845,50 @@ const PROJECTS_DB = [
     desc: "Conception intégrale de la campagne publicitaire corporate et de l'identité de marque pour SETRANS SARL, société d'ingénierie logistique multimodale basée à Dakar Plateau. Mise en valeur des 4 pôles stratégiques : Fret Aérien, Fret Maritime, Logistique Routière et Douane & Transit.",
     problem: "Illustrer avec force et crédibilité l'envergure d'un acteur du transit multimodal capable d'interconnecter air, mer, fer et route, tout en concevant des tenues professionnelles et goodies de prestige pour le personnel et les partenaires.",
     solution: "Composition publicitaire monumentale associant avion-cargo, porte-conteneurs, semi-remorque et locomotive sur le quai portuaire. Déclinaisons textiles soignées respectant la charte (bleu marine profond, blanc et typographie technique) sur casquettes brodées, polos d'entreprise et t-shirts pour les équipes terrain.",
-    result: "Campagne diffusée avec succès auprès des chargeurs, transitaires et importateurs d'Afrique de l'Ouest, renforçant le leadership de SETRANS SARL (www.set-trans.com)."
+    result: "Une présentation corporate homogène qui clarifie les métiers de SETRANS et fournit à l'équipe commerciale des supports cohérents pour le print et le terrain."
+  },
+  {
+    id: "khelcom",
+    num: "21",
+    title: "CAFÉ TOUBA KHELCOM",
+    cat: "Packaging · Agroalimentaire",
+    sub: "Identité et packaging d'un café Touba naturel",
+    client: "KhelCom — Touba",
+    role: "Direction artistique, packaging & mockups",
+    year: "2024",
+    img1: "assets/images/optimized/project-khelcom-packaging-04-1280.webp",
+    img2: "assets/images/optimized/project-khelcom-packaging-03-1280.webp",
+    gallery: [
+      { src: "assets/images/optimized/project-khelcom-packaging-04-1280.webp", badge: "[ PACKAGING · VUE PRINCIPALE ]" },
+      { src: "assets/images/optimized/project-khelcom-packaging-03-1280.webp", badge: "[ MOCKUP · VUE TROIS-QUARTS ]" },
+      { src: "assets/images/optimized/project-khelcom-packaging-02-1280.webp", badge: "[ DÉCLINAISON PACKAGING ]" }
+    ],
+    desc: "Création de l'univers visuel du café Touba KhelCom : face avant du sachet, informations produit, hiérarchie réglementaire et mises en situation réalistes pour la présentation commerciale.",
+    problem: "Installer une marque locale dans un rayon très concurrentiel, exprimer l'authenticité du café Touba et rendre les informations essentielles immédiatement repérables.",
+    solution: "Une palette brun café et jaune chaud, une typographie expressive et un visuel produit central. La composition garde le nom, la promesse naturelle et le poids visibles à distance.",
+    result: "Un système de packaging identifiable et prêt pour la présentation produit, avec plusieurs angles de mockup pour les supports commerciaux et numériques."
+  },
+  {
+    id: "ngs",
+    num: "22",
+    title: "NDIAYE GLOBAL SERVICES",
+    cat: "Identité visuelle · Corporate",
+    sub: "Système de marque et applications corporate NGS",
+    client: "Ndiaye Global Services",
+    role: "Logo, identité visuelle & déclinaisons",
+    year: "2024",
+    img1: "assets/images/optimized/project-ngs-brand-01-1280.webp",
+    img2: "assets/images/optimized/project-ngs-brand-03-1280.webp",
+    gallery: [
+      { src: "assets/images/optimized/project-ngs-brand-01-1280.webp", badge: "[ SIGNATURE DE MARQUE ]" },
+      { src: "assets/images/optimized/project-ngs-brand-02-1280.webp", badge: "[ APPLICATION · OBJETS CORPORATE ]" },
+      { src: "assets/images/optimized/project-ngs-brand-03-1280.webp", badge: "[ APPLICATION · ENSEIGNE ]" },
+      { src: "assets/images/optimized/project-ngs-brand-04-1280.webp", badge: "[ APPLICATION · SIGNALÉTIQUE ]" }
+    ],
+    desc: "Conception d'une identité corporate complète articulée autour du monogramme NGS, puis mise en situation sur papeterie, objets promotionnels, enseigne et signalétique.",
+    problem: "Donner une personnalité claire à une entreprise multiservice tout en conservant une image suffisamment institutionnelle pour ses échanges professionnels.",
+    solution: "Un monogramme compact, une palette bleu-vert porteuse de confiance et de croissance, et des règles simples permettant une application cohérente sur de nombreux formats.",
+    result: "Une base de marque unifiée et facilement reconnaissable, accompagnée de visuels d'application utilisables pour présenter l'identité aux partenaires."
   },
   {
     id: "salixate",
@@ -842,14 +908,53 @@ const PROJECTS_DB = [
   }
 ];
 
+// Démarches décrites à partir des créations et déclinaisons présentées.
+const CASE_DETAILS = {
+  prizent: {
+    approach: "La composition part du besoin de compréhension : identifier le service, montrer son usage sur smartphone, puis rendre visibles les publics concernés. La hiérarchie sépare la promesse principale des informations secondaires ; la mise en situation relie la solution numérique à un environnement de travail concret.",
+    deliverables: "Une affiche de présentation de la solution de pointage et un mockup de campagne en contexte professionnel. Les deux visuels sont consultables dans la galerie.",
+    result: "Le résultat visible est un support où le smartphone, le nom de la solution et sa promesse occupent des niveaux de lecture distincts. Les visuels montrent le travail de communication ; aucune donnée commerciale mesurée n’est disponible ici."
+  },
+  'cass-online': {
+    approach: "Le concept traduit le catalogue en une scène unique : les produits et le personnage matérialisent l’idée d’un marché accessible depuis son téléphone. Le regard est guidé vers le message, puis vers l’offre. La mise en situation permet d’évaluer la présence de la campagne à une autre échelle.",
+    deliverables: "Un visuel publicitaire de la place de marché et une mise en situation d’affichage. La composition réunit produits, accroche et identité de marque.",
+    result: "Deux supports cohérents illustrent une même promesse de marque, du visuel publicitaire au mockup. L’impact sur les ventes ou la notoriété n’a pas été documenté dans ce portfolio."
+  },
+  vacrea: {
+    problem: "Présenter une formation créative à Touba en rendant lisibles son programme, ses outils et les informations d’inscription, tout en donnant envie de découvrir les métiers du design.",
+    approach: "Le message de formation est organisé autour du formateur et des disciplines enseignées. Les éléments logiciels servent de repères rapides. La déclinaison en mise en situation prolonge l’univers créatif de l’affiche et aide à apprécier sa lisibilité dans un environnement réel.",
+    deliverables: "Une affiche de formation et un mockup d’ambiance. Les informations pédagogiques, le portrait et les repères logiciels sont réunis dans une composition événementielle.",
+    result: "Un ensemble de deux visuels présente clairement l’univers de la formation. Les chiffres d’inscription ne sont pas disponibles ; le résultat présenté porte sur les supports conçus."
+  },
+  setrans: {
+    approach: "L’information est structurée par métier : transport, transit et logistique. La couverture installe l’univers multimodal ; les pages intérieures détaillent les services et les coordonnées. Les mockups de brochure et les applications textiles permettent de lire la cohérence de la marque sur des usages différents.",
+    deliverables: "Brochure corporate : couverture, intérieur et mises en situation. Affiche de présentation, casquette, polo et t-shirt en mockup complètent la série visible.",
+    result: "La galerie réunit les supports éditoriaux et les applications de marque. Le résultat démontrable est la continuité du bleu corporate, du logo et de la présentation des métiers à travers ces formats."
+  },
+  khelcom: {
+    approach: "La face du sachet privilégie trois informations : la marque KhelCom, le café Touba et la référence produit. Les éléments secondaires sont regroupés en pied de packaging. Trois angles de présentation rendent visibles la composition à plat, le volume du sachet et la place de chaque information.",
+    deliverables: "Un concept de packaging café décliné en trois vues : face, perspective et sachet incliné. Les images présentent l’habillage et sa mise en volume, sans attester d’un tirage industriel.",
+    result: "Trois mockups cohérents montrent une identité produit reconnaissable par son nom manuscrit, ses tons café et ses accents jaunes. Aucun chiffre de vente n’est attribué à cette création."
+  },
+  ngs: {
+    approach: "Le monogramme NGS forme le point de départ du système. Sa lecture est examinée sur des échelles et matières différentes : papier, mug, façade et plaque. Ces applications montrent comment la signature conserve ses couleurs et sa présence du petit objet à la signalétique.",
+    deliverables: "Présentation du logotype, déclinaison sur mugs, simulation d’enseigne sur façade et plaque professionnelle. Les quatre mockups sont accessibles dans la galerie.",
+    result: "Quatre applications rendent tangible le système d’identité. Ce sont des mises en situation graphiques : elles ne constituent pas une preuve de fabrication ou de pose des enseignes."
+  }
+};
+
 function loadProject() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id') || 'prizent';
-  const idx = PROJECTS_DB.findIndex(p => p.id === id);
-  const p = idx !== -1 ? PROJECTS_DB[idx] : PROJECTS_DB[0];
+  const idx = Math.max(0, PROJECTS_DB.findIndex(p => p.id === id));
+  const p = { ...PROJECTS_DB[idx], ...CASE_DETAILS[PROJECTS_DB[idx].id] };
 
   document.title = `${p.title} — Cheikh Awa Balla Diop`;
-  document.getElementById('cs-num-display').textContent = `[ ÉTUDE DE CAS ${p.num} / 10 ]`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', `${p.sub}. Étude de cas par Cheikh Awa Balla Diop pour ${p.client}.`);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${p.title} — Étude de cas`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', p.sub);
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://cabd-portfolio.vercel.app/project.html?id=${p.id}`);
+  document.getElementById('cs-num-display').textContent = `[ ÉTUDE DE CAS ${String(idx + 1).padStart(2, '0')} / ${PROJECTS_DB.length} ]`;
   document.getElementById('cs-cat-display').textContent = p.cat;
   document.getElementById('cs-title').textContent = p.title;
   document.getElementById('cs-subtitle').textContent = p.sub;
@@ -859,22 +964,28 @@ function loadProject() {
   document.getElementById('cs-cat-val').textContent = p.cat;
 
   const showcaseGrid = document.querySelector('.cs-showcase-grid');
+  const imageTag = (src, alt, eager = false) => {
+    const original = src.includes('/optimized/') ? Object.keys(window.IMAGE_VARIANTS || {}).find(key => key.replace(/\.[^.]+$/, '').split('/').pop() === src.split('/').pop().replace(/-1280\.webp$/, '')) : src;
+    const variants = window.IMAGE_VARIANTS?.[original];
+    const large = variants?.[1];
+    return `<img src="${large?.src || src}" ${variants ? `srcset="${variants.map(v => `${v.src} ${v.width}w`).join(', ')}" sizes="(max-width:860px) 100vw, 50vw" width="${large.width}" height="${large.height}"` : ''} alt="${alt}" class="showcase-img" loading="${eager ? 'eager' : 'lazy'}" ${eager ? 'fetchpriority="high"' : ''} decoding="async" onclick="openLightbox('${original || src}')">`;
+  };
   if (showcaseGrid && p.gallery && p.gallery.length > 0) {
-    showcaseGrid.innerHTML = p.gallery.map(item => `
+    showcaseGrid.innerHTML = p.gallery.map((item, index) => `
       <div class="showcase-frame">
         <span class="showcase-badge">${item.badge}</span>
-        <img src="${item.src}" alt="${p.title}" class="showcase-img" onclick="openLightbox(this.src)">
+        ${imageTag(item.src, p.title, index === 0)}
       </div>
     `).join('');
   } else if (showcaseGrid) {
     showcaseGrid.innerHTML = `
       <div class="showcase-frame">
         <span class="showcase-badge">[ SUPPORT DE COMMUNICATION ORIGINAL ]</span>
-        <img src="${p.img1}" alt="${p.title}" class="showcase-img" id="cs-img1" onclick="openLightbox(this.src)">
+        ${imageTag(p.img1, p.title, true)}
       </div>
       <div class="showcase-frame">
         <span class="showcase-badge">[ MISE EN SITUATION RÉELLE / MOCKUP 3D ]</span>
-        <img src="${p.img2}" alt="${p.title}" class="showcase-img" id="cs-img2" onclick="openLightbox(this.src)">
+        ${imageTag(p.img2, p.title)}
       </div>
     `;
   }
@@ -882,6 +993,10 @@ function loadProject() {
   document.getElementById('cs-problem').textContent = p.problem;
   document.getElementById('cs-solution').textContent = p.solution;
   document.getElementById('cs-result').textContent = p.result;
+  for (const field of ['approach', 'deliverables']) {
+    document.getElementById(`cs-${field}-block`).hidden = !p[field];
+    document.getElementById(`cs-${field}`).textContent = p[field] || '';
+  }
 
   // Next Project Link
   const nextIdx = (idx + 1) % PROJECTS_DB.length;

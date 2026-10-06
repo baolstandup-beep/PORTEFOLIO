@@ -3,14 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cheikh Awa Balla Diop — Directeur Artistique, Designer Graphique &amp; Créatif IA</title>
-<meta name="description" content="Portfolio officiel de Cheikh Awa Balla Diop, Fondateur de Baol Vision à Touba, Sénégal. Direction artistique d'exception, branding de marque, campagnes publicitaires, UI/UX et créativité assistée par intelligence artificielle.">
+<title>Graphiste à Touba &amp; directeur artistique Sénégal — CABD</title>
+<meta name="description" content="Cheikh Awa Balla Diop, graphiste à Touba et directeur artistique au Sénégal : identité visuelle, branding, affiches, packaging, UI/UX et campagnes créatives.">
+<meta name="keywords" content="graphiste à Touba, directeur artistique Sénégal, création identité visuelle Sénégal, branding Touba, designer graphique Sénégal, Baol Vision">
+<meta name="geo.region" content="SN-DB"><meta name="geo.placename" content="Touba, Sénégal">
+<link rel="canonical" href="https://cabd-portfolio.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_SN">
+<meta property="og:title" content="Cheikh Awa Balla Diop — Directeur artistique &amp; designer graphique">
+<meta property="og:description" content="Identités visuelles, campagnes et expériences digitales conçues à Touba pour des marques au Sénégal et à l'international.">
+<meta property="og:url" content="https://cabd-portfolio.vercel.app/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#080808">
+<script defer src="assets/analytics.js"></script>
+<script defer src="assets/client-logos.js"></script>
+<script defer src="assets/testimonials.js"></script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text x='50%25' y='55%25' font-family='sans-serif' font-size='13' fill='%23FF5E1A' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>CD</text></svg>">
 
 <!-- Google Fonts : Plus Jakarta Sans (Titres), Inter (Corps), IBM Plex Mono (Technique) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
 <style>
 /* ═════════════════════════════════════════════════════════════════
@@ -40,15 +53,16 @@
   --accent-soft:   rgba(255, 94, 26, 0.12);
   --accent-glow:   rgba(255, 94, 26, 0.25);
   
-  --font-title:    'Plus Jakarta Sans', 'Space Grotesk', -apple-system, sans-serif;
-  --font-body:     'Inter', -apple-system, sans-serif;
-  --font-mono:     'IBM Plex Mono', monospace;
+  --font-title:    'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:     'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:     'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --wrap-max:      1380px;
   --header-height: 80px;
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   background-color: var(--bg-main);
   color: var(--text-main);
@@ -376,6 +390,14 @@ button {
   width: 100%;
 }
 
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
 .nav-right-actions {
   display: flex;
   align-items: center;
@@ -563,6 +585,28 @@ button {
   transform: translateY(-2px);
 }
 
+.btn-hero-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2rem;
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: #FFFFFF !important;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-hero-download:hover {
+  background: #E94A10;
+  border-color: #E94A10;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 94, 26, 0.28);
+}
+
 /* Carte Portrait / Visuel Hero avec Parallaxe Réactive */
 .hero-visual-col {
   display: flex;
@@ -586,6 +630,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.4s ease;
 }
 
@@ -1289,132 +1334,282 @@ body.theme-white .mosaic-item {
 }
 
 /* ═════════════════════════════════════════════════════════════════
-   13. SECTION OUTILS & TECH STACK (GRILLE AVEC TILT 3D)
+   13. LOGICIELS & IA — ÉCOSYSTÈME CRÉATIF PREMIUM
    ═════════════════════════════════════════════════════════════════ */
 .section-tools {
-  padding: 8rem 0;
+  position: relative;
+  padding: 9rem 0;
   border-bottom: 1px solid var(--border);
+  isolation: isolate;
+}
+
+.section-tools::before {
+  content: '';
+  position: absolute;
+  width: 46rem;
+  height: 46rem;
+  right: -18rem;
+  top: -8rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 31, .11), transparent 68%);
+  pointer-events: none;
+}
+
+.tools-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .75fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: end;
+  margin-bottom: 4.5rem;
+  animation: toolsReveal .7s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.tools-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1.6rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.tools-eyebrow::before {
+  content: '';
+  width: 2.5rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.tools-hero-title {
+  max-width: 850px;
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 6vw, 5.4rem);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.055em;
+  color: var(--text-main);
+}
+
+.tools-hero-title span { color: var(--accent); }
+
+.tools-hero-copy {
+  max-width: 760px;
+  margin-top: 1.65rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.tools-stat-card {
+  position: relative;
+  min-height: 215px;
+  padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: space-between;
+  gap: 1.5rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.045);
+  backdrop-filter: blur(18px);
+}
+
+.tools-stat-card::after {
+  content: '';
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  right: -5rem;
+  bottom: -6rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,90,31,.24), transparent 68%);
+}
+
+.tools-stat-kicker {
+  grid-column: 1 / -1;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tools-stat-title {
+  max-width: 15rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-main);
+}
+
+.tools-stat-number {
+  align-self: end;
+  text-align: right;
+  color: var(--text-main);
+}
+
+.tools-stat-number strong {
+  display: block;
+  font-size: 3.4rem;
+  line-height: .85;
+  letter-spacing: -.07em;
+}
+
+.tools-stat-number span {
+  display: block;
+  margin-top: .6rem;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  margin-top: 3.5rem;
-}
-
-@media (max-width: 1100px) {
-  .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-}
-@media (max-width: 720px) {
-  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-}
-@media (max-width: 480px) {
-  .tools-grid { grid-template-columns: 1fr; gap: 1rem; }
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
 }
 
 .tool-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 2.2rem 1.4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.1rem;
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
   position: relative;
+  min-height: 220px;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-content: start;
+  gap: 1.35rem;
   overflow: hidden;
+  text-align: left;
+  background: color-mix(in srgb, var(--bg-card) 94%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.035);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
+  animation: toolsReveal .55s cubic-bezier(.2,.8,.2,1) both;
 }
 
-.tool-card::before {
-  content: '';
+.tool-card:nth-child(2n) { animation-delay: .05s; }
+.tool-card:nth-child(3n) { animation-delay: .1s; }
+.tool-card:nth-child(4n) { animation-delay: .15s; }
+
+.tool-card::after {
+  content: '→';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  opacity: 0;
-  transform: scaleX(0.4);
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  right: 1.35rem;
+  bottom: 1.25rem;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: var(--bg-card);
+  border: 1px solid rgba(255,90,31,.25);
+  border-radius: 50%;
+  transition: transform .3s, color .3s, background .3s;
 }
 
 .tool-card:hover {
-  border-color: var(--border-accent);
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -8px rgba(255, 94, 26, 0.15), 0 6px 16px rgba(0, 0, 0, 0.04);
+  border-color: rgba(255,90,31,.3);
+  box-shadow: 0 18px 45px rgba(0,0,0,.08);
 }
 
-.tool-card:hover::before {
-  opacity: 1;
-  transform: scaleX(1);
+.tool-card:hover::after {
+  color: #fff;
+  background: var(--accent);
+  transform: rotate(-10deg);
 }
 
 .tool-icon-wrapper {
-  width: 58px;
-  height: 58px;
+  width: 76px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.07));
+  border-radius: 18px;
+  background: var(--accent-soft);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1);
 }
 
-.tool-card:hover .tool-icon-wrapper {
-  transform: scale(1.12);
-}
-
-.tool-svg-icon {
-  width: 54px;
-  height: 54px;
-  display: block;
-}
+.tool-card:hover .tool-icon-wrapper { transform: scale(1.04); }
+.tool-svg-icon { width: 60px; height: 60px; display: block; }
 
 .tool-content {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
+  align-items: flex-start;
+  gap: .7rem;
 }
 
 .tool-name {
   font-family: var(--font-title);
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
   color: var(--text-main);
-  letter-spacing: -0.01em;
+  letter-spacing: -.025em;
 }
 
 .tool-category {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+  max-width: 100%;
+  padding: .42rem .72rem;
+  font-size: .61rem;
   font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .05em;
+  text-transform: uppercase;
   color: var(--accent);
   background: var(--accent-soft);
-  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(255,90,31,.2);
   border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border: 1px solid rgba(255, 94, 26, 0.2);
-  transition: all 0.25s ease;
-}
-
-.tool-card:hover .tool-category {
-  background: var(--accent);
-  color: #FFFFFF;
-  border-color: var(--accent);
 }
 
 .tool-desc {
-  font-size: 0.8rem;
+  padding-right: 1.5rem;
+  font-size: .84rem;
+  line-height: 1.55;
   color: var(--text-muted);
-  line-height: 1.45;
-  margin-top: 0.2rem;
+}
+
+@keyframes toolsReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1180px) {
+  .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .section-tools { padding: 7rem 0; }
+  .tools-hero { grid-template-columns: 1fr; gap: 2rem; }
+  .tools-stat-card { min-height: 190px; }
+}
+
+@media (max-width: 620px) {
+  .section-tools { padding: 6rem 0; }
+  .tools-hero-title { font-size: clamp(2.65rem, 12vw, 3.5rem); }
+  .tools-hero-copy { font-size: .95rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .tool-card { min-height: 205px; padding: 1.25rem; grid-template-columns: 68px minmax(0, 1fr); gap: 1rem; }
+  .tool-icon-wrapper { width: 68px; height: 68px; }
+  .tool-svg-icon { width: 54px; height: 54px; }
+  .tool-desc { padding-right: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-hero, .tool-card { animation: none; }
+  .tool-card, .tool-card::after, .tool-icon-wrapper { transition: none; }
 }
 
 /* ═════════════════════════════════════════════════════════════════
@@ -1579,33 +1774,145 @@ body.theme-white .mosaic-item {
    16. SECTION CONTACT PLEIN ÉCRAN ("HAVE A PROJECT?")
    ═════════════════════════════════════════════════════════════════ */
 .section-contact-apex {
-  min-height: 100vh;
-  padding: 8rem 0 6rem;
+  padding-top: 0;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
 }
 
 .contact-apex-header {
+  --cta-orange: #FF5A1F;
+  --cta-ink: #0B0B0B;
+  --cta-paper: #FAF9F7;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  min-height: 650px;
+  margin: 0 0 7rem -50vw;
+  padding: 100px max(5vw, calc((100vw - var(--wrap-max)) / 2 + 3rem)) 120px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 4rem;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--cta-ink);
+  background:
+    radial-gradient(circle at 91% 92%, rgba(255, 90, 31, .19), transparent 34%),
+    radial-gradient(circle at 81% 18%, rgba(255, 90, 31, .055), transparent 29%),
+    linear-gradient(128deg, #FCFBF9 0%, var(--cta-paper) 72%, #FFF8F3 100%);
+}
+
+.contact-apex-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+.contact-apex-meta {
+  width: min(70%, 1050px);
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-apex-meta::after {
+  content: '';
+  width: clamp(42px, 6vw, 86px);
+  height: 1px;
+  background: var(--cta-orange);
+}
+
+.contact-apex-kicker {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--cta-orange);
 }
 
 .contact-monumental-heading {
+  width: min(92%, 1350px);
+  position: relative;
+  z-index: 1;
   font-family: var(--font-title);
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  font-weight: 800;
+  font-size: clamp(4rem, 5.5vw, 6.75rem);
+  font-weight: 900;
   letter-spacing: -0.04em;
-  line-height: 0.96;
-  color: var(--text-main);
+  line-height: .92;
+  color: var(--cta-ink);
   text-transform: uppercase;
+  text-wrap: balance;
 }
 
-.contact-monumental-heading .colored {
-  color: var(--accent);
+.contact-monumental-heading .heading-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.contact-mobile-break { display: inline; }
+
+.contact-apex-header.is-visible .heading-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-apex-header.is-visible .heading-line:nth-child(2) { transition-delay: .08s; }
+.contact-apex-header.is-visible .heading-line:nth-child(3) { transition-delay: .16s; }
+
+.contact-monumental-heading .heading-accent {
+  color: var(--cta-orange);
+  transition: color .3s ease, transform .3s ease;
+}
+
+.contact-apex-header:hover .heading-accent {
+  color: #FF682F;
+  transform: translateX(4px);
+}
+
+.contact-apex-orbit {
+  position: absolute;
+  right: -2vw;
+  bottom: 4%;
+  width: min(36vw, 560px);
+  color: var(--cta-orange);
+  opacity: .32;
+  pointer-events: none;
+  z-index: 0;
+  animation: contactOrbitDrift 16s ease-in-out infinite alternate;
+}
+
+@keyframes contactOrbitDrift {
+  from { transform: translate3d(0, 8px, 0) scale(.99); }
+  to { transform: translate3d(-12px, -8px, 0) scale(1.015); }
+}
+
+@media (max-width: 1024px) {
+  .contact-apex-header { min-height: 580px; padding: 90px 5vw 100px; }
+  .contact-monumental-heading { width: 88%; font-size: clamp(3.25rem, 8vw, 5.125rem); }
+}
+
+@media (max-width: 720px) {
+  .contact-apex-header {
+    min-height: 520px;
+    margin-bottom: 4.5rem;
+    padding: 70px 20px;
+    justify-content: center;
+  }
+  .contact-apex-meta { width: 100%; margin-bottom: 2.5rem; }
+  .contact-monumental-heading { width: 100%; font-size: clamp(2.125rem, 10.5vw, 3.25rem); line-height: .95; letter-spacing: -.045em; }
+  .contact-monumental-heading .heading-line { margin-bottom: .14em; }
+  .contact-mobile-break { display: block; }
+  .contact-apex-orbit { width: 76vw; right: -38vw; bottom: 5%; opacity: .18; }
 }
 
 .contact-apex-layout {
@@ -1772,26 +2079,111 @@ textarea.input-apex {
 /* ═════════════════════════════════════════════════════════════════
    17. FOOTER ÉDITORIAL & BOUTON FLOTTANT
    ═════════════════════════════════════════════════════════════════ */
-footer {
-  padding: 3rem 0;
+.site-footer {
   border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  padding: 5.5rem 0 2rem;
   color: var(--text-muted);
 }
 
-.footer-nav-links {
-  display: flex;
-  gap: 1.5rem;
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.6fr) repeat(2, minmax(150px, .7fr));
+  gap: clamp(3rem, 8vw, 8rem);
+  padding-bottom: 4.5rem;
 }
 
-.footer-nav-links a:hover {
-  color: var(--accent);
+.footer-brand-name {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin-bottom: .25rem;
+}
+
+.footer-brand-name::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.footer-role {
+  display: block;
+  color: var(--text-dim);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.footer-intro {
+  max-width: 47ch;
+  font-size: .95rem;
+  line-height: 1.75;
+  margin-bottom: 1.6rem;
+}
+
+.footer-socials { display: flex; flex-wrap: wrap; gap: .6rem; }
+.footer-social-link {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: .72rem;
+  font-weight: 700;
+  transition: color .25s ease, border-color .25s ease, background .25s ease, transform .25s ease;
+}
+.footer-social-link:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.footer-column-title {
+  color: var(--text-main);
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: 1.35rem;
+}
+
+.footer-link-list { list-style: none; display: grid; gap: .85rem; }
+.footer-link-list a { font-size: .88rem; transition: color .2s ease, transform .2s ease; display: inline-flex; }
+.footer-link-list a:hover { color: var(--accent); transform: translateX(4px); }
+
+.footer-bottom {
+  min-height: 70px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+  font-size: .76rem;
+}
+.footer-signature { color: var(--text-dim); }
+.footer-back-top { color: var(--text-main); font-weight: 600; }
+.footer-back-top:hover { color: var(--accent); }
+
+@media (max-width: 780px) {
+  .site-footer { padding-top: 4rem; }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 3rem 2rem; }
+  .footer-brand-block { grid-column: 1 / -1; }
+}
+
+@media (max-width: 480px) {
+  .footer-main { grid-template-columns: 1fr; padding-bottom: 3rem; }
+  .footer-brand-block { grid-column: auto; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; }
 }
 
 /* Bouton Flottant WhatsApp */
@@ -1843,6 +2235,10 @@ footer {
   }
   .marquee-track {
     animation: none !important;
+  }
+  .contact-monumental-heading .heading-line {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -2082,9 +2478,95 @@ body.theme-white .cursor-trail {
   box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
 }
 
+.skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 99999; padding: .8rem 1rem; background: var(--accent); color: #080808; font-weight: 700; transform: translateY(-180%); }
+.skip-link:focus { transform: translateY(0); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.form-note, .form-error { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
+.form-error { color: #c83b08; min-height: 1.25rem; }
+.input-apex[aria-invalid="true"] { border-color: #c83b08; }
+.trust-strip { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.trust-card { background: var(--bg-main); padding: 2rem; }
+.trust-card strong { display: block; color: var(--text-main); font-size: 1.05rem; margin-bottom: .65rem; }
+.trust-card p { color: var(--text-muted); font-size: .95rem; }
+.client-proof { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+.client-proof-header { display:flex; align-items:end; justify-content:space-between; gap:3rem; }
+.client-proof .section-header-block { margin-bottom:2.5rem; }
+.client-proof .section-title-large { max-width:18ch; }
+.client-proof-intro { max-width:62ch; color:var(--text-muted); margin-top:1.25rem; }
+.client-proof-count { flex:none; min-width:13rem; padding-bottom:.25rem; }
+.client-proof-count strong { display:block; color:var(--text-main); font-size:clamp(3.5rem,6vw,5.5rem); line-height:1; letter-spacing:-.04em; }
+.client-proof-count span { display:block; color:var(--text-muted); font-size:.83rem; line-height:1.45; margin-top:.5rem; }
+.client-proof-services { color:var(--text-muted); font-size:.8rem; font-weight:600; letter-spacing:.03em; margin-bottom:1.5rem; }
+.client-logo-viewport { overflow:hidden; max-width:100%; -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent); }
+.client-logo-track { display:flex; width:max-content; animation:clientLogoMarquee 42s linear infinite; will-change:transform; }
+.client-logo-group { display:flex; gap:32px; flex:none; padding-right:32px; }
+.client-logo-card { width:180px; height:110px; flex:none; display:flex; align-items:center; justify-content:center; padding:22px; border:1px solid #ECECEC; border-radius:16px; background:#fff; color:#252525; text-align:center; transition:transform .3s ease,box-shadow .3s ease; }
+.client-logo-card img { display:block; max-width:130px; max-height:65px; width:auto; height:auto; object-fit:contain; filter:grayscale(1); opacity:.68; transition:filter .3s ease,opacity .3s ease; }
+.client-logo-card--image { width:220px; padding:8px; }
+.client-logo-card--image img { max-width:200px; max-height:92px; filter:none; opacity:1; }
+.client-logo-card span { font-size:.88rem; font-weight:800; line-height:1.25; letter-spacing:-.02em; overflow-wrap:anywhere; }
+.client-logo-card:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.09); }
+.client-logo-card:hover img { filter:none; opacity:1; }
+.client-proof-cta { display:flex; justify-content:space-between; align-items:center; gap:2rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--border); }
+.client-proof-cta h3 { color:var(--text-main); font-size:clamp(1.35rem,2vw,1.8rem); line-height:1.2; letter-spacing:-.025em; }
+.client-proof-cta p { margin-top:.5rem; color:var(--text-muted); font-size:.92rem; }
+.client-proof-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
+.client-proof-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:.8rem 1.2rem; border-radius:6px; border:1px solid var(--border-strong); color:var(--text-main); font-size:.83rem; font-weight:700; white-space:nowrap; transition:transform .2s ease,background .2s ease; }
+.client-proof-actions a:first-child { background:var(--text-main); color:var(--bg-main); border-color:var(--text-main); }
+.client-proof-actions a:hover { transform:translateY(-2px); }
+@keyframes clientLogoMarquee { to { transform:translateX(-50%); } }
+@media (hover:hover) { .client-logo-viewport:hover .client-logo-track { animation-play-state:paused; } }
+@media (max-width:1024px) { .client-proof-header,.client-proof-cta { align-items:start; } .client-logo-group { gap:28px; padding-right:28px; } .client-logo-card { width:160px; height:100px; } }
+@media (max-width:860px) { .client-proof { padding-inline:1.5rem; } }
+@media (max-width:760px) { .client-proof-header,.client-proof-cta { flex-direction:column; gap:1.5rem; } .client-proof-count { min-width:0; } }
+@media (max-width:520px) { .client-proof { padding-block:4rem; } .client-logo-group { gap:20px; padding-right:20px; } .client-logo-card { width:135px; height:85px; padding:12px; border-radius:12px; } .client-logo-card img { max-width:105px; max-height:55px; } .client-logo-card span { font-size:.76rem; } .client-proof-actions { width:100%; } .client-proof-actions a { flex:1 1 100%; } }
+@media (max-width:520px) { .client-logo-card--image { width:170px; padding:7px; } .client-logo-card--image img { max-width:156px; max-height:71px; } }
+@media (prefers-reduced-motion:reduce) { .client-logo-viewport { overflow:visible; -webkit-mask-image:none; mask-image:none; } .client-logo-track { width:auto; animation:none; will-change:auto; } .client-logo-group { flex-wrap:wrap; width:100%; padding-right:0; } .client-logo-group[aria-hidden="true"] { display:none; } .client-logo-card,.client-logo-card img,.client-proof-actions a { transition:none; } }
+.testimonials { padding:clamp(4rem,7vw,7rem) 0; background:#FAF9F7; color:#171C26; border-block:1px solid #EAE8E4; scroll-margin-top:100px; }
+.testimonials .section-title-large { color:#171C26; }
+.testimonials-intro { max-width:58ch; color:#636872; margin:1rem 0 3rem; line-height:1.75; }
+.testimonials-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; }
+.testimonial-card { position:relative; min-width:0; padding:clamp(1.5rem,2.4vw,2.25rem); border:1px solid #E8E9EB; border-radius:22px; background:#FFF; box-shadow:0 4px 20px rgba(23,28,38,.035); transition:transform 300ms ease,box-shadow 300ms ease; }
+.testimonial-card-header { padding-right:2rem; }
+.testimonial-card h3 { color:#171C26; font-size:1.08rem; font-weight:700; line-height:1.4; letter-spacing:-.025em; overflow-wrap:anywhere; }
+.testimonial-role { margin-top:.4rem; color:#656B75; font-size:.84rem; line-height:1.65; }
+.testimonial-mark { position:absolute; right:1.5rem; top:1.2rem; color:#D5DAE2; font:700 4.5rem/1 Georgia,serif; pointer-events:none; }
+.testimonial-rating { display:flex; gap:.22rem; width:fit-content; margin:1.25rem 0 1.5rem; color:#B77900; }
+.testimonial-rating svg { width:19px; height:19px; fill:currentColor; }
+.testimonial-card blockquote { margin:0; color:#444B57; font-size:.94rem; line-height:1.85; overflow-wrap:anywhere; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { .testimonial-card:hover { transform:translateY(-5px); box-shadow:0 16px 36px rgba(23,28,38,.09); } }
+@media(max-width:1100px) { .testimonials-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) { .testimonials-grid { grid-template-columns:minmax(0,1fr); gap:1.25rem; } .testimonials-intro { margin-bottom:2rem; } }
+@media(prefers-reduced-motion:reduce) { .testimonial-card { transition:none; } }
+.contact-apex-layout > *, .footer-main > *, .local-seo-grid > * { min-width:0; }
+.channel-val { overflow-wrap:anywhere; }
+.local-seo { padding:6rem 0; border-bottom:1px solid var(--border); }
+.local-seo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.local-seo-card { padding:2rem; background:var(--bg-card); border:1px solid var(--border); border-radius:8px; }
+.local-seo-card h3 { color:var(--text-main); font-size:1.05rem; margin-bottom:.75rem; }
+.local-seo-card p { color:var(--text-muted); font-size:.94rem; }
+.form-status { min-height:1.5rem; font-size:.9rem; font-weight:600; }
+.form-status.success { color:#188447; }.form-status.error { color:#c83b08; }
+.hp-field { position:absolute!important; left:-9999px!important; width:1px!important; height:1px!important; overflow:hidden!important; }
+.legal-consent { font-size:.78rem; color:var(--text-muted); line-height:1.55; }
+.legal-consent a { color:var(--accent); text-decoration:underline; }
+@media (max-width: 760px) {
+  .trust-grid { grid-template-columns: 1fr; }
+  .local-seo-grid { grid-template-columns:1fr 1fr; }
+  .header-nav { padding-inline: 1rem; }
+  .nav-brand > span:nth-child(2) { max-width: 12ch; line-height: 1.1; }
+  .btn-nav-contact, .btn-theme-toggle span:last-child { display: none; }
+  .hero-section { padding-top: 8rem; }
+}
+@media (max-width: 520px) { .local-seo-grid { grid-template-columns:1fr; } }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://cabd-portfolio.vercel.app/#person","name":"Cheikh Awa Balla Diop","jobTitle":"Directeur artistique et designer graphique","url":"https://cabd-portfolio.vercel.app/","worksFor":{"@id":"https://cabd-portfolio.vercel.app/#business"},"address":{"@type":"PostalAddress","addressLocality":"Touba","addressCountry":"SN"},"sameAs":["https://www.behance.net/cheikhdiop16"]},{"@type":"ProfessionalService","@id":"https://cabd-portfolio.vercel.app/#business","name":"Baol Vision — Cheikh Awa Balla Diop","url":"https://cabd-portfolio.vercel.app/","email":"contact.baolvision@gmail.com","telephone":"+221773033196","areaServed":[{"@type":"City","name":"Touba"},{"@type":"Country","name":"Sénégal"}],"knowsAbout":["Direction artistique","Design graphique","Identité visuelle","Branding","Packaging","UI/UX"]}]}
+</script>
 </head>
 <body class="theme-white">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
 
 <!-- Grain Overlay & Ambient Glow -->
 <div class="noise-overlay"></div>
@@ -2098,7 +2580,7 @@ body.theme-white .cursor-trail {
 <!-- Preloader Initial Élégant -->
 <div class="preloader" id="preloader">
   <div class="preloader-title">Cheikh Awa Balla Diop</div>
-  <div class="preloader-sub">Portfolio 2026 · Baol Vision</div>
+  <div class="preloader-sub">Portfolio · Baol Vision</div>
   <div class="preloader-line">
     <div class="preloader-line-bar"></div>
   </div>
@@ -2114,12 +2596,12 @@ body.theme-white .cursor-trail {
     <span class="nav-badge-baol">BAOL VISION · TOUBA</span>
   </a>
 
-  <nav class="nav-center-links">
+  <nav class="nav-center-links" aria-label="Navigation principale">
     <a href="#projets" class="nav-link">Réalisations</a>
     <a href="#a-propos" class="nav-link">À propos</a>
     <a href="#experience" class="nav-link">Parcours</a>
     <a href="#services" class="nav-link">Services</a>
-    <a href="#outils" class="nav-link">Logiciels &amp; IA</a>
+    <a href="#outils" class="nav-link active" aria-current="page">Logiciels &amp; IA</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
@@ -2130,18 +2612,18 @@ body.theme-white .cursor-trail {
     </button>
     <div class="nav-status">
       <span class="brand-dot"></span>
-      <span>DISPONIBLE 2026</span>
+      <span>DISPONIBLE</span>
     </div>
     <a href="#contact" class="btn-nav-contact" data-magnetic>Démarrer un projet</a>
     <!-- Bouton Mobile Hamburger -->
-    <button class="btn-mobile-hamburger" id="hamburger-toggle" aria-label="Menu de navigation">
+    <button class="btn-mobile-hamburger" id="hamburger-toggle" aria-label="Menu de navigation" aria-expanded="false" aria-controls="mobile-drawer">
       <span id="hamburger-icon">☰</span>
     </button>
   </div>
 </header>
 
 <!-- Tiroir Mobile Navigation -->
-<div class="mobile-drawer" id="mobile-drawer">
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
   <a href="#projets" class="mobile-drawer-link">Réalisations</a>
   <a href="#a-propos" class="mobile-drawer-link">À propos</a>
   <a href="#experience" class="mobile-drawer-link">Parcours</a>
@@ -2150,7 +2632,8 @@ body.theme-white .cursor-trail {
   <a href="#contact" class="mobile-drawer-link" style="color:var(--accent);">Démarrer un projet →</a>
 </div>
 
-<main id="accueil">
+<main id="contenu">
+  <div id="accueil"></div>
   <!-- ═════════════════════════════════════════════════════════════════
        HERO SECTION MONUMENTALE
        ═════════════════════════════════════════════════════════════════ -->
@@ -2168,7 +2651,7 @@ body.theme-white .cursor-trail {
         </h1>
 
         <p class="hero-lead-text">
-          Fondateur du studio <strong>Baol Vision</strong> à <strong>Touba</strong>. Je façonne des identités visuelles stratégiques, des campagnes publicitaires percutantes et des interfaces digitales d'exception associant <span class="highlight-word">créativité de haut niveau et intelligence artificielle</span>.
+          J'aide les marques ambitieuses à devenir reconnaissables grâce à des <strong>identités visuelles fortes</strong>, des campagnes mémorables et des expériences digitales claires — depuis <strong>Baol Vision, à Touba</strong>.
         </p>
 
         <div class="hero-actions-row">
@@ -2183,13 +2666,20 @@ body.theme-white .cursor-trail {
           <a href="#contact" class="btn-hero-secondary" data-magnetic>
             <span>Me contacter</span>
           </a>
+          <a href="downloads/CABD-Portfolio-v1.0.1.apk"
+             download="CABD-Portfolio-v1.0.1.apk"
+             class="btn-hero-download"
+             aria-label="Télécharger l’application CABD Portfolio pour Android au format APK">
+            <span>Télécharger l’app Android</span>
+            <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </div>
 
       <!-- Carte Visuelle Interactive / Portrait avec Réactivité Souris -->
       <div class="hero-visual-col">
         <div class="hero-interactive-card" id="hero-card">
-          <img src="assets/images/project-vacrea-mockup.jpg" alt="Cheikh Awa Balla Diop - Baol Vision" id="hero-img">
+          <img src="assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp" srcset="assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp 640w, assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp 1049w" sizes="(max-width:760px) 92vw, 44vw" width="1049" height="1499" alt="Portrait de Cheikh Awa Balla Diop, directeur artistique de Baol Vision" id="hero-img" fetchpriority="high" decoding="async">
           <div class="hero-card-badge">
             <div>
               <div class="badge-name">CHEIKH AWA BALLA DIOP</div>
@@ -2330,16 +2820,16 @@ body.theme-white .cursor-trail {
       </div>
 
       <div class="works-filter-pills">
-        <button class="filter-pill active" data-filter="all">Tous (19)</button>
-        <button class="filter-pill" data-filter="print">Affiches &amp; Print (15)</button>
-        <button class="filter-pill" data-filter="digital">Digital &amp; Marque (8)</button>
+        <button class="filter-pill active" data-filter="all">Tous (36)</button>
+        <button class="filter-pill" data-filter="print">Affiches &amp; Print (22)</button>
+        <button class="filter-pill" data-filter="digital">Digital &amp; Marque (17)</button>
       </div>
     </div>
 
     <div class="pure-works-mosaic">
       <!-- 1. PRIZENT -->
       <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-prizent.png', 'PRIZENT · Système de Pointage Smartphone', 'project.html?id=prizent')">
-        <img src="assets/images/project-prizent.png" alt="PRIZENT Système de pointage smartphone" loading="lazy">
+        <img src="assets/images/optimized/project-prizent-1280.webp" srcset="assets/images/optimized/project-prizent-640.webp 640w, assets/images/optimized/project-prizent-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="1024" alt="PRIZENT Système de pointage smartphone" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Digital · App</span>
           <div class="mosaic-bottom-info">
@@ -2351,7 +2841,7 @@ body.theme-white .cursor-trail {
 
       <!-- 2. VACREA -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-vacrea.jpg', 'VACREA · Vacances de Créations Touba', 'project.html?id=vacrea')">
-        <img src="assets/images/project-vacrea.jpg" alt="VACREA Formation Graphisme et Web Touba" loading="lazy">
+        <img src="assets/images/optimized/project-vacrea-1280.webp" srcset="assets/images/optimized/project-vacrea-640.webp 640w, assets/images/optimized/project-vacrea-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="1024" alt="VACREA Formation Graphisme et Web Touba" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Formation</span>
           <div class="mosaic-bottom-info">
@@ -2363,7 +2853,7 @@ body.theme-white .cursor-trail {
 
       <!-- 3. GIE REINE DIOR -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-reine-dior.jpg', 'GIE Reine Dior · Formation Make Up & Coiffure', 'project.html?id=reine-dior')">
-        <img src="assets/images/project-reine-dior.jpg" alt="GIE Reine Dior and Co Formation Professionnelle Make up et Coiffure" loading="lazy">
+        <img src="assets/images/optimized/project-reine-dior-1280.webp" srcset="assets/images/optimized/project-reine-dior-640.webp 640w, assets/images/optimized/project-reine-dior-1280.webp 819w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="819" height="1024" alt="GIE Reine Dior and Co Formation Professionnelle Make up et Coiffure" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Beauté</span>
           <div class="mosaic-bottom-info">
@@ -2375,7 +2865,7 @@ body.theme-white .cursor-trail {
 
       <!-- 4. 115e ANNIVERSAIRE APPEL SEYDINA LIMAMOU LAYE -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-layene-115.jpg', '115e Anniversaire Appel · Seydina Limamou Laye', 'project.html?id=layene-115')">
-        <img src="assets/images/project-layene-115.jpg" alt="115e anniversaire L'Appel Seydina Limamou Laye" loading="lazy">
+        <img src="assets/images/optimized/project-layene-115-1280.webp" srcset="assets/images/optimized/project-layene-115-640.webp 640w, assets/images/optimized/project-layene-115-1280.webp 682w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="682" height="1024" alt="115e anniversaire L'Appel Seydina Limamou Laye" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Célébration</span>
           <div class="mosaic-bottom-info">
@@ -2387,7 +2877,7 @@ body.theme-white .cursor-trail {
 
       <!-- 5. DEMANDOO -->
       <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-demandoo.png', 'DEMANDOO · Solution de Covoiturage Touba - Dakar', 'project.html?id=demandoo')">
-        <img src="assets/images/project-demandoo.png" alt="Demandoo Covoiturage Touba Dakar Yombalna Sa Tukki" loading="lazy">
+        <img src="assets/images/optimized/project-demandoo-1280.webp" srcset="assets/images/optimized/project-demandoo-640.webp 640w, assets/images/optimized/project-demandoo-1280.webp 723w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="723" height="1024" alt="Demandoo Covoiturage Touba Dakar Yombalna Sa Tukki" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">UI/UX · Covoiturage</span>
           <div class="mosaic-bottom-info">
@@ -2399,7 +2889,7 @@ body.theme-white .cursor-trail {
 
       <!-- 6. POROXAAN INITIATIVE VOLAILLE -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-poroxaan.jpg', 'POROXAAN · Opération Spéciale Gamou Mawlid Touba', 'project.html?id=poroxaan')">
-        <img src="assets/images/project-poroxaan.jpg" alt="Poroxaan Initiative Volaille - Spéciale Opération Gamou Mawlid" loading="lazy">
+        <img src="assets/images/optimized/project-poroxaan-1280.webp" srcset="assets/images/optimized/project-poroxaan-640.webp 640w, assets/images/optimized/project-poroxaan-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="1024" alt="Poroxaan Initiative Volaille - Spéciale Opération Gamou Mawlid" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Gamou</span>
           <div class="mosaic-bottom-info">
@@ -2411,7 +2901,7 @@ body.theme-white .cursor-trail {
 
       <!-- 7. CASS ONLINE -->
       <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-cass-online.jpg', 'CASS ONLINE · Place de Marché Mobile', 'project.html?id=cass-online')">
-        <img src="assets/images/project-cass-online.jpg" alt="Cass Online - Comme un marché mais dans un téléphone" loading="lazy">
+        <img src="assets/images/optimized/project-cass-online-1280.webp" srcset="assets/images/optimized/project-cass-online-640.webp 640w, assets/images/optimized/project-cass-online-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="976" alt="Cass Online - Comme un marché mais dans un téléphone" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Branding · E-Commerce</span>
           <div class="mosaic-bottom-info">
@@ -2423,7 +2913,7 @@ body.theme-white .cursor-trail {
 
       <!-- 8. MSTECH -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-mstech.jpg', 'MSTECH · Services Techniques & Sécurité Touba', 'project.html?id=mstech')">
-        <img src="assets/images/project-mstech.jpg" alt="MSTech Al Moubarack Services Technologie Touba" loading="lazy">
+        <img src="assets/images/optimized/project-mstech-1280.webp" srcset="assets/images/optimized/project-mstech-640.webp 640w, assets/images/optimized/project-mstech-1280.webp 985w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="985" height="1024" alt="MSTech Al Moubarack Services Technologie Touba" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Print · Corporate</span>
           <div class="mosaic-bottom-info">
@@ -2435,7 +2925,7 @@ body.theme-white .cursor-trail {
 
       <!-- 9. SANOFI - PROJET URGEST -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-sanofi-urgest.jpg', 'SANOFI · Conférence Projet URGEST', 'project.html?id=sanofi-urgest')">
-        <img src="assets/images/project-sanofi-urgest.jpg" alt="Sanofi présente Projet URGEST Pr Oumar Kane" loading="lazy">
+        <img src="assets/images/optimized/project-sanofi-urgest-1280.webp" srcset="assets/images/optimized/project-sanofi-urgest-640.webp 640w, assets/images/optimized/project-sanofi-urgest-1280.webp 822w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="822" height="1024" alt="Sanofi présente Projet URGEST Pr Oumar Kane" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Santé</span>
           <div class="mosaic-bottom-info">
@@ -2447,7 +2937,7 @@ body.theme-white .cursor-trail {
 
       <!-- 10. DAROU SALAM ASSURANCE -->
       <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-darou-salam.png', 'DAROU SALAM ASSURANCE · Moto Auto Tricycle', 'project.html?id=darou-salam')">
-        <img src="assets/images/project-darou-salam.png" alt="Darou Salam Assurance Digitale chez Maodo mou Bamba" loading="lazy">
+        <img src="assets/images/optimized/project-darou-salam-1280.webp" srcset="assets/images/optimized/project-darou-salam-640.webp 640w, assets/images/optimized/project-darou-salam-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="1024" alt="Darou Salam Assurance Digitale chez Maodo mou Bamba" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Campagne · Assurance</span>
           <div class="mosaic-bottom-info">
@@ -2459,7 +2949,7 @@ body.theme-white .cursor-trail {
 
       <!-- 11. PASTEF GIGA CARAVANE MBACKÉ -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-pastef-mbacke.jpg', 'PASTEF · Giga Caravane Mbacké (Législatives 2024)', 'project.html?id=pastef-mbacke')">
-        <img src="assets/images/project-pastef-mbacke.jpg" alt="PASTEF Giga Caravane Mbacke - Sénégal 2050 - Législatives 2024" loading="lazy">
+        <img src="assets/images/optimized/project-pastef-mbacke-1280.webp" srcset="assets/images/optimized/project-pastef-mbacke-640.webp 640w, assets/images/optimized/project-pastef-mbacke-1280.webp 819w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="819" height="1024" alt="PASTEF Giga Caravane Mbacke - Sénégal 2050 - Législatives 2024" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Campagne</span>
           <div class="mosaic-bottom-info">
@@ -2471,7 +2961,7 @@ body.theme-white .cursor-trail {
 
       <!-- 12. FONDATION AHFAADU - NDIGEUL BISSUP ZIKRULLAH -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-ndigeul-zikrullah.jpg', 'FONDATION AHFAADU · Ndigeul Bissup Zikrullah Touba', 'project.html?id=ndigeul-zikrullah')">
-        <img src="assets/images/project-ndigeul-zikrullah.jpg" alt="Fondation Ahfaadu Cheikh Ibrahima Faal - Ndigeul Bissup Zikrullah" loading="lazy">
+        <img src="assets/images/optimized/project-ndigeul-zikrullah-1280.webp" srcset="assets/images/optimized/project-ndigeul-zikrullah-640.webp 640w, assets/images/optimized/project-ndigeul-zikrullah-1280.webp 723w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="723" height="1024" alt="Fondation Ahfaadu Cheikh Ibrahima Faal - Ndigeul Bissup Zikrullah" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Zikrullah</span>
           <div class="mosaic-bottom-info">
@@ -2483,7 +2973,7 @@ body.theme-white .cursor-trail {
 
       <!-- 13. MAGAL NGABOU ÉDITION 2026 -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-magal-ngabou.jpg', 'MAGAL NGABOU · Édition 2026 (Serigne Khalil LO)', 'project.html?id=magal-ngabou')">
-        <img src="assets/images/project-magal-ngabou.jpg" alt="Magal Ngabou Édition 2026 - Serigne Khalil LO" loading="lazy">
+        <img src="assets/images/optimized/project-magal-ngabou-1280.webp" srcset="assets/images/optimized/project-magal-ngabou-640.webp 640w, assets/images/optimized/project-magal-ngabou-1280.webp 723w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="723" height="1024" alt="Magal Ngabou Édition 2026 - Serigne Khalil LO" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Magal</span>
           <div class="mosaic-bottom-info">
@@ -2495,7 +2985,7 @@ body.theme-white .cursor-trail {
 
       <!-- 14. GAMOU DAROU MINAME PET -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-gamou-darou-miname.png', 'GAMOU DAROU MINAME PET · Dahira Hiznoul Abrare', 'project.html?id=gamou-darou-miname')">
-        <img src="assets/images/project-gamou-darou-miname.png" alt="Gamou Darou Miname Pet - Serigne El Hadji Mame Thierno Mbacke" loading="lazy">
+        <img src="assets/images/optimized/project-gamou-darou-miname-1280.webp" srcset="assets/images/optimized/project-gamou-darou-miname-640.webp 640w, assets/images/optimized/project-gamou-darou-miname-1280.webp 723w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="723" height="1024" alt="Gamou Darou Miname Pet - Serigne El Hadji Mame Thierno Mbacke" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Gamou</span>
           <div class="mosaic-bottom-info">
@@ -2507,7 +2997,7 @@ body.theme-white .cursor-trail {
 
       <!-- 15. PAS-PAS TABASKI CRÉATIVE -->
       <div class="mosaic-item" data-cat="print digital" onclick="openPortfolioModal('assets/images/project-pas-pas-tabaski.jpg', 'PAS-PAS · Tabaski Créative (Création IA & 3D)', 'project.html?id=pas-pas-tabaski')">
-        <img src="assets/images/project-pas-pas-tabaski.jpg" alt="PAS-PAS Bonne Fête de Tabaski création 3D IA" loading="lazy">
+        <img src="assets/images/optimized/project-pas-pas-tabaski-1280.webp" srcset="assets/images/optimized/project-pas-pas-tabaski-640.webp 640w, assets/images/optimized/project-pas-pas-tabaski-1280.webp 819w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="819" height="1024" alt="PAS-PAS Bonne Fête de Tabaski création 3D IA" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Création 3D · IA</span>
           <div class="mosaic-bottom-info">
@@ -2519,7 +3009,7 @@ body.theme-white .cursor-trail {
 
       <!-- 16. PAS-PAS TALK-SHOW WHATSAPP -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-pas-pas-talkshow.jpg', 'PAS-PAS · Talk-Show WhatsApp (Mbacké Khéwar)', 'project.html?id=pas-pas-talkshow')">
-        <img src="assets/images/project-pas-pas-talkshow.jpg" alt="PAS-PAS Talk-show WhatsApp Mouvement Mbacke" loading="lazy">
+        <img src="assets/images/optimized/project-pas-pas-talkshow-1280.webp" srcset="assets/images/optimized/project-pas-pas-talkshow-640.webp 640w, assets/images/optimized/project-pas-pas-talkshow-1280.webp 819w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="819" height="1024" alt="PAS-PAS Talk-show WhatsApp Mouvement Mbacke" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Affiche · Débat</span>
           <div class="mosaic-bottom-info">
@@ -2531,7 +3021,7 @@ body.theme-white .cursor-trail {
 
       <!-- 17. POROKHANE SOOW KHIAKRY -->
       <div class="mosaic-item" data-cat="digital print" onclick="openPortfolioModal('assets/images/project-porokhane-soow.jpg', 'POROKHANE SOOW · Packaging Khiakry 500G Touba', 'project.html?id=porokhane-soow')">
-        <img src="assets/images/project-porokhane-soow.jpg" alt="Porokhane Soow Khiakry 500G Packaging Touba Darou Khoudoss" loading="lazy">
+        <img src="assets/images/optimized/project-porokhane-soow-1280.webp" srcset="assets/images/optimized/project-porokhane-soow-640.webp 640w, assets/images/optimized/project-porokhane-soow-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="724" alt="Porokhane Soow Khiakry 500G Packaging Touba Darou Khoudoss" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Packaging · Produit</span>
           <div class="mosaic-bottom-info">
@@ -2543,7 +3033,7 @@ body.theme-white .cursor-trail {
 
       <!-- 18. GRAPHIA BOOTCAMP IA -->
       <div class="mosaic-item" data-cat="digital print" onclick="openPortfolioModal('assets/images/project-graphia-bootcamp.jpg', 'GRAPHIA · Bootcamps Infographie & IA Touba / Mbacké', 'project.html?id=graphia')">
-        <img src="assets/images/project-graphia-bootcamp.jpg" alt="GRAPHIA Un nouveau chapitre s ouvre Bootcamps Infographie et IA" loading="lazy">
+        <img src="assets/images/optimized/project-graphia-bootcamp-1280.webp" srcset="assets/images/optimized/project-graphia-bootcamp-640.webp 640w, assets/images/optimized/project-graphia-bootcamp-1280.webp 819w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="819" height="1024" alt="GRAPHIA Un nouveau chapitre s ouvre Bootcamps Infographie et IA" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Infographie &amp; IA</span>
           <div class="mosaic-bottom-info">
@@ -2555,7 +3045,7 @@ body.theme-white .cursor-trail {
 
       <!-- 19. ACIS FORUM WADIAL MAGAL TOUBA -->
       <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-acis-forum.jpg', 'ACIS · Forum Économique Wadial Magal Touba (18 Safar)', 'project.html?id=acis-forum')">
-        <img src="assets/images/project-acis-forum.jpg" alt="ACIS Forum Wadial Magal Touba 2026 Heliport de Touba" loading="lazy">
+        <img src="assets/images/optimized/project-acis-forum-1280.webp" srcset="assets/images/optimized/project-acis-forum-640.webp 640w, assets/images/optimized/project-acis-forum-1280.webp 724w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="724" height="1024" alt="ACIS Forum Wadial Magal Touba 2026 Heliport de Touba" loading="lazy" decoding="async">
         <div class="mosaic-overlay">
           <span class="mosaic-top-pill">Forum Économique</span>
           <div class="mosaic-bottom-info">
@@ -2564,6 +3054,83 @@ body.theme-white .cursor-trail {
           </div>
         </div>
       </div>
+
+      <!-- 20–23. SET-TRANS -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-setrans-brochure-cover.png', 'SET-TRANS · Couverture de brochure', 'project.html?id=setrans')">
+        <img src="assets/images/optimized/project-setrans-brochure-cover-1280.webp" srcset="assets/images/optimized/project-setrans-brochure-cover-640.webp 640w, assets/images/optimized/project-setrans-brochure-cover-1280.webp 1220w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1220" height="867" alt="Couverture de la brochure SET-TRANS transport et logistique" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Brochure · Logistique</span><div class="mosaic-bottom-info"><span class="mosaic-title">SET-TRANS · Couverture</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-setrans-brochure-interior.png', 'SET-TRANS · Présentation corporate', 'project.html?id=setrans')">
+        <img src="assets/images/optimized/project-setrans-brochure-interior-1280.webp" srcset="assets/images/optimized/project-setrans-brochure-interior-640.webp 640w, assets/images/optimized/project-setrans-brochure-interior-1280.webp 1217w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1217" height="891" alt="Présentation intérieure de la brochure SET-TRANS" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Édition · Corporate</span><div class="mosaic-bottom-info"><span class="mosaic-title">SET-TRANS · Intérieur</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-setrans-brochure-open.png', 'SET-TRANS · Brochure ouverte', 'project.html?id=setrans')">
+        <img src="assets/images/optimized/project-setrans-brochure-open-1280.webp" srcset="assets/images/optimized/project-setrans-brochure-open-640.webp 640w, assets/images/optimized/project-setrans-brochure-open-1280.webp 1243w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1243" height="883" alt="Mockup ouvert de la brochure SET-TRANS" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Mockup · Brochure</span><div class="mosaic-bottom-info"><span class="mosaic-title">SET-TRANS · Double page</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-setrans-brochure-mockup.png', 'SET-TRANS · Dépliant corporate', 'project.html?id=setrans')">
+        <img src="assets/images/optimized/project-setrans-brochure-mockup-1280.webp" srcset="assets/images/optimized/project-setrans-brochure-mockup-640.webp 640w, assets/images/optimized/project-setrans-brochure-mockup-1280.webp 1217w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1217" height="891" alt="Mockup du dépliant corporate SET-TRANS" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Print · Dépliant</span><div class="mosaic-bottom-info"><span class="mosaic-title">SET-TRANS · Mockup</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+
+      <!-- 24–26. KHELCOM CAFÉ TOUBA -->
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-khelcom-packaging-04.jpg', 'KhelCom · Packaging Café Touba', 'project.html?id=khelcom')">
+        <img src="assets/images/optimized/project-khelcom-packaging-04-1280.webp" srcset="assets/images/optimized/project-khelcom-packaging-04-640.webp 640w, assets/images/optimized/project-khelcom-packaging-04-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="853" alt="Packaging Café Touba KhelCom vue de face" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Packaging · Café</span><div class="mosaic-bottom-info"><span class="mosaic-title">KhelCom · Face</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-khelcom-packaging-03.jpg', 'KhelCom · Packaging en perspective', 'project.html?id=khelcom')">
+        <img src="assets/images/optimized/project-khelcom-packaging-03-1280.webp" srcset="assets/images/optimized/project-khelcom-packaging-03-640.webp 640w, assets/images/optimized/project-khelcom-packaging-03-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="853" alt="Packaging Café Touba KhelCom en perspective" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Packaging · Mockup</span><div class="mosaic-bottom-info"><span class="mosaic-title">KhelCom · Perspective</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="print" onclick="openPortfolioModal('assets/images/project-khelcom-packaging-02.jpg', 'KhelCom · Design de sachet', 'project.html?id=khelcom')">
+        <img src="assets/images/optimized/project-khelcom-packaging-02-1280.webp" srcset="assets/images/optimized/project-khelcom-packaging-02-640.webp 640w, assets/images/optimized/project-khelcom-packaging-02-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="853" alt="Design de sachet Café Touba KhelCom" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Identité · Produit</span><div class="mosaic-bottom-info"><span class="mosaic-title">KhelCom · Sachet</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+
+      <!-- 27–30. NDIAYE GLOBAL SERVICES -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-ngs-brand-01.jpg', 'NGS · Présentation du logotype', 'project.html?id=ngs')">
+        <img src="assets/images/optimized/project-ngs-brand-01-1280.webp" srcset="assets/images/optimized/project-ngs-brand-01-640.webp 640w, assets/images/optimized/project-ngs-brand-01-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="853" alt="Logotype Ndiaye Global Services sur papier" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Branding · Logo</span><div class="mosaic-bottom-info"><span class="mosaic-title">NGS · Logotype</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-ngs-brand-02.jpg', 'NGS · Déclinaison sur mugs', 'project.html?id=ngs')">
+        <img src="assets/images/optimized/project-ngs-brand-02-1280.webp" srcset="assets/images/optimized/project-ngs-brand-02-640.webp 640w, assets/images/optimized/project-ngs-brand-02-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="1024" alt="Identité Ndiaye Global Services appliquée sur des mugs" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Branding · Supports</span><div class="mosaic-bottom-info"><span class="mosaic-title">NGS · Mugs</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-ngs-brand-03.jpg', 'NGS · Signalétique extérieure', 'project.html?id=ngs')">
+        <img src="assets/images/optimized/project-ngs-brand-03-1280.webp" srcset="assets/images/optimized/project-ngs-brand-03-640.webp 640w, assets/images/optimized/project-ngs-brand-03-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="880" alt="Identité Ndiaye Global Services sur façade corporate" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Branding · Signalétique</span><div class="mosaic-bottom-info"><span class="mosaic-title">NGS · Façade</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-ngs-brand-04.jpg', 'NGS · Plaque professionnelle', 'project.html?id=ngs')">
+        <img src="assets/images/optimized/project-ngs-brand-04-1280.webp" srcset="assets/images/optimized/project-ngs-brand-04-640.webp 640w, assets/images/optimized/project-ngs-brand-04-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="896" alt="Plaque professionnelle Ndiaye Global Services" loading="lazy" decoding="async">
+        <div class="mosaic-overlay"><span class="mosaic-top-pill">Identité · Corporate</span><div class="mosaic-bottom-info"><span class="mosaic-title">NGS · Plaque</span><span class="mosaic-zoom-icon">↗</span></div></div>
+      </div>
+
+      <!-- 31–36. CRÉATIONS DIGITALES -->
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-digital-01.avif', 'Création digitale · Série 01', '#')"><img src="assets/images/optimized/project-digital-01-1280.webp" srcset="assets/images/optimized/project-digital-01-640.webp 640w, assets/images/optimized/project-digital-01-1280.webp 1024w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1024" height="1024" alt="Création graphique digitale Baol Vision série 1" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Digital · Création</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création digitale 01</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-digital-02.avif', 'Création digitale · Série 02', '#')"><img src="assets/images/optimized/project-digital-02-1280.webp" srcset="assets/images/optimized/project-digital-02-640.webp 640w, assets/images/optimized/project-digital-02-1280.webp 1264w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1264" height="848" alt="Création graphique digitale Baol Vision série 2" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Digital · Création</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création digitale 02</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-digital-03.avif', 'Création digitale · Série 03', '#')"><img src="assets/images/optimized/project-digital-03-1280.webp" srcset="assets/images/optimized/project-digital-03-640.webp 640w, assets/images/optimized/project-digital-03-1280.webp 1264w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1264" height="848" alt="Création graphique digitale Baol Vision série 3" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Digital · Création</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création digitale 03</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-digital-04.avif', 'Création digitale · Série 04', '#')"><img src="assets/images/optimized/project-digital-04-1280.webp" srcset="assets/images/optimized/project-digital-04-640.webp 640w, assets/images/optimized/project-digital-04-1280.webp 1264w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1264" height="848" alt="Création graphique digitale Baol Vision série 4" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Digital · Création</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création digitale 04</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-digital-05.avif', 'Création digitale · Série 05', '#')"><img src="assets/images/optimized/project-digital-05-1280.webp" srcset="assets/images/optimized/project-digital-05-640.webp 640w, assets/images/optimized/project-digital-05-1280.webp 1280w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1280" height="714" alt="Création graphique digitale Baol Vision série 5" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Digital · Création</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création digitale 05</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+      <div class="mosaic-item" data-cat="digital" onclick="openPortfolioModal('assets/images/project-social-media.png', 'Social Media · Création graphique', '#')"><img src="assets/images/optimized/project-social-media-1280.webp" srcset="assets/images/optimized/project-social-media-640.webp 640w, assets/images/optimized/project-social-media-1280.webp 1080w" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" width="1080" height="1080" alt="Création graphique pour les réseaux sociaux" loading="lazy" decoding="async"><div class="mosaic-overlay"><span class="mosaic-top-pill">Social Media</span><div class="mosaic-bottom-info"><span class="mosaic-title">Création réseaux sociaux</span><span class="mosaic-zoom-icon">↗</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="client-proof wrap" id="clients" aria-labelledby="clients-title">
+    <div class="client-proof-header">
+      <div class="section-header-block">
+        <span class="section-tag">Ils nous font confiance</span>
+        <h2 class="section-title-large" id="clients-title">Des entreprises qui nous font confiance.</h2>
+        <p class="client-proof-intro">Au fil des projets, j’ai accompagné des entreprises, commerces, institutions et entrepreneurs dans la création de leur identité, leur communication et le développement de leur image de marque.</p>
+      </div>
+      <div class="client-proof-count"><strong>+30</strong><span>Entreprises et marques accompagnées</span></div>
+    </div>
+    <p class="client-proof-services">Design · Branding · Communication · Digital</p>
+    <div class="client-logo-viewport" role="group" aria-label="Entreprises et marques accompagnées">
+      <div class="client-logo-track" id="client-logo-track"><p>Références clients en cours de chargement.</p></div>
+    </div>
+    <div class="client-proof-cta">
+      <div><h3>Votre marque pourrait être la prochaine.</h3><p>Construisons ensemble une identité forte, professionnelle et mémorable.</p></div>
+      <div class="client-proof-actions"><a href="#contact">Démarrer un projet</a><a href="#projets">Voir mes réalisations</a></div>
     </div>
   </section>
 
@@ -2596,9 +3163,17 @@ body.theme-white .cursor-trail {
        SECTION OUTILS (TECH STACK AVEC EFFET TILT)
        ═════════════════════════════════════════════════════════════════ -->
   <section id="outils" class="section-tools wrap">
-    <div class="section-header-block">
-      <span class="section-tag">05 / Écosystème Créatif</span>
-      <h2 class="section-title-large">Outils &amp; Logiciels Maîtrisés</h2>
+    <div class="tools-hero">
+      <div class="tools-hero-copy-block">
+        <span class="tools-eyebrow">Mes outils créatifs</span>
+        <h2 class="tools-hero-title">Logiciels &amp; IA <span>que j’utilise</span></h2>
+        <p class="tools-hero-copy">Une combinaison d’outils créatifs, d’IA et de technologies modernes pour donner vie aux idées, de la conception à la production.</p>
+      </div>
+      <aside class="tools-stat-card" aria-label="Douze outils créatifs maîtrisés">
+        <span class="tools-stat-kicker">Créativité + Technologie</span>
+        <p class="tools-stat-title">Des outils puissants au service de vos idées</p>
+        <div class="tools-stat-number"><strong>12+</strong><span>Outils maîtrisés</span></div>
+      </aside>
     </div>
 
     <div class="tools-grid">
@@ -2608,13 +3183,13 @@ body.theme-white .cursor-trail {
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="54" height="54" rx="14" fill="#001E36"/>
             <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#31A8FF" stroke-opacity="0.35" stroke-width="1.5"/>
-            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#31A8FF" letter-spacing="-0.5">Ps</text>
+            <text x="27" y="33" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-weight="800" font-size="22" fill="#31A8FF" letter-spacing="-0.5">Ps</text>
           </svg>
         </div>
         <div class="tool-content">
           <div class="tool-name">Adobe Photoshop</div>
           <span class="tool-category">Retouche &amp; Composition</span>
-          <p class="tool-desc">Compositing 4K, détourage &amp; photomanipulation</p>
+          <p class="tool-desc">Compositing 4K, détourage &amp; photomanipulation.</p>
         </div>
       </div>
 
@@ -2624,13 +3199,13 @@ body.theme-white .cursor-trail {
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="54" height="54" rx="14" fill="#330000"/>
             <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#FF9A00" stroke-opacity="0.35" stroke-width="1.5"/>
-            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#FF9A00" letter-spacing="-0.5">Ai</text>
+            <text x="27" y="33" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-weight="800" font-size="22" fill="#FF9A00" letter-spacing="-0.5">Ai</text>
           </svg>
         </div>
         <div class="tool-content">
           <div class="tool-name">Adobe Illustrator</div>
           <span class="tool-category">Vecteur &amp; Logos</span>
-          <p class="tool-desc">Logos vectoriels, chartes graphiques &amp; print</p>
+          <p class="tool-desc">Logos, visuels vectoriels, chartes graphiques &amp; print.</p>
         </div>
       </div>
 
@@ -2640,13 +3215,13 @@ body.theme-white .cursor-trail {
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="54" height="54" rx="14" fill="#00005B"/>
             <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#9999FF" stroke-opacity="0.35" stroke-width="1.5"/>
-            <text x="27" y="33" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="22" fill="#9999FF" letter-spacing="-0.5">Pr</text>
+            <text x="27" y="33" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-weight="800" font-size="22" fill="#9999FF" letter-spacing="-0.5">Pr</text>
           </svg>
         </div>
         <div class="tool-content">
           <div class="tool-name">Adobe Premiere Pro</div>
           <span class="tool-category">Montage Vidéo</span>
-          <p class="tool-desc">Montage cinématique 4K, rythme &amp; sound design</p>
+          <p class="tool-desc">Montage cinématique 4K, rythme &amp; sound design.</p>
         </div>
       </div>
 
@@ -2668,7 +3243,7 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">Figma</div>
           <span class="tool-category">UI/UX &amp; Prototypage</span>
-          <p class="tool-desc">Design systems, wireframes &amp; interfaces web/mobiles</p>
+          <p class="tool-desc">Design systems, wireframes &amp; interfaces web/mobiles.</p>
         </div>
       </div>
 
@@ -2686,7 +3261,7 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">Framer</div>
           <span class="tool-category">Web &amp; Interactions</span>
-          <p class="tool-desc">Développement no-code immersif &amp; micro-animations</p>
+          <p class="tool-desc">Développement no-code immersif &amp; micro-animations.</p>
         </div>
       </div>
 
@@ -2701,13 +3276,13 @@ body.theme-white .cursor-trail {
               </linearGradient>
             </defs>
             <rect width="54" height="54" rx="14" fill="url(#canva-grad)"/>
-            <text x="27" y="34" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" font-style="italic">C</text>
+            <text x="27" y="34" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" font-style="italic">C</text>
           </svg>
         </div>
         <div class="tool-content">
           <div class="tool-name">Canva Pro</div>
           <span class="tool-category">Social Media Fast</span>
-          <p class="tool-desc">Production agile, templates &amp; visuels sponsorisés</p>
+          <p class="tool-desc">Production agile, templates &amp; visuels sponsorisés.</p>
         </div>
       </div>
 
@@ -2726,18 +3301,51 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">ChatGPT</div>
           <span class="tool-category">Stratégie &amp; Copy</span>
-          <p class="tool-desc">Prompt engineering, storytelling de marque &amp; scripts</p>
+          <p class="tool-desc">Prompt engineering, storytelling de marque &amp; scripts.</p>
         </div>
       </div>
 
-      <!-- 08 : Runway -->
+      <!-- 08 : Claude -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="54" height="54" rx="14" fill="#D97757"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#F4E8DE" stroke-opacity="0.55" stroke-width="1.5"/>
+            <path d="M16 36.5 25.1 14h4.1L38 36.5h-5.3l-1.8-5.1H22.8l-1.9 5.1H16Zm8.4-9.7h4.9l-2.4-7.2-2.5 7.2Z" fill="#FFF8F2"/>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">Claude</div>
+          <span class="tool-category">Analyse &amp; Idéation IA</span>
+          <p class="tool-desc">Recherche créative, synthèse, concepts &amp; rédaction structurée.</p>
+        </div>
+      </div>
+
+      <!-- 09 : n8n -->
+      <div class="tool-card" data-tilt>
+        <div class="tool-icon-wrapper">
+          <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="54" height="54" rx="14" fill="#15151A"/>
+            <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="#FF6D5A" stroke-opacity="0.45" stroke-width="1.5"/>
+            <path d="M14 19.5h7.5l5.5 7.3 5.5-7.3H40M14 34.5h7.5l5.5-7.7 5.5 7.7H40" stroke="#FF6D5A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12.5" cy="19.5" r="3" fill="#FF6D5A"/><circle cx="41.5" cy="19.5" r="3" fill="#FF6D5A"/><circle cx="12.5" cy="34.5" r="3" fill="#FF6D5A"/><circle cx="41.5" cy="34.5" r="3" fill="#FF6D5A"/><circle cx="27" cy="27" r="3.3" fill="#FFF"/>
+          </svg>
+        </div>
+        <div class="tool-content">
+          <div class="tool-name">n8n</div>
+          <span class="tool-category">Automatisation</span>
+          <p class="tool-desc">Workflows no-code, intégrations API &amp; automatisation de production.</p>
+        </div>
+      </div>
+
+      <!-- 10 : Runway -->
       <div class="tool-card" data-tilt>
         <div class="tool-icon-wrapper">
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="54" height="54" rx="14" fill="#111114"/>
             <rect x="0.75" y="0.75" width="52.5" height="52.5" rx="13.25" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
             <g transform="translate(15, 13)">
-              <text x="12" y="21" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" font-style="italic">R</text>
+              <text x="12" y="21" text-anchor="middle" font-family="'Poppins', system-ui, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" font-style="italic">R</text>
               <circle cx="19" cy="7" r="3" fill="#FF5E1A"/>
             </g>
           </svg>
@@ -2745,11 +3353,11 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">Runway</div>
           <span class="tool-category">Génération Vidéo IA</span>
-          <p class="tool-desc">Gen-2 / Gen-3 Alpha, motion brush &amp; scènes 4K</p>
+          <p class="tool-desc">Génération vidéo IA, motion brush &amp; scènes cinématiques.</p>
         </div>
       </div>
 
-      <!-- 09 : Kling AI -->
+      <!-- 11 : Kling AI -->
       <div class="tool-card" data-tilt>
         <div class="tool-icon-wrapper">
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2767,11 +3375,11 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">Kling AI</div>
           <span class="tool-category">Animation Photoréaliste</span>
-          <p class="tool-desc">Mouvements physiques réalistes &amp; rendu cinématographique</p>
+          <p class="tool-desc">Animation photoréaliste &amp; génération vidéo IA.</p>
         </div>
       </div>
 
-      <!-- 10 : CapCut -->
+      <!-- 12 : CapCut -->
       <div class="tool-card" data-tilt>
         <div class="tool-icon-wrapper">
           <svg class="tool-svg-icon" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2786,7 +3394,7 @@ body.theme-white .cursor-trail {
         <div class="tool-content">
           <div class="tool-name">CapCut</div>
           <span class="tool-category">Shorts &amp; Reels</span>
-          <p class="tool-desc">Sous-titres dynamiques, transitions &amp; formats viraux</p>
+          <p class="tool-desc">Montage rapide, formats sociaux &amp; contenus engageants.</p>
         </div>
       </div>
     </div>
@@ -2947,7 +3555,7 @@ body.theme-white .cursor-trail {
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-num-row">
-            <span class="stat-value" data-counter="10">0</span>
+            <span class="stat-value" data-counter="10">10</span>
             <span class="stat-suffix">+</span>
           </div>
           <span class="stat-label">Projets Réalisés</span>
@@ -2955,7 +3563,7 @@ body.theme-white .cursor-trail {
 
         <div class="stat-item">
           <div class="stat-num-row">
-            <span class="stat-value" data-counter="15">0</span>
+            <span class="stat-value" data-counter="30">30</span>
             <span class="stat-suffix">+</span>
           </div>
           <span class="stat-label">Marques Accompagnées</span>
@@ -2963,7 +3571,7 @@ body.theme-white .cursor-trail {
 
         <div class="stat-item">
           <div class="stat-num-row">
-            <span class="stat-value" data-counter="4">0</span>
+            <span class="stat-value" data-counter="4">4</span>
             <span class="stat-suffix">+</span>
           </div>
           <span class="stat-label">Années d'Expérience</span>
@@ -2971,7 +3579,7 @@ body.theme-white .cursor-trail {
 
         <div class="stat-item">
           <div class="stat-num-row">
-            <span class="stat-value" data-counter="100">0</span>
+            <span class="stat-value" data-counter="100">100</span>
             <span class="stat-suffix">%</span>
           </div>
           <span class="stat-label">Solutions Sur-Mesure</span>
@@ -2980,17 +3588,56 @@ body.theme-white .cursor-trail {
     </div>
   </section>
 
+  <section class="trust-strip wrap" aria-labelledby="trust-title">
+    <div class="section-header-block">
+      <span class="section-tag">Ce que vous obtenez</span>
+      <h2 class="section-title-large" id="trust-title">Une création pensée pour être utile, cohérente et durable.</h2>
+    </div>
+    <div class="trust-grid">
+      <article class="trust-card"><strong>Direction claire</strong><p>Un concept créatif relié à vos objectifs, à votre public et à votre positionnement.</p></article>
+      <article class="trust-card"><strong>Livrables prêts à l'emploi</strong><p>Des fichiers organisés et adaptés au print, au digital et aux réseaux sociaux.</p></article>
+      <article class="trust-card"><strong>Accompagnement direct</strong><p>Un échange simple sur WhatsApp, des étapes lisibles et des retours cadrés.</p></article>
+    </div>
+  </section>
+
+  <section class="testimonials" id="temoignages" aria-labelledby="testimonials-title">
+    <div class="wrap">
+    <h2 class="section-title-large" id="testimonials-title">Témoignages clients</h2>
+    <p class="testimonials-intro">Des collaborations, des idées et des identités qui prennent vie. Mes clients vous racontent leur expérience.</p>
+    <div class="testimonials-grid" data-testimonials></div>
+    <noscript><p>Activez JavaScript pour consulter les six témoignages clients.</p></noscript>
+    </div>
+  </section>
+
+  <section class="local-seo wrap" aria-labelledby="local-title">
+    <div class="section-header-block">
+      <span class="section-tag">Touba · Sénégal · À distance</span>
+      <h2 class="section-title-large" id="local-title">Direction artistique et création d’identité visuelle au Sénégal.</h2>
+    </div>
+    <div class="local-seo-grid">
+      <article class="local-seo-card"><h3>Vous cherchez un graphiste à Touba&nbsp;?</h3><p>Je conçois affiches, brochures, packaging et contenus digitaux depuis Touba, avec un accompagnement direct de la définition du besoin à la livraison.</p></article>
+      <article class="local-seo-card"><h3>Travaillez-vous partout au Sénégal&nbsp;?</h3><p>Oui. Les échanges, validations et livraisons peuvent être organisés à distance pour Dakar et toutes les régions du Sénégal.</p></article>
+      <article class="local-seo-card"><h3>Que comprend une identité visuelle&nbsp;?</h3><p>Selon le projet : logo, palette, typographies, règles d’utilisation, applications de marque et fichiers prêts pour le print et le digital.</p></article>
+    </div>
+  </section>
+
   <!-- ═════════════════════════════════════════════════════════════════
        SECTION CONTACT PLEIN ÉCRAN ("HAVE A PROJECT?")
        ═════════════════════════════════════════════════════════════════ -->
   <section id="contact" class="section-contact-apex wrap">
     <div class="contact-apex-header">
-      <span class="section-tag">07 / Contact Direct &amp; Collaboration</span>
+      <div class="contact-apex-meta">
+        <span class="contact-apex-kicker">Créons ensemble</span>
+      </div>
       <h2 class="contact-monumental-heading">
-        UN PROJET EN TÊTE ?<br>
-        CRÉONS QUELQUE CHOSE<br>
-        <span class="colored">D'INOUBLIABLE.</span>
+        <span class="heading-line">UN PROJET <span class="contact-mobile-break">EN TÊTE&nbsp;?</span></span>
+        <span class="heading-line">CRÉONS <span class="contact-mobile-break">QUELQUE CHOSE</span></span>
+        <span class="heading-line heading-accent">D’INOUBLIABLE.</span>
       </h2>
+      <svg class="contact-apex-orbit" viewBox="0 0 620 360" aria-hidden="true">
+        <path d="M635 317C498 365 340 342 222 267C119 202 43 101 0 0" fill="none" stroke="currentColor" stroke-width="1.25"/>
+        <path d="M660 274C518 330 373 307 261 236C169 177 103 93 65 10" fill="none" stroke="currentColor" stroke-width=".7" opacity=".45"/>
+      </svg>
     </div>
 
     <div class="contact-apex-layout">
@@ -3037,28 +3684,43 @@ body.theme-white .cursor-trail {
 
       <!-- Formulaire Contact Interactif -->
       <form class="contact-form-apex" id="contact-form" novalidate>
+        <p class="form-note" id="form-availability">Préparez votre demande ici ou contactez-moi directement sur WhatsApp.</p>
+        <div class="form-group-apex">
+          <label class="label-apex" for="f-email">Votre Email *</label>
+          <input type="email" id="f-email" class="input-apex" placeholder="Ex: vous@entreprise.com" autocomplete="email" required>
+          <p class="form-error" id="error-email" aria-live="polite"></p>
+        </div>
+
         <div class="form-group-apex">
           <label class="label-apex" for="f-name">Votre Nom &amp; Prénom *</label>
           <input type="text" id="f-name" class="input-apex" placeholder="Ex: Mamadou Diop" required>
+          <p class="form-error" id="error-name" aria-live="polite"></p>
         </div>
 
         <div class="form-group-apex">
           <label class="label-apex" for="f-phone">Téléphone / WhatsApp *</label>
           <input type="tel" id="f-phone" class="input-apex" placeholder="Ex: +221 77 000 00 00" required>
+          <p class="form-error" id="error-phone" aria-live="polite"></p>
         </div>
 
         <div class="form-group-apex">
           <label class="label-apex" for="f-service">Prestation Envisagée *</label>
           <input type="text" id="f-service" class="input-apex" placeholder="Ex: Identité de marque, Affiches, Campagne, UI/UX..." required>
+          <p class="form-error" id="error-service" aria-live="polite"></p>
         </div>
 
         <div class="form-group-apex">
           <label class="label-apex" for="f-msg">Détails de Votre Projet *</label>
           <textarea id="f-msg" class="input-apex" placeholder="Parlez-moi de vos objectifs, vos délais et vos attentes créatives..." required></textarea>
+          <p class="form-error" id="error-msg" aria-live="polite"></p>
         </div>
 
+        <div class="hp-field" aria-hidden="true"><label for="f-website">Site web</label><input id="f-website" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="legal-consent">En envoyant ce formulaire, vous acceptez l’utilisation de vos coordonnées pour répondre à votre demande. Consultez notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
         <button type="submit" class="btn-submit-apex" data-magnetic>
-          <span>Envoyer ma demande via WhatsApp →</span>
+          <span>Envoyer ma demande →</span>
         </button>
       </form>
     </div>
@@ -3068,16 +3730,51 @@ body.theme-white .cursor-trail {
 <!-- ═════════════════════════════════════════════════════════════════
      FOOTER ÉDITORIAL
      ═════════════════════════════════════════════════════════════════ -->
-<footer class="wrap">
-  <div>
-    <strong>CHEIKH AWA BALLA DIOP</strong> — Creative Designer &amp; Founder BAOL VISION · TOUBA, SÉNÉGAL © 2026
-  </div>
-  <div class="footer-nav-links">
-    <a href="#projets">Selected Works</a>
-    <a href="#a-propos">À propos</a>
-    <a href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener">Behance ↗</a>
-    <a href="https://wa.me/221773033196" target="_blank" rel="noopener">WhatsApp ↗</a>
-    <a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Haut ↑</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand-block">
+        <a href="#accueil" class="footer-brand-name">Cheikh Awa Balla Diop</a>
+        <span class="footer-role">Directeur artistique · Baol Vision</span>
+        <p class="footer-intro">J'aide les marques à construire une présence visuelle claire, crédible et mémorable — du premier concept jusqu'aux supports prêts à diffuser.</p>
+        <div class="footer-socials" aria-label="Liens professionnels">
+          <a class="footer-social-link" href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener" aria-label="Behance">Bē</a>
+          <a class="footer-social-link" href="https://wa.me/221773033196" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+          <a class="footer-social-link" href="mailto:contact.baolvision@gmail.com" aria-label="Envoyer un email">@</a>
+          <a class="footer-social-link" href="tel:+221773033196" aria-label="Téléphoner">+221</a>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation du pied de page">
+        <h2 class="footer-column-title">Navigation</h2>
+        <ul class="footer-link-list">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#projets">Réalisations</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-column-title">Contact direct</h2>
+        <ul class="footer-link-list">
+          <li><a href="https://wa.me/221773033196" target="_blank" rel="noopener">WhatsApp · Sénégal ↗</a></li>
+          <li><a href="mailto:contact.baolvision@gmail.com">Email professionnel ↗</a></li>
+          <li><a href="tel:+221773033196">+221 77 303 31 96</a></li>
+          <li><a href="https://www.behance.net/cheikhdiop16" target="_blank" rel="noopener">Behance ↗</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Cheikh Awa Balla Diop. Tous droits réservés.</span>
+      <span class="footer-signature">Conçu à Touba · Sénégal</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span>
+      <a class="footer-back-top" href="#accueil">Retour en haut ↑</a>
+    </div>
   </div>
 </footer>
 
@@ -3208,10 +3905,26 @@ window.addEventListener('scroll', () => {
 (function initWorksFilter() {
   const btns = document.querySelectorAll('.filter-pill');
   const cards = document.querySelectorAll('.pure-works-mosaic [data-cat]');
+  cards.forEach(card => {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Voir le projet ${card.querySelector('.mosaic-title')?.textContent || ''}`);
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        card.click();
+      }
+    });
+  });
   btns.forEach(b => {
+    b.setAttribute('aria-pressed', String(b.classList.contains('active')));
     b.addEventListener('click', () => {
-      btns.forEach(btn => btn.classList.remove('active'));
+      btns.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
       b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
       const cat = b.getAttribute('data-filter');
       cards.forEach(c => {
         const itemCat = c.getAttribute('data-cat') || '';
@@ -3234,15 +3947,30 @@ function openPortfolioModal(imgSrc, title, projectUrl) {
   if (modal && img) {
     img.src = imgSrc;
     if (titleEl) titleEl.textContent = title;
-    if (btnEl) btnEl.href = projectUrl || '#';
+    if (btnEl) {
+      const hasCaseStudy = Boolean(projectUrl && projectUrl !== '#');
+      btnEl.hidden = !hasCaseStudy;
+      if (hasCaseStudy) btnEl.href = projectUrl;
+    }
     modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.lightbox-exit-btn')?.focus();
   }
 }
 
 function closePortfolioModal() {
   const modal = document.getElementById('portfolio-lightbox-modal');
-  if (modal) modal.classList.remove('open');
+  if (modal) {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 }
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closePortfolioModal();
+});
 
 /* 7. Accordéon des Services */
 document.querySelectorAll('.service-item').forEach(item => {
@@ -3285,6 +4013,28 @@ document.querySelectorAll('.service-item').forEach(item => {
   if (section) observer.observe(section);
 })();
 
+/* 8b. Entrée éditoriale du CTA contact */
+(function initContactHeadingReveal() {
+  const contactHeader = document.querySelector('.contact-apex-header');
+  if (!contactHeader) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    contactHeader.classList.add('is-visible');
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        contactHeader.classList.add('is-visible');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.22 });
+
+  observer.observe(contactHeader);
+})();
+
 /* 9. Copie d'Email Interactif */
 window.copyContactEmail = function() {
   navigator.clipboard.writeText("contact.baolvision@gmail.com").then(() => {
@@ -3296,23 +4046,73 @@ window.copyContactEmail = function() {
   });
 };
 
-/* 10. Formulaire de Contact vers WhatsApp */
+/* 10. Formulaire de contact relié au service email */
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  let emailAvailable = false;
+  const submitLabel = contactForm.querySelector('button[type="submit"] span');
+  submitLabel.textContent = 'Continuer sur WhatsApp →';
+  fetch('/api/contact').then(response => response.ok ? response.json() : {}).then(data => {
+    emailAvailable = data.available === true;
+    document.getElementById('form-availability').textContent = emailAvailable
+      ? 'Envoyez votre demande par email. Une confirmation apparaîtra lorsque le service aura accepté l’envoi.'
+      : 'Votre demande sera préparée dans WhatsApp. Vous pourrez la relire avant de l’envoyer.';
+    submitLabel.textContent = emailAvailable ? 'Envoyer ma demande →' : 'Continuer sur WhatsApp →';
+  }).catch(() => {});
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
+    if (contactForm.querySelector('button[type="submit"]').disabled) return;
     const name = document.getElementById("f-name")?.value.trim() || "";
+    const email = document.getElementById("f-email")?.value.trim() || "";
     const phone = document.getElementById("f-phone")?.value.trim() || "";
     const srv = document.getElementById("f-service")?.value.trim() || "";
     const msg = document.getElementById("f-msg")?.value.trim() || "";
-    if (!name || !phone || !msg) {
-      alert("Veuillez remplir votre nom, votre numéro WhatsApp et les détails de votre besoin.");
+    const website = document.getElementById("f-website")?.value || "";
+    const values = { name, email, phone, service: srv, msg };
+    const labels = { name: 'Indiquez votre nom.', email: 'Indiquez un email valide.', phone: 'Indiquez votre numéro WhatsApp.', service: 'Précisez la prestation souhaitée.', msg: 'Décrivez votre projet.' };
+    let firstInvalid = null;
+    Object.entries(values).forEach(([key, value]) => {
+      const input = document.getElementById(`f-${key}`);
+      const error = document.getElementById(`error-${key}`);
+      const invalid = !value || (key === 'email' && !/^\S+@\S+\.\S+$/.test(value));
+      input?.setAttribute('aria-invalid', String(invalid));
+      if (error) error.textContent = invalid ? labels[key] : '';
+      if (invalid && !firstInvalid) firstInvalid = input;
+    });
+    if (firstInvalid) {
+      firstInvalid.focus();
       return;
     }
-    const text = encodeURIComponent(`Bonjour Cheikh Awa Balla Diop,\nJe m'appelle ${name} (${phone}).\nPrestation : ${srv}\nProjet : ${msg}`);
-    window.open(`https://wa.me/221773033196?text=${text}`, '_blank');
+    if (!emailAvailable) {
+      const text = encodeURIComponent(`Bonjour Cheikh Awa Balla Diop,\nJe m'appelle ${name} (${phone}, ${email}).\nPrestation : ${srv}\nProjet : ${msg}`);
+      window.open(`https://wa.me/221773033196?text=${text}`, '_blank', 'noopener');
+      window.va?.('event', { name:'whatsapp_click' });
+      return;
+    }
+    const submit = contactForm.querySelector('button[type="submit"]');
+    const status = document.getElementById('form-status');
+    submit.disabled = true;
+    submit.querySelector('span').textContent = 'Envoi en cours…';
+    status.className = 'form-status'; status.textContent = '';
+    try {
+      const response = await fetch('/api/contact', { method:'POST', signal:AbortSignal.timeout(20000), headers:{'Content-Type':'application/json'}, body:JSON.stringify({ name, email, phone, service:srv, message:msg, website }) });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || "L'envoi n'a pas abouti.");
+      status.className = 'form-status success';
+      status.textContent = 'Merci ! Votre demande a bien été envoyée. Je vous répondrai rapidement.';
+      contactForm.reset();
+      window.va?.('event', { name:'contact_sent' });
+    } catch (error) {
+      const text = encodeURIComponent(`Bonjour Cheikh Awa Balla Diop,\nJe m'appelle ${name} (${phone}, ${email}).\nPrestation : ${srv}\nProjet : ${msg}`);
+      status.className = 'form-status error';
+      status.innerHTML = `L'email n'a pas pu partir. <a href="https://wa.me/221773033196?text=${text}" target="_blank" rel="noopener" style="text-decoration:underline">Envoyer plutôt sur WhatsApp</a>.`;
+    } finally {
+      submit.disabled = false;
+      submit.querySelector('span').textContent = 'Envoyer ma demande →';
+    }
   });
 }
+
 
 /* 11. Gestion du Thème Blanc & Orange / Sombre */
 (function initTheme() {
@@ -3363,9 +4163,13 @@ if (contactForm) {
     const isOpen = drawer.classList.contains("open");
     if (isOpen) {
       drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
       if (icon) icon.textContent = "☰";
     } else {
       drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+      toggle.setAttribute("aria-expanded", "true");
       if (icon) icon.textContent = "✕";
     }
   });
@@ -3373,6 +4177,8 @@ if (contactForm) {
   document.querySelectorAll(".mobile-drawer-link").forEach(link => {
     link.addEventListener("click", () => {
       drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
       if (icon) icon.textContent = "☰";
     });
   });
@@ -3381,10 +4187,10 @@ if (contactForm) {
 </script>
 
 <!-- Lightbox Modal Grand Format -->
-<div class="portfolio-lightbox" id="portfolio-lightbox-modal" onclick="closePortfolioModal()">
-  <button class="lightbox-exit-btn" onclick="closePortfolioModal()">✕</button>
+<div class="portfolio-lightbox" id="portfolio-lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-project-title" onclick="closePortfolioModal()">
+  <button class="lightbox-exit-btn" type="button" aria-label="Fermer l'aperçu" onclick="closePortfolioModal()">✕</button>
   <div class="lightbox-dialog" onclick="event.stopPropagation()">
-    <img src="" alt="Aperçu grand format" class="lightbox-main-img" id="lightbox-main-img">
+    <img src="assets/images/optimized/project-prizent-640.webp" alt="Aperçu grand format" class="lightbox-main-img" id="lightbox-main-img">
     <div class="lightbox-footer-bar">
       <span id="lightbox-project-title">Titre du projet</span>
       <a href="#" id="lightbox-project-btn" class="lightbox-action-btn">Explorer l'étude de cas →</a>
