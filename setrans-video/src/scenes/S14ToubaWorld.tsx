@@ -112,9 +112,9 @@ export const S14ToubaWorld: React.FC<SceneProps> = ({ duration }) => {
         <div
           style={{
             fontFamily: FONTS.title,
-            fontWeight: 700,
-            fontSize: 34,
-            letterSpacing: '0.3em',
+            fontWeight: 600,
+            fontSize: 40,
+            letterSpacing: '0.04em',
             color: COLORS.white,
             transform: `translateY(${(1 - caption) * 14}px)`,
           }}

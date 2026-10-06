@@ -56,7 +56,7 @@ export const TEXTS = {
   trackingRoute: 'DAKAR → TOUBA',
   activities: ['Commerçant', 'Entreprise', 'Entrepôt', 'Marchandises', 'Croissance'],
   cities: { dakar: 'DAKAR', touba: 'TOUBA' },
-  tagline: 'TOUBA. CONNECTÉE AU MONDE.',
+  tagline: 'Vos marchandises, notre priorité.',
   polesLine: 'TRANSIT • TRANSPORT • LOGISTIQUE',
   slogan: 'Vos échanges, notre expertise.',
 };
@@ -67,7 +67,7 @@ export const TEXTS = {
  */
 export const ASSETS = {
   /** Logo final (PNG/SVG, fond transparent). null = logo typographique. */
-  logo: null as string | null, // ex. 'assets/logo/setrans-logo.png'
+  logo: 'assets/logo/setrans-logo.png' as string | null,
   /** Plans cinéma générés avec Higgsfield (Kling 3.0 Pro, 6 s, 16:9). */
   clips: {
     ship: 'assets/videos/01-porte-conteneurs.mp4',
@@ -138,6 +138,8 @@ export const MUSIC = {
  */
 export const VOICEOVER = {
   enabled: true,
+  /** Voix Higgsfield choisie (seed_audio, preset « Faye ») pour la génération. */
+  higgsfieldVoice: { voice_id: 'd198dc0b-c4e5-5198-aa1d-ecf5ca0927c4', voice_type: 'preset' },
   folder: 'assets/voiceover',
   volume: 1,
   lines: [

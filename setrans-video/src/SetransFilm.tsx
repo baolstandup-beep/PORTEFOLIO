@@ -90,7 +90,7 @@ export const SetransFilm: React.FC = () => {
           </Sequence>
         );
       })}
-      <FilmFinish />
+      <FilmFinish lightFromSec={SCENES[SCENES.length - 1].start} />
       {VOICEOVER_SCRIPT.showSubtitles && <Subtitles />}
       {/* Effets sonores (config : SFX) */}
       <SfxTrack />

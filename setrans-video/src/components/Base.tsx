@@ -108,13 +108,19 @@ export const Clip: React.FC<{
   );
 };
 
-/** Vignettage + grain très léger, posés sur tout le film. */
-export const FilmFinish: React.FC = () => {
+/**
+ * Vignettage + grain très léger, posés sur tout le film.
+ * `lightFromSec` : à partir de cet instant (fond clair du logo), le vignettage s'efface.
+ */
+export const FilmFinish: React.FC<{ lightFromSec?: number }> = ({ lightFromSec }) => {
   const frame = useCurrentFrame();
+  const vignette =
+    lightFromSec === undefined ? 1 : 1 - 0.85 * progress(frame, lightFromSec - 0.6, lightFromSec + 0.2, EASE.soft);
   return (
     <AbsoluteFill style={{ pointerEvents: 'none' }}>
       <AbsoluteFill
         style={{
+          opacity: vignette,
           background:
             'radial-gradient(ellipse 85% 75% at 50% 50%, rgba(0,0,0,0) 55%, rgba(3,7,18,0.55) 100%)',
         }}
