@@ -50,7 +50,12 @@
 @layer layout {
   /* Photo fixe à droite, fondue dans le noir à gauche et en bas, avec une lueur ambre. */
   .backdrop { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: var(--bg); }
-  .backdrop img { position: absolute; right: 0; top: 0; height: 100%; width: min(100%, 58vw); object-fit: cover; object-position: 50% 20%; filter: brightness(0.62) contrast(1.1) saturate(0.85); }
+  .backdrop img { position: absolute; right: 0; top: 0; height: 100%; width: min(100%, 58vw); object-fit: cover; object-position: 50% 20%; filter: brightness(0.62) contrast(1.1) saturate(0.85); transition: filter 0.7s ease, transform 0.7s ease; }
+  /* Après l'accueil, la photo se floute et s'assombrit pour laisser la place au contenu. */
+  .past-hero .backdrop img { filter: blur(26px) brightness(0.38) saturate(0.85); transform: scale(1.08); }
+  .backdrop::before { transition: opacity 0.7s ease; }
+  .past-hero .backdrop::before { opacity: 0.55; }
+  @media (prefers-reduced-motion: reduce) { .backdrop img, .backdrop::before { transition: none; } }
   .backdrop::before, .backdrop::after { content: ''; position: absolute; inset: 0; pointer-events: none; }
   .backdrop::before { background: radial-gradient(40% 50% at 72% 30%, rgb(255 150 30 / 0.38), transparent 70%); mix-blend-mode: screen; }
   .backdrop::after { background: linear-gradient(90deg, #000 0 43%, rgb(0 0 0 / 0.72) 55%, rgb(0 0 0 / 0.2) 74%, transparent 90%), linear-gradient(0deg, #000, transparent 30%); }

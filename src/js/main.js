@@ -26,6 +26,14 @@ const update = () => {
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
 update();
 
+// Photo floutée dès que l'accueil est en grande partie sorti de l'écran.
+const hero = document.getElementById('accueil');
+if (hero) {
+  new IntersectionObserver(([entry]) => {
+    document.documentElement.classList.toggle('past-hero', entry.intersectionRatio < 0.5);
+  }, { threshold: [0, 0.5, 1] }).observe(hero);
+}
+
 // Copie de l'e-mail : le lien mailto reste le comportement par défaut si la copie échoue.
 document.addEventListener('click', async event => {
   const link = event.target.closest('[data-copy]');
