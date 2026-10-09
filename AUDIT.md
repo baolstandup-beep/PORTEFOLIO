@@ -90,3 +90,7 @@ vercel.json            CSP stricte, en-têtes de sécurité, cache des images
 1. Moderniser `project.html` (études de cas) et les pages légales dans le même style ; elles chargent encore Poppins depuis Google.
 2. Ajouter de vrais intitulés de poste et dates si d'autres expériences existent.
 3. Activer l'envoi e-mail en définissant les variables Resend dans Vercel.
+
+## Octobre 2026 : passage au style « CV sombre »
+
+À la demande du propriétaire, la page d'accueil adopte une mise en page inspirée du modèle Framer « Apex », recodée sans en reprendre le code, les images ni les textes : portrait fixe avec lueur ambre, colonne de contenu, frise du parcours avec projets phares, barre de navigation flottante, police Albert Sans hébergée sur le site.

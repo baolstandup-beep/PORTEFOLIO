@@ -5,6 +5,7 @@ Site statique avec une fonction Vercel (`api/contact.js`). Aucune dépendance : 
 ```
 data/projects.json       les 36 projets (nom, type, catégories, image, dimensions, étude de cas)
 data/clients.json        les logos clients
+data/cases.json          les 6 projets phares du parcours (liens vers les études de cas)
 src/index.html           gabarit de la page d'accueil
 src/css/styles.css       styles, organisés en @layer
 src/js/                  modules ES : galerie, visionneuse, formulaire, statistiques

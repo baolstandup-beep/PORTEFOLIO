@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Graphiste à Touba et directeur artistique au Sénégal | Cheikh Awa Balla Diop</title>
   <meta name="description" content="Cheikh Awa Balla Diop, graphiste et directeur artistique à Touba (Baol Vision) : identité visuelle, affiches, packaging, UI/UX et campagnes pour des marques au Sénégal.">
   <link rel="canonical" href="{{SITE_URL}}/">
@@ -16,14 +16,12 @@
   <meta property="og:image" content="{{SITE_URL}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp">
   <meta property="og:image:alt" content="Portrait de Cheikh Awa Balla Diop">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
-  <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp" imagesrcset="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp 640w, {{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp 1280w" imagesizes="(min-width: 960px) 30vw, 70vw" fetchpriority="high">
+  <link rel="preload" href="/fonts/albert-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp" imagesrcset="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp 640w, {{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp 1280w" imagesizes="(min-width: 900px) 60vw, 100vw" fetchpriority="high">
   <link rel="stylesheet" href="/css/styles.css">
   <script type="module" src="/js/main.js"></script>
   <link rel="modulepreload" href="/js/works.js">
@@ -43,131 +41,143 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <!-- Icônes : un seul sprite, réutilisé avec <use>. -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  </svg>
 
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a class="wordmark" href="/" aria-label="Baol Vision, accueil">CABD<span>Baol Vision</span></a>
+  <a class="skip-link" href="#profil">Aller au contenu</a>
 
-      <button class="menu-button" type="button" popovertarget="menu" aria-label="Ouvrir le menu">Menu</button>
-      <nav id="menu" class="site-nav" popover aria-label="Navigation principale">
-        <ul>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#avis">Avis clients</a></li>
-          <li><a class="site-nav__cta" href="#contact">Démarrer un projet</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Photo fixe : reste en place pendant que le contenu défile par-dessus. -->
+  <div class="backdrop" aria-hidden="true">
+    <img src="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp" srcset="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp 640w, {{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1049" height="1499" alt="" fetchpriority="high">
+  </div>
 
-  <main id="contenu">
-    <!-- Hero : le nom en grand, et le travail dès le premier écran. -->
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero__text">
-        <p class="hero__role">Graphiste et directeur artistique à Touba</p>
-        <h1 id="hero-title" class="hero__name">Cheikh Awa Balla Diop</h1>
-        <p class="hero__lede">J'aide les marques du Sénégal à se faire reconnaître : identités visuelles, affiches, packaging et campagnes, conçus chez Baol Vision depuis 2022.</p>
-        <div class="hero__actions">
-          <a class="button button--primary" href="#projets">Voir les projets</a>
-          <a class="button" href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20d%C3%A9couvre%20votre%20portfolio%20et%20je%20souhaite%20collaborer%20sur%20un%20projet." data-track="whatsapp_hero">Écrire sur WhatsApp</a>
-        </div>
-        <dl class="hero__facts">
-          <div><dt>Projets livrés</dt><dd>36+</dd></div>
-          <div><dt>Marques accompagnées</dt><dd>30+</dd></div>
-          <div><dt>Studio</dt><dd>Baol Vision, Touba</dd></div>
-        </dl>
+  <main class="column">
+    <section id="accueil" class="hero" aria-labelledby="hero-title">
+      <div class="hero__top">
+        <p class="status"><span class="status__dot"></span>Disponible pour vos projets</p>
+        <a class="pill pill--accent" href="https://wa.me/221773033196?text=Bonjour%20Cheikh%20Awa%20Balla%2C%20je%20d%C3%A9couvre%20votre%20portfolio%20et%20je%20souhaite%20collaborer%20sur%20un%20projet." data-track="whatsapp_hero">Démarrer un projet</a>
       </div>
 
-      <div class="hero__wall" aria-hidden="true">
-        <img class="hero__poster hero__poster--a" src="{{ASSET}}/assets/images/optimized/project-magal-ngabou-640.webp" width="723" height="1024" alt="" decoding="async">
-        <img class="hero__portrait" src="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp" srcset="{{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-640.webp 640w, {{ASSET}}/assets/images/optimized/cheikh-awa-balla-diop-portrait-1280.webp 1280w" sizes="(min-width: 960px) 30vw, 70vw" width="1049" height="1499" alt="" fetchpriority="high">
-        <img class="hero__poster hero__poster--b" src="{{ASSET}}/assets/images/optimized/project-layene-115-640.webp" width="724" height="1024" alt="" decoding="async">
+      <div class="hero__main">
+        <p class="hero__role">Graphiste et directeur artistique</p>
+        <h1 id="hero-title" class="hero__name">Cheikh Awa Balla Diop</h1>
+        <ul class="contact-grid">
+          <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:contact.baolvision@gmail.com">contact.baolvision@gmail.com</a></li>
+          <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+221773033196">+221 77 303 31 96</a></li>
+          <li><svg class="icon"><use href="#i-link"/></svg><a href="https://www.behance.net/cheikhdiop16" rel="me">behance.net/cheikhdiop16</a></li>
+          <li><svg class="icon"><use href="#i-pin"/></svg><span>Touba, Sénégal</span></li>
+        </ul>
       </div>
     </section>
 
-    <section id="projets" class="section wrap" aria-labelledby="projets-title">
-      <div class="section__head">
-        <h2 id="projets-title">Projets</h2>
-        <p>Affiches, éditions, packaging et identités réalisés pour des commerces, institutions et événements, de Touba à Dakar.</p>
+    <section id="profil" class="section" aria-labelledby="profil-title">
+      <h2 id="profil-title">Profil</h2>
+      <div class="prose">
+        <p>Je suis graphiste, directeur artistique et fondateur de Baol Vision, un studio créatif installé à Touba. Je combine design, stratégie et intelligence artificielle pour transformer des idées en identités fortes et en supports qui se remarquent.</p>
+        <p>Depuis 2022, j'accompagne des commerces, des institutions, des organisateurs d'événements et des entrepreneurs, à Touba, partout au Sénégal et à l'international : de la naissance d'une marque jusqu'à ses affiches, son packaging, ses interfaces et ses contenus pour les réseaux sociaux.</p>
+        <p>Pour moi, le design n'est pas qu'une question d'esthétique : c'est un levier de crédibilité et de croissance pour chaque marque.</p>
       </div>
+      <dl class="facts">
+        <div><dt>Projets livrés</dt><dd>36+</dd></div>
+        <div><dt>Marques accompagnées</dt><dd>30+</dd></div>
+        <div><dt>Studio créé en</dt><dd>2022</dd></div>
+      </dl>
+    </section>
 
-      <div class="filters" role="group" aria-label="Filtrer les projets">
+    <section id="parcours" class="section" aria-labelledby="parcours-title">
+      <h2 id="parcours-title">Parcours</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__head">
+            <h3>Fondateur et directeur créatif</h3>
+            <p class="timeline__date">2022 à aujourd'hui</p>
+          </div>
+          <p class="timeline__org">Baol Vision, Touba</p>
+          <p>Je dirige la création visuelle du studio : systèmes de marque, direction artistique de campagnes, affiches, packaging et interfaces, avec l'IA intégrée à la production graphique.</p>
+
+          <h4 class="label">Projets phares</h4>
+          <ul class="cards">
+{{CASES}}
+          </ul>
+
+          <ul class="dash-list">
+            <li>Création d'identités visuelles complètes : logo, palette, typographies et charte</li>
+            <li>Affiches pour les grands événements religieux et culturels : Magal, Gamou, Appel Layène</li>
+            <li>Brochures, dépliants et supports corporate pour des entreprises de logistique et de services</li>
+            <li>Packaging alimentaire et étiquettes produits</li>
+            <li>Maquettes d'applications et de sites, de la structure à la haute fidélité</li>
+            <li>Campagnes pour les réseaux sociaux, visuels animés et montage vidéo</li>
+            <li>Création assistée par IA : visuels 3D, retouches génératives et production accélérée</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="realisations" class="section" aria-labelledby="realisations-title">
+      <h2 id="realisations-title">Réalisations</h2>
+      <p class="section__lede">Affiches, éditions, packaging et identités, de Touba à Dakar.</p>
+
+      <div class="filters" role="group" aria-label="Filtrer les réalisations">
         <button type="button" class="chip" data-filter="all" aria-pressed="true">Tout <span>{{COUNT_ALL}}</span></button>
         <button type="button" class="chip" data-filter="print" aria-pressed="false">Print et affiches <span>{{COUNT_PRINT}}</span></button>
         <button type="button" class="chip" data-filter="digital" aria-pressed="false">Digital et marque <span>{{COUNT_DIGITAL}}</span></button>
       </div>
 
-      <ul class="works" data-page-size="12">
+      <ul class="works" data-page-size="8">
 {{PROJECTS}}
       </ul>
-      <p class="works__more"><button type="button" class="button" data-works-more hidden></button></p>
-    </section>
+      <p class="works__more"><button type="button" class="pill" data-works-more hidden></button></p>
 
-    <section id="clients" class="section wrap" aria-labelledby="clients-title">
-      <div class="section__head">
-        <h2 id="clients-title">Ils m'ont confié leur image</h2>
-        <p>Plus de 30 entreprises, commerces et institutions accompagnés en identité, communication et image de marque.</p>
-      </div>
+      <h3 class="label">Ils m'ont confié leur image</h3>
       <ul class="clients">
 {{CLIENTS}}
       </ul>
     </section>
 
-    <section id="services" class="section wrap" aria-labelledby="services-title">
-      <div class="section__head">
-        <h2 id="services-title">Services</h2>
-        <p>De la création de marque jusqu'aux contenus du quotidien, avec des fichiers prêts pour le print, le web et les réseaux.</p>
-      </div>
-      <dl class="services">
-        <div><dt>Identité visuelle</dt><dd>Logo, palette, typographies et charte d'utilisation pour une marque reconnaissable et durable.</dd></div>
-        <div><dt>Affiches et édition</dt><dd>Affiches grand format, flyers, brochures et rapports, pour les événements comme pour la vente.</dd></div>
-        <div><dt>Direction artistique</dt><dd>Concept créatif, shooting et cohérence visuelle d'une campagne sur tous ses supports.</dd></div>
-        <div><dt>Packaging</dt><dd>Étiquettes, sachets et boîtes qui valorisent les produits alimentaires, cosmétiques ou manufacturés.</dd></div>
-        <div><dt>Web et UI/UX</dt><dd>Sites vitrines, landing pages et maquettes d'applications, sur Figma, Framer ou WordPress.</dd></div>
-        <div><dt>Motion et vidéo</dt><dd>Logos animés, reels, formats TikTok et spots montés sur Premiere Pro et CapCut.</dd></div>
-        <div><dt>Création assistée par IA</dt><dd>Visuels conceptuels, retouches génératives et production accélérée avec Runway, Kling et ChatGPT.</dd></div>
-        <div><dt>Réseaux sociaux</dt><dd>Gabarits et visuels sponsorisés, déclinés pour garder une image cohérente toute l'année.</dd></div>
-      </dl>
+    <section id="competences" class="section" aria-labelledby="competences-title">
+      <h2 id="competences-title">Compétences et outils</h2>
+      <ul class="dots">
+        <li>Identité visuelle</li>
+        <li>Direction artistique</li>
+        <li>Affiches et édition</li>
+        <li>Packaging</li>
+        <li>Web design</li>
+        <li>UI/UX</li>
+        <li>Motion design</li>
+        <li>Montage vidéo</li>
+        <li>Réseaux sociaux</li>
+        <li>Création assistée par IA</li>
+      </ul>
 
-      <ol class="process" aria-label="Déroulement d'un projet">
-        <li><h3>Le besoin</h3><p>On fixe ensemble l'objectif, le public et les supports, par WhatsApp ou en rendez-vous à Touba.</p></li>
-        <li><h3>Les propositions</h3><p>Un concept relié à votre positionnement, avec des allers-retours cadrés.</p></li>
-        <li><h3>La livraison</h3><p>Des fichiers organisés et prêts pour l'imprimeur, le site et les réseaux sociaux.</p></li>
-      </ol>
-    </section>
+      <ul class="tools">
+        <li><span class="tool tool--ps">Ps</span>Photoshop</li>
+        <li><span class="tool tool--ai">Ai</span>Illustrator</li>
+        <li><span class="tool tool--pr">Pr</span>Premiere Pro</li>
+        <li><span class="tool">Fg</span>Figma</li>
+        <li><span class="tool">Fr</span>Framer</li>
+        <li><span class="tool">Ca</span>Canva Pro</li>
+        <li><span class="tool">Cc</span>CapCut</li>
+        <li><span class="tool">Gp</span>ChatGPT</li>
+        <li><span class="tool">Cl</span>Claude</li>
+        <li><span class="tool">Rw</span>Runway</li>
+        <li><span class="tool">Kl</span>Kling AI</li>
+        <li><span class="tool">n8</span>n8n</li>
+      </ul>
 
-    <section id="a-propos" class="section wrap about" aria-labelledby="about-title">
-      <div class="section__head">
-        <h2 id="about-title">À propos</h2>
-      </div>
-      <div class="about__body">
-        <blockquote class="about__quote"><p>Le design n'est pas seulement esthétique : c'est un levier de crédibilité, d'autorité et de croissance pour chaque marque.</p></blockquote>
-        <div class="about__text">
-          <p>Je suis Cheikh Awa Balla Diop, graphiste, directeur artistique et fondateur de Baol Vision. Je combine design, stratégie et intelligence artificielle pour transformer des idées en identités fortes.</p>
-          <p>Basé à Touba, je travaille avec des clients partout au Sénégal et à l'international, de la naissance d'une marque jusqu'au déploiement de ses campagnes, de ses interfaces web et de ses contenus.</p>
-          <h3>Parcours</h3>
-          <p class="about__role"><strong>Fondateur et directeur créatif, Baol Vision</strong> <span>2022 à aujourd'hui, Touba</span></p>
-          <p>Direction de la création visuelle, systèmes de marque, direction artistique de campagnes et intégration de l'IA dans la production graphique.</p>
-        </div>
-        <div class="about__tools">
-          <h3>Outils</h3>
-          <dl>
-            <div><dt>Design</dt><dd>Photoshop, Illustrator, Figma, Canva Pro</dd></div>
-            <div><dt>Web</dt><dd>Framer, WordPress</dd></div>
-            <div><dt>Vidéo</dt><dd>Premiere Pro, CapCut</dd></div>
-            <div><dt>IA</dt><dd>ChatGPT, Claude, Runway, Kling AI</dd></div>
-            <div><dt>Automatisation</dt><dd>n8n</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <section id="avis" class="section wrap" aria-labelledby="avis-title">
-      <div class="section__head">
-        <h2 id="avis-title">Avis clients</h2>
-      </div>
+      <h3 class="label">Ce que disent les clients</h3>
       <ul class="quotes">
         <li><figure><blockquote><p>Nous avons apprécié la qualité du travail, la créativité et surtout la compréhension rapide de nos besoins. Notre communication est aujourd'hui beaucoup plus professionnelle et attractive.</p></blockquote><figcaption><strong>Abdou Salam Lô</strong> Gérant, Restaurant Mbeeté mi</figcaption></figure></li>
         <li><figure><blockquote><p>Un service sérieux, réactif et très professionnel. Le résultat correspond parfaitement à l'image que nous voulions donner à notre boutique.</p></blockquote><figcaption><strong>Ndiaya Sylla</strong> Gérante, Boutique Keur Khadim</figcaption></figure></li>
@@ -176,12 +186,8 @@
         <li><figure><blockquote><p>Le travail reflète parfaitement l'élégance et l'identité de notre marque. Créativité, souci du détail, et nos idées transformées en une communication professionnelle.</p></blockquote><figcaption><strong>Aissatou</strong> Gérante, Élégance by Aïcha</figcaption></figure></li>
         <li><figure><blockquote><p>Un partenaire à l'écoute, capable de comprendre les exigences de notre secteur et de proposer une communication cohérente avec l'image de SETRANS.</p></blockquote><figcaption><strong>Mamadou Moustapha Dieng</strong> Directeur, SETRANS SARL</figcaption></figure></li>
       </ul>
-    </section>
 
-    <section id="faq" class="section wrap" aria-labelledby="faq-title">
-      <div class="section__head">
-        <h2 id="faq-title">Questions fréquentes</h2>
-      </div>
+      <h3 class="label">Questions fréquentes</h3>
       <div class="faq">
         <details name="faq"><summary>Vous cherchez un graphiste à Touba ?</summary><p>Je conçois affiches, brochures, packaging et contenus digitaux depuis Touba, avec un accompagnement direct de la définition du besoin à la livraison.</p></details>
         <details name="faq"><summary>Travaillez-vous partout au Sénégal ?</summary><p>Oui. Les échanges, validations et livraisons se font à distance pour Dakar et toutes les régions du Sénégal, comme pour l'international.</p></details>
@@ -189,73 +195,76 @@
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <div class="wrap contact__inner">
-        <div class="contact__intro">
-          <h2 id="contact-title">Parlons de votre projet</h2>
-          <p>Lancement de marque, refonte d'identité ou campagne : décrivez votre besoin, je vous réponds rapidement.</p>
-          <ul class="contact__channels">
-            <li><a href="https://wa.me/221773033196" data-track="whatsapp_contact">WhatsApp<span>+221 77 303 31 96</span></a></li>
-            <li><a href="tel:+221773033196">Téléphone<span>+221 77 303 31 96</span></a></li>
-            <li><a href="mailto:contact.baolvision@gmail.com" data-copy="contact.baolvision@gmail.com">E-mail<span>contact.baolvision@gmail.com</span></a></li>
-            <li><a href="https://www.behance.net/cheikhdiop16" rel="me">Behance<span>cheikhdiop16</span></a></li>
-          </ul>
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="section__lede">Lancement de marque, refonte d'identité ou campagne : décrivez votre besoin, je vous réponds rapidement.</p>
+      <ul class="link-list">
+        <li><a href="https://wa.me/221773033196" data-track="whatsapp_contact"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp<span>+221 77 303 31 96</span></a></li>
+        <li><a href="mailto:contact.baolvision@gmail.com" data-copy="contact.baolvision@gmail.com"><svg class="icon"><use href="#i-mail"/></svg>E-mail<span>contact.baolvision@gmail.com</span></a></li>
+        <li><a href="tel:+221773033196"><svg class="icon"><use href="#i-phone"/></svg>Téléphone<span>+221 77 303 31 96</span></a></li>
+        <li><a href="https://www.behance.net/cheikhdiop16" rel="me"><svg class="icon"><use href="#i-link"/></svg>Behance<span>cheikhdiop16</span></a></li>
+      </ul>
+
+      <form class="form" id="contact-form" novalidate>
+        <p class="form__mode">Votre demande s'ouvrira dans WhatsApp, vous pourrez la relire avant l'envoi.</p>
+        <div class="field">
+          <label for="f-name">Nom et prénom</label>
+          <input id="f-name" name="name" autocomplete="name" required>
         </div>
-
-        <form class="form" id="contact-form" novalidate>
-          <p class="form__mode" id="form-mode">Votre demande s'ouvrira dans WhatsApp, vous pourrez la relire avant l'envoi.</p>
-          <div class="field">
-            <label for="f-name">Nom et prénom</label>
-            <input id="f-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="f-phone">Téléphone ou WhatsApp</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-          </div>
-          <div class="field">
-            <label for="f-email">E-mail <span>(facultatif)</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-service">Prestation</label>
-            <select id="f-service" name="service" required>
-              <option value="">Choisir une prestation</option>
-              <option>Identité visuelle</option>
-              <option>Affiches, flyers et print</option>
-              <option>Direction artistique de campagne</option>
-              <option>Site web ou landing page</option>
-              <option>UI/UX d'application</option>
-              <option>Packaging</option>
-              <option>Motion design et vidéo</option>
-              <option>Création assistée par IA</option>
-              <option>Je ne sais pas encore</option>
-            </select>
-          </div>
-          <div class="field field--full">
-            <label for="f-message">Votre projet</label>
-            <textarea id="f-message" name="message" rows="5" required></textarea>
-          </div>
-          <!-- Piège à robots : invisible pour les humains -->
-          <div class="field--trap" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="website" tabindex="-1" autocomplete="off"></div>
-          <p class="form__legal">Vos coordonnées servent uniquement à répondre à votre demande. <a href="/confidentialite.html">Politique de confidentialité</a></p>
-          <button class="button button--primary" type="submit" data-submit>Continuer sur WhatsApp</button>
-          <p class="form__status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+        <div class="field">
+          <label for="f-phone">Téléphone ou WhatsApp</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="field">
+          <label for="f-email">E-mail <span>(facultatif)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-service">Prestation</label>
+          <select id="f-service" name="service" required>
+            <option value="">Choisir une prestation</option>
+            <option>Identité visuelle</option>
+            <option>Affiches, flyers et print</option>
+            <option>Direction artistique de campagne</option>
+            <option>Site web ou landing page</option>
+            <option>UI/UX d'application</option>
+            <option>Packaging</option>
+            <option>Motion design et vidéo</option>
+            <option>Création assistée par IA</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label for="f-message">Votre projet</label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+        </div>
+        <!-- Piège à robots : invisible pour les humains -->
+        <div class="field--trap" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="form__legal">Vos coordonnées servent uniquement à répondre à votre demande. <a href="/confidentialite.html">Politique de confidentialité</a></p>
+        <button class="pill pill--accent" type="submit" data-submit><svg class="icon"><use href="#i-send"/></svg>Continuer sur WhatsApp</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <p>© <span data-year>2026</span> Cheikh Awa Balla Diop, Baol Vision, Touba</p>
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> Cheikh Awa Balla Diop, Baol Vision</p>
       <nav aria-label="Liens de pied de page">
-        <a href="/downloads/CABD-Portfolio-v1.0.1.apk" download>Application Android (APK)</a>
+        <a href="/downloads/CABD-Portfolio-v1.0.1.apk" download>Application Android</a>
         <a href="/mentions-legales.html">Mentions légales</a>
         <a href="/confidentialite.html">Confidentialité</a>
-        <a href="https://www.behance.net/cheikhdiop16" rel="me">Behance</a>
       </nav>
-    </div>
-  </footer>
+    </footer>
+  </main>
+
+  <!-- Navigation flottante -->
+  <nav class="dock" aria-label="Navigation principale">
+    <a href="#accueil"><svg class="icon"><use href="#i-home"/></svg><span>Accueil</span></a>
+    <a href="#profil"><svg class="icon"><use href="#i-user"/></svg><span>Profil</span></a>
+    <a href="#parcours"><svg class="icon"><use href="#i-bag"/></svg><span>Parcours</span></a>
+    <a href="#realisations"><svg class="icon"><use href="#i-grid"/></svg><span>Réalisations</span></a>
+    <a href="#competences"><svg class="icon"><use href="#i-bolt"/></svg><span>Compétences</span></a>
+    <a href="#contact"><svg class="icon"><use href="#i-chat"/></svg><span>Contact</span></a>
+  </nav>
 
   <dialog class="lightbox" aria-labelledby="lightbox-title">
     <div class="lightbox__frame">

@@ -18,25 +18,34 @@ const readJson = async p => JSON.parse(await readFile(path(p), 'utf8'));
 
 const projects = await readJson('data/projects.json');
 const clients = await readJson('data/clients.json');
+const cases = await readJson('data/cases.json');
 
 // Chaque fichier référencé doit exister dans public/, sinon le build échoue au lieu de publier une image cassée.
 const referenced = new Set();
 const asset = file => { referenced.add(file); return `${ASSET}${file}`; };
+
+const arrow = '<svg class="icon card__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>';
 
 const projectCard = (p, i) => {
   const type = p.tag.split(' · ')[0];
   const small = asset(`${IMG}/${p.img}-640.webp`);
   const medium = asset(`${IMG}/${p.img}-1280.webp`);
   const full = p.large ? asset(`${IMG}/${p.img}-1920.webp`) : medium;
-  // Les 4 premières vignettes sont visibles sans défiler sur grand écran.
   const loading = i < 4 ? 'eager' : 'lazy';
   return `        <li class="work" data-cat="${p.cat.join(' ')}">
-          <button type="button" class="work__open" data-full="${full}" data-title="${escape(p.title)}"${p.case ? ` data-case="/project.html?id=${escape(p.case)}"` : ''}>
-            <img src="${small}" srcset="${small} 640w, ${medium} 1280w" sizes="(min-width: 1100px) 25vw, (min-width: 700px) 33vw, 50vw" width="${p.w}" height="${p.h}" alt="${escape(p.alt)}" loading="${loading}" decoding="async">
-            <span class="work__meta"><span class="work__name">${escape(p.name)}</span> <span class="work__type">${escape(type)}</span></span>
+          <button type="button" class="card work__open" data-full="${full}" data-title="${escape(p.title)}"${p.case ? ` data-case="/project.html?id=${escape(p.case)}"` : ''}>
+            <img src="${small}" srcset="${small} 640w, ${medium} 1280w" sizes="(min-width: 700px) 300px, 50vw" width="${p.w}" height="${p.h}" alt="${escape(p.alt)}" loading="${loading}" decoding="async">
+            ${arrow}
+            <span class="card__text"><span class="card__name">${escape(p.name)}</span><span class="card__desc">${escape(type)}</span></span>
           </button>
         </li>`;
 };
+
+const caseCard = c => `            <li><a class="card" href="/project.html?id=${escape(c.id)}">
+              <img src="${asset(`${IMG}/${c.img}-640.webp`)}" width="${c.w}" height="${c.h}" alt="" loading="lazy" decoding="async">
+              ${arrow}
+              <span class="card__text"><span class="card__name">${escape(c.name)}</span><span class="card__desc">${escape(c.summary)}</span></span>
+            </a></li>`;
 
 const clientLogo = c =>
   `        <li><img src="${asset(`/assets/clients/${c.file}.webp`)}" alt="${escape(c.name)}" width="${c.w}" height="${c.h}" loading="lazy" decoding="async"></li>`;
@@ -47,6 +56,7 @@ let html = await readFile(path('src/index.html'), 'utf8');
 html = html
   .replace('{{PROJECTS}}', projects.map(projectCard).join('\n'))
   .replace('{{CLIENTS}}', clients.map(clientLogo).join('\n'))
+  .replace('{{CASES}}', cases.map(caseCard).join('\n'))
   .replaceAll('{{COUNT_ALL}}', projects.length)
   .replaceAll('{{COUNT_PRINT}}', count('print'))
   .replaceAll('{{COUNT_DIGITAL}}', count('digital'))
