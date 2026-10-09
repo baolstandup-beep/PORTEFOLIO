@@ -1,0 +1,11 @@
+{
+  "name": "cabd-portfolio",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/build.mjs && python3 -m http.server 4321 -d dist",
+    "images": "npm i --no-save sharp@0.34.4 && node scripts/optimize-images.mjs"
+  }
+}

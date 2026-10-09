@@ -21,8 +21,13 @@ export default async function handler(req, res) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) return json(res, 400, { error: 'Demande invalide.' });
   const { name, email, phone, service, message, website } = body;
   if (clean(website)) return json(res, 200, { ok: true });
-  const fields = [[name,120], [email,200], [phone,80], [service,200], [message,5000]];
-  if (fields.some(([value,max]) => typeof value !== 'string' || !value.trim() || value.length > max) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  // L'e-mail est facultatif (le téléphone suffit pour répondre), mais doit être valide s'il est fourni.
+  const required = [[name,120], [phone,80], [service,200], [message,5000]];
+  const emailValue = typeof email === 'string' ? email.trim() : '';
+  if (required.some(([value,max]) => typeof value !== 'string' || !value.trim() || value.length > max)
+    || (email !== undefined && typeof email !== 'string')
+    || emailValue.length > 200
+    || (emailValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue))) {
     return json(res, 400, { error: 'Merci de compléter correctement tous les champs.' });
   }
   if (!available) return json(res, 503, { error: "Le service email est en cours d'activation." });
@@ -35,9 +40,9 @@ export default async function handler(req, res) {
     body: JSON.stringify({
       from: process.env.CONTACT_FROM_EMAIL,
       to: [process.env.CONTACT_TO_EMAIL || 'contact.baolvision@gmail.com'],
-      reply_to: clean(email, 200),
+      ...(emailValue ? { reply_to: emailValue } : {}),
       subject: `Nouvelle demande portfolio — ${clean(service, 120)}`,
-      html: `<h1>Nouvelle demande</h1><p><strong>Nom :</strong> ${escapeHtml(name)}</p><p><strong>Email :</strong> ${escapeHtml(email)}</p><p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p><p><strong>Prestation :</strong> ${escapeHtml(service)}</p><p><strong>Projet :</strong><br>${escapeHtml(message).replace(/\n/g, '<br>')}</p>`
+      html: `<h1>Nouvelle demande</h1><p><strong>Nom :</strong> ${escapeHtml(name)}</p><p><strong>Email :</strong> ${escapeHtml(emailValue) || 'non renseigné'}</p><p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p><p><strong>Prestation :</strong> ${escapeHtml(service)}</p><p><strong>Projet :</strong><br>${escapeHtml(message).replace(/\n/g, '<br>')}</p>`
     })
   });
   if (!response.ok) return json(res, 502, { error: "Le service d'envoi est momentanément indisponible." });

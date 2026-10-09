@@ -1,0 +1,517 @@
+[
+  {
+    "slug": "prizent",
+    "name": "Prizent Pointage",
+    "title": "PRIZENT · Système de Pointage Smartphone",
+    "tag": "Digital · App",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-prizent",
+    "w": 1024,
+    "h": 1024,
+    "alt": "PRIZENT Système de pointage smartphone",
+    "case": "prizent"
+  },
+  {
+    "slug": "vacrea",
+    "name": "Vacrea Touba",
+    "title": "VACREA · Vacances de Créations Touba",
+    "tag": "Affiche · Formation",
+    "cat": [
+      "print"
+    ],
+    "img": "project-vacrea",
+    "w": 1024,
+    "h": 1024,
+    "alt": "VACREA Formation Graphisme et Web Touba",
+    "case": "vacrea"
+  },
+  {
+    "slug": "reine-dior",
+    "name": "Reine Dior & Co",
+    "title": "GIE Reine Dior · Formation Make Up & Coiffure",
+    "tag": "Affiche · Beauté",
+    "cat": [
+      "print"
+    ],
+    "img": "project-reine-dior",
+    "w": 819,
+    "h": 1024,
+    "alt": "GIE Reine Dior and Co Formation Professionnelle Make up et Coiffure",
+    "case": "reine-dior"
+  },
+  {
+    "slug": "layene-115",
+    "name": "115e Appel Layène",
+    "title": "115e Anniversaire Appel · Seydina Limamou Laye",
+    "tag": "Affiche · Célébration",
+    "cat": [
+      "print"
+    ],
+    "img": "project-layene-115",
+    "w": 682,
+    "h": 1024,
+    "alt": "115e anniversaire L'Appel Seydina Limamou Laye",
+    "case": "layene-115"
+  },
+  {
+    "slug": "demandoo",
+    "name": "Demandoo Tukki",
+    "title": "DEMANDOO · Solution de Covoiturage Touba - Dakar",
+    "tag": "UI/UX · Covoiturage",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-demandoo",
+    "w": 723,
+    "h": 1024,
+    "alt": "Demandoo Covoiturage Touba Dakar Yombalna Sa Tukki",
+    "case": "demandoo"
+  },
+  {
+    "slug": "poroxaan",
+    "name": "Poroxaan Volaille",
+    "title": "POROXAAN · Opération Spéciale Gamou Mawlid Touba",
+    "tag": "Affiche · Gamou",
+    "cat": [
+      "print"
+    ],
+    "img": "project-poroxaan",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Poroxaan Initiative Volaille - Spéciale Opération Gamou Mawlid",
+    "case": "poroxaan"
+  },
+  {
+    "slug": "cass-online",
+    "name": "Cass Online",
+    "title": "CASS ONLINE · Place de Marché Mobile",
+    "tag": "Branding · E-Commerce",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-cass-online",
+    "w": 1024,
+    "h": 976,
+    "alt": "Cass Online - Comme un marché mais dans un téléphone",
+    "case": "cass-online"
+  },
+  {
+    "slug": "mstech",
+    "name": "MSTech Touba",
+    "title": "MSTECH · Services Techniques & Sécurité Touba",
+    "tag": "Print · Corporate",
+    "cat": [
+      "print"
+    ],
+    "img": "project-mstech",
+    "w": 985,
+    "h": 1024,
+    "alt": "MSTech Al Moubarack Services Technologie Touba",
+    "case": "mstech"
+  },
+  {
+    "slug": "sanofi-urgest",
+    "name": "Sanofi URGEST",
+    "title": "SANOFI · Conférence Projet URGEST",
+    "tag": "Affiche · Santé",
+    "cat": [
+      "print"
+    ],
+    "img": "project-sanofi-urgest",
+    "w": 822,
+    "h": 1024,
+    "alt": "Sanofi présente Projet URGEST Pr Oumar Kane",
+    "case": "sanofi-urgest"
+  },
+  {
+    "slug": "darou-salam",
+    "name": "Darou Salam",
+    "title": "DAROU SALAM ASSURANCE · Moto Auto Tricycle",
+    "tag": "Campagne · Assurance",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-darou-salam",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Darou Salam Assurance Digitale chez Maodo mou Bamba",
+    "case": "darou-salam"
+  },
+  {
+    "slug": "pastef-mbacke",
+    "name": "PASTEF Mbacké",
+    "title": "PASTEF · Giga Caravane Mbacké (Législatives 2024)",
+    "tag": "Affiche · Campagne",
+    "cat": [
+      "print"
+    ],
+    "img": "project-pastef-mbacke",
+    "w": 819,
+    "h": 1024,
+    "alt": "PASTEF Giga Caravane Mbacke - Sénégal 2050 - Législatives 2024",
+    "case": "pastef-mbacke"
+  },
+  {
+    "slug": "ndigeul-zikrullah",
+    "name": "Bissup Zikrullah",
+    "title": "FONDATION AHFAADU · Ndigeul Bissup Zikrullah Touba",
+    "tag": "Affiche · Zikrullah",
+    "cat": [
+      "print"
+    ],
+    "img": "project-ndigeul-zikrullah",
+    "w": 723,
+    "h": 1024,
+    "alt": "Fondation Ahfaadu Cheikh Ibrahima Faal - Ndigeul Bissup Zikrullah",
+    "case": "ndigeul-zikrullah"
+  },
+  {
+    "slug": "magal-ngabou",
+    "name": "Magal Ngabou",
+    "title": "MAGAL NGABOU · Édition 2026 (Serigne Khalil LO)",
+    "tag": "Affiche · Magal",
+    "cat": [
+      "print"
+    ],
+    "img": "project-magal-ngabou",
+    "w": 723,
+    "h": 1024,
+    "alt": "Magal Ngabou Édition 2026 - Serigne Khalil LO",
+    "case": "magal-ngabou"
+  },
+  {
+    "slug": "gamou-darou-miname",
+    "name": "Darou Miname Pet",
+    "title": "GAMOU DAROU MINAME PET · Dahira Hiznoul Abrare",
+    "tag": "Affiche · Gamou",
+    "cat": [
+      "print"
+    ],
+    "img": "project-gamou-darou-miname",
+    "w": 723,
+    "h": 1024,
+    "alt": "Gamou Darou Miname Pet - Serigne El Hadji Mame Thierno Mbacke",
+    "case": "gamou-darou-miname"
+  },
+  {
+    "slug": "pas-pas-tabaski",
+    "name": "PAS-PAS Tabaski",
+    "title": "PAS-PAS · Tabaski Créative (Création IA & 3D)",
+    "tag": "Création 3D · IA",
+    "cat": [
+      "digital",
+      "print"
+    ],
+    "img": "project-pas-pas-tabaski",
+    "w": 819,
+    "h": 1024,
+    "alt": "PAS-PAS Bonne Fête de Tabaski création 3D IA",
+    "case": "pas-pas-tabaski"
+  },
+  {
+    "slug": "pas-pas-talkshow",
+    "name": "PAS-PAS Talk-Show",
+    "title": "PAS-PAS · Talk-Show WhatsApp (Mbacké Khéwar)",
+    "tag": "Affiche · Débat",
+    "cat": [
+      "print"
+    ],
+    "img": "project-pas-pas-talkshow",
+    "w": 819,
+    "h": 1024,
+    "alt": "PAS-PAS Talk-show WhatsApp Mouvement Mbacke",
+    "case": "pas-pas-talkshow"
+  },
+  {
+    "slug": "porokhane-soow",
+    "name": "Porokhane Soow",
+    "title": "POROKHANE SOOW · Packaging Khiakry 500G Touba",
+    "tag": "Packaging · Produit",
+    "cat": [
+      "digital",
+      "print"
+    ],
+    "img": "project-porokhane-soow",
+    "w": 1024,
+    "h": 724,
+    "alt": "Porokhane Soow Khiakry 500G Packaging Touba Darou Khoudoss",
+    "case": "porokhane-soow"
+  },
+  {
+    "slug": "graphia-bootcamp",
+    "name": "Graphia Bootcamp",
+    "title": "GRAPHIA · Bootcamps Infographie & IA Touba / Mbacké",
+    "tag": "Infographie & IA",
+    "cat": [
+      "digital",
+      "print"
+    ],
+    "img": "project-graphia-bootcamp",
+    "w": 819,
+    "h": 1024,
+    "alt": "GRAPHIA Un nouveau chapitre s ouvre Bootcamps Infographie et IA",
+    "case": "graphia"
+  },
+  {
+    "slug": "acis-forum",
+    "name": "ACIS Forum Touba",
+    "title": "ACIS · Forum Économique Wadial Magal Touba (18 Safar)",
+    "tag": "Forum Économique",
+    "cat": [
+      "print"
+    ],
+    "img": "project-acis-forum",
+    "w": 724,
+    "h": 1024,
+    "alt": "ACIS Forum Wadial Magal Touba 2026 Heliport de Touba",
+    "case": "acis-forum"
+  },
+  {
+    "slug": "setrans-brochure-cover",
+    "name": "SET-TRANS · Couverture",
+    "title": "SET-TRANS · Couverture de brochure",
+    "tag": "Brochure · Logistique",
+    "cat": [
+      "print"
+    ],
+    "img": "project-setrans-brochure-cover",
+    "w": 1220,
+    "h": 867,
+    "alt": "Couverture de la brochure SET-TRANS transport et logistique",
+    "case": "setrans"
+  },
+  {
+    "slug": "setrans-brochure-interior",
+    "name": "SET-TRANS · Intérieur",
+    "title": "SET-TRANS · Présentation corporate",
+    "tag": "Édition · Corporate",
+    "cat": [
+      "print"
+    ],
+    "img": "project-setrans-brochure-interior",
+    "w": 1217,
+    "h": 891,
+    "alt": "Présentation intérieure de la brochure SET-TRANS",
+    "case": "setrans"
+  },
+  {
+    "slug": "setrans-brochure-open",
+    "name": "SET-TRANS · Double page",
+    "title": "SET-TRANS · Brochure ouverte",
+    "tag": "Mockup · Brochure",
+    "cat": [
+      "print"
+    ],
+    "img": "project-setrans-brochure-open",
+    "w": 1243,
+    "h": 883,
+    "alt": "Mockup ouvert de la brochure SET-TRANS",
+    "case": "setrans"
+  },
+  {
+    "slug": "setrans-brochure-mockup",
+    "name": "SET-TRANS · Mockup",
+    "title": "SET-TRANS · Dépliant corporate",
+    "tag": "Print · Dépliant",
+    "cat": [
+      "print"
+    ],
+    "img": "project-setrans-brochure-mockup",
+    "w": 1217,
+    "h": 891,
+    "alt": "Mockup du dépliant corporate SET-TRANS",
+    "case": "setrans"
+  },
+  {
+    "slug": "khelcom-packaging-04",
+    "name": "KhelCom · Face",
+    "title": "KhelCom · Packaging Café Touba",
+    "tag": "Packaging · Café",
+    "cat": [
+      "print"
+    ],
+    "img": "project-khelcom-packaging-04",
+    "w": 1280,
+    "h": 853,
+    "alt": "Packaging Café Touba KhelCom vue de face",
+    "case": "khelcom",
+    "large": true
+  },
+  {
+    "slug": "khelcom-packaging-03",
+    "name": "KhelCom · Perspective",
+    "title": "KhelCom · Packaging en perspective",
+    "tag": "Packaging · Mockup",
+    "cat": [
+      "print"
+    ],
+    "img": "project-khelcom-packaging-03",
+    "w": 1280,
+    "h": 853,
+    "alt": "Packaging Café Touba KhelCom en perspective",
+    "case": "khelcom",
+    "large": true
+  },
+  {
+    "slug": "khelcom-packaging-02",
+    "name": "KhelCom · Sachet",
+    "title": "KhelCom · Design de sachet",
+    "tag": "Identité · Produit",
+    "cat": [
+      "print"
+    ],
+    "img": "project-khelcom-packaging-02",
+    "w": 1280,
+    "h": 853,
+    "alt": "Design de sachet Café Touba KhelCom",
+    "case": "khelcom",
+    "large": true
+  },
+  {
+    "slug": "ngs-brand-01",
+    "name": "NGS · Logotype",
+    "title": "NGS · Présentation du logotype",
+    "tag": "Branding · Logo",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-ngs-brand-01",
+    "w": 1280,
+    "h": 853,
+    "alt": "Logotype Ndiaye Global Services sur papier",
+    "case": "ngs",
+    "large": true
+  },
+  {
+    "slug": "ngs-brand-02",
+    "name": "NGS · Mugs",
+    "title": "NGS · Déclinaison sur mugs",
+    "tag": "Branding · Supports",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-ngs-brand-02",
+    "w": 1280,
+    "h": 1024,
+    "alt": "Identité Ndiaye Global Services appliquée sur des mugs",
+    "case": "ngs",
+    "large": true
+  },
+  {
+    "slug": "ngs-brand-03",
+    "name": "NGS · Façade",
+    "title": "NGS · Signalétique extérieure",
+    "tag": "Branding · Signalétique",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-ngs-brand-03",
+    "w": 1280,
+    "h": 880,
+    "alt": "Identité Ndiaye Global Services sur façade corporate",
+    "case": "ngs",
+    "large": true
+  },
+  {
+    "slug": "ngs-brand-04",
+    "name": "NGS · Plaque",
+    "title": "NGS · Plaque professionnelle",
+    "tag": "Identité · Corporate",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-ngs-brand-04",
+    "w": 1280,
+    "h": 896,
+    "alt": "Plaque professionnelle Ndiaye Global Services",
+    "case": "ngs",
+    "large": true
+  },
+  {
+    "slug": "digital-01",
+    "name": "Création digitale 01",
+    "title": "Création digitale · Série 01",
+    "tag": "Digital · Création",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-digital-01",
+    "w": 1024,
+    "h": 1024,
+    "alt": "Création graphique digitale Baol Vision série 1",
+    "case": null
+  },
+  {
+    "slug": "digital-02",
+    "name": "Création digitale 02",
+    "title": "Création digitale · Série 02",
+    "tag": "Digital · Création",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-digital-02",
+    "w": 1264,
+    "h": 848,
+    "alt": "Création graphique digitale Baol Vision série 2",
+    "case": null
+  },
+  {
+    "slug": "digital-03",
+    "name": "Création digitale 03",
+    "title": "Création digitale · Série 03",
+    "tag": "Digital · Création",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-digital-03",
+    "w": 1264,
+    "h": 848,
+    "alt": "Création graphique digitale Baol Vision série 3",
+    "case": null
+  },
+  {
+    "slug": "digital-04",
+    "name": "Création digitale 04",
+    "title": "Création digitale · Série 04",
+    "tag": "Digital · Création",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-digital-04",
+    "w": 1264,
+    "h": 848,
+    "alt": "Création graphique digitale Baol Vision série 4",
+    "case": null
+  },
+  {
+    "slug": "digital-05",
+    "name": "Création digitale 05",
+    "title": "Création digitale · Série 05",
+    "tag": "Digital · Création",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-digital-05",
+    "w": 1280,
+    "h": 714,
+    "alt": "Création graphique digitale Baol Vision série 5",
+    "case": null,
+    "large": true
+  },
+  {
+    "slug": "social-media",
+    "name": "Création réseaux sociaux",
+    "title": "Social Media · Création graphique",
+    "tag": "Social Media",
+    "cat": [
+      "digital"
+    ],
+    "img": "project-social-media",
+    "w": 1080,
+    "h": 1080,
+    "alt": "Création graphique pour les réseaux sociaux",
+    "case": null
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Porokhane Soow",
+    "file": "porokhane-soow",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Restaurant Eldasy",
+    "file": "restaurant-eldasy",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Camusat",
+    "file": "camusat",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Quincaillerie Mouridoulla",
+    "file": "quincaillerie-mouridoulla",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Boutique Keur Khadim",
+    "file": "boutique-keur-khadim",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Bio Mbacké",
+    "file": "bio-mbacke",
+    "w": 400,
+    "h": 170
+  },
+  {
+    "name": "Baol Office",
+    "file": "baol-office",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Mbeeté mi",
+    "file": "mbeete-mi",
+    "w": 400,
+    "h": 239
+  },
+  {
+    "name": "Commune de Touba Mosquée",
+    "file": "ctm-commune-touba-mosquee",
+    "w": 400,
+    "h": 239
+  }
+]
