@@ -20,20 +20,26 @@ const caseUrl = id => `/projets/${id}/`;
 
 // ---------- Accueil ----------
 
-// Cartes « Projets phares » : vignette ronde, nom, catégorie et résumé, lien vers l'étude de cas.
-function featuredCard(c) {
-  const thumb = c.images[0];
-  return `        <li class="reveal">
-          <a class="project-card" href="${caseUrl(c.id)}">
-            <span class="project-card__head">
-              <span class="project-card__thumb">${picture(thumb, { alt: '', sizes: '56px', loading: 'lazy' })}</span>
-              <span><span class="project-card__name">${escape(c.name)}</span><span class="project-card__cat">${escape(c.category)}${c.year ? `, ${escape(c.year)}` : ''}</span></span>
-            </span>
-            <span class="project-card__text">${escape(c.summary)}</span>
-            <span class="project-card__more">Voir l'étude de cas <span aria-hidden="true">→</span></span>
-          </a>
-        </li>`;
+// Projets phares : polaroïds scotchés, légende manuscrite, lien vers l'étude de cas.
+function polaroid(c, i) {
+  const img = c.images.find(x => x.w >= x.h) ?? c.images[0];
+  return `      <li class="polaroid polaroid--${(i % 3) + 1}">
+        <a href="${caseUrl(c.id)}">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="polaroid__img">${picture(img, { alt: img.alt, sizes: '(min-width: 1000px) 360px, (min-width: 640px) 45vw, calc(100vw - 3rem)' })}</span>
+          <span class="polaroid__caption"><span class="polaroid__name">${escape(c.name)}</span><span class="polaroid__cat">${escape(c.category)}${c.year ? `, ${escape(c.year)}` : ''}</span></span>
+        </a>
+      </li>`;
 }
+
+// Papiers déchirés de l'affiche : projets récents réels, reliés à leur étude de cas.
+const scrap = (c, i) => `      <li class="scrap scrap--${i + 2}">
+        <a href="${caseUrl(c.id)}">
+          <span class="scrap__role">${escape(c.category)}</span>
+          <span class="scrap__org">${escape(c.name)}${c.year && !c.name.includes(c.year) ? ` (${escape(c.year)})` : ''}</span>
+          <span class="scrap__text">${escape(c.summary)}</span>
+        </a>
+      </li>`;
 
 function archiveCard(p, i) {
   const img = { img: p.img, w: p.w, h: p.h, large: p.large };
@@ -51,19 +57,14 @@ const clientLogo = c => `      <li><img src="/assets/clients/${c.file}.webp" alt
 export function homePage({ template, cases, projects, clients }) {
   const byId = Object.fromEntries(cases.map(c => [c.id, c]));
   const featured = cases.filter(c => c.featured).sort((a, b) => a.featured - b.featured);
-  const portrait = { img: 'cheikh-awa-balla-diop-portrait', w: 1049, h: 1499 };
-  const salixate = byId.salixate.images[0];
-  const ngsFacade = byId.ngs.images.find(i => i.img.endsWith('-03'));
-  const setransPolo = byId.setrans.images.find(i => i.img.endsWith('-polo'));
+  const sticker = { img: 'cheikh-awa-balla-diop-sticker', w: 1280, h: 1726 };
   const count = cat => projects.filter(p => p.cat.includes(cat)).length;
+  const scraps = ['ngs', 'setrans', 'khelcom', 'magal-ngabou'].map(id => byId[id]);
 
   const body = template
-    .replace('{{HERO_PORTRAIT}}', picture(portrait, { alt: 'Portrait de Cheikh Awa Balla Diop', sizes: '(min-width: 960px) 360px, 80vw', priority: true }))
-    .replace('{{IMG_A}}', picture(salixate, { alt: 'Packaging Salixate Café en situation', sizes: '(min-width: 960px) 560px, calc(100vw - 2.5rem)' }))
-    .replace('{{IMG_B}}', picture(ngsFacade, { alt: 'Identité Ndiaye Global Services appliquée sur une façade', sizes: '(min-width: 960px) 560px, calc(100vw - 2.5rem)' }))
-    .replace('{{SERVICES_IMG}}', picture(setransPolo, { alt: 'Polos brodés aux couleurs de SETRANS', sizes: '(min-width: 960px) 320px, calc(100vw - 2.5rem)' }))
-    .replace('{{CTA_PORTRAIT}}', picture(portrait, { alt: '', sizes: '(min-width: 960px) 380px, 70vw' }))
-    .replace('{{FEATURED}}', featured.map(featuredCard).join('\n'))
+    .replace('{{STICKER}}', picture(sticker, { alt: 'Cheikh Awa Balla Diop, directeur artistique et graphiste', sizes: '(min-width: 1000px) 420px, 80vw', priority: true }))
+    .replace('{{SCRAPS}}', scraps.map(scrap).join('\n'))
+    .replace('{{FEATURED}}', featured.map(polaroid).join('\n'))
     .replace('{{ARCHIVE}}', projects.map(archiveCard).join('\n'))
     .replace('{{CLIENTS}}', clients.map(clientLogo).join('\n'))
     .replace('{{LIGHTBOX}}', lightbox)
@@ -78,7 +79,7 @@ export function homePage({ template, cases, projects, clients }) {
     path: '/',
     body,
     bodyClass: 'page-home',
-    preload: `  <link rel="preload" as="image" href="${IMG}/${portrait.img}-640.webp" imagesrcset="${IMG}/${portrait.img}-640.webp 640w, ${IMG}/${portrait.img}-1280.webp 1280w" imagesizes="(min-width: 960px) 360px, 80vw" fetchpriority="high">\n`,
+    preload: `  <link rel="preload" as="image" href="${IMG}/${sticker.img}-640.webp" imagesrcset="${IMG}/${sticker.img}-640.webp 640w, ${IMG}/${sticker.img}-960.webp 960w, ${IMG}/${sticker.img}-1280.webp 1280w" imagesizes="(min-width: 1000px) 420px, 80vw" fetchpriority="high">\n`,
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [

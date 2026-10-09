@@ -133,10 +133,11 @@ export function layout({ title, description, path, body, image, jsonLd, preload 
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0b0b0b">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#ece7dd">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 ${preload}  <link rel="stylesheet" href="/css/styles.css">
   <script type="module" src="/js/main.js"></script>

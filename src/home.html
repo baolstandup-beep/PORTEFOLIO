@@ -1,197 +1,200 @@
 <main id="contenu">
 
-  <!-- Hero : carte claire arrondie -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__card">
-      <svg class="spark spark--hero" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 34 92 18 66 42 100 50 66 58 92 82 58 66 50 100 42 66 8 82 34 58 0 50 34 42 8 18 42 34Z"/></svg>
-      <h1 id="hero-title" class="hero__title">Des identités fortes. <span>Des idées qui traversent les frontières.</span></h1>
+  <!-- Affiche « personal branding » : collage sur papier -->
+  <section id="a-propos" class="poster wrap" aria-labelledby="poster-title">
+    <p class="poster__kicker">Portfolio · Baol Vision</p>
+    <p class="poster__year" aria-hidden="true">2026</p>
 
-      <div class="hero__grid">
-        <div class="hero__intro">
-          <p>Directeur artistique et designer graphique à Touba, je conçois des identités visuelles, des univers de marque et des expériences digitales qui donnent de la force aux entreprises.</p>
-          <a class="pill-link" href="#a-propos">En savoir plus</a>
-        </div>
-
-        <figure class="hero__portrait">
-          {{HERO_PORTRAIT}}
-          <div class="hero__actions">
-            <a class="button button--accent" href="{{WHATSAPP}}" data-track="whatsapp_hero">Démarrer un projet</a>
-            <a class="button button--glass" href="#projets">Voir mes travaux</a>
-          </div>
-        </figure>
-
-        <div class="hero__since">
-          <p class="hero__since-value">Depuis 2022</p>
-          <p>Studio Baol Vision<br>Touba, Sénégal</p>
-        </div>
-      </div>
+    <div class="poster__heading">
+      <h1 id="poster-title" class="poster__title">Directeur artistique &amp; graphiste</h1>
+      <p class="poster__name"><span>Cheikh Awa Balla Diop</span></p>
+      <p class="poster__tagline">Identités visuelles &amp;<br>communication créative</p>
     </div>
-  </section>
 
-  <!-- Chiffres réels -->
-  <section class="stats wrap" aria-label="Quelques chiffres">
-    <dl class="stats__bar">
-      <div><dt>Projets réalisés</dt><dd>36+</dd></div>
-      <div><dt>Marques accompagnées</dt><dd>30+</dd></div>
-      <div><dt>Études de cas publiées</dt><dd>24</dd></div>
-      <div><dt>Création du studio</dt><dd>2022</dd></div>
-    </dl>
-    <p class="stats__note">Des créations concrètes pour des entrepreneurs, des commerces et des institutions, de Touba à Dakar.</p>
-  </section>
+    <!-- Doodles dessinés à la main (décoratifs) -->
+    <svg class="doodle doodle--arrow-title" viewBox="0 0 220 120" aria-hidden="true"><path d="M4 30C60 4 150 6 190 60" /><path d="M176 50l15 12 4-19" /></svg>
+    <svg class="doodle doodle--arrow-notes" viewBox="0 0 140 110" aria-hidden="true"><path d="M8 100C10 50 50 18 120 14" /><path d="M104 5l17 9-13 13" /></svg>
+    <svg class="doodle doodle--stars" viewBox="0 0 90 90" aria-hidden="true"><path d="M30 8l5 15 15 2-12 9 4 16-12-9-13 8 5-15-11-10 15-1z" /><path d="M66 46l3 8 8 1-6 5 2 9-7-5-7 4 3-8-6-6 8 0z" /></svg>
+    <svg class="doodle doodle--pen" viewBox="0 0 170 120" aria-hidden="true"><path d="M10 100C40 20 120 120 160 20" /><rect x="5" y="95" width="10" height="10" /><rect x="155" y="15" width="10" height="10" /><circle cx="60" cy="25" r="4" /><path d="M10 100L60 25" stroke-dasharray="4 5" /></svg>
+    <svg class="doodle doodle--waves" viewBox="0 0 60 60" aria-hidden="true"><path d="M14 40c8-6 8-18 0-24" /><path d="M24 48c13-10 13-30 0-40" /><path d="M34 56c18-14 18-40 0-54" /></svg>
+    <svg class="doodle doodle--arrow-qr" viewBox="0 0 120 110" aria-hidden="true"><path d="M110 8C70 10 30 40 20 95" /><path d="M8 80l11 17 14-14" /></svg>
+    <svg class="doodle doodle--scribble" viewBox="0 0 80 80" aria-hidden="true"><path d="M8 70L70 8M18 74L74 18M30 76L76 30M42 76L76 42" /></svg>
 
-  <!-- À propos -->
-  <section id="a-propos" class="ideas wrap" aria-labelledby="ideas-title">
-    <div class="ideas__col">
-      <h2 id="ideas-title" class="title">Transformer des idées en identités fortes</h2>
-      <figure class="ideas__img ideas__img--a">{{IMG_A}}</figure>
+    <!-- Tablette graphique et outils (illustration originale) -->
+    <div class="poster__desk" aria-hidden="true">
+      <svg class="tablet" viewBox="0 0 260 180"><rect x="6" y="20" width="248" height="150" rx="18" class="tablet__body" /><rect x="70" y="38" width="168" height="114" rx="6" class="tablet__pad" /><circle cx="36" cy="62" r="14" class="tablet__wheel" /><rect x="26" y="90" width="20" height="10" rx="3" class="tablet__key" /><rect x="26" y="108" width="20" height="10" rx="3" class="tablet__key" /><path d="M120 150L214 10l9 5-90 142z" class="tablet__pen" /></svg>
+      <span class="app app--ps">Ps</span>
+      <span class="app app--ai">Ai</span>
+      <span class="app app--pr">Pr</span>
+      <span class="app app--fg">Fg</span>
     </div>
-    <div class="ideas__col">
-      <div class="ideas__text">
-        <p>Une marque mal identifiée se confond avec ses concurrents : visuels incohérents, message flou, image qui ne reflète pas la qualité du travail.</p>
-        <p>Je suis Cheikh Awa Balla Diop, fondateur de Baol Vision. Je comble cet écart avec des créations pensées pour être reconnues, rassurer et vendre, en combinant design, stratégie et intelligence artificielle.</p>
-        <p class="ideas__role"><strong>Fondateur et directeur créatif, Baol Vision</strong> · Touba, depuis 2022</p>
-      </div>
-      <figure class="ideas__img ideas__img--b">{{IMG_B}}</figure>
+
+    <!-- Portrait détouré façon autocollant -->
+    <figure class="poster__portrait">
+      {{STICKER}}
+    </figure>
+
+    <!-- Note scotchée : outils -->
+    <div class="note">
+      <span class="tape" aria-hidden="true"></span>
+      <h2 class="note__title">Outils créatifs</h2>
+      <ul class="note__list">
+        <li><span class="chip-app app--ps">Ps</span>Adobe Photoshop</li>
+        <li><span class="chip-app app--ai">Ai</span>Adobe Illustrator</li>
+        <li><span class="chip-app app--pr">Pr</span>Adobe Premiere Pro</li>
+        <li><span class="chip-app app--fg">Fg</span>Figma</li>
+        <li><span class="chip-app app--ia">IA</span>Runway, Kling, ChatGPT</li>
+      </ul>
+    </div>
+
+    <!-- Tableau des compétences -->
+    <table class="skills-table">
+      <caption class="visually-hidden">Compétences</caption>
+      <tbody>
+        <tr><td>Direction artistique</td><td>Branding</td><td>Affiches &amp; print</td></tr>
+        <tr><td>Web &amp; UI/UX</td><td>Réseaux sociaux</td><td>Packaging</td></tr>
+        <tr><td>Motion design</td><td>Montage vidéo</td><td>Création IA</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Parcours et projets récents sur papiers déchirés -->
+    <ol class="scraps">
+      <li class="scrap scrap--1">
+        <h2>Fondateur &amp; directeur créatif</h2>
+        <p class="scrap__org">Baol Vision, Touba (2022 – aujourd'hui)</p>
+        <p>Direction de la création visuelle, systèmes de marque et campagnes.</p>
+      </li>
+{{SCRAPS}}
+    </ol>
+
+    <!-- QR code vers Behance -->
+    <a class="polaroid-qr" href="https://www.behance.net/cheikhdiop16" rel="me">
+      <span class="tape" aria-hidden="true"></span>
+      <img src="/assets/qr-behance.svg" width="160" height="160" alt="QR code vers le profil Behance de Cheikh Awa Balla Diop">
+      <span class="polaroid-qr__label">Mon Behance</span>
+    </a>
+
+    <!-- Résumé -->
+    <div class="summary">
+      <h2>Graphiste &amp; directeur artistique <span>depuis 2022</span></h2>
+      <p>Je transforme les idées en identités visuelles fortes : branding, affiches, packaging et contenus digitaux pour des marques au Sénégal et à l'international, en combinant design, stratégie et intelligence artificielle.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="connect">
+      <p class="connect__title">Contactez-moi</p>
+      <ul>
+        <li><span class="connect__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg></span><a href="tel:+221773033196">+221 77 303 31 96</a></li>
+        <li><span class="connect__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg></span><a href="mailto:contact.baolvision@gmail.com" data-copy="contact.baolvision@gmail.com">contact.baolvision@gmail.com</a></li>
+        <li><span class="connect__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1L4 20" /></svg></span><a href="{{WHATSAPP}}" data-track="whatsapp_hero">Écrire sur WhatsApp</a></li>
+      </ul>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="services wrap" aria-labelledby="services-title">
-    <div class="panel services__panel">
-      <div class="services__intro">
-        <h2 id="services-title" class="title">Mes <mark>services</mark></h2>
-        <p>De la création de marque aux contenus du quotidien, avec des fichiers prêts pour le print, le web et les réseaux sociaux.</p>
-        <ol class="services__list">
-          <li>Identité visuelle et branding</li>
-          <li>Direction artistique de campagnes</li>
-          <li>Affiches, édition et print</li>
-          <li>Packaging et étiquettes</li>
-          <li>Web design et UI/UX</li>
-          <li>Motion design, vidéo et IA</li>
-        </ol>
-      </div>
-      <figure class="services__img">{{SERVICES_IMG}}</figure>
-      <div class="services__cards">
-        <svg class="spark spark--services" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 34 92 18 66 42 100 50 66 58 92 82 58 66 50 100 42 66 8 82 34 58 0 50 34 42 8 18 42 34Z"/></svg>
-        <a class="mini-card" href="#a-propos">Mon parcours <span class="mini-card__arrow" aria-hidden="true">→</span></a>
-        <a class="mini-card mini-card--accent" href="#projets">Voir mes travaux <span class="mini-card__arrow" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Valeurs -->
-  <section class="values wrap" aria-label="Valeurs">
-    <ul>
-      <li>Créativité</li>
-      <li>Exigence</li>
-      <li>Fiabilité</li>
+  <section id="services" class="section wrap" aria-labelledby="services-title">
+    <h2 id="services-title" class="section__title">Ce que je fais <span class="hand">pour vous</span></h2>
+    <ul class="paper-cards">
+      <li class="paper-card"><h3>Identité visuelle</h3><p>Logo, palette, typographies et charte pour une marque reconnaissable et durable.</p></li>
+      <li class="paper-card"><h3>Direction artistique</h3><p>Concept, campagne et cohérence visuelle sur tous les supports, du print aux réseaux.</p></li>
+      <li class="paper-card"><h3>Affiches &amp; édition</h3><p>Affiches événementielles, brochures, dépliants et supports corporate.</p></li>
+      <li class="paper-card"><h3>Packaging</h3><p>Sachets, étiquettes et boîtes qui valorisent les produits en rayon.</p></li>
+      <li class="paper-card"><h3>Web &amp; UI/UX</h3><p>Sites vitrines, landing pages et maquettes d'applications.</p></li>
+      <li class="paper-card"><h3>Motion, vidéo &amp; IA</h3><p>Visuels animés, reels, montage et création assistée par IA.</p></li>
     </ul>
   </section>
 
-  <!-- Projets phares + archive -->
-  <section id="projets" class="projects wrap" aria-labelledby="projets-title">
-    <div class="panel">
-      <h2 id="projets-title" class="title">Projets <mark>phares</mark></h2>
-      <ul class="featured">
+  <!-- Projets phares (polaroïds) + archive -->
+  <section id="projets" class="section wrap" aria-labelledby="projets-title">
+    <h2 id="projets-title" class="section__title">Projets <span class="hand">phares</span></h2>
+    <ul class="polaroids">
 {{FEATURED}}
-      </ul>
-
-      <div id="archive" class="archive">
-        <div class="archive__head">
-          <h3>Toutes les réalisations</h3>
-          <div class="filters" role="group" aria-label="Filtrer les réalisations">
-            <button type="button" class="chip" data-filter="all" aria-pressed="true">Tout <span>{{COUNT_ALL}}</span></button>
-            <button type="button" class="chip" data-filter="print" aria-pressed="false">Print et affiches <span>{{COUNT_PRINT}}</span></button>
-            <button type="button" class="chip" data-filter="digital" aria-pressed="false">Digital et marque <span>{{COUNT_DIGITAL}}</span></button>
-          </div>
-        </div>
-        <ul class="works" data-page-size="12" data-gallery>
-{{ARCHIVE}}
-        </ul>
-        <p class="works__more"><button type="button" class="button button--line" data-works-more hidden></button></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Témoignages (contenus réels) -->
-  <section class="testimonials" aria-labelledby="testimonials-title">
-    <div class="wrap testimonials__head">
-      <h2 id="testimonials-title" class="title">Ce que disent <mark>mes clients</mark></h2>
-      <div class="testimonials__nav">
-        <button type="button" class="round-button" data-scroll="-1" aria-label="Avis précédent">←</button>
-        <button type="button" class="round-button" data-scroll="1" aria-label="Avis suivant">→</button>
-      </div>
-    </div>
-    <ul class="testimonials__track" tabindex="0" aria-label="Avis clients, faire défiler horizontalement">
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">AL</span><strong>Abdou Salam Lô</strong><span>Gérant, Restaurant Mbeeté mi</span></figcaption><blockquote><p>Nous avons apprécié la qualité du travail, la créativité et surtout la compréhension rapide de nos besoins. Notre communication est aujourd'hui beaucoup plus professionnelle et attractive.</p></blockquote></figure></li>
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">NS</span><strong>Ndiaya Sylla</strong><span>Gérante, Boutique Keur Khadim</span></figcaption><blockquote><p>Un service sérieux, réactif et très professionnel. Le résultat correspond parfaitement à l'image que nous voulions donner à notre boutique.</p></blockquote></figure></li>
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">MD</span><strong>Mamadou Moustapha Dieng</strong><span>Directeur, SETRANS SARL</span></figcaption><blockquote><p>Un partenaire à l'écoute, capable de comprendre les exigences de notre secteur et de proposer une communication cohérente avec l'image de SETRANS.</p></blockquote></figure></li>
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">PD</span><strong>Dr Penda Diop</strong><span>Directrice, Bio Mbacké</span></figcaption><blockquote><p>J'ai particulièrement apprécié l'écoute, la disponibilité et la qualité des propositions. Notre communication est plus claire, moderne et cohérente.</p></blockquote></figure></li>
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">IS</span><strong>Ibrahima Sow</strong><span>Fondateur, Ndamatou Fitness</span></figcaption><blockquote><p>Des visuels modernes et adaptés à notre univers. Le travail apporte une vraie valeur à l'image de Ndamatou Fitness et à notre présence sur les réseaux sociaux.</p></blockquote></figure></li>
-      <li><figure><figcaption><span class="avatar" aria-hidden="true">A</span><strong>Aissatou</strong><span>Gérante, Élégance by Aïcha</span></figcaption><blockquote><p>Le travail reflète parfaitement l'élégance et l'identité de notre marque. Créativité, souci du détail, et nos idées transformées en une communication professionnelle.</p></blockquote></figure></li>
     </ul>
-    <div class="wrap">
-      <h3 class="clients__title">Ils m'ont confié leur image</h3>
-      <ul class="clients">
-{{CLIENTS}}
+
+    <div id="archive" class="archive">
+      <div class="archive__head">
+        <h3>Toutes les réalisations</h3>
+        <div class="filters" role="group" aria-label="Filtrer les réalisations">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">Tout <span>{{COUNT_ALL}}</span></button>
+          <button type="button" class="chip" data-filter="print" aria-pressed="false">Print et affiches <span>{{COUNT_PRINT}}</span></button>
+          <button type="button" class="chip" data-filter="digital" aria-pressed="false">Digital et marque <span>{{COUNT_DIGITAL}}</span></button>
+        </div>
+      </div>
+      <ul class="works" data-page-size="12" data-gallery>
+{{ARCHIVE}}
       </ul>
+      <p class="works__more"><button type="button" class="button button--line" data-works-more hidden></button></p>
     </div>
   </section>
 
-  <!-- Appel à l'action + formulaire -->
-  <section id="contact" class="cta wrap" aria-labelledby="contact-title">
-    <div class="cta__text">
-      <h2 id="contact-title" class="title">Prêt à faire grandir votre marque ?</h2>
-      <p>Vous lancez une marque, un produit ou un événement ? Décrivez votre besoin, je vous réponds rapidement sur WhatsApp.</p>
+  <!-- Avis (contenus réels) sur notes adhésives -->
+  <section class="section wrap" aria-labelledby="avis-title">
+    <h2 id="avis-title" class="section__title">Ils en <span class="hand">parlent</span></h2>
+    <ul class="sticky-notes">
+      <li><figure><blockquote><p>Nous avons apprécié la qualité du travail, la créativité et surtout la compréhension rapide de nos besoins. Notre communication est aujourd'hui beaucoup plus professionnelle et attractive.</p></blockquote><figcaption><strong>Abdou Salam Lô</strong> Gérant, Restaurant Mbeeté mi</figcaption></figure></li>
+      <li><figure><blockquote><p>Un service sérieux, réactif et très professionnel. Le résultat correspond parfaitement à l'image que nous voulions donner à notre boutique.</p></blockquote><figcaption><strong>Ndiaya Sylla</strong> Gérante, Boutique Keur Khadim</figcaption></figure></li>
+      <li><figure><blockquote><p>Un partenaire à l'écoute, capable de comprendre les exigences de notre secteur et de proposer une communication cohérente avec l'image de SETRANS.</p></blockquote><figcaption><strong>Mamadou Moustapha Dieng</strong> Directeur, SETRANS SARL</figcaption></figure></li>
+      <li><figure><blockquote><p>J'ai particulièrement apprécié l'écoute, la disponibilité et la qualité des propositions. Notre communication est plus claire, moderne et cohérente.</p></blockquote><figcaption><strong>Dr Penda Diop</strong> Directrice, Bio Mbacké</figcaption></figure></li>
+      <li><figure><blockquote><p>Des visuels modernes et adaptés à notre univers. Le travail apporte une vraie valeur à l'image de Ndamatou Fitness et à notre présence sur les réseaux sociaux.</p></blockquote><figcaption><strong>Ibrahima Sow</strong> Fondateur, Ndamatou Fitness</figcaption></figure></li>
+      <li><figure><blockquote><p>Le travail reflète parfaitement l'élégance et l'identité de notre marque. Créativité, souci du détail, et nos idées transformées en une communication professionnelle.</p></blockquote><figcaption><strong>Aissatou</strong> Gérante, Élégance by Aïcha</figcaption></figure></li>
+    </ul>
+    <h3 class="clients__title">Ils m'ont confié leur image</h3>
+    <ul class="clients">
+{{CLIENTS}}
+    </ul>
+  </section>
 
-      <form class="form" id="contact-form" novalidate>
-        <p class="form__mode">Votre demande s'ouvrira dans WhatsApp, vous pourrez la relire avant l'envoi.</p>
-        <div class="field">
-          <label for="f-name">Nom et prénom</label>
-          <input id="f-name" name="name" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="f-phone">Téléphone ou WhatsApp</label>
-          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-        </div>
-        <div class="field">
-          <label for="f-email">E-mail <span>(facultatif)</span></label>
-          <input id="f-email" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="f-service">Prestation</label>
-          <select id="f-service" name="service" required>
-            <option value="">Choisir une prestation</option>
-            <option>Identité visuelle</option>
-            <option>Affiches, flyers et print</option>
-            <option>Direction artistique de campagne</option>
-            <option>Site web ou landing page</option>
-            <option>UI/UX d'application</option>
-            <option>Packaging</option>
-            <option>Motion design et vidéo</option>
-            <option>Création assistée par IA</option>
-            <option>Je ne sais pas encore</option>
-          </select>
-        </div>
-        <div class="field field--full">
-          <label for="f-message">Votre projet</label>
-          <textarea id="f-message" name="message" rows="4" required></textarea>
-        </div>
-        <div class="field--trap" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="website" tabindex="-1" autocomplete="off"></div>
-        <p class="form__legal">Vos coordonnées servent uniquement à répondre à votre demande. <a href="/confidentialite.html">Politique de confidentialité</a></p>
-        <button class="button button--accent" type="submit" data-submit>Continuer sur WhatsApp</button>
-        <p class="form__status" role="status" aria-live="polite"></p>
-      </form>
+  <!-- Contact : bloc-notes -->
+  <section id="contact" class="section wrap contact" aria-labelledby="contact-title">
+    <div class="contact__intro">
+      <h2 id="contact-title" class="section__title">Un projet <span class="hand">en tête ?</span></h2>
+      <p>Décrivez votre besoin : la demande s'ouvre dans WhatsApp, prête à envoyer. Je vous réponds rapidement.</p>
+      <div class="faq">
+        <details name="faq"><summary>Vous cherchez un graphiste à Touba ?</summary><p>Je conçois affiches, brochures, packaging et contenus digitaux depuis Touba, avec un accompagnement direct de la définition du besoin à la livraison.</p></details>
+        <details name="faq"><summary>Travaillez-vous partout au Sénégal ?</summary><p>Oui. Les échanges, validations et livraisons se font à distance pour Dakar et toutes les régions du Sénégal, comme pour l'international.</p></details>
+        <details name="faq"><summary>Que comprend une identité visuelle ?</summary><p>Selon le projet : logo, palette, typographies, règles d'utilisation, applications de marque et fichiers prêts pour le print et le digital.</p></details>
+      </div>
     </div>
 
-    <figure class="cta__portrait">{{CTA_PORTRAIT}}</figure>
-
-    <div class="faq">
-      <h3>Questions fréquentes</h3>
-      <details name="faq"><summary>Vous cherchez un graphiste à Touba ?</summary><p>Je conçois affiches, brochures, packaging et contenus digitaux depuis Touba, avec un accompagnement direct de la définition du besoin à la livraison.</p></details>
-      <details name="faq"><summary>Travaillez-vous partout au Sénégal ?</summary><p>Oui. Les échanges, validations et livraisons se font à distance pour Dakar et toutes les régions du Sénégal, comme pour l'international.</p></details>
-      <details name="faq"><summary>Que comprend une identité visuelle ?</summary><p>Selon le projet : logo, palette, typographies, règles d'utilisation, applications de marque et fichiers prêts pour le print et le digital.</p></details>
-    </div>
+    <form class="form notepad" id="contact-form" novalidate>
+      <span class="tape" aria-hidden="true"></span>
+      <p class="form__mode">Votre demande s'ouvrira dans WhatsApp, vous pourrez la relire avant l'envoi.</p>
+      <div class="field">
+        <label for="f-name">Nom et prénom</label>
+        <input id="f-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Téléphone ou WhatsApp</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+      </div>
+      <div class="field">
+        <label for="f-email">E-mail <span>(facultatif)</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="f-service">Prestation</label>
+        <select id="f-service" name="service" required>
+          <option value="">Choisir une prestation</option>
+          <option>Identité visuelle</option>
+          <option>Affiches, flyers et print</option>
+          <option>Direction artistique de campagne</option>
+          <option>Site web ou landing page</option>
+          <option>UI/UX d'application</option>
+          <option>Packaging</option>
+          <option>Motion design et vidéo</option>
+          <option>Création assistée par IA</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="f-message">Votre projet</label>
+        <textarea id="f-message" name="message" rows="4" required></textarea>
+      </div>
+      <div class="field--trap" aria-hidden="true"><label for="f-site">Site web</label><input id="f-site" name="website" tabindex="-1" autocomplete="off"></div>
+      <p class="form__legal">Vos coordonnées servent uniquement à répondre à votre demande. <a href="/confidentialite.html">Politique de confidentialité</a></p>
+      <button class="button button--ink" type="submit" data-submit>Continuer sur WhatsApp</button>
+      <p class="form__status" role="status" aria-live="polite"></p>
+    </form>
   </section>
 </main>
 
