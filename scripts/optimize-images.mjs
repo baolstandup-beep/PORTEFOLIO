@@ -2,6 +2,7 @@
 //   npm i --no-save sharp@0.34.4 && node scripts/optimize-images.mjs
 // - logos clients : WebP 400 px de large → public/assets/clients/*.webp, dimensions dans data/clients.json
 // - projets : WebP 1920 px pour la visionneuse quand l'original est plus grand que 1280 px
+// - toutes les images : variante 960 px pour les téléphones
 import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -21,6 +22,15 @@ for (const client of clients) {
   console.log(`logo ${client.file} : ${kb((await stat(source)).size)} → ${kb(info.size)}`);
 }
 await writeFile(path('data/clients.json'), `${JSON.stringify(clients, null, 2)}\n`);
+
+// Variantes intermédiaires 960 px (téléphones à haute densité), pour toute image 1280 assez large
+for (const file of (await readdir(path('public/assets/images/optimized'))).filter(f => f.endsWith('-1280.webp'))) {
+  const source = path(`public/assets/images/optimized/${file}`);
+  const target = source.replace('-1280.webp', '-960.webp');
+  if (existsSync(target) || (await sharp(source).metadata()).width <= 1000) continue;
+  await sharp(source).resize({ width: 960 }).webp({ quality: 78 }).toFile(target);
+  console.log(`variante 960 : ${file.replace('-1280.webp', '')}`);
+}
 
 // Grandes versions des projets
 const originals = await readdir(path('public/assets/images'));

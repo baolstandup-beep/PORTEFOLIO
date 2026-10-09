@@ -94,3 +94,17 @@ vercel.json            CSP stricte, en-têtes de sécurité, cache des images
 ## Octobre 2026 : passage au style « CV sombre »
 
 À la demande du propriétaire, la page d'accueil adopte une mise en page inspirée du modèle Framer « Apex », recodée sans en reprendre le code, les images ni les textes : portrait fixe avec lueur ambre, colonne de contenu, frise du parcours avec projets phares, barre de navigation flottante, police Albert Sans hébergée sur le site.
+
+## Octobre 2026 : refonte « African Contemporary Art Direction »
+
+**Audit préalable.** Site statique (HTML, CSS, JS natifs, build Node sans dépendance) sur Vercel. Contenu réel conservé : 36 visuels, 24 projets détaillés (client, rôle, année, problématique, solution, résultat) jusque-là enfermés dans le JavaScript de `project.html`, 9 logos, 6 avis, coordonnées, FAQ, API de contact, APK, pages légales.
+
+**Problèmes corrigés.**
+- Les études de cas n'existaient qu'à travers `project.html?id=…`, rendu en JavaScript : invisibles pour les moteurs de recherche, styles et polices différents du reste du site. Elles deviennent 24 pages statiques `/projets/<id>/`, avec leurs métadonnées, leur JSON-LD et leur image de partage. Les anciennes adresses redirigent (301).
+- Les pages légales utilisaient Poppins depuis Google et des styles intégrés : elles sont générées dans le même gabarit.
+- La CSP stricte couvre désormais tout le site.
+- Variantes WebP 960 px ajoutées pour les téléphones (34 images, 44 Ko économisés en moyenne par image).
+
+**Système visuel.** Papier `#F6F3ED`, encre `#171717`, vert profond `#174B3A` en signature, ocre `#B77A46` réservé aux détails et grands chiffres, gris minéral `#8A8882` pour le décor. Le texte secondaire utilise `#5C5A55` (6,2:1) car le gris minéral n'atteint que 3,2:1. Cormorant Garamond pour les titres, Manrope pour le texte, hébergées sur le site.
+
+**Mesures Lighthouse (serveur local, sans compression ni cache).** Accueil mobile : 94 / 100 / 96 / 100. Accueil ordinateur : 100 / 100 / 96 / 100. Étude de cas mobile : 93 / 100 / 100 / 92 avant les derniers correctifs. CLS 0, TBT 0 ms.

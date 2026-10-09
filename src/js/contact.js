@@ -49,8 +49,14 @@ export function initContactForm(form) {
     const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 
     if (!emailEnabled) {
-      window.open(waUrl, '_blank', 'noopener');
+      const tab = window.open(waUrl, '_blank', 'noopener');
       track('whatsapp_form');
+      const link = Object.assign(document.createElement('a'), { href: waUrl, target: '_blank', rel: 'noopener', textContent: 'Ouvrir WhatsApp' });
+      // window.open renvoie null avec noopener : on affiche toujours un lien de secours.
+      status.replaceChildren(
+        tab ? 'WhatsApp s’est ouvert avec votre demande : il ne reste qu’à l’envoyer. ' : 'Votre demande est prête dans WhatsApp. Si rien ne s’est ouvert : ',
+        link
+      );
       return;
     }
 

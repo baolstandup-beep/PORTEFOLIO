@@ -1,0 +1,691 @@
+[
+  {
+    "id": "prizent",
+    "name": "Prizent",
+    "category": "Communication visuelle",
+    "type": "UI/UX · SaaS Tech",
+    "client": "Globe Soft SARL / Prizent.tech",
+    "role": "Direction artistique & Design publicitaire",
+    "year": "2024",
+    "summary": "Système de pointage intelligent par smartphone",
+    "description": "Conception du support visuel de promotion et mise en valeur de la solution Prizent, un logiciel de pointage moderne par smartphone et badges destiné aux entreprises, écoles, chantiers BTP et restaurants.",
+    "problem": "Rendre accessible et immédiatement compréhensible une solution logicielle B2B dans un format publicitaire percutant au Sénégal.",
+    "direction": "Direction artistique axée sur des contrastes forts, typographie nette et intégration du mockup smartphone en situation réelle de bureau.",
+    "approach": "La composition part du besoin de compréhension : identifier le service, montrer son usage sur smartphone, puis rendre visibles les publics concernés. La hiérarchie sépare la promesse principale des informations secondaires ; la mise en situation relie la solution numérique à un environnement de travail concret.",
+    "deliverables": "Une affiche de présentation de la solution de pointage et un mockup de campagne en contexte professionnel. Les deux visuels sont consultables dans la galerie.",
+    "result": "Le résultat visible est un support où le smartphone, le nom de la solution et sa promesse occupent des niveaux de lecture distincts. Les visuels montrent le travail de communication ; aucune donnée commerciale mesurée n’est disponible ici.",
+    "featured": 4,
+    "images": [
+      {
+        "img": "project-prizent",
+        "w": 1024,
+        "h": 1024,
+        "alt": "PRIZENT Système de pointage smartphone",
+        "large": false
+      },
+      {
+        "img": "project-prizent-mockup",
+        "w": 1280,
+        "h": 714,
+        "alt": "Prizent : visuel 2",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "cass-online",
+    "name": "Cass Online",
+    "category": "Communication visuelle",
+    "type": "Branding · E-commerce",
+    "client": "Cass Online Sénégal",
+    "role": "Campagne publicitaire & Branding",
+    "year": "2024",
+    "summary": "Place de marché digitale & E-commerce au Sénégal",
+    "description": "Création de la campagne promotionnelle percutante 'Comme un marché dans un téléphone' valorisant l'achat et la revente de produits high-tech et mode sans se déplacer.",
+    "problem": "Capter l'attention dans un marché e-commerce très concurrentiel et transmettre la promesse de rapidité et de simplicité.",
+    "direction": "Composition publicitaire énergique, intégration harmonieuse d'une multitude de produits (smartphones, son, mode) autour d'un personnage dynamique en lévitation.",
+    "approach": "Le concept traduit le catalogue en une scène unique : les produits et le personnage matérialisent l’idée d’un marché accessible depuis son téléphone. Le regard est guidé vers le message, puis vers l’offre. La mise en situation permet d’évaluer la présence de la campagne à une autre échelle.",
+    "deliverables": "Un visuel publicitaire de la place de marché et une mise en situation d’affichage. La composition réunit produits, accroche et identité de marque.",
+    "result": "Deux supports cohérents illustrent une même promesse de marque, du visuel publicitaire au mockup. L’impact sur les ventes ou la notoriété n’a pas été documenté dans ce portfolio.",
+    "featured": 6,
+    "images": [
+      {
+        "img": "project-cass-online",
+        "w": 1024,
+        "h": 976,
+        "alt": "Cass Online - Comme un marché mais dans un téléphone",
+        "large": false
+      },
+      {
+        "img": "project-cass-online-mockup",
+        "w": 1280,
+        "h": 714,
+        "alt": "Cass Online : visuel 2",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "darou-salam",
+    "name": "Darou Salam Assurance",
+    "category": "Communication visuelle",
+    "type": "Assurance Digitale · Print",
+    "client": "Darou Salam Assurance",
+    "role": "Conception graphique & Campagne",
+    "year": "2024",
+    "summary": "Campagne digitale moto - auto - tricycle",
+    "description": "Campagne promotionnelle pour l'assurance digitale moto, auto et tricycle avec délivrance instantanée d'attestation.",
+    "problem": "Démocratiser la souscription d'assurance en ligne auprès des conducteurs et transporteurs urbains.",
+    "direction": "Mise en avant claire du smartphone affichant l'attestation numérique validée, entouré des véhicules cibles (Mercedes, moto, tricycle de livraison).",
+    "result": "Adhésion forte des usagers et augmentation immédiate des souscriptions en ligne.",
+    "images": [
+      {
+        "img": "project-darou-salam",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Darou Salam Assurance Digitale chez Maodo mou Bamba",
+        "large": false
+      },
+      {
+        "img": "project-darou-salam-mockup",
+        "w": 1280,
+        "h": 714,
+        "alt": "Darou Salam Assurance : visuel 2",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "mstech",
+    "name": "MSTech",
+    "category": "Identité visuelle",
+    "type": "Identité Visuelle · Corporate",
+    "client": "MSTech Sénégal",
+    "role": "Direction visuelle & Print Corporate",
+    "year": "2024",
+    "summary": "Al Moubarack Services Technologie",
+    "description": "Supports promotionnels et identité pour une entreprise experte en électricité bâtiment, climatisation et caméras de surveillance.",
+    "problem": "Valoriser la rigueur technique et le professionnalisme d'une entreprise multi-services techniques.",
+    "direction": "Palette bleu et rouge technique, composition structurée en vignettes pour chaque corps de métier et maquette de covering utilitaire.",
+    "result": "Supports commerciaux de référence pour les réponses aux appels d'offres et démarchages B2B.",
+    "images": [
+      {
+        "img": "project-mstech",
+        "w": 985,
+        "h": 1024,
+        "alt": "MSTech Al Moubarack Services Technologie Touba",
+        "large": false
+      },
+      {
+        "img": "project-mstech-mockup",
+        "w": 1280,
+        "h": 714,
+        "alt": "MSTech : visuel 2",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "vacrea",
+    "name": "Vacrea",
+    "category": "Communication visuelle",
+    "type": "Événementiel · Formation Design",
+    "client": "Vacrea / Baol Vision",
+    "role": "Branding événementiel & Affiche",
+    "year": "2024",
+    "summary": "Vacances de création — Graphisme & Web",
+    "description": "Affiche promotionnelle pour la session de formation intensive aux métiers du design graphique (Photoshop, Illustrator, Premiere Pro, WordPress).",
+    "problem": "Présenter une formation créative à Touba en rendant lisibles son programme, ses outils et les informations d’inscription, tout en donnant envie de découvrir les métiers du design.",
+    "direction": "Composition chaleureuse et dynamique mettant en avant le formateur, les modules clés et les badges logiciels officiels.",
+    "approach": "Le message de formation est organisé autour du formateur et des disciplines enseignées. Les éléments logiciels servent de repères rapides. La déclinaison en mise en situation prolonge l’univers créatif de l’affiche et aide à apprécier sa lisibilité dans un environnement réel.",
+    "deliverables": "Une affiche de formation et un mockup d’ambiance. Les informations pédagogiques, le portrait et les repères logiciels sont réunis dans une composition événementielle.",
+    "result": "Un ensemble de deux visuels présente clairement l’univers de la formation. Les chiffres d’inscription ne sont pas disponibles ; le résultat présenté porte sur les supports conçus.",
+    "images": [
+      {
+        "img": "project-vacrea",
+        "w": 1024,
+        "h": 1024,
+        "alt": "VACREA Formation Graphisme et Web Touba",
+        "large": false
+      },
+      {
+        "img": "project-vacrea-mockup",
+        "w": 1280,
+        "h": 714,
+        "alt": "Vacrea : visuel 2",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "demandoo",
+    "name": "Demandoo",
+    "category": "Design digital",
+    "type": "UI/UX · Mobilité",
+    "client": "Demandoo Mobility",
+    "role": "Identité visuelle & UI Design",
+    "year": "2024",
+    "summary": "Plateforme de covoiturage urbain",
+    "description": "Création de la marque et de l'expérience utilisateur d'une application de transport partagé reliant notamment Touba et Dakar.",
+    "problem": "Créer une identité fraîche et sécurisante pour une mobilité collaborative avec réservation et trajet transparents.",
+    "direction": "Contraste vert électrique et bleu profond, typographie moderne et design system réutilisable pour application mobile.",
+    "result": "Déploiement complet des écrans mobiles et kit marketing.",
+    "images": [
+      {
+        "img": "project-demandoo",
+        "w": 723,
+        "h": 1024,
+        "alt": "Demandoo Covoiturage Touba Dakar Yombalna Sa Tukki",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "reine-dior",
+    "name": "Reine Dior & Co",
+    "category": "Communication visuelle",
+    "type": "Affiche · Beauté & Formation",
+    "client": "GIE Reine Dior and Co",
+    "role": "Direction artistique & Conception Affiche",
+    "year": "2024",
+    "summary": "Formation Professionnelle Make Up & Coiffure",
+    "description": "Conception de l'affiche publicitaire haute définition pour la formation professionnelle en esthétique, maquillage et coiffure de luxe.",
+    "problem": "Positionner la marque dans un univers premium, élégant et sélectif pour attirer les apprenantes passionnées.",
+    "direction": "Typographie dorée texturée avec ombres portées douces, mise en valeur photographique sublime de modèles avec un travail minutieux des lumières et contrastes.",
+    "result": "Impact visuel marquant, adhésion forte et valorisation du savoir-faire du GIE.",
+    "images": [
+      {
+        "img": "project-reine-dior",
+        "w": 819,
+        "h": 1024,
+        "alt": "GIE Reine Dior and Co Formation Professionnelle Make up et Coiffure",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "layene-115",
+    "name": "115e Appel de Seydina Limamou Laye",
+    "category": "Communication visuelle",
+    "type": "Affiche · Célébration Spirituelle",
+    "client": "Daara Diamalahi",
+    "role": "Création visuelle & Affiche Événementielle",
+    "year": "2025",
+    "summary": "115e Anniversaire de l'Appel — Longueuil Canada",
+    "description": "Affiche commémorative officielle pour le 115e Anniversaire de l'Appel de Seydina Limamou Laye Al Mahdi, organisée par Daara Diamalahi.",
+    "problem": "Créer une affiche solennelle, empreinte de spiritualité et de respect des figures saintes, tout en assurant une lisibilité impeccable des informations pratiques.",
+    "direction": "Traitement pictural en découpe papier déchiré, composition harmonieuse entre les guides spirituels, la foule de pèlerins en blanc et les détails de la conférence.",
+    "result": "Large diffusion au sein de la communauté au Canada et sur les plateformes numériques.",
+    "images": [
+      {
+        "img": "project-layene-115",
+        "w": 682,
+        "h": 1024,
+        "alt": "115e anniversaire L'Appel Seydina Limamou Laye",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "poroxaan",
+    "name": "Poroxaan Initiative Volaille",
+    "category": "Communication visuelle",
+    "type": "Affiche · Campagne Événementielle",
+    "client": "Poroxaan Initiative Volaille (Touba Mbacké)",
+    "role": "Direction artistique & Conception Graphique",
+    "year": "2024",
+    "summary": "Spéciale Opération GAMOU Mawlid Al Nabi",
+    "description": "Affiche publicitaire percutante conçue pour la vente de poulets de chair lors du grand événement religieux du Mawlid.",
+    "problem": "Capter l'attention immédiate des fidèles et des familles préparant les festivités du Gamou.",
+    "direction": "Contraste vert et rouge festif, intégration des symboles de la fête religieuse et mise en valeur appétissante du produit avec coordonnées d'appel claires.",
+    "result": "Ruée sur les commandes avec écoulement complet des stocks avant le Gamou.",
+    "images": [
+      {
+        "img": "project-poroxaan",
+        "w": 1024,
+        "h": 1024,
+        "alt": "Poroxaan Initiative Volaille - Spéciale Opération Gamou Mawlid",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "sanofi-urgest",
+    "name": "Sanofi · Projet URGEST",
+    "category": "Communication visuelle",
+    "type": "Affiche Médicale & Conférence",
+    "client": "Sanofi Sénégal / Pr Oumar Kane",
+    "role": "Design visuel & Affiche Scientifique",
+    "year": "2024",
+    "summary": "Douleur aux urgences : enjeu de qualité et sécurité",
+    "description": "Conception de l'affiche de conférence médicale de haut niveau pour le laboratoire international Sanofi et l'Hôpital FANN.",
+    "problem": "Créer un support institutionnel alliant rigueur scientifique, clarté pédagogique et élégance médicale.",
+    "direction": "Typographie contrastée vert clinique et blanc sur fond sombre soigné, mise en exergue du conférencier et des thématiques d'urgence.",
+    "result": "Forte mobilisation des spécialistes du corps médical lors de la conférence à l'Hôtel Fleur de LYS.",
+    "images": [
+      {
+        "img": "project-sanofi-urgest",
+        "w": 822,
+        "h": 1024,
+        "alt": "Sanofi présente Projet URGEST Pr Oumar Kane",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "pastef-mbacke",
+    "name": "PASTEF · Giga caravane Mbacké",
+    "category": "Communication visuelle",
+    "type": "Affiche Politique & Campagne",
+    "client": "Section PASTEF Touba Mbacké",
+    "role": "Direction artistique & Conception Graphique",
+    "year": "2024",
+    "summary": "Législatives 2024 — Sénégal 2050",
+    "description": "Affiche officielle de mobilisation pour la grande caravane politique des Législatives 2024 à Mbacké et Touba.",
+    "problem": "Mobiliser les militants et sympathisants avec une hiérarchie visuelle forte combinant les leaders, les candidats et le spécimen de vote.",
+    "direction": "Composition percutante aux couleurs nationales et partisanes, découpe dynamique des portraits et typographie impactante 'GIGA CARAVANE'.",
+    "result": "Diffusion massive sur les réseaux et lors des rassemblements populaires.",
+    "images": [
+      {
+        "img": "project-pastef-mbacke",
+        "w": 819,
+        "h": 1024,
+        "alt": "PASTEF Giga Caravane Mbacke - Sénégal 2050 - Législatives 2024",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "ndigeul-zikrullah",
+    "name": "Ndigeul Bissup Zikrullah",
+    "category": "Communication visuelle",
+    "type": "Affiche · Célébration Spirituelle",
+    "client": "Fondation Ahfaadu Cheikh Ibrahima Faal",
+    "role": "Conception visuelle & Direction artistique",
+    "year": "2026",
+    "summary": "Sous le Ndigeul du Khalif Général des Mourides",
+    "description": "Affiche solennelle pour la journée de commémoration et de Zikroulah à la Grande Mosquée de Touba.",
+    "problem": "Rendre hommage aux figures vénérées de la confrérie avec une dignité spirituelle exemplaire.",
+    "direction": "Finition texturée or et noir, mise en valeur du minaret de Touba et des guides spirituels avec typographie calligraphique soignée.",
+    "result": "Affiche de référence partagée dans les dahiras du Sénégal et de la diaspora.",
+    "images": [
+      {
+        "img": "project-ndigeul-zikrullah",
+        "w": 723,
+        "h": 1024,
+        "alt": "Fondation Ahfaadu Cheikh Ibrahima Faal - Ndigeul Bissup Zikrullah",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "magal-ngabou",
+    "name": "Magal Ngabou 2026",
+    "category": "Communication visuelle",
+    "type": "Affiche Événementielle & Religieuse",
+    "client": "Comité d'organisation Magal Ngabou / Serigne Khalil LO",
+    "role": "Direction visuelle & Affiche Officielle",
+    "year": "2026",
+    "summary": "Commémoration du retour de Serigne Touba de la mer",
+    "description": "Affiche de la 20e journée après la Korité commémorant l'événement historique de Serigne Touba à Ngabou.",
+    "problem": "Concevoir une affiche festive et lumineuse adaptée au grand rassemblement annuel.",
+    "direction": "Titre 3D en vert émeraude et or relief, médaillons des vénérables chefs religieux et repères calendaires nets.",
+    "result": "Forte visibilité dans les médias religieux et affichage urbain dans le Baol.",
+    "featured": 5,
+    "images": [
+      {
+        "img": "project-magal-ngabou",
+        "w": 723,
+        "h": 1024,
+        "alt": "Magal Ngabou Édition 2026 - Serigne Khalil LO",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "gamou-darou-miname",
+    "name": "Gamou Darou Miname Pet",
+    "category": "Communication visuelle",
+    "type": "Affiche Religieuse & Veillée",
+    "client": "Dahira Hiznoul Abrare",
+    "role": "Création graphique & Mise en page",
+    "year": "2025",
+    "summary": "Sous la présence de Serigne El Hadji Mame Thierno Mbacké",
+    "description": "Affiche officielle pour la nuit du Gamou, conférences religieuses et récitals du Saint Coran à Darou Miname Pet.",
+    "problem": "Organiser un programme complexe d'activités sur 24h avec une clarté de lecture totale.",
+    "direction": "Arche islamique verte centrale, découpe soignée des guides religieux et chronologie des heures d'activités parfaitement ordonnée.",
+    "result": "Support validé par le comité d'organisation et imprimé en grand format pour l'événement.",
+    "images": [
+      {
+        "img": "project-gamou-darou-miname",
+        "w": 723,
+        "h": 1024,
+        "alt": "Gamou Darou Miname Pet - Serigne El Hadji Mame Thierno Mbacke",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "gda",
+    "name": "GDA Architecture",
+    "category": "Identité visuelle",
+    "type": "Branding & Espace",
+    "client": "GDA Architecture",
+    "role": "Branding & Direction artistique",
+    "year": "2024",
+    "summary": "Cabinet d'architecture & Construction",
+    "description": "Identité géométrique inspirée des lignes de plans architecturaux.",
+    "problem": "Signifier la précision millimétrée et l'élégance sobre.",
+    "direction": "Logo minimaliste en noir et blanc avec grille modulaire rigoureuse.",
+    "result": "Image de marque installée auprès de promoteurs immobiliers.",
+    "images": [
+      {
+        "img": "project-gda",
+        "w": 1280,
+        "h": 714,
+        "alt": "GDA Architecture : visuel 1",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "graphia",
+    "name": "Graphia · Bootcamps IA et infographie",
+    "category": "Communication visuelle",
+    "type": "Infographie & Intelligence Artificielle",
+    "client": "Graphia Academy / Baol Vision",
+    "role": "Direction pédagogique & Création visuelle",
+    "year": "2024",
+    "summary": "Un nouveau chapitre s'ouvre pour les créatifs de Touba & Mbacké",
+    "description": "Affiche promotionnelle pour la session exclusive de Bootcamps alliant maîtrise des outils de référence (Illustrator, Photoshop) et des IA génératives de pointe (ChatGPT, Claude Code, Gemini, Veo 3).",
+    "problem": "Faire passer les jeunes créatifs du Baol à la vitesse supérieure en intégrant l'IA dans leur workflow de graphistes.",
+    "direction": "Composition innovante avec smartphone-télécommande d'outils, chiffres clés (50 talents, 5 jours, 1 ambition) et minaret de Touba en arrière-plan.",
+    "result": "Impact retentissant auprès des créatifs et inscriptions saturées.",
+    "images": [
+      {
+        "img": "project-graphia-bootcamp",
+        "w": 819,
+        "h": 1024,
+        "alt": "GRAPHIA Un nouveau chapitre s ouvre Bootcamps Infographie et IA",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "pas-pas-tabaski",
+    "name": "PAS-PAS · Tabaski",
+    "category": "Direction artistique",
+    "type": "Création 3D & Intelligence Artificielle",
+    "client": "Mouvement PAS-PAS Sénégal",
+    "role": "Direction artistique 3D & Génération IA",
+    "year": "2024",
+    "summary": "Campagne décalée : 'On n'est pas la cible aujourd'hui'",
+    "description": "Visuel humoristique et chaleureux de célébration de la fête de Tabaski mettant en scène un coq détendu dégustant un thé sénégalais.",
+    "problem": "Créer un visuel de vœux mémorable qui se démarque de tous les visuels traditionnels sur les réseaux sociaux.",
+    "direction": "Direction artistique 3D soignée avec rendu ultra-détaillé des plumes, du fauteuil en bois et de la tasse de thé, ton décalé et bienveillant.",
+    "result": "Viralité exceptionnelle sur WhatsApp et les réseaux avec des milliers de partages.",
+    "images": [
+      {
+        "img": "project-pas-pas-tabaski",
+        "w": 819,
+        "h": 1024,
+        "alt": "PAS-PAS Bonne Fête de Tabaski création 3D IA",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "pas-pas-talkshow",
+    "name": "PAS-PAS · Talk-show WhatsApp",
+    "category": "Communication visuelle",
+    "type": "Affiche Digitale & Événement",
+    "client": "Plateforme PAS-PAS (Mbacké Khéwar)",
+    "role": "Conception graphique & Print",
+    "year": "2026",
+    "summary": "Contexte et historique de la naissance de PAS-PAS",
+    "description": "Affiche promotionnelle pour le grand Talk-show WhatsApp réunissant les figures clés du mouvement PAS-PAS.",
+    "problem": "Structurer un grand nombre d'informations (intervenants, horaires, accès, coordonnées) sans surcharger la composition.",
+    "direction": "Disposition aérée en triptyque pour les intervenants, ondes sonores stylisées et badge WhatsApp officiel.",
+    "result": "Forte affluence lors du direct et engagement record de la communauté.",
+    "images": [
+      {
+        "img": "project-pas-pas-talkshow",
+        "w": 819,
+        "h": 1024,
+        "alt": "PAS-PAS Talk-show WhatsApp Mouvement Mbacke",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "porokhane-soow",
+    "name": "Porokhane Soow · Khiakry",
+    "category": "Branding & packaging",
+    "type": "Packaging & Identité Produit",
+    "client": "Porokhane Soow Agroalimentaire",
+    "role": "Design Packaging & Direction Graphique",
+    "year": "2024",
+    "summary": "Étiquette pot de Thiakry 100% Naturel — Touba Darou Khoudoss",
+    "description": "Conception technique de l'étiquette conique pour le pot de Thiakry 500G commercialisé à Touba et au Sénégal.",
+    "problem": "Réaliser une maquette en arc de cercle aux normes strictes d'impression agroalimentaire avec tableau nutritionnel et code-barres.",
+    "direction": "Design frais vert laiteux, mise en valeur gourmande du bol de khiakry et logo emblématique 'Porokhane Soow'.",
+    "result": "Conditionnement en rayon dans les supermarchés et boutiques de proximité.",
+    "images": [
+      {
+        "img": "project-porokhane-soow",
+        "w": 1024,
+        "h": 724,
+        "alt": "Porokhane Soow Khiakry 500G Packaging Touba Darou Khoudoss",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "acis-forum",
+    "name": "ACIS · Forum Wadial Magal Touba",
+    "category": "Communication visuelle",
+    "type": "Affiche Économique & Forum",
+    "client": "ACIS (Association des Commerçants et Industriels du Sénégal)",
+    "role": "Direction visuelle & Affiche Événementielle",
+    "year": "2026",
+    "summary": "Le Magal de Touba : levier pour une économie locale dynamique",
+    "description": "Affiche officielle du Forum Économique 18 Safar organisé à l'Héliport de Touba dans le cadre des préparatifs du Grand Magal.",
+    "problem": "Valoriser la dimension économique et industrielle du Magal auprès des décideurs institutionnels et chefs d'entreprises.",
+    "direction": "Élégance institutionnelle bleue et blanche, badge emblématique avec le minaret et chapiteaux du forum en perspective.",
+    "result": "Validation par les instances de l'ACIS et affichage officiel de l'événement.",
+    "images": [
+      {
+        "img": "project-acis-forum",
+        "w": 724,
+        "h": 1024,
+        "alt": "ACIS Forum Wadial Magal Touba 2026 Heliport de Touba",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "setrans",
+    "name": "SETRANS",
+    "category": "Direction artistique",
+    "type": "Transit · Transport · Logistique",
+    "client": "SETRANS SARL — 52 rue Escarfait, Dakar Plateau",
+    "role": "Direction Artistique, Affiche Publicitaire & Merchandising Textile",
+    "year": "2024",
+    "summary": "L'Ingénierie Logistique Globale — Fret Aérien, Maritime, Routier & Douane",
+    "description": "Conception intégrale de la campagne publicitaire corporate et de l'identité de marque pour SETRANS SARL, société d'ingénierie logistique multimodale basée à Dakar Plateau. Mise en valeur des 4 pôles stratégiques : Fret Aérien, Fret Maritime, Logistique Routière et Douane & Transit.",
+    "problem": "Illustrer avec force et crédibilité l'envergure d'un acteur du transit multimodal capable d'interconnecter air, mer, fer et route, tout en concevant des tenues professionnelles et goodies de prestige pour le personnel et les partenaires.",
+    "direction": "Composition publicitaire monumentale associant avion-cargo, porte-conteneurs, semi-remorque et locomotive sur le quai portuaire. Déclinaisons textiles soignées respectant la charte (bleu marine profond, blanc et typographie technique) sur casquettes brodées, polos d'entreprise et t-shirts pour les équipes terrain.",
+    "approach": "L’information est structurée par métier : transport, transit et logistique. La couverture installe l’univers multimodal ; les pages intérieures détaillent les services et les coordonnées. Les mockups de brochure et les applications textiles permettent de lire la cohérence de la marque sur des usages différents.",
+    "deliverables": "Brochure corporate : couverture, intérieur et mises en situation. Affiche de présentation, casquette, polo et t-shirt en mockup complètent la série visible.",
+    "result": "La galerie réunit les supports éditoriaux et les applications de marque. Le résultat démontrable est la continuité du bleu corporate, du logo et de la présentation des métiers à travers ces formats.",
+    "featured": 3,
+    "images": [
+      {
+        "img": "project-setrans",
+        "w": 819,
+        "h": 1024,
+        "alt": "SETRANS : visuel 1",
+        "large": false
+      },
+      {
+        "img": "project-setrans-brochure-cover",
+        "w": 1220,
+        "h": 867,
+        "alt": "Couverture de la brochure SET-TRANS transport et logistique",
+        "large": false
+      },
+      {
+        "img": "project-setrans-brochure-interior",
+        "w": 1217,
+        "h": 891,
+        "alt": "Présentation intérieure de la brochure SET-TRANS",
+        "large": false
+      },
+      {
+        "img": "project-setrans-brochure-mockup",
+        "w": 1217,
+        "h": 891,
+        "alt": "Mockup du dépliant corporate SET-TRANS",
+        "large": false
+      },
+      {
+        "img": "project-setrans-brochure-open",
+        "w": 1243,
+        "h": 883,
+        "alt": "Mockup ouvert de la brochure SET-TRANS",
+        "large": false
+      },
+      {
+        "img": "project-setrans-cap",
+        "w": 1024,
+        "h": 768,
+        "alt": "SETRANS : visuel 6",
+        "large": false
+      },
+      {
+        "img": "project-setrans-polo",
+        "w": 1024,
+        "h": 819,
+        "alt": "SETRANS : visuel 7",
+        "large": false
+      },
+      {
+        "img": "project-setrans-tshirt",
+        "w": 1024,
+        "h": 594,
+        "alt": "SETRANS : visuel 8",
+        "large": false
+      }
+    ]
+  },
+  {
+    "id": "khelcom",
+    "name": "Café Touba KhelCom",
+    "category": "Branding & packaging",
+    "type": "Packaging · Agroalimentaire",
+    "client": "KhelCom — Touba",
+    "role": "Direction artistique, packaging & mockups",
+    "year": "2024",
+    "summary": "Identité et packaging d'un café Touba naturel",
+    "description": "Création de l'univers visuel du café Touba KhelCom : face avant du sachet, informations produit, hiérarchie réglementaire et mises en situation réalistes pour la présentation commerciale.",
+    "problem": "Installer une marque locale dans un rayon très concurrentiel, exprimer l'authenticité du café Touba et rendre les informations essentielles immédiatement repérables.",
+    "direction": "Une palette brun café et jaune chaud, une typographie expressive et un visuel produit central. La composition garde le nom, la promesse naturelle et le poids visibles à distance.",
+    "approach": "La face du sachet privilégie trois informations : la marque KhelCom, le café Touba et la référence produit. Les éléments secondaires sont regroupés en pied de packaging. Trois angles de présentation rendent visibles la composition à plat, le volume du sachet et la place de chaque information.",
+    "deliverables": "Un concept de packaging café décliné en trois vues : face, perspective et sachet incliné. Les images présentent l’habillage et sa mise en volume, sans attester d’un tirage industriel.",
+    "result": "Trois mockups cohérents montrent une identité produit reconnaissable par son nom manuscrit, ses tons café et ses accents jaunes. Aucun chiffre de vente n’est attribué à cette création.",
+    "featured": 2,
+    "images": [
+      {
+        "img": "project-khelcom-packaging-02",
+        "w": 1280,
+        "h": 853,
+        "alt": "Design de sachet Café Touba KhelCom",
+        "large": true
+      },
+      {
+        "img": "project-khelcom-packaging-03",
+        "w": 1280,
+        "h": 853,
+        "alt": "Packaging Café Touba KhelCom en perspective",
+        "large": true
+      },
+      {
+        "img": "project-khelcom-packaging-04",
+        "w": 1280,
+        "h": 853,
+        "alt": "Packaging Café Touba KhelCom vue de face",
+        "large": true
+      }
+    ]
+  },
+  {
+    "id": "ngs",
+    "name": "Ndiaye Global Services",
+    "category": "Identité visuelle",
+    "type": "Identité visuelle · Corporate",
+    "client": "Ndiaye Global Services",
+    "role": "Logo, identité visuelle & déclinaisons",
+    "year": "2024",
+    "summary": "Système de marque et applications corporate NGS",
+    "description": "Conception d'une identité corporate complète articulée autour du monogramme NGS, puis mise en situation sur papeterie, objets promotionnels, enseigne et signalétique.",
+    "problem": "Donner une personnalité claire à une entreprise multiservice tout en conservant une image suffisamment institutionnelle pour ses échanges professionnels.",
+    "direction": "Un monogramme compact, une palette bleu-vert porteuse de confiance et de croissance, et des règles simples permettant une application cohérente sur de nombreux formats.",
+    "approach": "Le monogramme NGS forme le point de départ du système. Sa lecture est examinée sur des échelles et matières différentes : papier, mug, façade et plaque. Ces applications montrent comment la signature conserve ses couleurs et sa présence du petit objet à la signalétique.",
+    "deliverables": "Présentation du logotype, déclinaison sur mugs, simulation d’enseigne sur façade et plaque professionnelle. Les quatre mockups sont accessibles dans la galerie.",
+    "result": "Quatre applications rendent tangible le système d’identité. Ce sont des mises en situation graphiques : elles ne constituent pas une preuve de fabrication ou de pose des enseignes.",
+    "featured": 1,
+    "images": [
+      {
+        "img": "project-ngs-brand-01",
+        "w": 1280,
+        "h": 853,
+        "alt": "Logotype Ndiaye Global Services sur papier",
+        "large": true
+      },
+      {
+        "img": "project-ngs-brand-02",
+        "w": 1280,
+        "h": 1024,
+        "alt": "Identité Ndiaye Global Services appliquée sur des mugs",
+        "large": true
+      },
+      {
+        "img": "project-ngs-brand-03",
+        "w": 1280,
+        "h": 880,
+        "alt": "Identité Ndiaye Global Services sur façade corporate",
+        "large": true
+      },
+      {
+        "img": "project-ngs-brand-04",
+        "w": 1280,
+        "h": 896,
+        "alt": "Plaque professionnelle Ndiaye Global Services",
+        "large": true
+      }
+    ]
+  },
+  {
+    "id": "salixate",
+    "name": "Salixate",
+    "category": "Branding & packaging",
+    "type": "Packaging & Produit",
+    "client": "Laboratoires Salixate",
+    "role": "Packaging Design & Rendu 3D",
+    "year": "2023",
+    "summary": "Design packaging & Ligne produit",
+    "description": "Gamme de packaging épurée pour produits de soin et santé.",
+    "problem": "Créer un sentiment de pureté et d'efficacité pharmaceutique.",
+    "direction": "Flaconnage minimaliste, typographie lisible et finitions dorées subtiles.",
+    "result": "Commercialisation réussie en officines et boutiques spécialisées.",
+    "images": [
+      {
+        "img": "project-salixate",
+        "w": 1280,
+        "h": 714,
+        "alt": "Salixate : visuel 1",
+        "large": false
+      }
+    ]
+  }
+]

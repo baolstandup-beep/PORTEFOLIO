@@ -1,8 +1,0 @@
-[
-  { "id": "prizent", "name": "Prizent", "summary": "Campagne d'une solution de pointage sur smartphone", "img": "project-prizent-mockup", "w": 640, "h": 357 },
-  { "id": "cass-online", "name": "Cass Online", "summary": "Publicité d'une place de marché mobile", "img": "project-cass-online-mockup", "w": 640, "h": 357 },
-  { "id": "vacrea", "name": "Vacrea Touba", "summary": "Affiche d'une formation en design à Touba", "img": "project-vacrea-mockup", "w": 640, "h": 357 },
-  { "id": "setrans", "name": "SET-TRANS", "summary": "Brochure corporate, transport et logistique", "img": "project-setrans-brochure-open", "w": 640, "h": 455 },
-  { "id": "khelcom", "name": "Café Touba KhelCom", "summary": "Packaging d'un sachet de café", "img": "project-khelcom-packaging-03", "w": 640, "h": 427 },
-  { "id": "ngs", "name": "Ndiaye Global Services", "summary": "Identité visuelle et supports de marque", "img": "project-ngs-brand-03", "w": 640, "h": 440 }
-]
