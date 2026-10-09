@@ -20,25 +20,19 @@ const caseUrl = id => `/projets/${id}/`;
 
 // ---------- Accueil ----------
 
-// Largeur de chaque emplacement en colonnes (sur 12), pour annoncer la bonne taille d'image.
-const SLOT = [7, 4, 5, 5, 5, 6];
-
-// Grille asymétrique : chaque carte reçoit un gabarit différent (voir .featured__item--N dans le CSS).
-function featuredCard(c, i) {
-  // Chaque emplacement de la grille a une orientation : on choisit l'image du projet qui s'y prête.
-  const landscape = [true, false, false, true, false, true][i];
-  const cover = c.images.find(img => (img.w >= img.h * 1.15) === landscape) ?? c.images[0];
-  const num = String(i + 1).padStart(2, '0');
-  return `      <li class="featured__item featured__item--${i + 1} reveal">
-        <a class="featured__link" href="${caseUrl(c.id)}">
-          <span class="featured__media">${picture(cover, { alt: cover.alt, sizes: `(min-width: 1320px) ${Math.round(1240 * SLOT[i] / 12)}px, (min-width: 900px) ${Math.round(100 * SLOT[i] / 12)}vw, calc(100vw - 2.5rem)` })}</span>
-          <span class="featured__meta">
-            <span class="featured__num" aria-hidden="true">${num}</span>
-            <span class="featured__name">${escape(c.name)}</span>
-            <span class="featured__cat">${escape(c.category)}${c.year ? `, ${escape(c.year)}` : ''}</span>
-          </span>
-        </a>
-      </li>`;
+// Cartes « Projets phares » : vignette ronde, nom, catégorie et résumé, lien vers l'étude de cas.
+function featuredCard(c) {
+  const thumb = c.images[0];
+  return `        <li class="reveal">
+          <a class="project-card" href="${caseUrl(c.id)}">
+            <span class="project-card__head">
+              <span class="project-card__thumb">${picture(thumb, { alt: '', sizes: '56px', loading: 'lazy' })}</span>
+              <span><span class="project-card__name">${escape(c.name)}</span><span class="project-card__cat">${escape(c.category)}${c.year ? `, ${escape(c.year)}` : ''}</span></span>
+            </span>
+            <span class="project-card__text">${escape(c.summary)}</span>
+            <span class="project-card__more">Voir l'étude de cas <span aria-hidden="true">→</span></span>
+          </a>
+        </li>`;
 }
 
 function archiveCard(p, i) {
@@ -57,18 +51,21 @@ const clientLogo = c => `      <li><img src="/assets/clients/${c.file}.webp" alt
 export function homePage({ template, cases, projects, clients }) {
   const byId = Object.fromEntries(cases.map(c => [c.id, c]));
   const featured = cases.filter(c => c.featured).sort((a, b) => a.featured - b.featured);
-  const salixate = byId.salixate.images[0];
-  const ngsSign = byId.ngs.images.find(i => i.img.endsWith('-04'));
   const portrait = { img: 'cheikh-awa-balla-diop-portrait', w: 1049, h: 1499 };
+  const salixate = byId.salixate.images[0];
+  const ngsFacade = byId.ngs.images.find(i => i.img.endsWith('-03'));
+  const setransPolo = byId.setrans.images.find(i => i.img.endsWith('-polo'));
   const count = cat => projects.filter(p => p.cat.includes(cat)).length;
 
   const body = template
-    .replace('{{HERO_MAIN}}', picture(salixate, { alt: 'Packaging Salixate Café en situation : gobelets et sachet de café sur un comptoir', sizes: '(min-width: 1320px) 400px, (min-width: 960px) 31vw, calc(100vw - 2.5rem)', priority: true }))
-    .replace('{{HERO_ASIDE}}', picture(ngsSign, { alt: '', sizes: '(min-width: 900px) 18vw, 40vw', loading: 'eager' }))
+    .replace('{{HERO_PORTRAIT}}', picture(portrait, { alt: 'Portrait de Cheikh Awa Balla Diop', sizes: '(min-width: 960px) 360px, 80vw', priority: true }))
+    .replace('{{IMG_A}}', picture(salixate, { alt: 'Packaging Salixate Café en situation', sizes: '(min-width: 960px) 560px, calc(100vw - 2.5rem)' }))
+    .replace('{{IMG_B}}', picture(ngsFacade, { alt: 'Identité Ndiaye Global Services appliquée sur une façade', sizes: '(min-width: 960px) 560px, calc(100vw - 2.5rem)' }))
+    .replace('{{SERVICES_IMG}}', picture(setransPolo, { alt: 'Polos brodés aux couleurs de SETRANS', sizes: '(min-width: 960px) 320px, calc(100vw - 2.5rem)' }))
+    .replace('{{CTA_PORTRAIT}}', picture(portrait, { alt: '', sizes: '(min-width: 960px) 380px, 70vw' }))
     .replace('{{FEATURED}}', featured.map(featuredCard).join('\n'))
     .replace('{{ARCHIVE}}', projects.map(archiveCard).join('\n'))
     .replace('{{CLIENTS}}', clients.map(clientLogo).join('\n'))
-    .replace('{{PORTRAIT}}', picture(portrait, { alt: 'Portrait de Cheikh Awa Balla Diop', sizes: '(min-width: 900px) 34vw, 100vw' }))
     .replace('{{LIGHTBOX}}', lightbox)
     .replaceAll('{{WHATSAPP}}', escape(SITE.whatsapp))
     .replaceAll('{{COUNT_ALL}}', projects.length)
@@ -81,7 +78,7 @@ export function homePage({ template, cases, projects, clients }) {
     path: '/',
     body,
     bodyClass: 'page-home',
-    preload: `  <link rel="preload" as="image" href="${IMG}/${salixate.img}-1280.webp" imagesrcset="${IMG}/${salixate.img}-640.webp 640w, ${IMG}/${salixate.img}-960.webp 960w, ${IMG}/${salixate.img}-1280.webp 1280w" imagesizes="(min-width: 1320px) 400px, (min-width: 960px) 31vw, calc(100vw - 2.5rem)" fetchpriority="high">\n`,
+    preload: `  <link rel="preload" as="image" href="${IMG}/${portrait.img}-640.webp" imagesrcset="${IMG}/${portrait.img}-640.webp 640w, ${IMG}/${portrait.img}-1280.webp 1280w" imagesizes="(min-width: 960px) 360px, 80vw" fetchpriority="high">\n`,
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [

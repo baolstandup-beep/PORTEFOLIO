@@ -30,52 +30,85 @@ export function picture(img, { alt = '', sizes = '100vw', loading = 'lazy', prio
   return `<img${className ? ` class="${className}"` : ''} src="${base}-1280.webp" srcset="${srcset.join(', ')}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${escape(alt)}" loading="${priority ? 'eager' : loading}" decoding="async"${priority ? ' fetchpriority="high"' : ''}>`;
 }
 
-const NAV = [
+const NAV_LEFT = [
   ['/#projets', 'Projets', 'projets'],
-  ['/#expertise', 'Expertise', 'expertise'],
-  ['/#a-propos', 'À propos', 'a-propos'],
+  ['/#a-propos', 'À propos', 'a-propos']
+];
+const NAV_RIGHT = [
+  ['/#services', 'Services', 'services'],
   ['/#contact', 'Contact', 'contact']
 ];
+const navItems = list => list.map(([href, label, id]) => `        <li><a href="${href}" data-section="${id}">${label}</a></li>`).join('\n');
 
+// En-tête : pilule noire, logo au centre, deux liens de chaque côté.
 export function header() {
   return `<a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
-  <div class="wrap site-header__inner">
-    <a class="brand" href="/"><strong>CABD</strong><span>/ Creative Direction</span></a>
-    <button class="menu-button" type="button" popovertarget="menu"><span class="menu-button__bars" aria-hidden="true"></span>Menu</button>
+  <div class="site-header__pill">
+    <a class="brand" href="/" aria-label="CABD, accueil"><span class="brand__mark">CABD</span><span class="brand__sub">creative direction</span></a>
+    <button class="menu-button" type="button" popovertarget="menu">Menu</button>
     <nav id="menu" class="site-nav" popover aria-label="Navigation principale">
       <button class="site-nav__close" type="button" popovertarget="menu" popovertargetaction="hide">Fermer</button>
-      <ul>
-${NAV.map(([href, label, id]) => `        <li><a href="${href}" data-section="${id}">${label}</a></li>`).join('\n')}
+      <ul class="site-nav__left">
+${navItems(NAV_LEFT)}
       </ul>
-      <a class="button button--dark" href="${SITE.whatsapp}" data-track="whatsapp_header">Démarrer un projet <span aria-hidden="true">↗</span></a>
+      <ul class="site-nav__right">
+${navItems(NAV_RIGHT)}
+      </ul>
+      <a class="button button--accent site-nav__cta" href="${SITE.whatsapp}" data-track="whatsapp_header">Démarrer un projet</a>
     </nav>
   </div>
 </header>`;
 }
 
+// Pied de page : bloc jaune arrondi, quatre colonnes.
 export function footer() {
   return `<footer class="site-footer">
-  <div class="wrap site-footer__inner">
-    <div class="site-footer__id">
-      <p class="site-footer__brand">CABD</p>
-      <p>Directeur artistique et designer graphique<br>Touba, Sénégal</p>
+  <div class="wrap">
+    <div class="site-footer__top">
+      <p class="site-footer__brand">CABD<span>creative direction</span></p>
+      <p class="site-footer__pitch">J'accompagne les marques, les entrepreneurs et les institutions du Sénégal avec des identités visuelles et une communication qui se remarquent.</p>
     </div>
-    <nav aria-label="Liens de pied de page">
-      <ul>
-${NAV.map(([href, label]) => `        <li><a href="${href}">${label}</a></li>`).join('\n')}
-      </ul>
-      <ul>
-        <li><a href="${SITE.behance}" rel="me">Behance</a></li>
-        <li><a href="https://wa.me/221773033196">WhatsApp</a></li>
-        <li><a href="/downloads/CABD-Portfolio-v1.0.1.apk" download>Application Android</a></li>
-      </ul>
-      <ul>
-        <li><a href="/mentions-legales.html">Mentions légales</a></li>
-        <li><a href="/confidentialite.html">Confidentialité</a></li>
-      </ul>
-    </nav>
-    <p class="site-footer__copy">© <span data-year>2026</span> Cheikh Awa Balla Diop, Baol Vision. Tous droits réservés.</p>
+    <div class="site-footer__cols">
+      <nav aria-labelledby="footer-services">
+        <h2 id="footer-services">Services</h2>
+        <ul>
+          <li>Identité visuelle</li>
+          <li>Direction artistique</li>
+          <li>Affiches et édition</li>
+          <li>Packaging</li>
+          <li>Web et UI/UX</li>
+          <li>Motion et vidéo</li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-nav">
+        <h2 id="footer-nav">Navigation</h2>
+        <ul>
+${[...NAV_LEFT, ...NAV_RIGHT].map(([href, label]) => `          <li><a href="${href}">${label}</a></li>`).join('\n')}
+          <li><a href="/downloads/CABD-Portfolio-v1.0.1.apk" download>Application Android</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+          <li><a href="tel:${SITE.phone}">${SITE.phoneLabel}</a></li>
+          <li><a href="https://wa.me/221773033196">WhatsApp</a></li>
+          <li><a href="${SITE.behance}" rel="me">Behance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Localisation</h2>
+        <ul>
+          <li>Touba, Sénégal</li>
+          <li>Partout au Sénégal et à l'international, à distance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span data-year>2026</span> Cheikh Awa Balla Diop, Baol Vision. Tous droits réservés.</p>
+      <p><a href="/mentions-legales.html">Mentions légales</a> <a href="/confidentialite.html">Confidentialité</a></p>
+    </div>
   </div>
 </footer>`;
 }
@@ -100,10 +133,10 @@ export function layout({ title, description, path, body, image, jsonLd, preload 
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImage}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#f6f3ed">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 ${preload}  <link rel="stylesheet" href="/css/styles.css">
   <script type="module" src="/js/main.js"></script>

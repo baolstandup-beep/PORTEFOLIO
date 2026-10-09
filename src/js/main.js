@@ -33,7 +33,14 @@ if (sections.length) {
   let ticking = false;
   const update = () => {
     const line = innerHeight * 0.35;
-    const current = sections.filter(section => section.getBoundingClientRect().top <= line).pop();
+    // La section active est celle dont le haut est le plus proche au-dessus de la ligne de lecture,
+    // quel que soit l'ordre des liens dans le menu.
+    let current = null;
+    let best = -Infinity;
+    for (const section of sections) {
+      const top = section.getBoundingClientRect().top;
+      if (top <= line && top > best) { best = top; current = section; }
+    }
     setActive(current?.id ?? null);
     ticking = false;
   };
@@ -50,6 +57,14 @@ const reveal = new IntersectionObserver(entries => {
   }
 }, { rootMargin: '0px 0px -8% 0px' });
 document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+
+// Témoignages : les flèches font défiler le carrousel d'une carte.
+const carousel = document.querySelector('.testimonials__track');
+document.querySelectorAll('[data-scroll]').forEach(button => button.addEventListener('click', () => {
+  const card = carousel.querySelector('li');
+  const step = card ? card.getBoundingClientRect().width + 16 : carousel.clientWidth * 0.8;
+  carousel.scrollBy({ left: step * Number(button.dataset.scroll), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}));
 
 // Copie de l'e-mail : le lien mailto reste le comportement par défaut si la copie échoue.
 document.addEventListener('click', async event => {
