@@ -114,7 +114,7 @@ ${[...NAV_LEFT, ...NAV_RIGHT].map(([href, label]) => `          <li><a href="${h
 }
 
 // Document complet : chaque page fournit son titre, sa description, son URL et son contenu.
-export function layout({ title, description, path, body, image, jsonLd, preload = '', bodyClass = '' }) {
+export function layout({ title, description, path, body, image, imageAlt, imageSize, jsonLd, preload = '', bodyClass = '' }) {
   const url = `${SITE.url}${path}`;
   const ogImage = `${SITE.url}${image ?? `${IMG}/project-salixate-1280.webp`}`;
   return `<!doctype html>
@@ -132,7 +132,8 @@ export function layout({ title, description, path, body, image, jsonLd, preload 
   <meta property="og:description" content="${escape(description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImage}">
-  <meta name="twitter:card" content="summary_large_image">
+${imageSize ? `  <meta property="og:image:width" content="${imageSize[0]}">\n  <meta property="og:image:height" content="${imageSize[1]}">\n` : ''}${imageAlt ? `  <meta property="og:image:alt" content="${escape(imageAlt)}">\n` : ''}  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="${ogImage}">
   <meta name="theme-color" content="#ece7dd">
   <meta name="color-scheme" content="light">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">

@@ -77,6 +77,10 @@ export function homePage({ template, cases, projects, clients }) {
     title: 'CABD, Cheikh Awa Balla Diop : directeur artistique et graphiste à Touba, Sénégal',
     description: 'Identités visuelles, univers de marque, packaging et campagnes conçus à Touba par Cheikh Awa Balla Diop, directeur artistique et fondateur de Baol Vision.',
     path: '/',
+    // Image de partage : composition de l'affiche (scripts/og/accueil.html → public/og/accueil.jpg)
+    image: '/og/accueil.jpg',
+    imageAlt: 'Cheikh Awa Balla Diop, directeur artistique et graphiste à Touba : affiche de présentation',
+    imageSize: [1200, 630],
     body,
     bodyClass: 'page-home',
     preload: `  <link rel="preload" as="image" href="${IMG}/${sticker.img}-640.webp" imagesrcset="${IMG}/${sticker.img}-640.webp 640w, ${IMG}/${sticker.img}-960.webp 960w, ${IMG}/${sticker.img}-1280.webp 1280w" imagesizes="(min-width: 1000px) 420px, 80vw" fetchpriority="high">\n`,

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<!-- Image de partage (Open Graph) de l'accueil : 1200 × 630, reprend la composition de l'affiche.
+     Générée par scripts/og/render.cjs vers public/og/accueil.jpg. -->
+<style>
+  @font-face { font-family: 'Archivo'; src: url('../../public/fonts/archivo-latin.woff2') format('woff2'); font-weight: 400 900; font-stretch: 62% 125%; }
+  @font-face { font-family: 'Manrope'; src: url('../../public/fonts/manrope-latin.woff2') format('woff2'); font-weight: 400 700; }
+  @font-face { font-family: 'Caveat'; src: url('../../public/fonts/caveat-latin.woff2') format('woff2'); font-weight: 500 700; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative; font-family: 'Manrope', sans-serif; color: #151515;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(900px 600px at 50% 0%, #f6f3ec, transparent 70%), #ece7dd;
+  }
+  .abs { position: absolute; }
+  .kicker { top: 46px; left: 64px; font-weight: 700; font-size: 20px; color: #58554f; }
+  .year { top: 40px; right: 56px; font-family: 'Archivo'; font-weight: 800; font-size: 30px; color: #58554f; }
+  h1 { top: 86px; left: 64px; width: 470px; font-family: 'Archivo'; font-weight: 800; font-size: 74px; line-height: 0.98; letter-spacing: -0.02em; }
+  .name { top: 342px; left: 64px; padding: 8px 20px; background: #d8cdf6; border-radius: 10px; font-family: 'Archivo'; font-weight: 700; font-size: 38px; letter-spacing: -0.01em; }
+  .tagline { top: 422px; left: 64px; font-size: 24px; font-weight: 600; line-height: 1.3; }
+  .url { bottom: 44px; left: 64px; display: flex; align-items: center; gap: 12px; font-family: 'Caveat'; font-weight: 700; font-size: 34px; color: #6d1f2e; }
+  .url span { display: inline-block; width: 42px; height: 2px; background: #6d1f2e; }
+
+  .portrait { bottom: 0; left: 535px; width: 360px; filter: drop-shadow(0 18px 22px rgb(50 35 15 / 0.3)); }
+
+  .note { top: 96px; right: 52px; width: 290px; padding: 26px 20px 20px 42px; rotate: 2deg;
+    background: radial-gradient(circle at 16px 50%, #ece7dd 5px, transparent 6px) 0 0 / 32px 30px repeat-y,
+      repeating-linear-gradient(transparent 0 29px, rgb(80 110 160 / 0.28) 29px 30px), #fdfcf8;
+    filter: drop-shadow(0 6px 10px rgb(40 30 10 / 0.2)); }
+  .note h2 { font-family: 'Archivo'; font-weight: 800; font-size: 24px; margin-bottom: 12px; }
+  .note li { display: flex; align-items: center; gap: 10px; list-style: none; font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+  .app { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 7px; font-weight: 800; font-size: 13px; }
+  .ps { background: #001e36; color: #31a8ff; } .ai { background: #330000; color: #ff9a00; } .pr { background: #00005b; color: #9999ff; } .fg { background: #1e1e1e; color: #f5f3ec; }
+  .tape { position: absolute; top: -14px; left: 50%; width: 104px; height: 28px; translate: -50% 0; rotate: -3deg; background: rgb(226 210 160 / 0.85); }
+
+  .scrap { right: 60px; width: 290px; padding: 20px 22px 18px; background: #ddd8ce; filter: drop-shadow(0 6px 10px rgb(40 30 10 / 0.2));
+    clip-path: polygon(0% 6%, 6% 1%, 14% 5%, 24% 0%, 34% 4%, 45% 1%, 56% 5%, 66% 0%, 77% 4%, 88% 1%, 100% 4%, 100% 95%, 92% 100%, 81% 96%, 70% 100%, 58% 96%, 46% 100%, 34% 96%, 22% 100%, 10% 96%, 0% 99%); }
+  .scrap b { display: block; font-family: 'Archivo'; font-weight: 800; font-size: 19px; color: #6d1f2e; }
+  .scrap i { font-weight: 700; font-size: 16px; }
+  .s1 { top: 352px; rotate: -1.5deg; } .s2 { top: 462px; rotate: 1.2deg; }
+
+  svg.doodle { position: absolute; fill: none; stroke: #151515; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+  <p class="abs kicker">Portfolio · Baol Vision</p>
+  <p class="abs year">2026</p>
+  <h1 class="abs">Directeur artistique &amp; graphiste</h1>
+  <p class="abs name">Cheikh Awa Balla Diop</p>
+  <p class="abs tagline">Identités visuelles &amp;<br>communication créative · Touba</p>
+  <p class="abs url"><span></span>cabd-portfolio.vercel.app</p>
+
+  <svg class="doodle" style="top:268px;left:478px;width:120px" viewBox="0 0 220 120"><path d="M4 30C60 4 150 6 190 60"/><path d="M176 50l15 12 4-19"/></svg>
+  <svg class="doodle" style="top:150px;left:860px;width:56px" viewBox="0 0 90 90"><path d="M30 8l5 15 15 2-12 9 4 16-12-9-13 8 5-15-11-10 15-1z"/><path d="M66 46l3 8 8 1-6 5 2 9-7-5-7 4 3-8-6-6 8 0z"/></svg>
+
+  <img class="abs portrait" src="../../public/assets/images/optimized/cheikh-awa-balla-diop-sticker-960.webp" alt="">
+
+  <div class="abs note">
+    <span class="tape"></span>
+    <h2>Outils créatifs</h2>
+    <ul style="padding:0">
+      <li><span class="app ps">Ps</span>Adobe Photoshop</li>
+      <li><span class="app ai">Ai</span>Adobe Illustrator</li>
+      <li><span class="app pr">Pr</span>Adobe Premiere Pro</li>
+      <li><span class="app fg">Fg</span>Figma</li>
+    </ul>
+  </div>
+
+  <div class="abs scrap s1"><b>Fondateur &amp; directeur créatif</b><i>Baol Vision, depuis 2022</i></div>
+  <div class="abs scrap s2"><b>Branding · Affiches · Packaging</b><i>36+ projets, 30+ marques</i></div>
+</body>
+</html>
