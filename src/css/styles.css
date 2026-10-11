@@ -263,7 +263,7 @@
 
   /* Composition d'affiche sur grand écran : chaque élément est posé comme sur un collage. */
   @media (min-width: 1100px) {
-    .poster { display: block; height: 1350px; }
+    .poster { display: block; height: 1300px; }
     .poster > * { position: absolute; }
     .poster__kicker { top: 2.5rem; left: 0; }
     .poster__heading { top: 5rem; left: 0; width: 34rem; }
@@ -287,7 +287,7 @@
     .scraps { top: 31rem; right: 0; width: 22rem; z-index: 2; gap: 0.6rem; }
     .polaroid-qr { top: 49rem; left: 1.5rem; z-index: 2; }
     .summary { top: 65rem; left: 0; width: 25rem; z-index: 2; }
-    .connect { top: 68rem; left: 29rem; z-index: 2; }
+    .connect { top: 62rem; left: 29rem; z-index: 2; }
   }
   @media (min-width: 1100px) and (max-width: 1239px) { .poster__portrait { width: 23rem; } .scraps { width: 19rem; } .skills-table { right: 20.5rem; } }
 
