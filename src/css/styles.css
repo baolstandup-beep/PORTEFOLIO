@@ -26,6 +26,7 @@
     --muted: #58554f;          /* 6,3:1 sur le papier */
     --lavender: #d8cdf6;
     --maroon: #6d1f2e;
+    --orange: #f7931e;         /* orange du logo Baol Vision */
     --tape: rgb(226 210 160 / 0.78);
     --line: rgb(21 21 21 / 0.14);
 
@@ -191,7 +192,11 @@
   .doodle { position: absolute; fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; display: none; }
   .doodle--pen rect, .doodle--pen circle { fill: var(--paper-light); stroke-width: 1.6; }
 
-  .poster__portrait { margin: 0; justify-self: center; width: min(100%, 26rem); filter: drop-shadow(0 18px 22px rgb(50 35 15 / 0.28)); }
+  .poster__portrait { margin: 0; justify-self: center; width: min(100%, 26rem); filter: drop-shadow(0 18px 22px rgb(50 35 15 / 0.28)); position: relative; isolation: isolate; }
+  .poster__portrait img { position: relative; }
+  /* Papier déchiré orange Baol Vision derrière le portrait : la tête dépasse du haut. */
+  .poster__portrait::before { content: ''; position: absolute; z-index: -1; inset: 24% -7% -5% -7%; background: var(--orange); clip-path: var(--torn); rotate: -3deg; }
+  .poster__portrait::after { content: ''; position: absolute; top: calc(24% - 0.9rem); left: -4%; width: 6.5rem; height: 1.7rem; rotate: -38deg; background: var(--tape); clip-path: polygon(3% 0, 97% 6%, 100% 50%, 96% 100%, 2% 94%, 0 50%); }
 
   .poster__desk { display: none; }
   .app, .chip-app { display: inline-grid; place-items: center; font-family: var(--sans); font-weight: 800; border-radius: 9px; }
