@@ -279,9 +279,9 @@
     .app--ai { left: 11rem; top: 0.5rem; rotate: 5deg; }
     .app--pr { left: 15.5rem; top: 3rem; rotate: -4deg; }
     .app--fg { left: 14rem; top: 9rem; rotate: 7deg; }
-    .poster__portrait { top: 20.5rem; left: 50%; translate: -50% 0; width: 26rem; z-index: 1; } /* sous le nom, pour ne pas masquer « Diop » */
+    .poster__portrait { top: 23rem; left: 50%; translate: -50% 0; width: 26rem; z-index: 1; } /* sous le nom, pour ne pas masquer « Diop » */
     .note { top: 6rem; right: 1rem; z-index: 2; }
-    .skills-table { top: 49rem; right: 23.5rem; z-index: 3; } /* calé à 1,5rem de la colonne de droite (22rem) */
+    .skills-table { top: 51.5rem; right: 23.5rem; z-index: 3; } /* calé à 1,5rem de la colonne de droite (22rem) */
     .scraps { top: 31rem; right: 0; width: 22rem; z-index: 2; gap: 0.6rem; }
     .polaroid-qr { top: 49rem; left: 1.5rem; z-index: 2; }
     .summary { top: 65rem; left: 0; width: 25rem; z-index: 2; }
