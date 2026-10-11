@@ -3,10 +3,12 @@
 export const SITE = {
   url: (process.env.SITE_URL ?? 'https://cabd-portfolio.vercel.app').replace(/\/$/, ''),
   name: 'CABD',
-  email: 'contact.baolvision@gmail.com',
+  email: 'baolstandup@gmail.com',
   phone: '+221773033196',
   phoneLabel: '+221 77 303 31 96',
   behance: 'https://www.behance.net/cheikhdiop16',
+  facebook: 'https://www.facebook.com/baolvision/',
+  tiktok: 'https://www.tiktok.com/@blabla_galsen',
   whatsapp: 'https://wa.me/221773033196?text=' + encodeURIComponent('Bonjour Cheikh Awa Balla, je découvre votre portfolio et je souhaite démarrer un projet.')
 };
 
@@ -95,6 +97,8 @@ ${[...NAV_LEFT, ...NAV_RIGHT].map(([href, label]) => `          <li><a href="${h
           <li><a href="tel:${SITE.phone}">${SITE.phoneLabel}</a></li>
           <li><a href="https://wa.me/221773033196">WhatsApp</a></li>
           <li><a href="${SITE.behance}" rel="me">Behance</a></li>
+          <li><a href="${SITE.facebook}" rel="me">Facebook</a></li>
+          <li><a href="${SITE.tiktok}" rel="me">TikTok</a></li>
         </ul>
       </div>
       <div>

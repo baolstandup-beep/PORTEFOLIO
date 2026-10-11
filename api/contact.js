@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       from: process.env.CONTACT_FROM_EMAIL,
-      to: [process.env.CONTACT_TO_EMAIL || 'contact.baolvision@gmail.com'],
+      to: [process.env.CONTACT_TO_EMAIL || 'baolstandup@gmail.com'],
       ...(emailValue ? { reply_to: emailValue } : {}),
       subject: `Nouvelle demande portfolio — ${clean(service, 120)}`,
       html: `<h1>Nouvelle demande</h1><p><strong>Nom :</strong> ${escapeHtml(name)}</p><p><strong>Email :</strong> ${escapeHtml(emailValue) || 'non renseigné'}</p><p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p><p><strong>Prestation :</strong> ${escapeHtml(service)}</p><p><strong>Projet :</strong><br>${escapeHtml(message).replace(/\n/g, '<br>')}</p>`
