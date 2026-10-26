@@ -3,9 +3,18 @@
 import React from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile} from 'remotion';
 import {Background} from '../components/Background';
-import {IntroLogo} from '../components/IntroLogo';
+import {AnimatedLogo} from '../components/AnimatedLogo';
 import {Panel, Piece} from '../components/Piece';
-import {CONTACT_PANEL, DECOR_COLUMN, PIECES, REDESIGN_FRAMES, REDESIGN_SFX, SCENES} from '../config/redesign';
+import {
+	CONTACT_PANEL,
+	DECOR_COLUMN,
+	INTRO_LOGO,
+	PIECES,
+	PROG_LOGO,
+	REDESIGN_FRAMES,
+	REDESIGN_SFX,
+	SCENES,
+} from '../config/redesign';
 import {HeroUnderline, ProgressDots, RecapTimeline} from '../components/ProgrammeGraphics';
 import {MUSIC} from '../config/timeline';
 import {BRAND} from '../config/video';
@@ -26,7 +35,8 @@ export const TikTokRedesign: React.FC<TikTokRedesignProps> = ({bgm}) => (
 		{PIECES.map((p) => (
 			<Piece key={p.id} spec={p} />
 		))}
-		<IntroLogo />
+		<AnimatedLogo anim={INTRO_LOGO} />
+		<AnimatedLogo anim={PROG_LOGO} />
 		<Panel {...CONTACT_PANEL} color={BRAND.green} />
 		<ProgressDots />
 		<HeroUnderline />

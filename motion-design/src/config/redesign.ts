@@ -41,7 +41,22 @@ const S2_IN = S.S2.from;
 const S3_IN = S.S3.from;
 
 // ------------------------------------------------------------ S0 : intro logo (voir components/IntroLogo.tsx)
-export const INTRO_LOGO = {
+export type LogoAnim = {
+	big: {cx: number; cy: number; s: number};
+	rest: {cx: number; cy: number; s: number};
+	coreAt: number;
+	ringAt: number;
+	waveAt: number;
+	glintAt: number;
+	moveAt: number;
+	moveDur: number;
+	exitAt: number;
+	exitDur: number;
+	pulses?: number[];
+	glints?: number[];
+};
+
+export const INTRO_LOGO: LogoAnim = {
 	big: {cx: 540, cy: 900, s: 1.7}, // le logo ne fait que 286 px dans le PSD : au-delà, il devient flou
 	rest: {cx: 540, cy: 400, s: 0.85}, // place du logo pendant la scène 1
 	coreAt: 0,
@@ -155,6 +170,25 @@ export const RECAP_AT = PROG.heroStart + rows.length * PROG.heroStep;
 // Arrivée de plus en plus rapide (intervalles 10, 9, 8 … images).
 const RECAP_DELAYS = [0, 10, 19, 27, 34, 40, 45, 49, 52];
 export const RECAP_CARD_AT = RECAP_DELAYS.map((d) => RECAP_AT + d);
+
+// Logo animé sous les plans vedettes : construit au début du programme, pulse à
+// chaque point, reflet tous les 3 points, s'efface avant le récapitulatif.
+// Taille 1,0 = taille native du logo dans le PSD (net).
+const PROG_LOGO_POS = {cx: 540, cy: 1290, s: 1.0};
+export const PROG_LOGO: LogoAnim = {
+	big: PROG_LOGO_POS,
+	rest: PROG_LOGO_POS,
+	coreAt: PROG.heroStart - 26,
+	ringAt: PROG.heroStart - 18,
+	waveAt: PROG.heroStart + 12,
+	glintAt: PROG.heroStart + 18,
+	moveAt: Number.MAX_SAFE_INTEGER,
+	moveDur: 1,
+	exitAt: RECAP_AT - 14,
+	exitDur: 16,
+	pulses: HERO_AT.slice(1),
+	glints: HERO_AT.filter((_, i) => i > 0 && i % 3 === 0).map((at) => at + 6),
+};
 
 // Plans vedettes
 export const HERO = {timeCy: 800, timeS: 1.7, textTop: 905, textMaxW: 920, textMaxS: 1.8, underlineY: 868};
@@ -364,6 +398,7 @@ export const REDESIGN_SFX: RedesignSfx[] = [
 			note: `point de programme ${i + 1}`,
 		}),
 	),
+	{from: PROG.heroStart - 26, src: sfx('swoosh-slow'), volume: 0.2, durationInFrames: 36, note: 'le logo du programme se construit'},
 	{from: RECAP_AT - 4, src: sfx('swoosh-slow'), volume: 0.3, durationInFrames: 45, note: 'récapitulatif'},
 	...RECAP_CARD_AT.map(
 		(at, i): RedesignSfx => ({

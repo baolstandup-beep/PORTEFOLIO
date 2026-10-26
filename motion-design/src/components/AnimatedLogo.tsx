@@ -1,14 +1,15 @@
-// Intro : animation du logo PAS-PAS (image du PSD, non redessinée).
+// Logo PAS-PAS animé (image du PSD, non redessinée) : intro et habillage du programme.
 // Le logo est affiché deux fois avec des masques complémentaires :
 //  - l'emblème central (disque de rayon RING_INNER) apparaît en zoom ;
 //  - l'anneau de texte (RING_INNER → bord) se dessine en balayage circulaire
 //    tout en tournant jusqu'à sa position.
 // Au repos, les deux masques se complètent : on retrouve le logo exact.
-// Puis une onde verte, un reflet, et le logo monte à sa place au-dessus du titre.
+// Puis une onde verte, un reflet, éventuellement un déplacement, des pulsations
+// et des reflets ponctuels pendant la tenue.
 import React from 'react';
 import {Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {getElement} from '../config/assets';
-import {INTRO_LOGO} from '../config/redesign';
+import type {LogoAnim} from '../config/redesign';
 import {BRAND} from '../config/video';
 import {EASE} from './Transitions';
 
@@ -19,15 +20,19 @@ const LOGO_CX = 142;
 const LOGO_CY = 143.5;
 const RING_INNER = 104;
 
-export const IntroLogo: React.FC = () => {
+export const AnimatedLogo: React.FC<{anim: LogoAnim}> = ({anim: L}) => {
 	const frame = useCurrentFrame();
-	const L = INTRO_LOGO;
-	if (frame >= L.exitAt + L.exitDur) return null;
+	if (frame < L.coreAt || frame >= L.exitAt + L.exitDur) return null;
 	const el = getElement('logo-paspas');
 
 	// Position : grand au centre, puis montée vers sa place de la scène 1.
 	const move = EASE.camera(interpolate(frame, [L.moveAt, L.moveAt + L.moveDur], [0, 1], clamp));
-	const s = L.big.s + (L.rest.s - L.big.s) * move;
+	// Pulsation brève à chaque instant de L.pulses (ex. : chaque point du programme).
+	const pulse = (L.pulses ?? []).reduce(
+		(a, at) => Math.max(a, interpolate(frame, [at, at + 6, at + 18], [0, 1, 0], clamp)),
+		0,
+	);
+	const s = (L.big.s + (L.rest.s - L.big.s) * move) * (1 + 0.045 * pulse);
 	const cx = L.big.cx + (L.rest.cx - L.big.cx) * move;
 	const float = frame > L.moveAt + L.moveDur ? Math.sin((frame - L.moveAt - L.moveDur) / 38) * 4 : 0;
 	const cy = L.big.cy + (L.rest.cy - L.big.cy) * move + float;
@@ -60,7 +65,8 @@ export const IntroLogo: React.FC = () => {
 	const waveR = (Math.max(w, h) / 2) * (1 + 0.6 * EASE.reveal(wave));
 
 	// Reflet lumineux sur le logo entier, découpé à sa forme.
-	const sweepP = interpolate(frame, [L.glintAt, L.glintAt + 30], [0, 1], clamp);
+	const glintAt = [L.glintAt, ...(L.glints ?? [])].reduce((a, g) => (frame >= g ? g : a), L.glintAt);
+	const sweepP = interpolate(frame, [glintAt, glintAt + 30], [0, 1], clamp);
 	const url = `url("${staticFile(el.src)}")`;
 
 	return (
