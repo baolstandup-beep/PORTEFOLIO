@@ -20,11 +20,12 @@ const chain = <K extends string>(defs: [K, number, string][]) => {
 	return {scenes: out, total: t};
 };
 
-const {scenes, total} = chain<'S1' | 'S2' | 'S3' | 'S4' | 'S5'>([
-	['S1', 120, 'Accroche : titre, logo, plateforme'],
-	['S2', 180, 'Le rendez-vous : date, lieu, pupitre'],
-	['S3', 484, 'Le programme détaillé'],
-	['S4', 150, 'Contacts'],
+const {scenes, total} = chain<'S0' | 'S1' | 'S2' | 'S3' | 'S4' | 'S5'>([
+	['S0', 70, 'Intro : animation du logo'],
+	['S1', 100, 'Accroche : titre et plateforme'],
+	['S2', 165, 'Le rendez-vous : date, lieu, pupitre'],
+	['S3', 466, 'Le programme détaillé'],
+	['S4', 140, 'Contacts'],
 	['S5', 100, "Retour à l'affiche d'origine"],
 ]);
 
@@ -35,39 +36,46 @@ const S = scenes;
 // ------------------------------------------------------------ S1 + S2 : titre, identité, rendez-vous
 const TITLE_A = {conf: {cx: 540, cy: 820, s: 0.62}, presse: {cx: 540 + 182 * 0.62, cy: 820 + 271 * 0.62, s: 0.62}};
 const TITLE_B = {conf: {cx: 540, cy: 300, s: 0.5}, presse: {cx: 540 + 182 * 0.5, cy: 300 + 271 * 0.5, s: 0.5}};
+const S1_IN = S.S1.from;
 const S2_IN = S.S2.from;
 const S3_IN = S.S3.from;
+
+// ------------------------------------------------------------ S0 : intro logo (voir components/IntroLogo.tsx)
+export const INTRO_LOGO = {
+	big: {cx: 540, cy: 900, s: 1.7}, // le logo ne fait que 286 px dans le PSD : au-delà, il devient flou
+	rest: {cx: 540, cy: 400, s: 0.85}, // place du logo pendant la scène 1
+	coreAt: 0,
+	ringAt: 8,
+	waveAt: 38,
+	glintAt: 44,
+	moveAt: S1_IN - 8,
+	moveDur: 30,
+	exitAt: S2_IN,
+	exitDur: 20,
+};
 
 const intro: PieceSpec[] = [
 	{
 		id: 'titre-conference',
 		el: 'titre-conference',
-		enter: {at: -12, dur: 30, preset: 'rise'},
+		enter: {at: S1_IN + 14, dur: 30, preset: 'rise'},
 		exit: {at: S3_IN, dur: 22, preset: 'fadeUp'},
 		keys: [{f: 0, ...TITLE_A.conf}, {f: S2_IN, ...TITLE_A.conf}, {f: S2_IN + 32, ...TITLE_B.conf}],
-		sweep: {at: 70, dur: 34},
+		sweep: {at: S1_IN + 60, dur: 34},
 		z: 5,
 	},
 	{
 		id: 'titre-de-presse',
 		el: 'titre-de-presse',
-		enter: {at: 6, dur: 30, preset: 'rise'},
+		enter: {at: S1_IN + 26, dur: 30, preset: 'rise'},
 		exit: {at: S3_IN + 3, dur: 22, preset: 'fadeUp'},
 		keys: [{f: 0, ...TITLE_A.presse}, {f: S2_IN + 3, ...TITLE_A.presse}, {f: S2_IN + 35, ...TITLE_B.presse}],
 		z: 5,
 	},
 	{
-		id: 'logo-paspas',
-		el: 'logo-paspas',
-		enter: {at: 40, dur: 26, preset: 'scaleIn'},
-		exit: {at: S2_IN, dur: 20, preset: 'fadeUp'},
-		keys: [{f: 0, cx: 540, cy: 400, s: 0.85}],
-		float: 4,
-	},
-	{
 		id: 'bandeau-plateforme',
 		el: 'bandeau-plateforme',
-		enter: {at: 54, dur: 30, preset: 'wipeRight'},
+		enter: {at: S1_IN + 40, dur: 30, preset: 'wipeRight'},
 		exit: {at: S2_IN + 4, dur: 20, preset: 'fadeUp'},
 		keys: [{f: 0, cx: 540, cy: 610, s: 0.76}],
 	},
@@ -140,7 +148,7 @@ export const PROG = {
 	headerAt: S3_IN + 16,
 	dotsAt: S3_IN + 30,
 	heroStart: S3_IN + 50,
-	heroStep: 34,
+	heroStep: 32,
 };
 export const HERO_AT = rows.map((r) => PROG.heroStart + r.i * PROG.heroStep);
 export const RECAP_AT = PROG.heroStart + rows.length * PROG.heroStep;
@@ -317,7 +325,7 @@ export const PIECES: PieceSpec[] = [...intro, ...programme, ...contacts, ...post
 export const DECOR_COLUMN: PieceSpec = {
 	id: 'colonne-decor',
 	el: 'colonne-motifs',
-	enter: {at: 10, dur: 60, preset: 'wipeDown'},
+	enter: {at: S1_IN, dur: 60, preset: 'wipeDown'},
 	exit: {at: S5_IN, dur: 16, preset: 'fade'},
 	keys: [
 		{f: 0, cx: 1080, cy: 1000, s: 0.72},
@@ -331,9 +339,13 @@ const sfx = (name: string) => `assets/audio/sfx/${name}.mp3`;
 export type RedesignSfx = {from: number; src: string; volume: number; durationInFrames?: number; note: string};
 
 export const REDESIGN_SFX: RedesignSfx[] = [
-	{from: 0, src: sfx('impact-deep-whoosh'), volume: 0.45, durationInFrames: 70, note: 'le titre monte'},
-	{from: 40, src: sfx('hit-weak'), volume: 0.3, note: 'logo'},
-	{from: 70, src: sfx('shimmer-sparkle-sweep'), volume: 0.22, durationInFrames: 50, note: 'reflet sur le titre'},
+	{from: 0, src: sfx('impact-deep-whoosh'), volume: 0.42, durationInFrames: 60, note: "l'emblème du logo apparaît"},
+	{from: INTRO_LOGO.ringAt, src: sfx('swoosh-slow'), volume: 0.25, durationInFrames: 36, note: "l'anneau du logo se dessine"},
+	{from: INTRO_LOGO.waveAt, src: sfx('bass-hit-short'), volume: 0.35, note: 'onde, logo complet'},
+	{from: INTRO_LOGO.glintAt, src: sfx('sparkle-touch'), volume: 0.2, durationInFrames: 40, note: 'reflet sur le logo'},
+	{from: INTRO_LOGO.moveAt, src: sfx('air-woosh-quick'), volume: 0.28, note: 'le logo monte à sa place'},
+	{from: S1_IN + 14, src: sfx('sweep-short'), volume: 0.3, note: 'le titre monte'},
+	{from: S1_IN + 60, src: sfx('shimmer-sparkle-sweep'), volume: 0.2, durationInFrames: 50, note: 'reflet sur le titre'},
 	{from: S2_IN, src: sfx('air-woosh-quick'), volume: 0.32, note: 'le titre monte en tête'},
 	{from: S2_IN + 34, src: sfx('sweep-short'), volume: 0.35, note: 'pastille jour'},
 	{from: S2_IN + 50, src: sfx('sweep-short'), volume: 0.28, note: 'pastille heure'},

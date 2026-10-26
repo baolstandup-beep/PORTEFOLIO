@@ -1,8 +1,9 @@
 // Composition principale « redesign » 1080×1920 : les éléments du PSD recomposés
-// pour le format vertical, scène par scène, puis retour à l'affiche d'origine.
+// pour le format vertical : intro logo, scènes, puis retour à l'affiche d'origine.
 import React from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile} from 'remotion';
 import {Background} from '../components/Background';
+import {IntroLogo} from '../components/IntroLogo';
 import {Panel, Piece} from '../components/Piece';
 import {CONTACT_PANEL, DECOR_COLUMN, PIECES, REDESIGN_FRAMES, REDESIGN_SFX, SCENES} from '../config/redesign';
 import {HeroUnderline, ProgressDots, RecapTimeline} from '../components/ProgrammeGraphics';
@@ -25,6 +26,7 @@ export const TikTokRedesign: React.FC<TikTokRedesignProps> = ({bgm}) => (
 		{PIECES.map((p) => (
 			<Piece key={p.id} spec={p} />
 		))}
+		<IntroLogo />
 		<Panel {...CONTACT_PANEL} color={BRAND.green} />
 		<ProgressDots />
 		<HeroUnderline />

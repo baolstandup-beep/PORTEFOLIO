@@ -1,6 +1,6 @@
 # Motion design « Conférence de presse PAS-PAS »
 
-Vidéo verticale TikTok/Reels (1080 × 1920, 30 i/s, H.264 + AAC, BT.709, 34,5 s) générée avec **Remotion** (React + TypeScript) à partir du PSD `Sans titre - 4.psd`.
+Vidéo verticale TikTok/Reels (1080 × 1920, 30 i/s, H.264 + AAC, BT.709, 34,7 s) générée avec **Remotion** (React + TypeScript) à partir du PSD `Sans titre - 4.psd`.
 
 **Vidéo principale = version « redesign »** : les éléments du PSD recomposés pour le 9:16 (programme détaillé en cartes, contacts empilés), puis retour à l'affiche d'origine. Détails : `output/analysis/redesign.md`. La variante « caméra sur l'affiche d'origine » reste disponible (`npm run render:affiche`).
 
