@@ -1,0 +1,88 @@
+{
+  "voice": "Piper TTS, voix « fr-siwis-medium » (jeu de données SIWIS, CC-BY 4.0)",
+  "lengthScale": 1.08,
+  "cues": [
+    {
+      "id": "vo-01",
+      "shot": "P1",
+      "text": "Conférence de presse.",
+      "spoken": "Conférence de presse.",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-02",
+      "shot": "P2",
+      "text": "La Plateforme d'Acteurs Sénégalais pour le Progrès et l'Ancrage Souverain vous donne rendez-vous.",
+      "spoken": "La Plateforme d'Acteurs Sénégalais pour le Progrès et l'Ancrage Souverain vous donne rendez-vous.",
+      "needsValidation": true,
+      "note": "« vous donne rendez-vous » est une formulation d'annonce ajoutée ; le nom de la plateforme est repris tel quel du PSD."
+    },
+    {
+      "id": "vo-03a",
+      "shot": "P3",
+      "text": "Samedi 31 octobre 2026,",
+      "spoken": "Samedi trente et un octobre deux mille vingt-six,",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-03b",
+      "shot": "P3",
+      "text": "à partir de 16 h 30,",
+      "spoken": "à partir de seize heures trente,",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-03c",
+      "shot": "P3",
+      "text": "au siège du PAS-PAS, à Mbacké.",
+      "spoken": "au siège du Pas-Pas, à Mbacké.",
+      "needsValidation": true,
+      "note": "Prononciation de « PAS-PAS » (lu « Pas-Pas ») et de « Mbacké » à valider à l'écoute."
+    },
+    {
+      "id": "vo-04a",
+      "shot": "P4",
+      "text": "Au programme :",
+      "spoken": "Au programme :",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-04b",
+      "shot": "P4",
+      "text": "doctrine et vision politique,",
+      "spoken": "doctrine et vision politique,",
+      "needsValidation": false,
+      "note": "Sélection de 4 points sur 9, libellés repris du PSD."
+    },
+    {
+      "id": "vo-04c",
+      "shot": "P4",
+      "text": "le progrès à travers les réalités vécues,",
+      "spoken": "le progrès à travers les réalités vécues,",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-04d",
+      "shot": "P4",
+      "text": "une déclaration politique officielle,",
+      "spoken": "une déclaration politique officielle,",
+      "needsValidation": false
+    },
+    {
+      "id": "vo-04e",
+      "shot": "P4",
+      "text": "puis les questions de la presse.",
+      "spoken": "puis les questions de la presse.",
+      "needsValidation": true,
+      "note": "Résumé de la ligne « Questions et réponses avec la presse »."
+    },
+    {
+      "id": "vo-05",
+      "shot": "P5",
+      "text": "Rejoignez-nous ! Toutes les informations sur www.pas-pas.org.",
+      "spoken": "Rejoignez-nous ! Toutes les informations sur pas tiret pas, point org.",
+      "needsValidation": true,
+      "note": "Lecture de l'adresse web à valider."
+    }
+  ]
+}

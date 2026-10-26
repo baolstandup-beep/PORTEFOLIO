@@ -1,0 +1,57 @@
+{
+  "vo-01": {
+    "seconds": 1.205,
+    "frames": 37,
+    "hash": "c9c053add879"
+  },
+  "vo-02": {
+    "seconds": 4.369,
+    "frames": 132,
+    "hash": "9b306a0f1246"
+  },
+  "vo-03a": {
+    "seconds": 2.744,
+    "frames": 83,
+    "hash": "d3c051830857"
+  },
+  "vo-03b": {
+    "seconds": 1.497,
+    "frames": 45,
+    "hash": "d5af88ea3664"
+  },
+  "vo-03c": {
+    "seconds": 1.99,
+    "frames": 60,
+    "hash": "a7907d029d49"
+  },
+  "vo-04a": {
+    "seconds": 0.787,
+    "frames": 24,
+    "hash": "f0e3758f7525"
+  },
+  "vo-04b": {
+    "seconds": 2.105,
+    "frames": 64,
+    "hash": "80483b527fb4"
+  },
+  "vo-04c": {
+    "seconds": 2.073,
+    "frames": 63,
+    "hash": "4657c2651663"
+  },
+  "vo-04d": {
+    "seconds": 1.954,
+    "frames": 59,
+    "hash": "377cc8ddfac7"
+  },
+  "vo-04e": {
+    "seconds": 1.832,
+    "frames": 55,
+    "hash": "6a3b0498d369"
+  },
+  "vo-05": {
+    "seconds": 4.167,
+    "frames": 125,
+    "hash": "43e47a654edc"
+  }
+}

@@ -1,0 +1,20 @@
+VOIX OFF — Conférence de presse PAS-PAS (script final)
+
+[P1] Conférence de presse.
+[P2] La Plateforme d'Acteurs Sénégalais pour le Progrès et l'Ancrage Souverain vous donne rendez-vous.  [À VALIDER]
+      note : « vous donne rendez-vous » est une formulation d'annonce ajoutée ; le nom de la plateforme est repris tel quel du PSD.
+[P3] Samedi 31 octobre 2026,
+[P3] à partir de 16 h 30,
+[P3] au siège du PAS-PAS, à Mbacké.  [À VALIDER]
+      note : Prononciation de « PAS-PAS » (lu « Pas-Pas ») et de « Mbacké » à valider à l'écoute.
+[P4] Au programme :
+[P4] doctrine et vision politique,
+      note : Sélection de 4 points sur 9, libellés repris du PSD.
+[P4] le progrès à travers les réalités vécues,
+[P4] une déclaration politique officielle,
+[P4] puis les questions de la presse.  [À VALIDER]
+      note : Résumé de la ligne « Questions et réponses avec la presse ».
+[P5] Rejoignez-nous ! Toutes les informations sur www.pas-pas.org.  [À VALIDER]
+      note : Lecture de l'adresse web à valider.
+
+Voix : Piper TTS, voix « fr-siwis-medium » (jeu de données SIWIS, CC-BY 4.0)

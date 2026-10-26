@@ -1,0 +1,41 @@
+{
+  "file": "Sans titre - 4.psd",
+  "width": 2317,
+  "height": 3014,
+  "color_mode": "3",
+  "depth_bits": 8,
+  "psd_version": 1,
+  "icc_profile": "sRGB IEC61966-2.1",
+  "resolution_ppi": [
+    150.0,
+    150.0
+  ],
+  "saved_alpha_channels": [
+    "Transparency\u0000"
+  ],
+  "layer_count": 1,
+  "layers": [
+    {
+      "name": "Sans titre - 4",
+      "kind": "pixel",
+      "depth": 0,
+      "visible": true,
+      "bbox": [
+        9,
+        186,
+        2317,
+        3014
+      ],
+      "opacity": 255,
+      "blend_mode": "BlendMode.NORMAL",
+      "has_mask": false,
+      "has_effects": false,
+      "is_group": false
+    }
+  ],
+  "composite_alpha": {
+    "transparent_px_ratio": 0.6578,
+    "opaque_px_ratio": 0.2161,
+    "partial_px_ratio": 0.1261
+  }
+}

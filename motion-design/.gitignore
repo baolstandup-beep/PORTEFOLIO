@@ -1,0 +1,4 @@
+node_modules
+tools/piper
+public/assets/audio/voice/*.raw.wav
+out
