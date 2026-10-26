@@ -51,14 +51,17 @@ export const FINAL_CAMERA = {cx: DOC.width / 2, cy: 1600, z: VIDEO.width / DOC.w
 
 export const CAMERA_KEYS: CameraKey[] = [
 	// P1 — accroche : le titre seul, léger travelling avant.
-	{frame: S.P1.from, cx: 1232, cy: 844, z: 0.64},
-	{frame: S.P1.from + 90, cx: 1232, cy: 844, z: 0.664, ease: 'linear'},
-	// P2 — léger recul pour inclure logo et nom de la plateforme, bloc centré.
-	{frame: S.P2.from + 45, cx: 1060, cy: 806, z: 0.56},
-	{frame: S.P2.from + S.P2.duration, cx: 1064, cy: 800, z: 0.572, ease: 'linear'},
-	// P3 — insert sur le pupitre (sujet principal), cadrage vertical serré.
-	{frame: S.P3.from + 38, cx: 560, cy: 1960, z: 0.98},
-	{frame: S.P3.from + 55, cx: 560, cy: 1952, z: 0.995, ease: 'linear'},
+	// Titre ≤ 920 px de large : marges latérales ≥ 80 px.
+	{frame: S.P1.from, cx: 1232, cy: 844, z: 0.6},
+	{frame: S.P1.from + 90, cx: 1232, cy: 844, z: 0.615, ease: 'linear'},
+	// P2 — recul : logo, plateforme et titre entiers ; le bord gauche du pupitre
+	// (bord perdu de l'affiche) reste juste hors cadre.
+	{frame: S.P2.from + 45, cx: 1096, cy: 827, z: 0.5},
+	{frame: S.P2.from + S.P2.duration, cx: 1098, cy: 822, z: 0.51, ease: 'linear'},
+	// P3 — insert sur le pupitre (sujet principal), cadrage vertical serré. Les
+	// bords gauche et bas du pupitre (coupés dans l'affiche) restent hors cadre.
+	{frame: S.P3.from + 38, cx: 610, cy: 1760, z: 0.98},
+	{frame: S.P3.from + 55, cx: 610, cy: 1752, z: 1.0, ease: 'linear'},
 	// Plan de détail : la pastille date, lue de gauche à droite.
 	{frame: S.P3.from + 92, cx: 900, cy: 1150, z: 0.95},
 	{frame: S.P3.from + 125, cx: 935, cy: 1150, z: 0.955, ease: 'linear'},
