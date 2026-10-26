@@ -11,7 +11,8 @@
     "preview": "remotion render src/index.ts TikTokVideo output/tiktok/preview_tiktok.mp4 --scale=0.5 --crf=28 && cp output/tiktok/preview_tiktok.mp4 output/previews/motion_design_preview.mp4",
     "render": "remotion render src/index.ts TikTokVideo output/tiktok/motion_design_tiktok.mp4 --codec=h264 --crf=16 --color-space=bt709 && cp output/tiktok/motion_design_tiktok.mp4 output/motion_design_final.mp4",
     "typecheck": "tsc --noEmit",
-    "render:voix": "remotion render src/index.ts TikTokVideo output/tiktok/motion_design_tiktok_avec_voix.mp4 --codec=h264 --crf=16 --color-space=bt709 --props=props-voix.json"
+    "render:voix": "remotion render src/index.ts TikTokVideo output/tiktok/motion_design_tiktok_avec_voix.mp4 --codec=h264 --crf=16 --color-space=bt709 --props=props-voix.json",
+    "render:affiche": "remotion render src/index.ts AfficheCamera output/tiktok/affiche_camera.mp4 --codec=h264 --crf=16 --color-space=bt709"
   },
   "dependencies": {
     "@remotion/cli": "4.0.539",
