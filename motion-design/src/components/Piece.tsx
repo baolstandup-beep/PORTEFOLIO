@@ -26,6 +26,10 @@ export type PieceSpec = {
 	// Décalage vertical supplémentaire (défilement d'une liste).
 	scrollY?: (f: number) => number;
 	sweep?: {at: number; dur: number};
+	// Coins arrondis (px) : pour une zone découpée dans une pastille.
+	radius?: number;
+	// Léger zoom pendant la tenue (1 = aucun), de l'entrée à la sortie.
+	push?: number;
 };
 
 const keyAt = (keys: PieceKey[], f: number) => {
@@ -63,7 +67,12 @@ export const Piece: React.FC<{spec: PieceSpec}> = ({spec}) => {
 	if (t <= 0) return null;
 	if (spec.exit && frame >= spec.exit.at + spec.exit.dur) return null;
 
-	const k = keyAt(spec.keys, frame);
+	const k0 = keyAt(spec.keys, frame);
+	const pushEnd = spec.exit ? spec.exit.at : spec.enter.at + 120;
+	const push = spec.push
+		? 1 + (spec.push - 1) * interpolate(frame, [spec.enter.at, pushEnd], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})
+		: 1;
+	const k = {...k0, s: k0.s * push};
 	const w = crop.w * k.s;
 	const h = crop.h * k.s;
 	// Flottement : déterministe, phase dérivée de l'identifiant.
@@ -75,7 +84,7 @@ export const Piece: React.FC<{spec: PieceSpec}> = ({spec}) => {
 
 	return (
 		<div style={{position: 'absolute', left: k.cx - w / 2, top: y, width: w, height: h, zIndex: spec.z ?? 1, ...exit}}>
-			<div style={{position: 'absolute', inset: 0, overflow: 'hidden', ...outer}}>
+			<div style={{position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: spec.radius ? spec.radius * k.s : 0, ...outer}}>
 				<div style={{position: 'absolute', inset: 0, ...inner}}>
 					<Img
 						src={staticFile(el.src)}

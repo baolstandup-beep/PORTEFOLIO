@@ -23,9 +23,9 @@ const chain = <K extends string>(defs: [K, number, string][]) => {
 const {scenes, total} = chain<'S1' | 'S2' | 'S3' | 'S4' | 'S5'>([
 	['S1', 120, 'Accroche : titre, logo, plateforme'],
 	['S2', 180, 'Le rendez-vous : date, lieu, pupitre'],
-	['S3', 420, 'Le programme détaillé'],
+	['S3', 484, 'Le programme détaillé'],
 	['S4', 150, 'Contacts'],
-	['S5', 120, "Retour à l'affiche d'origine"],
+	['S5', 100, "Retour à l'affiche d'origine"],
 ]);
 
 export const SCENES = scenes;
@@ -72,20 +72,37 @@ const intro: PieceSpec[] = [
 		keys: [{f: 0, cx: 540, cy: 610, s: 0.76}],
 	},
 	{
-		id: 'info-date',
+		// « Samedi 31 Oct 2026 », découpé dans la pastille date (fond bleu d'origine).
+		id: 'date-jour',
 		el: 'info-date',
-		enter: {at: S2_IN + 34, dur: 30, preset: 'wipeRight'},
+		crop: {x: 412, y: 1048, w: 892, h: 146},
+		enter: {at: S2_IN + 34, dur: 28, preset: 'wipeRight'},
 		exit: {at: S3_IN + 6, dur: 22, preset: 'fadeUp'},
-		keys: [{f: 0, cx: 540, cy: 690, s: 0.55}],
-		sweep: {at: S2_IN + 80, dur: 34},
+		keys: [{f: 0, cx: 540, cy: 640, s: 0.95}],
+		radius: 73,
+		push: 1.03,
+		z: 4,
+	},
+	{
+		// « à partir 16h30 », découpé dans la même pastille.
+		id: 'date-heure',
+		el: 'info-date',
+		crop: {x: 1316, y: 1048, w: 716, h: 146},
+		enter: {at: S2_IN + 50, dur: 28, preset: 'wipeRight'},
+		exit: {at: S3_IN + 8, dur: 22, preset: 'fadeUp'},
+		keys: [{f: 0, cx: 540, cy: 800, s: 0.95}],
+		radius: 73,
+		push: 1.03,
+		sweep: {at: S2_IN + 90, dur: 34},
 		z: 4,
 	},
 	{
 		id: 'info-lieu',
 		el: 'info-lieu',
-		enter: {at: S2_IN + 62, dur: 26, preset: 'slideUp'},
+		enter: {at: S2_IN + 72, dur: 26, preset: 'slideUp'},
 		exit: {at: S3_IN + 9, dur: 22, preset: 'fadeUp'},
-		keys: [{f: 0, cx: 540, cy: 830, s: 0.75}],
+		keys: [{f: 0, cx: 540, cy: 955, s: 0.78}],
+		push: 1.02,
 		z: 4,
 	},
 	{
@@ -94,108 +111,136 @@ const intro: PieceSpec[] = [
 		el: 'pupitre',
 		enter: {at: S2_IN + 44, dur: 48, preset: 'rise'},
 		exit: {at: S3_IN, dur: 30, preset: 'sinkDown'},
-		keys: [{f: 0, cx: -40 + 666 / 2, cy: 1000 + 1657 / 2, s: 1}],
+		keys: [{f: 0, cx: -40 + 666 / 2, cy: 1080 + 1657 / 2, s: 1}],
 		z: 3,
 	},
 ];
 
 // ------------------------------------------------------------ S3 : programme détaillé
 // Chaque ligne du programme est découpée en deux zones de la même image :
-// l'horaire (avec sa flèche) et l'intitulé (avec l'intervenant éventuel),
-// recomposées en carte verticale plus grande que sur l'affiche.
-const CARD_S = 0.9;
-const CARD_LEFT = 84;
+// l'horaire (avec sa flèche) et l'intitulé (avec l'intervenant éventuel).
+// 1) Plans vedettes : un point à la fois, horaire en très grand.
+// 2) Récapitulatif : les 9 cartes sur une frise verticale, arrivée accélérée.
 const TIME_X = [655, 1115] as const;
-const TEXT_X = [1120, 2145] as const;
+const TEXT_X0 = 1120;
+const HERO_TEXT_X0 = 1138;
 const TIME_H = 52;
-const LIST_TOP = 400; // haut de la zone de liste (sous la pastille PROGRAMME)
-const LIST_BOTTOM = 1600; // au-delà : marge basse d'interface TikTok
-const CARD_GAP = 34;
 
-export const ROW_AT = PROGRAMME_ROWS.map((_, i) => S3_IN + 52 + i * 34);
-
-type Card = {id: ElementId; top: number; height: number; time: PieceSpec; text: PieceSpec};
-
-let cursor = 0;
-const cardsBase = PROGRAMME_ROWS.map((id, i) => {
+const rows = PROGRAMME_ROWS.map((id, i) => {
 	const v = getElement(id).visible;
-	const timeCrop = {x: TIME_X[0], y: v.y - 6, w: TIME_X[1] - TIME_X[0], h: TIME_H};
-	const textCrop = {x: TEXT_X[0], y: v.y - 6, w: TEXT_X[1] - TEXT_X[0], h: v.height + 12};
-	const top = cursor;
-	const height = TIME_H * CARD_S + 6 + textCrop.h * CARD_S;
-	cursor += height + CARD_GAP;
-	return {id, i, top, height, timeCrop, textCrop};
+	return {
+		id,
+		i,
+		time: {x: TIME_X[0], y: v.y - 6, w: TIME_X[1] - TIME_X[0], h: TIME_H},
+		text: {x: TEXT_X0, y: v.y - 6, w: v.x + v.width + 10 - TEXT_X0, h: v.height + 12},
+	};
 });
 
-/**
- * Défilement de la liste : remonte pour garder la dernière carte apparue dans le
- * cadre, en s'arrêtant toujours sur le haut d'une carte (aucune carte à moitié
- * masquée sous la pastille PROGRAMME pendant les tenues).
- */
-const snapTarget = (needed: number) => {
-	if (needed <= 0) return 0;
-	const card = cardsBase.find((c) => c.top >= needed);
-	return card ? card.top : needed;
+export const PROG = {
+	headerAt: S3_IN + 16,
+	dotsAt: S3_IN + 30,
+	heroStart: S3_IN + 50,
+	heroStep: 34,
 };
+export const HERO_AT = rows.map((r) => PROG.heroStart + r.i * PROG.heroStep);
+export const RECAP_AT = PROG.heroStart + rows.length * PROG.heroStep;
+// Arrivée de plus en plus rapide (intervalles 10, 9, 8 … images).
+const RECAP_DELAYS = [0, 10, 19, 27, 34, 40, 45, 49, 52];
+export const RECAP_CARD_AT = RECAP_DELAYS.map((d) => RECAP_AT + d);
 
-export const listScroll = (f: number) => {
-	let y = 0;
-	for (const c of cardsBase) {
-		const target = snapTarget(LIST_TOP + c.top + c.height - LIST_BOTTOM);
-		const at = ROW_AT[c.i] - 8;
-		const p = Math.min(1, Math.max(0, (f - at) / 24));
-		const e = p * p * (3 - 2 * p);
-		y = y + (target - y) * e;
-	}
-	return -y;
-};
+// Plans vedettes
+export const HERO = {timeCy: 800, timeS: 1.7, textTop: 905, textMaxW: 920, textMaxS: 1.8, underlineY: 868};
+const heroText = (w: number) => Math.min(HERO.textMaxS, HERO.textMaxW / w);
 
-const listExit = (i: number) => ({at: S.S4.from + i * 2, dur: 20, preset: 'fadeUp' as const});
+const heroes: PieceSpec[] = rows.flatMap((r): PieceSpec[] => {
+	const at = HERO_AT[r.i];
+	const ts = heroText(r.text.w - (HERO_TEXT_X0 - TEXT_X0));
+	const exit = {at: at + 28, dur: 8, preset: 'fadeUp' as const};
+	return [
+		{
+			id: `${r.id}-vedette-horaire`,
+			el: r.id,
+			crop: r.time,
+			enter: {at, dur: 14, preset: 'rowIn'},
+			exit,
+			keys: [{f: 0, cx: 540, cy: HERO.timeCy, s: HERO.timeS}],
+			push: 1.03,
+			z: 6,
+		},
+		{
+			id: `${r.id}-vedette-intitule`,
+			el: r.id,
+			// Découpe resserrée à gauche pour centrer exactement l'intitulé.
+			crop: {...r.text, x: HERO_TEXT_X0, w: r.text.w - (HERO_TEXT_X0 - TEXT_X0)},
+			enter: {at: at + 5, dur: 16, preset: 'rise'},
+			exit,
+			keys: [{f: 0, cx: 540, cy: HERO.textTop + (r.text.h * ts) / 2, s: ts}],
+			push: 1.02,
+			z: 6,
+		},
+	];
+});
 
-export const CARDS: Card[] = cardsBase.map((c) => ({
-	id: c.id,
-	top: c.top,
-	height: c.height,
-	time: {
-		id: `${c.id}-horaire`,
-		el: c.id,
-		crop: c.timeCrop,
-		enter: {at: ROW_AT[c.i], dur: 22, preset: 'rowIn'},
-		exit: listExit(c.i),
-		keys: [{f: 0, cx: CARD_LEFT + (c.timeCrop.w * CARD_S) / 2, cy: LIST_TOP + c.top + (TIME_H * CARD_S) / 2, s: CARD_S}],
-		scrollY: listScroll,
-	},
-	text: {
-		id: `${c.id}-intitule`,
-		el: c.id,
-		crop: c.textCrop,
-		enter: {at: ROW_AT[c.i] + 6, dur: 24, preset: 'rowIn'},
-		exit: listExit(c.i),
-		keys: [
-			{
-				f: 0,
-				cx: CARD_LEFT - (TEXT_X[0] - 1146) * CARD_S + (c.textCrop.w * CARD_S) / 2,
-				cy: LIST_TOP + c.top + TIME_H * CARD_S + 6 + (c.textCrop.h * CARD_S) / 2,
-				s: CARD_S,
-			},
-		],
-		scrollY: listScroll,
-	},
-}));
+// Récapitulatif : taille calculée pour que les 9 cartes tiennent sans défilement.
+export const RECAP = {top: 410, bottom: 1590, left: 130, gap: 18, lineX: 88};
+const recapS = Math.min(
+	0.85,
+	(RECAP.bottom - RECAP.top - (rows.length - 1) * RECAP.gap - rows.length * 6) /
+		rows.reduce((a, r) => a + TIME_H + r.text.h, 0),
+);
+let cursor = RECAP.top;
+export const RECAP_CARDS = rows.map((r) => {
+	const top = cursor;
+	const height = TIME_H * recapS + 6 + r.text.h * recapS;
+	cursor += height + RECAP.gap;
+	return {id: r.id, top, height, dotY: top + (TIME_H * recapS) / 2};
+});
 
-export const CARD_ACCENT = {x: 56, width: 6};
-export const LIST_VIEW = {top: LIST_TOP - 30, fade: 40};
+const recap: PieceSpec[] = rows.flatMap((r): PieceSpec[] => {
+	const c = RECAP_CARDS[r.i];
+	const at = RECAP_CARD_AT[r.i];
+	const exit = {at: S.S4.from + r.i * 2, dur: 18, preset: 'fadeUp' as const};
+	return [
+		{
+			id: `${r.id}-carte-horaire`,
+			el: r.id,
+			crop: r.time,
+			enter: {at, dur: 16, preset: 'rowIn'},
+			exit,
+			keys: [{f: 0, cx: RECAP.left + (r.time.w * recapS) / 2, cy: c.top + (TIME_H * recapS) / 2, s: recapS}],
+			z: 6,
+		},
+		{
+			id: `${r.id}-carte-intitule`,
+			el: r.id,
+			crop: r.text,
+			enter: {at: at + 3, dur: 16, preset: 'rowIn'},
+			exit,
+			keys: [
+				{
+					f: 0,
+					cx: RECAP.left - (1146 - TEXT_X0) * recapS + (r.text.w * recapS) / 2,
+					cy: c.top + TIME_H * recapS + 6 + (r.text.h * recapS) / 2,
+					s: recapS,
+				},
+			],
+			z: 6,
+		},
+	];
+});
 
 const programme: PieceSpec[] = [
 	{
 		id: 'programme-titre',
 		el: 'programme-titre',
-		enter: {at: S3_IN + 24, dur: 24, preset: 'scaleIn'},
+		enter: {at: PROG.headerAt, dur: 24, preset: 'scaleIn'},
 		exit: {at: S.S4.from, dur: 20, preset: 'fadeUp'},
-		keys: [{f: 0, cx: 540, cy: 280, s: 0.7}],
-		sweep: {at: S3_IN + 50, dur: 30},
+		keys: [{f: 0, cx: 540, cy: 290, s: 0.7}],
+		sweep: {at: PROG.headerAt + 26, dur: 30},
 		z: 6,
 	},
+	...heroes,
+	...recap,
 ];
 
 // ------------------------------------------------------------ S4 : contacts
@@ -290,21 +335,34 @@ export const REDESIGN_SFX: RedesignSfx[] = [
 	{from: 40, src: sfx('hit-weak'), volume: 0.3, note: 'logo'},
 	{from: 70, src: sfx('shimmer-sparkle-sweep'), volume: 0.22, durationInFrames: 50, note: 'reflet sur le titre'},
 	{from: S2_IN, src: sfx('air-woosh-quick'), volume: 0.32, note: 'le titre monte en tête'},
-	{from: S2_IN + 34, src: sfx('sweep-short'), volume: 0.35, note: 'pastille date'},
+	{from: S2_IN + 34, src: sfx('sweep-short'), volume: 0.35, note: 'pastille jour'},
+	{from: S2_IN + 50, src: sfx('sweep-short'), volume: 0.28, note: 'pastille heure'},
 	{from: S2_IN + 44, src: sfx('swoosh-slow'), volume: 0.28, durationInFrames: 55, note: 'le pupitre monte'},
-	{from: S2_IN + 62, src: sfx('paper-move-quick'), volume: 0.26, note: 'encart lieu'},
-	{from: S2_IN + 80, src: sfx('sparkle-touch'), volume: 0.18, durationInFrames: 40, note: 'reflet sur la date'},
+	{from: S2_IN + 72, src: sfx('paper-move-quick'), volume: 0.26, note: 'encart lieu'},
+	{from: S2_IN + 90, src: sfx('sparkle-touch'), volume: 0.18, durationInFrames: 40, note: "reflet sur l'heure"},
 	{from: S3_IN, src: sfx('air-woosh-quick'), volume: 0.35, note: 'changement de scène'},
-	{from: S3_IN + 28, src: sfx('hit-weak'), volume: 0.35, note: 'pastille PROGRAMME'},
-	...ROW_AT.map(
+	{from: PROG.headerAt + 4, src: sfx('hit-weak'), volume: 0.35, note: 'pastille PROGRAMME'},
+	// Plans vedettes : un son par point, deux échantillons alternés, volume dégressif.
+	...HERO_AT.map(
+		(at, i): RedesignSfx => ({
+			from: at,
+			src: sfx(i % 2 === 0 ? 'sweep-short' : 'air-woosh-quick'),
+			volume: Number((0.3 - i * 0.012).toFixed(3)),
+			durationInFrames: 24,
+			note: `point de programme ${i + 1}`,
+		}),
+	),
+	{from: RECAP_AT - 4, src: sfx('swoosh-slow'), volume: 0.3, durationInFrames: 45, note: 'récapitulatif'},
+	...RECAP_CARD_AT.map(
 		(at, i): RedesignSfx => ({
 			from: at,
 			src: sfx(i % 2 === 0 ? 'paper-move-quick' : 'paper-slide'),
-			volume: Number((0.26 - i * 0.012).toFixed(3)),
-			durationInFrames: 22,
-			note: `carte programme ${i + 1}`,
+			volume: Number((0.2 - i * 0.012).toFixed(3)),
+			durationInFrames: 14,
+			note: `carte récapitulative ${i + 1}`,
 		}),
 	),
+	{from: RECAP_CARD_AT[8] + 16, src: sfx('hit-weak'), volume: 0.32, note: 'liste complète'},
 	{from: S4_IN, src: sfx('air-woosh-quick'), volume: 0.32, note: 'changement de scène'},
 	{from: S4_IN + 22, src: sfx('swoosh-slow'), volume: 0.25, durationInFrames: 40, note: 'panneau vert'},
 	{from: S4_IN + 80, src: sfx('sparkle-touch'), volume: 0.2, durationInFrames: 40, note: 'reflet Rejoignez-nous'},
