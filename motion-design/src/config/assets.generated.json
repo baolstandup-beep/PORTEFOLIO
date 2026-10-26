@@ -3,6 +3,7 @@
   "docWidth": 2317,
   "docHeight": 3014,
   "orphanPixels": 0,
+  "dustPixelsRemoved": 1247,
   "elements": [
     {
       "id": "colonne-motifs",
@@ -13,6 +14,12 @@
       "y": 186,
       "width": 163,
       "height": 2828,
+      "visible": {
+        "x": 2154,
+        "y": 186,
+        "width": 163,
+        "height": 2828
+      },
       "zIndex": 0,
       "opacity": 1
     },
@@ -25,6 +32,12 @@
       "y": 1146,
       "width": 666,
       "height": 1657,
+      "visible": {
+        "x": 9,
+        "y": 1154,
+        "width": 660,
+        "height": 1649
+      },
       "zIndex": 1,
       "opacity": 1
     },
@@ -37,6 +50,12 @@
       "y": 241,
       "width": 286,
       "height": 288,
+      "visible": {
+        "x": 138,
+        "y": 241,
+        "width": 286,
+        "height": 288
+      },
       "zIndex": 2,
       "opacity": 1
     },
@@ -49,6 +68,12 @@
       "y": 276,
       "width": 1111,
       "height": 114,
+      "visible": {
+        "x": 724,
+        "y": 276,
+        "width": 1111,
+        "height": 114
+      },
       "zIndex": 3,
       "opacity": 1
     },
@@ -61,6 +86,12 @@
       "y": 490,
       "width": 1494,
       "height": 265,
+      "visible": {
+        "x": 485,
+        "y": 490,
+        "width": 1494,
+        "height": 265
+      },
       "zIndex": 4,
       "opacity": 1
     },
@@ -73,6 +104,12 @@
       "y": 773,
       "width": 992,
       "height": 240,
+      "visible": {
+        "x": 918,
+        "y": 773,
+        "width": 992,
+        "height": 240
+      },
       "zIndex": 5,
       "opacity": 1
     },
@@ -84,7 +121,13 @@
       "x": 343,
       "y": 1039,
       "width": 1715,
-      "height": 166,
+      "height": 215,
+      "visible": {
+        "x": 345,
+        "y": 1039,
+        "width": 1713,
+        "height": 164
+      },
       "zIndex": 6,
       "opacity": 1
     },
@@ -93,10 +136,16 @@
       "category": "typography",
       "role": "Encart lieu (siège de PAS-PAS)",
       "src": "assets/typography/info-lieu.png",
-      "x": 327,
+      "x": 800,
       "y": 1211,
-      "width": 1689,
+      "width": 1216,
       "height": 135,
+      "visible": {
+        "x": 800,
+        "y": 1211,
+        "width": 1216,
+        "height": 135
+      },
       "zIndex": 7,
       "opacity": 1
     },
@@ -109,6 +158,12 @@
       "y": 1395,
       "width": 925,
       "height": 170,
+      "visible": {
+        "x": 943,
+        "y": 1395,
+        "width": 925,
+        "height": 170
+      },
       "zIndex": 8,
       "opacity": 1
     },
@@ -121,6 +176,12 @@
       "y": 1589,
       "width": 987,
       "height": 41,
+      "visible": {
+        "x": 671,
+        "y": 1589,
+        "width": 987,
+        "height": 40
+      },
       "zIndex": 9,
       "opacity": 1
     },
@@ -133,6 +194,12 @@
       "y": 1693,
       "width": 1050,
       "height": 49,
+      "visible": {
+        "x": 671,
+        "y": 1693,
+        "width": 1050,
+        "height": 49
+      },
       "zIndex": 10,
       "opacity": 1
     },
@@ -145,6 +212,12 @@
       "y": 1796,
       "width": 1454,
       "height": 90,
+      "visible": {
+        "x": 671,
+        "y": 1796,
+        "width": 1454,
+        "height": 90
+      },
       "zIndex": 11,
       "opacity": 1
     },
@@ -157,6 +230,12 @@
       "y": 1952,
       "width": 1124,
       "height": 101,
+      "visible": {
+        "x": 671,
+        "y": 1953,
+        "width": 1124,
+        "height": 100
+      },
       "zIndex": 12,
       "opacity": 1
     },
@@ -169,6 +248,12 @@
       "y": 2090,
       "width": 1403,
       "height": 119,
+      "visible": {
+        "x": 671,
+        "y": 2107,
+        "width": 1387,
+        "height": 102
+      },
       "zIndex": 13,
       "opacity": 1
     },
@@ -181,6 +266,12 @@
       "y": 2263,
       "width": 1182,
       "height": 90,
+      "visible": {
+        "x": 671,
+        "y": 2263,
+        "width": 1182,
+        "height": 90
+      },
       "zIndex": 14,
       "opacity": 1
     },
@@ -193,6 +284,12 @@
       "y": 2418,
       "width": 1349,
       "height": 50,
+      "visible": {
+        "x": 671,
+        "y": 2418,
+        "width": 1349,
+        "height": 50
+      },
       "zIndex": 15,
       "opacity": 1
     },
@@ -205,6 +302,12 @@
       "y": 2523,
       "width": 864,
       "height": 89,
+      "visible": {
+        "x": 671,
+        "y": 2523,
+        "width": 848,
+        "height": 89
+      },
       "zIndex": 16,
       "opacity": 1
     },
@@ -217,6 +320,12 @@
       "y": 2635,
       "width": 1294,
       "height": 84,
+      "visible": {
+        "x": 671,
+        "y": 2679,
+        "width": 1294,
+        "height": 40
+      },
       "zIndex": 17,
       "opacity": 1
     },
@@ -229,6 +338,12 @@
       "y": 2766,
       "width": 2046,
       "height": 239,
+      "visible": {
+        "x": 9,
+        "y": 2766,
+        "width": 2046,
+        "height": 239
+      },
       "zIndex": 18,
       "opacity": 1
     }

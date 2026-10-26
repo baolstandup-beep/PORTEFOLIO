@@ -27,6 +27,7 @@ ANALYSIS = ROOT / "output" / "analysis"
 
 ALPHA_MIN = 8          # alpha au-dessous duquel un pixel est considéré vide pour la segmentation
 DILATE = 12            # rapproche les lettres d'un même bloc de texte
+DUST_DIST = 40         # pixels quasi invisibles plus loin que ça d'un bloc = poussière, écartés
 DECOR_X = 2140         # tout ce qui commence à droite de cette abscisse = colonne décorative
 TITLE_SPLIT_Y = 764    # ligne vide entre « Conférence » et « de presse »
 DATE_SPLIT_Y = 1207    # ligne vide entre la pastille date et l'encart lieu
@@ -89,17 +90,23 @@ def main(psd_path):
     lab, n = nd.label(nd.binary_dilation(solid, iterations=DILATE))
     sizes = nd.sum(np.ones_like(lab), lab, index=range(1, n + 1))
     big_id = int(np.argmax(sizes)) + 1
-    # Les pixels très faiblement opaques (ombres, anticrénelage) hors des îles
-    # sont rattachés à l'île la plus proche, pour ne rien perdre.
-    _, (iy, ix) = nd.distance_transform_edt(lab == 0, return_indices=True)
+    # Les pixels très faiblement opaques (ombres, anticrénelage) proches d'une île
+    # y sont rattachés. Ceux qui sont isolés loin de tout bloc (« poussière »,
+    # opacité ≤ ALPHA_MIN) sont écartés : sinon ils gonflent la boîte d'un élément.
+    dist, (iy, ix) = nd.distance_transform_edt(lab == 0, return_indices=True)
     nearest = lab[iy, ix]
+    dust = (alpha > 0) & (alpha <= ALPHA_MIN) & (dist > DUST_DIST)
+    # Pour les coupes horizontales (titre, date/lieu), un pixel faible suit le
+    # pixel visible le plus proche : l'ombre de la pastille date reste à la date.
+    _, (sy, _sx) = nd.distance_transform_edt(~solid, return_indices=True)
+    near_y = sy
 
     masks = {e[0]: np.zeros((H, W), bool) for e in ELEMENTS}
     yy = np.arange(H)[:, None]
     xx = np.arange(W)[None, :]
 
     for i, sl in enumerate(nd.find_objects(lab), start=1):
-        region = nearest == i
+        region = (nearest == i) & ~dust
         box = (sl[0].start, sl[1].start, sl[0].stop, sl[1].stop)
         name = classify(box, i == big_id)
         if name is None:
@@ -108,11 +115,11 @@ def main(psd_path):
             masks["bandeau-contacts"] |= footer
             masks["pupitre"] |= region & ~footer
         elif name == "titre":
-            masks["titre-conference"] |= region & (yy < TITLE_SPLIT_Y)
-            masks["titre-de-presse"] |= region & (yy >= TITLE_SPLIT_Y)
+            masks["titre-conference"] |= region & (near_y < TITLE_SPLIT_Y)
+            masks["titre-de-presse"] |= region & (near_y >= TITLE_SPLIT_Y)
         elif name == "info":
-            masks["info-date"] |= region & (yy < DATE_SPLIT_Y)
-            masks["info-lieu"] |= region & (yy >= DATE_SPLIT_Y)
+            masks["info-date"] |= region & (near_y < DATE_SPLIT_Y)
+            masks["info-lieu"] |= region & (near_y >= DATE_SPLIT_Y)
         else:
             masks[name] |= region
 
@@ -120,7 +127,7 @@ def main(psd_path):
     stack = np.stack([m & (alpha > 0) for m in masks.values()])
     counts = stack.sum(0)
     assert counts.max() <= 1, "chevauchement entre éléments"
-    orphans = int(((alpha > 0) & (counts == 0)).sum())
+    orphans = int(((alpha > 0) & (counts == 0) & ~dust).sum())
 
     config = []
     layers = {}
@@ -143,15 +150,19 @@ def main(psd_path):
         rel = f"assets/{cat}/{eid}.png"
         crop.save(ROOT / "public" / rel, optimize=True)
         layers[eid] = (crop, left, top)
+        # Boîte des pixels réellement visibles (sert au contrôle de cadrage).
+        vy, vx = np.where(rgba[..., 3] > ALPHA_MIN)
         config.append({
             "id": eid, "category": cat, "role": role, "src": rel,
             "x": left, "y": top, "width": right - left, "height": bottom - top,
+            "visible": {"x": int(vx.min()), "y": int(vy.min()),
+                        "width": int(vx.max()) + 1 - int(vx.min()), "height": int(vy.max()) + 1 - int(vy.min())},
             "zIndex": z, "opacity": 1,
         })
 
     meta = {
         "source": Path(psd_path).name, "docWidth": W, "docHeight": H,
-        "orphanPixels": orphans, "elements": config,
+        "orphanPixels": orphans, "dustPixelsRemoved": int(dust.sum()), "elements": config,
         "notes": [
             "Coordonnées en pixels du document PSD (origine en haut à gauche).",
             "pupitre : bande y 2766-2803 / x 100-566 reconstruite par prolongement vertical, uniquement sous les pixels opaques de la pastille (invisible dans la composition finale).",
@@ -196,7 +207,8 @@ def main(psd_path):
     sheet.save(ANALYSIS / "planche-calques.png", optimize=True)
 
     print(f"{len(config)} éléments, pixels orphelins : {orphans}")
-    print(f"écart max recomposition vs original : {max_diff} (attendu : 0)")
+    print(f"poussière écartée : {int(dust.sum())} px, opacité max {int(alpha[dust].max()) if dust.any() else 0}/255")
+    print(f"écart max recomposition vs original : {max_diff} (≤ opacité max de la poussière)")
 
 
 if __name__ == "__main__":

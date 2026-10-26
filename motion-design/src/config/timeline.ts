@@ -56,23 +56,22 @@ export const CAMERA_KEYS: CameraKey[] = [
 	{frame: S.P1.from + 90, cx: 1232, cy: 844, z: 0.615, ease: 'linear'},
 	// P2 — recul : logo, plateforme et titre entiers ; le bord gauche du pupitre
 	// (bord perdu de l'affiche) reste juste hors cadre.
-	{frame: S.P2.from + 45, cx: 1096, cy: 827, z: 0.5},
-	{frame: S.P2.from + S.P2.duration, cx: 1098, cy: 822, z: 0.51, ease: 'linear'},
-	// P3 — insert sur le pupitre (sujet principal), cadrage vertical serré. Les
-	// bords gauche et bas du pupitre (coupés dans l'affiche) restent hors cadre.
-	{frame: S.P3.from + 38, cx: 610, cy: 1760, z: 0.98},
-	{frame: S.P3.from + 55, cx: 610, cy: 1752, z: 1.0, ease: 'linear'},
-	// Plan de détail : la pastille date, lue de gauche à droite.
-	{frame: S.P3.from + 92, cx: 900, cy: 1150, z: 0.95},
-	{frame: S.P3.from + 125, cx: 935, cy: 1150, z: 0.955, ease: 'linear'},
-	{frame: S.P3.from + 165, cx: 1530, cy: 1150, z: 0.95},
-	// Le lieu, juste dessous.
-	{frame: S.P3.from + 212, cx: 1408, cy: 1290, z: 0.8},
-	{frame: S.P3.from + S.P3.duration, cx: 1405, cy: 1295, z: 0.815, ease: 'linear'},
-	// P4 — le programme : cadrage large sur la liste, lent panoramique vertical.
-	{frame: S.P4.from + 45, cx: 1415, cy: 1760, z: 0.66},
-	{frame: S.P4.from + 300, cx: 1415, cy: 2140, z: 0.675},
-	{frame: S.P4.from + S.P4.duration, cx: 1415, cy: 2148, z: 0.675, ease: 'linear'},
+	{frame: S.P2.from + 45, cx: 1104, cy: 827, z: 0.5},
+	{frame: S.P2.from + S.P2.duration, cx: 1104, cy: 822, z: 0.51, ease: 'linear'},
+	// Règle de cadrage : sur les plans tenus, chaque texte visible est entier
+	// (vérifié par scripts/check-framing.ts).
+	// P3 — insert sur le pupitre (sujet principal) : cadre entre le bas de
+	// « de presse » (y 1013) et le pied du pupitre ; aucun texte dans le champ.
+	{frame: S.P3.from + 38, cx: 580, cy: 1880, z: 1.15},
+	{frame: S.P3.from + 55, cx: 580, cy: 1874, z: 1.17, ease: 'linear'},
+	// Date et lieu en plan large : la pastille date (1713 px) ne tient entière
+	// qu'à z ≤ 0,63 ; logo, plateforme, titre, date et lieu sont tous entiers.
+	{frame: S.P3.from + 92, cx: 1098, cy: 1000, z: 0.55},
+	{frame: S.P3.from + S.P3.duration, cx: 1098, cy: 992, z: 0.558, ease: 'linear'},
+	// P4 — le programme : liste cadrée sur toute sa largeur, la date juste au-dessus
+	// du cadre et le lieu entier en haut (fenêtre de cy très étroite, ne pas élargir).
+	{frame: S.P4.from + 45, cx: 1400, cy: 2530, z: 0.725},
+	{frame: S.P4.from + S.P4.duration, cx: 1400, cy: 2533, z: 0.725, ease: 'linear'},
 	// P5 — recul vers la composition complète puis stabilisation.
 	{frame: S.P5.from + 70, ...FINAL_CAMERA},
 	{frame: total, ...FINAL_CAMERA, ease: 'linear'},
@@ -120,7 +119,7 @@ export const REVEALS: Reveal[] = [
 		at: S.P2.from + 40,
 		duration: 48,
 		preset: 'rise',
-		depth: 0.05,
+		depth: 0.1,
 		cropBottom: {doc: 37, releaseAt: FOOTER_AT, releaseDuration: FOOTER_DURATION},
 	},
 	{id: 'info-date', shot: 'P3', at: S.P3.from + 58, duration: 30, preset: 'wipeRight'},

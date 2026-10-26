@@ -23,6 +23,8 @@ export type PsdElement = {
 	y: number;
 	width: number;
 	height: number;
+	// Boîte des pixels visibles (opacité > 8/255), sans les ombres très faibles.
+	visible: {x: number; y: number; width: number; height: number};
 	zIndex: number;
 	opacity: number;
 };

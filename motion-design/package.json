@@ -6,7 +6,7 @@
     "dev": "remotion studio src/index.ts",
     "extract": "python3 scripts/inspect-psd.py && python3 scripts/extract-assets.py",
     "audio": "python3 scripts/prepare-audio.py",
-    "validate": "python3 scripts/validate-project.py",
+    "validate": "python3 scripts/validate-project.py && tsx scripts/check-framing.ts",
     "still": "remotion still src/index.ts TikTokVideo output/previews/still.png",
     "preview": "remotion render src/index.ts TikTokVideo output/tiktok/preview_tiktok.mp4 --scale=0.5 --crf=28 && cp output/tiktok/preview_tiktok.mp4 output/previews/motion_design_preview.mp4",
     "render": "remotion render src/index.ts TikTokVideo output/tiktok/motion_design_tiktok.mp4 --codec=h264 --crf=16 --color-space=bt709 && cp output/tiktok/motion_design_tiktok.mp4 output/motion_design_final.mp4",
