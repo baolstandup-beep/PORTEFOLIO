@@ -7,10 +7,9 @@ Vidéo verticale TikTok/Reels (1080 × 1920, 30 i/s, H.264 + AAC, BT.709, 33,57 
 | Fichier | Contenu |
 |---|---|
 | `output/motion_design_final.mp4` | vidéo finale (= `output/tiktok/motion_design_tiktok.mp4`) |
-| `output/tiktok/motion_design_tiktok_sans_musique.mp4` | même vidéo, voix + effets sans musique (pour poser une musique de la plateforme) |
 | `output/tiktok/preview_tiktok.mp4`, `output/previews/motion_design_preview.mp4` | prévisualisation demi-résolution |
-| `output/tiktok/voix_off.txt`, `output/audio/voix-off.txt` | script de la voix off (passages à valider marqués) |
-| `output/tiktok/voix_off.wav`, `output/audio/voix-off.wav` | piste voix off complète, calée sur la timeline |
+| `output/tiktok/voix_off.txt`, `output/audio/voix-off.txt` | script de la voix off **non utilisée** dans la version livrée (option, voir ci-dessous) |
+| `output/tiktok/voix_off.wav`, `output/audio/voix-off.wav` | piste voix off Piper (option non utilisée) |
 | `output/analysis/rapport_psd.md` | analyse du PSD, découpe, limites |
 | `output/analysis/tiktok_shot_list.md`, `tiktok_storyboard.md`, `camera-movements.md` | préproduction (les fichiers `shot-list.md`, `storyboard.md`, `storyboard-shotcraft.md` y renvoient) |
 | `output/analysis/video-shotcraft.md` | ce qui a été repris du skill Video Shotcraft, et ce qui ne l'a pas été |
@@ -36,7 +35,7 @@ npm run audio       # 2e passage : assemble output/tiktok/voix_off.wav avec les 
 npm run dev         # Remotion Studio (aperçu interactif)
 npm run preview     # rendu demi-résolution → output/tiktok/preview_tiktok.mp4 (+ copie dans output/previews/)
 npm run render      # rendu final → output/tiktok/motion_design_tiktok.mp4 (+ copie output/motion_design_final.mp4)
-npm run render:nobgm  # version sans musique
+npm run render:voix   # variante AVEC voix off (Piper) → output/tiktok/motion_design_tiktok_avec_voix.mp4
 npm run typecheck
 ```
 
@@ -72,7 +71,7 @@ Il n'y a qu'une composition : l'affiche étant en portrait (0,77), le cadrage 9:
 - **Durée d'un plan** : `chain([...])` dans `timeline.ts`. Tout ce qui suit est décalé automatiquement (les événements sont exprimés en `SHOTS.Px.from + décalage`).
 - **Cadrage** : `CAMERA_KEYS` (centre `cx, cy` en pixels du PSD, zoom `z`). Plan final : `FINAL_CAMERA`.
 - **Animation d'un élément** : `REVEALS` (instant `at`, `duration`, `preset`, `depth` de parallaxe).
-- **Voix off** : modifier `text` / `spoken` dans `voiceover.json`, puis `npm run audio && npm run validate && npm run audio`. Ajuster `VO_START` si une réplique déborde (la validation le signale).
+- **Voix off** : **désactivée par défaut** à la demande du client (`voice: false` dans `src/Root.tsx`) ; musique alors à 0,5 sans baisse. Pour la réactiver : `voice: true` ou `npm run render:voix`. Pour changer le texte : modifier `text` / `spoken` dans `voiceover.json`, puis `npm run audio && npm run validate && npm run audio`. Ajuster `VO_START` si une réplique déborde (la validation le signale).
 - **Musique** : remplacer `public/assets/audio/music/house-vibez.mp3` et `MUSIC.src` ; volumes et ducking dans `MUSIC`.
 - **Effets sonores** : table `SFX` (une ligne commentée par action).
 - **Zones de sécurité** : `src/config/safeZones.ts` et `SAFE` dans `validate-project.py`.
@@ -82,11 +81,11 @@ Il n'y a qu'une composition : l'affiche étant en portrait (0,77), le cadrage 9:
 - Recomposition des éléments extraits = composite PSD (écart max 0).
 - Dernière image comparée à l'affiche : seuls les contours diffèrent (rééchantillonnage sous-pixel) et le blanc porte le halo de fond (≤ ~9 %) ; aucun élément absent ou déplacé.
 - `ffprobe` : 1080×1920, 30/1, 1007 images, H.264 High yuv420p BT.709, AAC 48 kHz stéréo, 33,57 s ; décodage complet sans erreur ; 0 image noire (blackdetect).
-- Audio : −16,8 LUFS intégré, crête vraie −1,1 dBFS ; musique ≈ 11 dB sous la voix pendant la narration ; pas de silence > 0,4 s.
+- Audio (version livrée, sans voix off) : −17,4 LUFS intégré, crête −0,8 dBFS.
 
 ## Limites connues
 
 - PSD aplati (1 calque, aucun texte éditable) : animation par blocs, pas de lettre à lettre, parallaxe simulée.
-- Voix de synthèse locale Piper (qualité « medium », 22 kHz) : intelligible mais moins naturelle qu'une voix studio ; le modèle ne gère pas le tilde nasal de son phonémiseur, les nasales (« conférence », « trente ») peuvent sonner approximatives. Prononciations de « PAS-PAS », « Mbacké » et de l'adresse web non vérifiées à l'oreille.
+- (Option voix off, non livrée) Voix de synthèse locale Piper (qualité « medium », 22 kHz) : intelligible mais moins naturelle qu'une voix studio ; le modèle ne gère pas le tilde nasal de son phonémiseur, les nasales (« conférence », « trente ») peuvent sonner approximatives. Prononciations de « PAS-PAS », « Mbacké » et de l'adresse web non vérifiées à l'oreille.
 - Texte des lignes du programme petit sur téléphone (≈ 20–28 px), contrainte de la mise en page d'origine.
 - Au plan final, le logo est à 64 px du bord gauche (mise en page d'origine) et les bords perdus touchent le cadre.

@@ -4,7 +4,7 @@ import {TikTokVideo, type TikTokVideoProps} from './compositions/TikTokVideo';
 import {TOTAL_FRAMES} from './config/timeline';
 import {VIDEO} from './config/video';
 
-const defaultProps: TikTokVideoProps = {bgm: true};
+const defaultProps: TikTokVideoProps = {bgm: true, voice: false};
 
 export const Root: React.FC = () => (
 	<Composition

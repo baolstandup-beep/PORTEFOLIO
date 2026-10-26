@@ -13,9 +13,10 @@ import {SceneOutro} from '../scenes/SceneOutro';
 import {SceneReveal} from '../scenes/SceneReveal';
 import {SceneShowcase} from '../scenes/SceneShowcase';
 
-export type TikTokVideoProps = {bgm: boolean};
+// voice : voix off (désactivée par défaut à la demande du client ; les prises restent dans le projet).
+export type TikTokVideoProps = {bgm: boolean; voice: boolean};
 
-export const TikTokVideo: React.FC<TikTokVideoProps> = ({bgm}) => (
+export const TikTokVideo: React.FC<TikTokVideoProps> = ({bgm, voice}) => (
 	<AbsoluteFill style={{backgroundColor: '#fff'}}>
 		<CameraMotion>
 			<Background />
@@ -27,6 +28,6 @@ export const TikTokVideo: React.FC<TikTokVideoProps> = ({bgm}) => (
 				<SceneOutro />
 			</AbsoluteFill>
 		</CameraMotion>
-		<Soundtrack bgm={bgm} />
+		<Soundtrack bgm={bgm} voice={voice} />
 	</AbsoluteFill>
 );

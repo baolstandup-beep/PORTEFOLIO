@@ -1,5 +1,7 @@
 # Shot list — Conférence de presse PAS-PAS (TikTok 9:16)
 
+> **Version livrée sans voix off** (demande du client). La colonne « Narration » décrit l’option voix off, désactivable ; les apparitions gardent les mêmes instants.
+
 1080 × 1920, 30 i/s, 1007 images = **33,57 s**. Source de vérité : `src/config/timeline.ts` (les numéros d'image ci-dessous en sont extraits).
 
 **Concept** : une seule affiche, filmée comme un plateau. La caméra révèle l'information dans l'ordre où on la lit à voix haute — quoi (titre) → qui (logo, plateforme) → où on parle (pupitre) → quand et où (date, lieu) → ce qui s'y passera (programme) → comment venir (contacts) — puis recule pour rendre l'affiche entière, identique à l'original.

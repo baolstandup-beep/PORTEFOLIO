@@ -167,7 +167,8 @@ export const VOICE_CUES: VoiceCue[] = voiceover.cues.map((c) => ({
 // ---------------------------------------------------------------- Musique
 export const MUSIC = {
 	src: 'assets/audio/music/house-vibez.mp3',
-	volume: 0.3, // hors voix off
+	volume: 0.3, // hors voix off (quand la voix off est active)
+	volumeNoVoice: 0.5, // version sans voix off (par défaut)
 	duckedVolume: 0.1, // pendant la voix off
 	duckFrames: 8, // durée de la transition de ducking
 	fadeIn: 20,
