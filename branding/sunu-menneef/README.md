@@ -31,3 +31,11 @@ npm i opentype.js@1.3.4 @fontsource/bricolage-grotesque@5.1.0
 node build.mjs svg
 node page.mjs presentation.html chemin/vers/logo-actuel.png
 ```
+
+## Kit de livraison (`kit/`)
+
+Exporté depuis `svg/` par `kit.cjs` (Playwright), sans modifier les SVG.
+
+- `png/` : chaque logo en PNG transparent, 600, 1200 et 2400 px de large ; chaque symbole en 256, 512 et 1024 px.
+- `favicon/` : `favicon.svg`, `favicon.ico` (16, 32, 48), PNG 16 à 512 px, `apple-touch-icon.png` (180 px, fond blanc).
+- `avatar/` : 1080 px fond forêt ou blanc, 400 px fond forêt. Marge de 22 % pour le recadrage en cercle des réseaux sociaux.
