@@ -1,15 +1,17 @@
 import { useVideoConfig } from "remotion";
 
-// Palette. Hypothèse : couleurs nationales sénégalaises (vert, or, rouge), le logo
-// officiel n'ayant pas pu être téléchargé. Remplacer ici par les couleurs exactes du logo.
+// Palette relevée sur le logo officiel (manifeste PAS-PAS) : vert de la pirogue et du
+// bandeau, bleu du nom et du liseré, bleu ciel des vagues. Fond nuit bleutée.
 export const colors = {
-  night: "#050B08",
-  deep: "#0A1A12",
-  green: "#00853F",
-  greenLight: "#2BC46F",
-  gold: "#F2C230",
-  goldLight: "#FFE38A",
-  red: "#E31B23",
+  night: "#040A14",
+  deep: "#0A1B30",
+  green: "#34A44C",
+  greenLight: "#5CCB74",
+  blue: "#3C74C4",
+  // Bleu du logo éclairci pour rester lisible sur fond sombre (mots mis en valeur).
+  accent: "#7DB6F5",
+  accentLight: "#D4E9FF",
+  sky: "#8CCDF2",
   white: "#FFFFFF",
   mist: "rgba(255,255,255,0.72)",
   // Rouge du bouton d'abonnement : convention visuelle YouTube.

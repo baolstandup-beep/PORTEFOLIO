@@ -68,12 +68,12 @@ export const Kinetic: React.FC<Props> = ({
         const gold = highlight.includes(clean);
         const paint: React.CSSProperties = gradient
           ? {
-              backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, ${colors.goldLight} 55%, ${colors.gold} 100%)`,
+              backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, ${colors.accentLight} 55%, ${colors.accent} 100%)`,
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
             }
-          : { color: gold ? colors.gold : color };
+          : { color: gold ? colors.accent : color };
         return (
           <span
             key={i}
@@ -100,7 +100,7 @@ export const Eyebrow: React.FC<{ text: string; at: number; size: number; exitAt?
   at,
   size,
   exitAt,
-  color = colors.gold,
+  color = colors.greenLight,
 }) => {
   const frame = useCurrentFrame();
   const inP = interpolate(frame, [at, at + 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });

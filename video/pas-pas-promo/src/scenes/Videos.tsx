@@ -106,8 +106,8 @@ const Card: React.FC<{ video: (typeof VIDEOS)[number]; width: number; frame: num
         borderRadius: width * 0.03,
         overflow: "hidden",
         background: "rgba(14,24,18,0.92)",
-        border: `1px solid rgba(242,194,48,0.35)`,
-        boxShadow: `0 ${width * 0.06}px ${width * 0.12}px rgba(0,0,0,0.6), 0 0 ${width * 0.08}px rgba(0,133,63,0.25)`,
+        border: `1px solid rgba(125,182,245,0.35)`,
+        boxShadow: `0 ${width * 0.06}px ${width * 0.12}px rgba(0,0,0,0.6), 0 0 ${width * 0.08}px rgba(52,164,76,0.25)`,
       }}
     >
       <div style={{ position: "relative", width, height: h, overflow: "hidden" }}>
@@ -139,7 +139,7 @@ const Card: React.FC<{ video: (typeof VIDEOS)[number]; width: number; frame: num
             top: width * 0.025,
             padding: `${width * 0.006}px ${width * 0.016}px`,
             borderRadius: width * 0.01,
-            background: video.kind === "SHORT" ? colors.red : colors.green,
+            background: video.kind === "SHORT" ? colors.blue : colors.green,
             color: "#fff",
             fontFamily: fonts.ui,
             fontWeight: 700,
@@ -184,8 +184,8 @@ const Card: React.FC<{ video: (typeof VIDEOS)[number]; width: number; frame: num
 const ThumbPlaceholder: React.FC<{ width: number; height: number; index: number }> = ({ width, height, index }) => {
   const tints = [
     [colors.green, "#03361C"],
-    ["#0B4A2B", "#1E1405"],
-    ["#5C0F12", "#140606"],
+    [colors.blue, "#071A33"],
+    ["#0B3D5C", "#04121F"],
   ][index % 3];
   return (
     <div
@@ -217,7 +217,7 @@ const ThumbPlaceholder: React.FC<{ width: number; height: number; index: number 
           height: height * 0.32,
           borderRadius: "50%",
           background: "rgba(255,255,255,0.14)",
-          border: `2px solid ${colors.gold}`,
+          border: `2px solid ${colors.accent}`,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -230,7 +230,7 @@ const ThumbPlaceholder: React.FC<{ width: number; height: number; index: number 
             marginLeft: height * 0.03,
             borderTop: `${height * 0.065}px solid transparent`,
             borderBottom: `${height * 0.065}px solid transparent`,
-            borderLeft: `${height * 0.1}px solid ${colors.goldLight}`,
+            borderLeft: `${height * 0.1}px solid ${colors.accentLight}`,
           }}
         />
       </div>

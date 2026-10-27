@@ -56,9 +56,9 @@ export const Bell: React.FC = () => {
                   width: s,
                   height: s,
                   borderRadius: "50%",
-                  border: `${8 * u * (1 - p)}px solid ${colors.gold}`,
+                  border: `${8 * u * (1 - p)}px solid ${colors.accent}`,
                   opacity: (1 - p) * 0.9,
-                  boxShadow: `0 0 ${40 * u}px ${colors.gold}66`,
+                  boxShadow: `0 0 ${40 * u}px ${colors.accent}66`,
                 }}
               />
             );
@@ -75,10 +75,10 @@ export const Bell: React.FC = () => {
           height: bellSize * 1.3,
           borderRadius: "50%",
           background: active
-            ? `radial-gradient(circle at 50% 35%, ${colors.goldLight}, ${colors.gold} 55%, #9A6E05)`
+            ? `radial-gradient(circle at 50% 35%, ${colors.greenLight}, ${colors.green} 55%, #1E6B33)`
             : "radial-gradient(circle at 50% 35%, #3A423D, #161B18)",
           boxShadow: active
-            ? `0 0 ${120 * u}px ${colors.gold}AA, inset 0 ${-10 * u}px ${30 * u}px rgba(0,0,0,0.3)`
+            ? `0 0 ${120 * u}px ${colors.green}AA, inset 0 ${-10 * u}px ${30 * u}px rgba(0,0,0,0.3)`
             : `0 ${30 * u}px ${70 * u}px rgba(0,0,0,0.6)`,
           border: `${3 * u}px solid rgba(255,255,255,0.18)`,
           display: "flex",
@@ -88,7 +88,7 @@ export const Bell: React.FC = () => {
           opacity: bellIn,
         }}
       >
-        <BellIcon size={bellSize * 0.72} filled={active} color={active ? "#1A1206" : "#F1F1F1"} rotate={swing} />
+        <BellIcon size={bellSize * 0.72} filled={active} color={"#FFFFFF"} rotate={swing} />
       </div>
 
       <Cursor

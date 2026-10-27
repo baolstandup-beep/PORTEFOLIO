@@ -12,23 +12,29 @@ Projet Remotion (React) qui produit la vidéo promotionnelle de 35 s de la chaî
 | Horodatage mot à mot de la voix | `assets/voiceover/words.json` |
 | Projet source | `src/` (scènes, composants, timeline) |
 
+## Identité visuelle
+
+- **Logo** : extrait du manifeste officiel (`MANIFESTE_PAS-PAS.pdf`, image 3508 px avec transparence), recadré au carré
+  sans retouche : `public/brand/logo.png`.
+- **Couleurs** relevées sur ce logo (`src/theme.ts`) : vert `#34A44C` (pirogue, bandeau), bleu `#3C74C4` (nom, liseré),
+  bleu ciel `#8CCDF2` (vagues). Sur le fond nuit bleutée, le bleu des mots mis en valeur est éclairci en `#7DB6F5`
+  pour rester lisible. Seul le bouton S'ABONNER garde le rouge, par convention YouTube.
+
 ## Ce qui reste à fournir
 
-Le proxy de l'environnement de production bloque les images de YouTube et de Google : **le logo, la bannière et les miniatures
-officielles n'ont pas pu être téléchargés**. Les exports actuels utilisent donc des remplacements, signalés ci-dessous.
+Le proxy de l'environnement de production bloque les images de YouTube : les **miniatures officielles** n'ont pas pu être
+téléchargées. Les cartes de la scène 3 affichent les vrais titres et durées sur un fond aux couleurs de la marque.
 
-| Fichier à déposer | Remplace | Effet |
-| --- | --- | --- |
-| `public/brand/logo.png` (carré, ≥ 1000 px, fond plein) | l'emblème typographique « PAS-PAS / OFFICIEL » | le logo original apparaît dans les scènes 1, 2, 4, 5 et 6, sans retouche |
-| `public/thumbs/r0GEhHLY55s.jpg` | carte verte n° 1 | vraie miniature de « PAS-PAS (Plateforme d'Acteurs Sénégalais…) » |
-| `public/thumbs/6HJ9nR0Eb_I.jpg` | carte n° 2 | vraie miniature de « Pas-Pas, une nouvelle dynamique politique… » |
-| `public/thumbs/4PODQBLTWZc.jpg` | carte rouge n° 3 | vraie miniature du Short « Conférence de presse PAS-PAS » |
+| Fichier à déposer | Effet |
+| --- | --- |
+| `public/thumbs/r0GEhHLY55s.jpg` | vraie miniature de « PAS-PAS (Plateforme d'Acteurs Sénégalais…) » |
+| `public/thumbs/6HJ9nR0Eb_I.jpg` | vraie miniature de « Pas-Pas, une nouvelle dynamique politique… » |
+| `public/thumbs/4PODQBLTWZc.jpg` | vraie miniature du Short « Conférence de presse PAS-PAS » |
 
-Les fichiers sont détectés automatiquement (`src/brand.ts`) : il suffit de les déposer puis de relancer `npm run render`.
-Les miniatures se récupèrent sur `https://i.ytimg.com/vi/<id>/maxresdefault.jpg`.
+Les fichiers sont détectés automatiquement (`src/brand.ts`) : les déposer puis relancer `npm run render`.
+Source : `https://i.ytimg.com/vi/<id>/maxresdefault.jpg`.
 
-**Couleurs.** Faute d'accès au logo, la palette suit les couleurs nationales du Sénégal (vert `#00853F`, or `#F2C230`,
-rouge `#E31B23`). Si le logo utilise d'autres teintes, les modifier dans `src/theme.ts` (objet `colors`).
+La carte du Short annonce la conférence de presse du samedi 31 octobre 2026 : passé cette date, la remplacer dans `src/brand.ts`.
 
 ## Storyboard et découpage
 
@@ -42,9 +48,9 @@ donc un déplacement d'événement reste synchronisé partout.
 | 3 | 9–17 s | 270–509 | Les 3 publications réelles en panneaux flottants, caméra en orbite | DÉCOUVREZ NOS VIDÉOS → DE NOUVEAUX CONTENUS À EXPLORER | « Tu veux découvrir… » (9,4 s), « Tu es au bon endroit ! » (12,75 s), « Rejoins notre communauté… » (14,3 s) | entrée du rythme, souffles par panneau |
 | 4 | 17–24 s | 510–719 | En-tête de chaîne stylisé ; bouton rouge S'ABONNER avec rebond et halo ; clic du curseur à 19,8 s ; passage à ABONNÉ | ABONNE-TOI À LA CHAÎNE ! → C'EST GRATUIT ! | « Clique sur le bouton S'abonner, » (18,2 s) | « pop » du bouton, clic, carillon discret |
 | 5 | 24–30 s | 720–899 | La caméra plonge dans la cloche du bouton ; médaillon ; clic à 25,8 s ; balancement amorti, ondes d'alerte | ACTIVE LA CLOCHE 🔔 / POUR NE RATER AUCUNE NOUVELLE VIDÉO | « puis active la cloche… » (24,3 s), « N'oublie pas de liker… » (27,85 s) | clic, double tintement de cloche |
-| 6 | 30–35 s | 900–1049 | Retour du logo, recul de caméra, filet doré, dernier éclat à 33,7 s, logo tenu 1 s, fondu au noir sur les 10 dernières images | PAS-PAS OFFICIEL / ABONNE-TOI • ACTIVE LA CLOCHE • PARTAGE | « PAS-PAS OFFICIEL… abonne-toi et reste connecté ! » (30,5 s) | accord tenu, impact final |
+| 6 | 30–35 s | 900–1049 | Retour du logo, recul de caméra, filet lumineux, dernier éclat à 33,7 s, logo tenu 1 s, fondu au noir sur les 10 dernières images | PAS-PAS OFFICIEL / ABONNE-TOI • ACTIVE LA CLOCHE • PARTAGE | « PAS-PAS OFFICIEL… abonne-toi et reste connecté ! » (30,5 s) | accord tenu, impact final |
 
-Transitions : éclair lumineux doré centré sur chaque changement de scène (images 118, 268, 508, 718, 898), accompagné d'un souffle.
+Transitions : éclair lumineux bleuté centré sur chaque changement de scène (images 118, 268, 508, 718, 898), accompagné d'un souffle.
 
 La scène 4 est une représentation stylisée : pas de logo YouTube, pas de compteur d'abonnés, rien de cliquable. La scène 5
 montre le geste à faire, elle n'affirme pas que des notifications sont activées.

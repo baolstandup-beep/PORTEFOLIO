@@ -39,7 +39,7 @@ export const Outro: React.FC = () => {
           <Logo3D size={logoSize} rotateY={rotY} glint={glint} rim={0.8 + flash * 0.6} />
         </div>
         <Kinetic text="PAS-PAS OFFICIEL" at={14} size={(vertical ? 118 : 108) * u} gradient stagger={6} tracking={-0.01} />
-        <div style={{ height: 2 * u, width: interpolate(frame, [30, 60], [0, vertical ? 560 : 760], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) * u, background: `linear-gradient(90deg, transparent, ${colors.gold}, transparent)` }} />
+        <div style={{ height: 2 * u, width: interpolate(frame, [30, 60], [0, vertical ? 560 : 760], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) * u, background: `linear-gradient(90deg, transparent, ${colors.accent}, transparent)` }} />
         <Eyebrow
           text={vertical ? "ABONNE-TOI\nACTIVE LA CLOCHE\nPARTAGE" : "ABONNE-TOI • ACTIVE LA CLOCHE • PARTAGE"}
           at={34}
@@ -49,7 +49,7 @@ export const Outro: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill
         style={{
-          background: `radial-gradient(circle at 50% 42%, #fff 0%, ${colors.goldLight}AA 20%, transparent 60%)`,
+          background: `radial-gradient(circle at 50% 42%, #fff 0%, ${colors.accentLight}AA 20%, transparent 60%)`,
           opacity: flash * 0.8,
           mixBlendMode: "screen",
         }}

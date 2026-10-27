@@ -22,7 +22,7 @@ export const Hook: React.FC = () => {
   const logoSize = vertical ? width * 0.95 : height * 1.05;
   // Le logo n'est éclairé que dans le sillage de la ligne, puis retombe dans l'ombre.
   const revealWidth = Math.max(0, Math.min(1, sweep)) * 100;
-  const logoFade = interpolate(frame, [sweepAt + 20, sweepAt + 60], [0.55, 0.16], {
+  const logoFade = interpolate(frame, [sweepAt + 20, sweepAt + 60], [0.38, 0.12], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -49,8 +49,8 @@ export const Hook: React.FC = () => {
           top: 0,
           width: 6 * u,
           height,
-          background: `linear-gradient(180deg, transparent, ${colors.goldLight}, #fff, ${colors.goldLight}, transparent)`,
-          boxShadow: `0 0 ${40 * u}px ${12 * u}px ${colors.gold}88`,
+          background: `linear-gradient(180deg, transparent, ${colors.accentLight}, #fff, ${colors.accentLight}, transparent)`,
+          boxShadow: `0 0 ${40 * u}px ${12 * u}px ${colors.accent}88`,
           opacity: sweep > -0.05 && sweep < 1.05 ? 1 : 0,
           transform: "skewX(-8deg)",
         }}

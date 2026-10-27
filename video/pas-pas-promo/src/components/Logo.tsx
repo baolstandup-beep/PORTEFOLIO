@@ -39,7 +39,7 @@ export const Logo3D: React.FC<Props> = ({ size, rotateY = 0, rotateX = 0, glint 
           position: "absolute",
           inset: -size * 0.08,
           borderRadius: "50%",
-          background: `conic-gradient(from ${rotateY * 2}deg, ${colors.gold}, ${colors.green}, ${colors.goldLight}, ${colors.green}, ${colors.gold})`,
+          background: `conic-gradient(from ${rotateY * 2}deg, ${colors.accent}, ${colors.green}, ${colors.accentLight}, ${colors.green}, ${colors.accent})`,
           filter: `blur(${size * 0.07}px)`,
           opacity: rim * 0.7,
         }}
@@ -61,7 +61,7 @@ export const Logo3D: React.FC<Props> = ({ size, rotateY = 0, rotateX = 0, glint 
               inset: 0,
               borderRadius: "50%",
               transform: `translateZ(${-d * size * 0.004}px)`,
-              background: `linear-gradient(135deg, ${colors.goldLight}, #7A5A0A)`,
+              background: `linear-gradient(135deg, #FFFFFF, #6C8DB5)`,
             }}
           />
         ))}
@@ -71,7 +71,7 @@ export const Logo3D: React.FC<Props> = ({ size, rotateY = 0, rotateX = 0, glint 
             inset: 0,
             borderRadius: "50%",
             overflow: "hidden",
-            boxShadow: `0 0 0 ${size * 0.018}px ${colors.gold}, 0 ${size * 0.04}px ${size * 0.12}px rgba(0,0,0,0.6)`,
+            boxShadow: `0 0 0 ${size * 0.018}px ${colors.accent}, 0 ${size * 0.04}px ${size * 0.12}px rgba(0,0,0,0.6)`,
             backfaceVisibility: "hidden",
           }}
         >
@@ -118,11 +118,11 @@ const Wordmark: React.FC<{ size: number }> = ({ size }) => (
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      background: `radial-gradient(circle at 50% 35%, #0F5B33 0%, #06311B 70%)`,
+      background: `radial-gradient(circle at 50% 35%, #1E5FAF 0%, #0A2A55 70%)`,
     }}
   >
     <div style={{ display: "flex", gap: size * 0.025, marginBottom: size * 0.05 }}>
-      {[colors.green, colors.gold, colors.red].map((c) => (
+      {[colors.green, colors.blue, colors.sky].map((c) => (
         <div key={c} style={{ width: size * 0.1, height: size * 0.022, borderRadius: size, background: c }} />
       ))}
     </div>
@@ -144,7 +144,7 @@ const Wordmark: React.FC<{ size: number }> = ({ size }) => (
         fontWeight: 700,
         fontSize: size * 0.065,
         letterSpacing: "0.38em",
-        color: colors.gold,
+        color: colors.accent,
         marginTop: size * 0.04,
         marginRight: -size * 0.025,
       }}

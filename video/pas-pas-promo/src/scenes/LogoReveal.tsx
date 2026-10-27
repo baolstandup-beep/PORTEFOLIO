@@ -48,9 +48,9 @@ export const LogoReveal: React.FC = () => {
                 width: logoSize * (1 + shock * 1.6),
                 height: logoSize * (1 + shock * 1.6),
                 borderRadius: "50%",
-                border: `${6 * u * (1 - shock)}px solid ${colors.goldLight}`,
+                border: `${6 * u * (1 - shock)}px solid ${colors.accentLight}`,
                 opacity: 1 - shock,
-                boxShadow: `0 0 ${60 * u}px ${colors.gold}`,
+                boxShadow: `0 0 ${60 * u}px ${colors.accent}`,
               }}
             />
           ) : null}

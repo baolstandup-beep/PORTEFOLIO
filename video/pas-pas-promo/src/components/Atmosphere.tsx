@@ -50,7 +50,7 @@ const Beams: React.FC<{ frame: number; warm: number; width: number; height: numb
   const diag = Math.hypot(width, height);
   const beams = [
     { angle: -24, x: 0.22, w: 0.16, speed: 1, color: colors.green },
-    { angle: -18, x: 0.5, w: 0.1, speed: 1.4, color: colors.gold },
+    { angle: -18, x: 0.5, w: 0.1, speed: 1.4, color: colors.accent },
     { angle: -30, x: 0.78, w: 0.2, speed: 0.8, color: colors.green },
   ];
   return (
@@ -58,7 +58,7 @@ const Beams: React.FC<{ frame: number; warm: number; width: number; height: numb
       {beams.map((b, i) => {
         const sway = Math.sin(frame / (90 * b.speed) + i * 2) * 6;
         const pulse = 0.55 + 0.25 * Math.sin(frame / 50 + i);
-        const tint = i === 1 ? colors.gold : warm > 0.5 && i === 2 ? colors.gold : b.color;
+        const tint = i === 1 ? colors.accent : warm > 0.5 && i === 2 ? colors.accent : b.color;
         return (
           <div
             key={i}
@@ -108,7 +108,7 @@ const Particles: React.FC<{ frame: number; camX: number; camY: number; width: nu
       extrapolateRight: "clamp",
     });
     const hue = random(`c${i}`);
-    const color = hue < 0.55 ? colors.goldLight : hue < 0.85 ? "#FFFFFF" : colors.greenLight;
+    const color = hue < 0.55 ? colors.accentLight : hue < 0.85 ? "#FFFFFF" : colors.greenLight;
     items.push(
       <div
         key={i}
@@ -157,7 +157,7 @@ export const LightTransitions: React.FC = () => {
     <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen" }}>
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse 60% 40% at 50% 50%, ${colors.goldLight} 0%, ${colors.gold}88 30%, transparent 70%)`,
+          background: `radial-gradient(ellipse 60% 40% at 50% 50%, ${colors.accentLight} 0%, ${colors.accent}88 30%, transparent 70%)`,
           opacity: strength * 0.85,
         }}
       />
@@ -170,7 +170,7 @@ export const LightTransitions: React.FC = () => {
           height: width * 0.006,
           transform: `translateY(-50%) scaleX(${0.3 + strength * 0.9})`,
           background: `linear-gradient(90deg, transparent, #fff, transparent)`,
-          boxShadow: `0 0 ${width * 0.03}px ${colors.goldLight}`,
+          boxShadow: `0 0 ${width * 0.03}px ${colors.accentLight}`,
           opacity: strength,
         }}
       />
