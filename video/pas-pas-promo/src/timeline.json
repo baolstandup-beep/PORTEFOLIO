@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "durationInFrames": 1050,
+  "scenes": {
+    "hook": { "from": 0, "duration": 120 },
+    "logo": { "from": 120, "duration": 150 },
+    "videos": { "from": 270, "duration": 240 },
+    "subscribe": { "from": 510, "duration": 210 },
+    "bell": { "from": 720, "duration": 180 },
+    "outro": { "from": 900, "duration": 150 }
+  },
+  "events": {
+    "lineSweep": 30,
+    "logoImpact": 132,
+    "cards": [318, 340, 362],
+    "buttonPop": 540,
+    "subscribeClick": 594,
+    "bellClick": 774,
+    "outroImpact": 912,
+    "finalFlash": 1010
+  },
+  "transitions": [118, 268, 508, 718, 898]
+}

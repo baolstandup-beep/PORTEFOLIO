@@ -1,0 +1,27 @@
+{
+  "name": "pas-pas-promo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audio": "node scripts/make-audio.mjs",
+    "studio": "remotion studio src/index.ts",
+    "render:16x9": "remotion render src/index.ts PasPasPromo out/pas-pas-officiel-16x9.mp4 && node scripts/finalize.mjs out/pas-pas-officiel-16x9.mp4",
+    "render:9x16": "remotion render src/index.ts PasPasPromoShorts out/pas-pas-officiel-9x16-shorts.mp4 && node scripts/finalize.mjs out/pas-pas-officiel-9x16-shorts.mp4",
+    "render": "npm run audio && npm run render:16x9 && npm run render:9x16",
+    "stills": "node scripts/stills.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/montserrat": "5.2.8",
+    "@remotion/cli": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.12",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": "assets/voiceover/voix-off.mp3",
+  "note": "srcStart/srcEnd : position de la phrase dans l'enregistrement (s). at : placement dans la vidéo (s).",
+  "phrases": [
+    { "text": "Bienvenue sur PAS-PAS OFFICIEL !", "srcStart": 0.12, "srcEnd": 2.2, "at": 4.6 },
+    { "text": "Tu veux découvrir nos vidéos et ne rien manquer de nos publications ?", "srcStart": 2.42, "srcEnd": 5.45, "at": 9.4 },
+    { "text": "Tu es au bon endroit !", "srcStart": 5.7, "srcEnd": 6.92, "at": 12.75 },
+    { "text": "Rejoins notre communauté dès maintenant.", "srcStart": 7.16, "srcEnd": 9.08, "at": 14.3 },
+    { "text": "Clique sur le bouton S'abonner,", "srcStart": 9.28, "srcEnd": 10.68, "at": 18.2 },
+    { "text": "puis active la cloche de notification pour être informé des nouvelles vidéos.", "srcStart": 10.76, "srcEnd": 14.26, "at": 24.3 },
+    { "text": "N'oublie pas de liker et de partager autour de toi !", "srcStart": 14.44, "srcEnd": 16.76, "at": 27.85 },
+    { "text": "PAS-PAS OFFICIEL… abonne-toi et reste connecté !", "srcStart": 17.08, "srcEnd": 20.2, "at": 30.5 }
+  ]
+}
