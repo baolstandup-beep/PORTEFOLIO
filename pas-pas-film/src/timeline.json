@@ -1,0 +1,39 @@
+{
+  "fps": 25,
+  "durationInFrames": 750,
+  "scenes": {
+    "opening": {
+      "from": 0,
+      "duration": 100
+    },
+    "reveal": {
+      "from": 100,
+      "duration": 125
+    },
+    "hero": {
+      "from": 225,
+      "duration": 175
+    },
+    "brand": {
+      "from": 400,
+      "duration": 175
+    },
+    "endCard": {
+      "from": 575,
+      "duration": 175
+    }
+  },
+  "cues": {
+    "riserStart": 55,
+    "reveal": 100,
+    "heroStart": 225,
+    "titleIn": 486,
+    "taglineIn": 515,
+    "taglineOut": 584,
+    "finale": 575,
+    "pressLineIn": 600,
+    "endLineIn": 620,
+    "fadeOutStart": 690,
+    "silenceAt": 740
+  }
+}

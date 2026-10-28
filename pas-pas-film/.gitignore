@@ -1,0 +1,5 @@
+node_modules
+out/*.mp4
+!out/pas-pas-conference-presse.mp4
+!out/pas-pas-conference-presse-sans-audio.mp4
+out/frames

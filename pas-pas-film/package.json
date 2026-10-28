@@ -1,0 +1,26 @@
+{
+  "name": "pas-pas-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "python3 scripts/extract_bottle.py && node scripts/generate-score.mjs",
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts PasPasFilm out/pas-pas-conference-presse.mp4",
+    "render:silent": "remotion render src/index.ts PasPasFilm out/pas-pas-conference-presse-sans-audio.mp4 --muted",
+    "render:4k": "remotion render src/index.ts PasPasFilm4K out/pas-pas-conference-presse-4k.mp4",
+    "render:preview": "remotion render src/index.ts PasPasFilm out/preview.mp4 --scale=0.5 --crf=28"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@remotion/cli": "^4.0.539",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}
