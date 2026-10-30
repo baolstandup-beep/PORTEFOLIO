@@ -56,6 +56,8 @@ if (args.includes('--stills')) {
       outputLocation,
       imageFormat: alpha ? 'png' : 'jpeg',
       jpegQuality: 95,
+      audioCodec: job.codec === 'h264' ? 'aac' : job.codec === 'vp9' ? 'opus' : 'pcm-16',
+      audioBitrate: '192k',
       ...(job.codec === 'h264' ? {crf: 16, pixelFormat: 'yuv420p', colorSpace: 'bt709', x264Preset: 'slow'} : {}),
       ...(job.codec === 'vp9' ? {crf: 24, pixelFormat: 'yuva420p'} : {}),
       ...(job.codec === 'prores' ? {proResProfile: '4444', pixelFormat: 'yuva444p10le'} : {}),

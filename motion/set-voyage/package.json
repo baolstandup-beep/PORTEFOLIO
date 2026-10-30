@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "layers": "python3 scripts/extract_layers.py",
+    "sound": "python3 scripts/make_sound.py",
     "studio": "remotion studio src/index.ts",
     "render": "node scripts/render.mjs",
     "stills": "node scripts/render.mjs --stills"

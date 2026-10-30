@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {LogoAnimation} from './LogoAnimation';
 import {CONTENT, T, progress} from './layout';
 
@@ -48,6 +48,7 @@ export const SetVoyageComposition: React.FC<SetVoyageProps> = ({transparent}) =>
   return (
     <AbsoluteFill>
       {transparent ? null : <Background />}
+      <Audio src={staticFile('assets/audio/soundtrack.wav')} />
       <LogoAnimation scale={scale} cx={width / 2} cy={cy} />
     </AbsoluteFill>
   );

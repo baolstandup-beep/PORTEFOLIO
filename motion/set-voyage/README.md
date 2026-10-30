@@ -1,18 +1,30 @@
 # SET-VOYAGE : animation du logo (Remotion)
 
-Animation de 10 s du logo SET-VOYAGE, en 16:9 (1920 × 1080) et 9:16 TikTok (1080 × 1920), à 30 i/s, avec une version sur fond transparent.
+Animation de 10 s du logo SET-VOYAGE avec bande-son originale, en 16:9 (1920 × 1080) et 9:16 TikTok (1080 × 1920), à 30 i/s, avec une version sur fond transparent.
 
 ## Livrables (`out/`)
 
 | Fichier | Format |
 | --- | --- |
-| `set-voyage-16x9-1080p.mp4` | 1920 × 1080, H.264, yuv420p, 30 i/s, 10 s |
-| `set-voyage-9x16-tiktok.mp4` | 1080 × 1920, H.264, yuv420p, 30 i/s, 10 s |
-| `set-voyage-16x9-alpha.webm` | 1920 × 1080, VP9 avec couche alpha |
-| `set-voyage-9x16-alpha.webm` | 1080 × 1920, VP9 avec couche alpha |
+| `set-voyage-16x9-1080p.mp4` | 1920 × 1080, H.264, yuv420p, 30 i/s, 10 s, son AAC 48 kHz stéréo |
+| `set-voyage-9x16-tiktok.mp4` | 1080 × 1920, H.264, yuv420p, 30 i/s, 10 s, son AAC 48 kHz stéréo |
+| `set-voyage-16x9-alpha.webm` | 1920 × 1080, VP9 avec couche alpha, son Opus |
+| `set-voyage-9x16-alpha.webm` | 1080 × 1920, VP9 avec couche alpha, son Opus |
 | `index.html` | page de prévisualisation des quatre vidéos |
 
-Les MP4 n'ont pas de piste audio : sur TikTok, ajoutez le son depuis l'application (bibliothèque sous licence).
+## Bande-son
+
+`scripts/make_sound.py` synthétise toute la bande-son (aucun échantillon externe, donc libre de droits) dans `public/assets/audio/soundtrack.wav`, intégrée par `src/Composition.tsx`.
+
+- Nappe de fond en ré majeur (Ré, Si mineur, Sol, retour sur Ré à l'impact final), basse et pulsation légère à 100 BPM à partir du texte.
+- Effets calés sur l'image : scintillement du trait lumineux, souffle des arcs, passage de l'avion (souffle panoramique droite vers centre, grondement, sifflement avec effet Doppler), atterrissage (impact et carillon), quatre impacts pour S, E, T et le tiret, montée lumineuse de VOYAGE, notes pincées du slogan, scintillements des reflets, impact final avec réverbération.
+- Mixage : -14,5 LUFS intégrés, crête -1 dBTP, le niveau de référence de TikTok.
+
+Les temps des effets reprennent ceux de `src/layout.ts`. Si vous modifiez le minutage, reportez-le en haut de `make_sound.py`, puis lancez :
+
+```bash
+npm run sound
+```
 
 ## Principe : le logo n'est jamais redessiné
 
