@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SET-VOYAGE · Animation du logo</title>
+<style>
+  :root { --bg: #f4f6fa; --ink: #595451; --blue: #193f88; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px 48px; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
+  h1 { margin: 0 0 4px; color: var(--blue); font-size: 22px; }
+  p { margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; align-items: start; max-width: 1200px; }
+  figure { margin: 0; }
+  video { width: 100%; display: block; border-radius: 10px; background: #fff; box-shadow: 0 8px 24px rgba(25,63,136,.12); }
+  .checker { background: repeating-conic-gradient(#d9dde5 0 25%, #fff 0 50%) 0 0 / 24px 24px; }
+  figcaption { margin-top: 8px; font-size: 13px; }
+  a { color: var(--blue); }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <h1>SET-VOYAGE : animation du logo</h1>
+  <p>10 s · 30 i/s · rendu Remotion. Les versions transparentes sont posées sur un damier.</p>
+  <div class="grid">
+    <figure><video src="set-voyage-16x9-1080p.mp4" controls autoplay muted loop playsinline></video>
+      <figcaption>16:9 · 1920 × 1080 · <a href="set-voyage-16x9-1080p.mp4" download>MP4 H.264</a></figcaption></figure>
+    <figure><video src="set-voyage-9x16-tiktok.mp4" controls autoplay muted loop playsinline></video>
+      <figcaption>9:16 TikTok · 1080 × 1920 · <a href="set-voyage-9x16-tiktok.mp4" download>MP4 H.264</a></figcaption></figure>
+    <figure><video class="checker" src="set-voyage-16x9-alpha.webm" controls muted loop playsinline></video>
+      <figcaption>16:9 fond transparent · <a href="set-voyage-16x9-alpha.webm" download>WebM VP9 alpha</a></figcaption></figure>
+    <figure><video class="checker" src="set-voyage-9x16-alpha.webm" controls muted loop playsinline></video>
+      <figcaption>9:16 fond transparent · <a href="set-voyage-9x16-alpha.webm" download>WebM VP9 alpha</a></figcaption></figure>
+  </div>
+</body>
+</html>

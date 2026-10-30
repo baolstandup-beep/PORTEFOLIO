@@ -1,0 +1,4 @@
+node_modules
+out/frames
+out/*.mov
+__pycache__
