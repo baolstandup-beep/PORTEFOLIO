@@ -54,7 +54,8 @@ const Destination: React.FC<{ i: number; dur: number }> = ({ i, dur }) => {
             style={{
               fontFamily: FONTS.titre,
               fontWeight: 900,
-              fontSize: 190,
+              fontSize: d.ville.length > 7 ? 150 : 190,
+              whiteSpace: 'nowrap',
               lineHeight: 0.95,
               color: '#fff',
               letterSpacing: -4,
