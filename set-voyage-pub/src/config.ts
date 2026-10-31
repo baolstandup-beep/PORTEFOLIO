@@ -33,9 +33,14 @@ export const RESPONSABLE = {
 
 // ---------- Médias remplaçables (chemins dans /public) ----------
 export const MEDIAS = {
-  logo: 'assets/logo.svg', // PNG transparent ou SVG recommandé
-  /** true si le fichier logo contient déjà le texte « SET VOYAGE » (masque le texte généré). */
-  logoContientTexte: false,
+  /** Logo fourni (fond détouré). Ancien emblème provisoire : 'assets/logo.svg'. */
+  logo: 'assets/logo-setcom.png',
+  /** true = logo horizontal complet (avec texte) posé sur une plaque blanche. false = emblème carré + texte généré. */
+  logoContientTexte: true,
+  /** Largeur / hauteur du fichier logo (utilisé quand logoContientTexte = true). */
+  logoRatio: 1286 / 338,
+  /** Affiche « SET VOYAGE » en texte animé sous le logo (utile si le logo porte un autre nom). */
+  afficherNomAgence: true,
   /** ⚠ Placeholder : photo de banque d'images. Remplacer par le vrai portrait. */
   portrait: 'assets/responsable.jpg',
   avion: 'assets/avion.svg', // PNG détouré, avion orienté vers la DROITE
@@ -91,6 +96,7 @@ export const DUREE_TOTALE =
 // Chaque réplique démarre à `debut` (frames, absolu). Si `fichier` est renseigné,
 // l'audio est calé exactement sur ce point ; sinon seuls les sous-titres s'affichent.
 // Enregistrer une piste par réplique = synchronisation parfaite sans retouche.
+// Voix actuelle : générée par synthèse vocale (ElevenLabs, voix « JOHN MALA »). `duree` = durée réelle du fichier.
 export type Replique = {
   debut: number;
   duree: number;
@@ -101,39 +107,39 @@ export type Replique = {
 export const VOIX_OFF: Replique[] = [
   {
     debut: DEBUTS.intro + 20,
-    duree: 110,
+    duree: 117,
     texte: 'Votre prochain voyage commence ici, avec SET VOYAGE.',
-    fichier: null,
+    fichier: 'audio/voix/01-intro.mp3',
   },
   {
     debut: DEBUTS.responsable + 15,
-    duree: 160,
-    texte: `${RESPONSABLE.nom} et son équipe vous accompagnent personnellement, à chaque étape.`,
-    fichier: null,
+    duree: 136,
+    texte: 'Notre équipe vous accompagne personnellement, à chaque étape de votre voyage.',
+    fichier: 'audio/voix/02-responsable.mp3',
   },
   {
     debut: DEBUTS.services + 15,
-    duree: 200,
+    duree: 165,
     texte: 'Billets d’avion toutes compagnies, au meilleur prix. Réservation rapide, paiement sécurisé.',
-    fichier: null,
+    fichier: 'audio/voix/03-billets.mp3',
   },
   {
     debut: DEBUTS.destinations + 20,
-    duree: 250,
+    duree: 193,
     texte: 'Paris, Dubaï, Istanbul, New York… Le monde entier est à votre portée.',
-    fichier: null,
+    fichier: 'audio/voix/04-destinations.mp3',
   },
   {
     debut: DEBUTS.serviceClient + 15,
-    duree: 160,
+    duree: 138,
     texte: 'Un service client à l’écoute, avant, pendant et après votre voyage.',
-    fichier: null,
+    fichier: 'audio/voix/05-service-client.mp3',
   },
   {
     debut: DEBUTS.final + 20,
-    duree: 160,
+    duree: 88,
     texte: 'SET VOYAGE. Appelez-nous dès aujourd’hui !',
-    fichier: null,
+    fichier: 'audio/voix/06-final.mp3',
   },
 ];
 

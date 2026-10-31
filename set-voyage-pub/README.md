@@ -16,7 +16,7 @@ npm run render:draft  # brouillon rapide en demi-résolution
 
 | Élément | Où | Remarque |
 |---|---|---|
-| Logo | `public/assets/logo.svg` → `MEDIAS.logo` | PNG transparent ou SVG. Si le logo contient déjà le texte, mettre `logoContientTexte: true` |
+| Logo | `public/assets/logo-setcom.png` → `MEDIAS.logo` | Logo horizontal posé sur une plaque blanche (`logoContientTexte: true`). Pour un emblème carré, mettre `false`. `afficherNomAgence` ajoute « SET VOYAGE » sous le logo |
 | Portrait du responsable | `public/assets/responsable.jpg` → `MEDIAS.portrait` | Régler `RESPONSABLE.cadrage` (object-position) et `zoom` |
 | Avion | `public/assets/avion.svg` → `MEDIAS.avion` | PNG détouré, **nez vers la droite**, ratio ≈ 3:1 |
 | Téléphone, WhatsApp, adresse, slogan | `AGENCE` | Valeurs **factices** à remplacer |
@@ -29,6 +29,12 @@ npm run render:draft  # brouillon rapide en demi-résolution
 > Un fichier audio déclaré mais absent fait échouer le rendu : laisser `null` tant qu'il n'existe pas.
 
 ## Voix off : synchronisation
+
+**Voix actuelle** : synthèse vocale ElevenLabs (voix « JOHN MALA », français, accent africain), une piste
+par réplique dans `public/audio/voix/01-intro.mp3` … `06-final.mp3`. Une seconde prise de chaque réplique
+existe dans le flow ElevenLabs « SET VOYAGE — voix off pub 40 s ». Pour la remplacer par une voix humaine,
+écraser les fichiers en gardant les mêmes noms et mettre à jour `duree` (durée en s × 30).
+
 
 Le script est dans `VOIX_OFF` (texte + frame de début, calculée depuis le début réel de chaque scène).
 Enregistrez **une piste par réplique** en respectant la durée indiquée (`duree` / 30 = secondes) :
