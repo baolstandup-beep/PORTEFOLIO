@@ -1,0 +1,27 @@
+{
+  "name": "set-voyage-pub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Publicité animée SET VOYAGE — 40 s, 1080x1920, 30 fps (Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render SetVoyagePub out/set-voyage-pub.mp4",
+    "render:draft": "remotion render SetVoyagePub out/brouillon.mp4 --scale=0.5 --crf=28",
+    "still": "remotion still SetVoyagePub out/apercu.png --frame=600",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "@remotion/motion-blur": "4.0.539",
+    "@remotion/paths": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.6.3"
+  }
+}

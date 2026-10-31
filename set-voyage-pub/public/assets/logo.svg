@@ -1,0 +1,28 @@
+<!-- PLACEHOLDER — emblème SET VOYAGE. Remplacer par le logo officiel (PNG transparent ou SVG). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2F86F0"/><stop offset="1" stop-color="#0A2A5E"/>
+    </linearGradient>
+    <radialGradient id="s" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFE27A"/><stop offset="1" stop-color="#F5B700"/>
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="190" fill="url(#g)"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="3"/>
+  <!-- méridiens / parallèles -->
+  <g fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="3">
+    <ellipse cx="200" cy="200" rx="70" ry="172"/>
+    <ellipse cx="200" cy="200" rx="130" ry="172"/>
+    <path d="M30 200h340M52 120h296M52 280h296"/>
+  </g>
+  <circle cx="262" cy="138" r="46" fill="url(#s)"/>
+  <!-- trajectoire -->
+  <path d="M70 290 C 140 330, 250 300, 318 196" fill="none" stroke="#E63946" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22"/>
+  <!-- avion stylisé -->
+  <g transform="translate(318 190) rotate(-48)">
+    <path d="M-46 0 C-46 -7 -38 -9 -30 -9 L34 -9 C48 -9 58 -4 62 0 C58 4 48 9 34 9 L-30 9 C-38 9 -46 7 -46 0Z" fill="#fff"/>
+    <path d="M6 -8 L-14 -52 L-2 -52 L28 -8Z M6 8 L-14 52 L-2 52 L28 8Z" fill="#fff"/>
+    <path d="M-38 -6 L-50 -26 L-42 -26 L-26 -6Z M-38 6 L-50 26 L-42 26 L-26 6Z" fill="#fff"/>
+  </g>
+</svg>
