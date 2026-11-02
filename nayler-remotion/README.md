@@ -2,7 +2,7 @@
 
 Bande-annonce de 15 s (30 fps, H.264 + AAC) générée à partir du flyer original.
 Aucun portrait, logo ou texte n'est recréé par IA : chaque calque animé est une
-**découpe exacte** du flyer (`public/flyer.jpg`), et le flyer original intact
+**découpe exacte** du flyer (`public/flyer.png`), et le flyer original intact
 repasse au premier plan en scène 5 (fidélité pixel garantie sur le plan final).
 
 ## Rendus
@@ -19,6 +19,7 @@ npm install
 npm run dev            # Remotion Studio (prévisualisation)
 npm run render         # MP4 960×1600 -> renders/
 npm run render:native  # MP4 960×1280 -> renders/
+npm run flyer          # régénère public/flyer.png (correction de texte) + clean plate
 npm run audio          # régénère public/audio/soundtrack.wav (Python 3 + numpy)
 ```
 
@@ -43,6 +44,13 @@ Réseau restreint (Remotion ne peut pas télécharger son navigateur) :
 - `src/components/FlyerCrop.tsx` — calque = découpe du flyer (masques, polygones, glissements internes)
 - `scripts/make_plates.py` — « clean plate » du bandeau (texte effacé par interpolation du dégradé) pour révéler MARDI / 20H00 sans doublon
 - `scripts/generate_audio.py` — musique afro instrumentale + whooshes + impact + signature, 100 % synthétisés (aucun sample sous licence)
+
+## Correction de texte
+
+Le badge de Bassirou Sene affiche « Coordonnateur » au lieu de « Coordinateur »
+(`scripts/fix_text.py`). L'ancien mot est effacé et réécrit en Inter Regular,
+calibré sur la taille, la couleur et le centrage d'origine. Le flyer source
+non modifié reste disponible : `public/flyer-original.jpg`.
 
 ## Limites connues
 

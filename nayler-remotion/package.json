@@ -5,6 +5,7 @@
   "description": "Animation du flyer ÑAYLER (IYAT TV) avec Remotion",
   "scripts": {
     "audio": "python3 scripts/generate_audio.py",
+    "flyer": "python3 scripts/fix_text.py && python3 scripts/make_plates.py",
     "dev": "remotion studio",
     "render": "remotion render Nayler renders/nayler-960x1600.mp4 --codec=h264 --crf=16",
     "render:native": "remotion render NaylerNative renders/nayler-960x1280.mp4 --codec=h264 --crf=16",

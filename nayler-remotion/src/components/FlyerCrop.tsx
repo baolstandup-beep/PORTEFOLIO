@@ -2,7 +2,7 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { FLYER_H, FLYER_W, Rect } from "../regions";
 
-export const FLYER_SRC = staticFile("flyer.jpg");
+export const FLYER_SRC = staticFile("flyer.png");
 
 type Props = {
   /** Zone du flyer (coordonnées flyer) affichée par ce calque. */

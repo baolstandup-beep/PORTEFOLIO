@@ -9,7 +9,7 @@ Aucun pixel du flyer n'est généré par IA.
 import numpy as np
 from PIL import Image, ImageFilter
 
-src = Image.open("public/flyer.jpg").convert("RGB")
+src = Image.open("public/flyer.png").convert("RGB")
 a = np.asarray(src).astype(np.float32)
 
 # Bandeau (coordonnées flyer 960x1280) — miroir de src/regions.ts
