@@ -1,0 +1,6 @@
+work/
+output/
+tests/fixture/
+.env
+__pycache__/
+*.pyc

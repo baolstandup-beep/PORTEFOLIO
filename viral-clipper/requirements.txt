@@ -1,0 +1,8 @@
+# Python >= 3.10 ; FFmpeg (avec libass) doit être installé séparément.
+yt-dlp>=2025.1.1            # téléchargement YouTube (mettre à jour souvent : pip install -U yt-dlp)
+faster-whisper>=1.1         # transcription mot à mot (modèles téléchargés au 1er lancement)
+numpy>=1.26
+opencv-python>=4.8,<5       # détection de visage ; la v5 ne fournit plus les cascades Haar
+scenedetect>=0.6.4          # détection des changements de plan
+anthropic>=2.4              # optionnel : analyse sémantique par Claude (ANTHROPIC_API_KEY)
+gradio>=5,<6                # optionnel : interface graphique (python main.py --ui)
