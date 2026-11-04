@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Easing,
+  Img,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -35,20 +36,25 @@ export const hookReelSchema: HookReelProps = {
   highlight: ['dit', 'direct'],
   badge: 'En direct · IYAT TV',
   teaser: 'Regardez jusqu’au bout 👀',
-  cta: 'Abonne-toi pour la suite',
+  cta: 'Suivez PAS-PAS',
 };
 
+/** Charte PAS-PAS, relevée sur le logo officiel. */
 const C = {
-  bg: '#0b0a08',
-  ink: '#fdf8ee',
-  gold: '#f5b301',
-  goldDeep: '#c98a00',
-  red: '#e5322d',
+  bg: '#031a2e', // bleu nuit (fond)
+  navy: '#065e9d', // bleu profond du logo
+  blue: '#2175bb', // bleu « PAS-PAS »
+  green: '#159741', // vert pirogue / bandeau
+  greenDeep: '#0e7a33',
+  cyan: '#26bbe5', // vagues
+  sky: '#a0d1ef', // écume
+  ink: '#ffffff',
+  red: '#e5322d', // point « direct »
 };
 
 const VIDEO_W = 1080;
 const VIDEO_H = Math.round((VIDEO_W * 9) / 16); // 608
-const VIDEO_TOP = 700;
+const VIDEO_TOP = 780;
 
 /** Petits zooms « punch-in » calés sur les moments où l'orateur s'anime. */
 const PUNCHES: { at: number; scale: number }[] = [
@@ -88,7 +94,7 @@ const Background: React.FC = () => {
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(11,10,8,0.92) 0%, rgba(11,10,8,0.55) 32%, rgba(11,10,8,0.55) 70%, rgba(11,10,8,0.95) 100%)',
+            'linear-gradient(180deg, rgba(3,26,46,0.94) 0%, rgba(6,94,157,0.55) 34%, rgba(6,94,157,0.5) 68%, rgba(3,26,46,0.96) 100%)',
         }}
       />
     </AbsoluteFill>
@@ -110,7 +116,7 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
     <div
       style={{
         position: 'absolute',
-        top: 150,
+        top: 330,
         left: 60,
         right: 60,
         display: 'flex',
@@ -137,11 +143,11 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
                   fontFamily: 'Archivo',
                   fontWeight: 900,
                   fontStretch: '75%',
-                  fontSize: 132,
+                  fontSize: 122,
                   lineHeight: 1.02,
                   letterSpacing: '-0.01em',
                   textTransform: 'uppercase',
-                  color: isHl ? C.bg : C.ink,
+                  color: C.ink,
                   padding: '0 14px',
                   opacity: interpolate(s, [0, 0.4], [0, 1], { extrapolateRight: 'clamp' }),
                   transform: `translateY(${(1 - s) * 70}px) scale(${0.6 + 0.4 * s}) rotate(${(1 - s) * (i % 2 ? 6 : -6)}deg)`,
@@ -153,12 +159,12 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
                     style={{
                       position: 'absolute',
                       inset: '8px 0 4px 0',
-                      background: `linear-gradient(180deg, ${C.gold}, ${C.goldDeep})`,
+                      background: `linear-gradient(180deg, ${C.green}, ${C.greenDeep})`,
                       borderRadius: 14,
                       transform: `scaleX(${boxGrow}) rotate(-1.5deg)`,
                       transformOrigin: 'left center',
                       zIndex: -1,
-                      boxShadow: `0 10px 40px ${C.gold}55`,
+                      boxShadow: `0 10px 40px ${C.green}66`,
                     }}
                   />
                 )}
@@ -169,6 +175,30 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
         </div>
       ))}
     </div>
+  );
+};
+
+/** Logo PAS-PAS : arrivée en rebond, puis léger tangage de pirogue. */
+const Logo: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const s = spring({ frame, fps, config: { damping: 10, stiffness: 120 } });
+  const sway = Math.sin((frame / fps) * Math.PI * 0.8) * 3;
+  return (
+    <Img
+      src={staticFile('paspas-logo.png')}
+      style={{
+        position: 'absolute',
+        top: 70,
+        left: (1080 - 240) / 2,
+        width: 240,
+        height: 240,
+        borderRadius: '50%',
+        border: `6px solid ${C.ink}`,
+        boxShadow: `0 12px 50px rgba(0,0,0,0.5), 0 0 0 10px ${C.blue}66`,
+        transform: `scale(${s}) rotate(${(1 - s) * -90 + sway}deg)`,
+      }}
+    />
   );
 };
 
@@ -188,9 +218,9 @@ const VideoCard: React.FC = () => {
         width: VIDEO_W,
         height: VIDEO_H,
         overflow: 'hidden',
-        borderTop: `6px solid ${C.gold}`,
-        borderBottom: `6px solid ${C.gold}`,
-        boxShadow: `0 0 80px rgba(245,179,1,${glow})`,
+        borderTop: `8px solid ${C.blue}`,
+        borderBottom: `8px solid ${C.green}`,
+        boxShadow: `0 0 80px rgba(38,187,229,${glow})`,
         transform: `translateY(${(1 - enter) * 120}px)`,
         opacity: enter,
       }}
@@ -254,10 +284,10 @@ const Waveform: React.FC = () => {
     <div
       style={{
         position: 'absolute',
-        top: VIDEO_TOP + VIDEO_H + 180,
+        top: VIDEO_TOP + VIDEO_H + 160,
         left: 0,
         right: 0,
-        height: 160,
+        height: 130,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -265,8 +295,8 @@ const Waveform: React.FC = () => {
       }}
     >
       {mirrored.map((v, i) => {
-        const h = Math.max(10, Math.min(150, Math.sqrt(v) * 360));
-        return <div key={i} style={{ width: 18, height: h, borderRadius: 9, background: C.gold, opacity: 0.35 + 0.65 * Math.min(1, v * 6) }} />;
+        const h = Math.max(10, Math.min(126, Math.sqrt(v) * 320));
+        return <div key={i} style={{ width: 18, height: h, borderRadius: 9, background: i % 2 ? C.cyan : C.sky, opacity: 0.35 + 0.65 * Math.min(1, v * 6) }} />;
       })}
     </div>
   );
@@ -280,7 +310,7 @@ const Teaser: React.FC<{ text: string }> = ({ text }) => {
     <div
       style={{
         position: 'absolute',
-        top: VIDEO_TOP + VIDEO_H + 370,
+        top: VIDEO_TOP + VIDEO_H + 330,
         width: '100%',
         textAlign: 'center',
         fontFamily: 'Manrope',
@@ -302,7 +332,7 @@ const ProgressBar: React.FC = () => {
   const p = frame / (durationInFrames - 1);
   return (
     <div style={{ position: 'absolute', bottom: 90, left: 80, right: 80, height: 10, borderRadius: 10, background: 'rgba(253,248,238,0.15)' }}>
-      <div style={{ width: `${p * 100}%`, height: '100%', borderRadius: 10, background: C.gold, boxShadow: `0 0 18px ${C.gold}` }} />
+      <div style={{ width: `${p * 100}%`, height: '100%', borderRadius: 10, background: `linear-gradient(90deg, ${C.green}, ${C.cyan})`, boxShadow: `0 0 18px ${C.cyan}` }} />
     </div>
   );
 };
@@ -320,12 +350,13 @@ const Cta: React.FC<{ text: string }> = ({ text }) => {
           fontStretch: '80%',
           fontSize: 64,
           textTransform: 'uppercase',
-          color: C.bg,
-          background: C.gold,
+          color: C.ink,
+          background: `linear-gradient(180deg, ${C.green}, ${C.greenDeep})`,
+          border: `4px solid ${C.ink}`,
           padding: '22px 46px',
           borderRadius: 20,
           transform: `scale(${s}) rotate(${(1 - s) * -8}deg)`,
-          boxShadow: `0 20px 60px ${C.gold}66`,
+          boxShadow: `0 20px 60px ${C.green}88`,
         }}
       >
         {text}
@@ -341,6 +372,7 @@ export const HookReel: React.FC<HookReelProps> = (props) => {
     <AbsoluteFill>
       <FontLoader />
       <Background />
+      <Logo />
       <HookTitle lines={props.hookLines} highlight={props.highlight} />
       <VideoCard />
       <Badge text={props.badge} />
