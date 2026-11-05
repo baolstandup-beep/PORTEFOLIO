@@ -3,7 +3,9 @@
 Pad cinématique en ré mineur, arpèges, percussions inspirées du djembé + shaker,
 whooshes avant chaque coupe, impacts sur les grands titres, montée finale.
 Les instants sont calés sur src/timeline.ts (30 fps).
-Usage : python3 scripts/generate_audio.py  ->  public/audio/bande-son.wav
+Usage : python3 scripts/generate_audio.py
+  -> public/audio/bande-son.wav  (musique + bruitages)
+  -> public/audio/bruitages.wav  (bruitages seuls, sans musique)
 """
 import wave
 import numpy as np
@@ -17,11 +19,13 @@ CUTS = [f / 30 for f in (120, 270, 480, 630, 810, 1050)]
 BPM = 96
 BEAT = 60 / BPM
 
-L = np.zeros(N)
-R = np.zeros(N)
+# Pistes : 'music' (pad, arpèges, percussions), 'sfx' (whooshes, impacts, montée),
+# 'sfx_extra' (petits bruitages d'animation, uniquement dans la version bruitages).
+BUS = {k: (np.zeros(N), np.zeros(N)) for k in ('music', 'sfx', 'sfx_extra')}
 
 
-def add(sig, start, gain=1.0, pan=0.0):
+def add(sig, start, gain=1.0, pan=0.0, bus='music'):
+    L, R = BUS[bus]
     i = int(start * SR)
     if i >= N:
         return
@@ -154,7 +158,7 @@ for c in CUTS:
     tt = np.arange(n) / SR
     noise = bandnoise(n, 300, 9000)
     sweep = lowpass(noise * np.sin(np.pi * tt / 0.7) ** 2, 2500)
-    add(sweep / (np.abs(sweep).max() + 1e-9), c - 0.55, 0.22, pan=0.0)
+    add(sweep / (np.abs(sweep).max() + 1e-9), c - 0.55, 0.22, pan=0.0, bus='sfx')
 
 # --- Impacts sur les grands titres ----------------------------------------
 def impact(strength=1.0):
@@ -166,17 +170,17 @@ def impact(strength=1.0):
     return (boom + hit) * strength
 
 
-add(impact(0.75), 4.0 + 4 / 30)  # INAUGURATION
-add(impact(0.6), 16.0 + 26 / 30)  # « 08 »
-add(impact(0.5), 21.0 + 112 / 30)  # compteur à 100
-add(impact(0.9), 35.0)  # final
+add(impact(0.75), 4.0 + 4 / 30, bus='sfx')  # INAUGURATION
+add(impact(0.6), 16.0 + 26 / 30, bus='sfx')  # « 08 »
+add(impact(0.5), 21.0 + 112 / 30, bus='sfx')  # compteur à 100
+add(impact(0.9), 35.0, bus='sfx')  # final
 
 # --- Montée avant le final -------------------------------------------------
 n = int(3.0 * SR)
 tt = np.arange(n) / SR
 riser = bandnoise(n, 400, 10000) * (tt / 3.0) ** 2
 riser += 0.3 * np.sin(2 * np.pi * np.cumsum(200 + 600 * (tt / 3) ** 2) / SR) * (tt / 3) ** 2
-add(riser, 32.0, 0.18)
+add(riser, 32.0, 0.18, bus='sfx')
 
 # --- Réverbération (convolution FFT) + mastering ----------------------------
 ir_n = int(2.2 * SR)
@@ -191,16 +195,67 @@ def conv(x):
     return np.fft.irfft(np.fft.rfft(x, m) * np.fft.rfft(ir, m), m)[: len(x)]
 
 
-Lw, Rw = L + 0.28 * conv(L), R + 0.28 * conv(np.roll(R, 371))
+# --- Bruitages d'animation (version bruitages seulement) --------------------
+def pop(freq=900, dur=0.18):
+    n = int(dur * SR)
+    tt = np.arange(n) / SR
+    f = freq * (1 + 0.6 * np.exp(-tt * 40))
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 28) + 0.25 * bandnoise(n, 2000, 8000) * np.exp(-tt * 80)
+
+
+def shimmer(dur=1.2):
+    n = int(dur * SR)
+    tt = np.arange(n) / SR
+    sig = sum(np.sin(2 * np.pi * hz(m) * tt + k) for k, m in enumerate([86, 90, 93, 98]))
+    return sig / 4 * np.exp(-tt * 3) * np.minimum(1, tt * 40)
+
+
+def tick():
+    n = int(0.03 * SR)
+    tt = np.arange(n) / SR
+    return bandnoise(n, 2500, 9000) * np.exp(-tt * 200)
+
+
+F = 1 / 30
+add(shimmer(1.6), 12 * F, 0.35, bus='sfx_extra')  # logo d'intro
+add(pop(700), (270 + 6) * F, 0.5, bus='sfx_extra')  # épingle LIEU
+add(pop(500, 0.3), (480 + 8) * F, 0.5, bus='sfx_extra')  # calendrier
+add(pop(800), (630 + 4) * F, 0.45, bus='sfx_extra')  # « 4ème »
+last = -1
+for fr in range(56, 113):  # tic du compteur 0 → 100
+    c = round(100 * (1 - (1 - (fr - 56) / 56) ** 2.2))
+    if c // 4 != last:
+        last = c // 4
+        add(tick(), (630 + fr) * F, 0.35, pan=0.2 * np.sin(fr), bus='sfx_extra')
+add(shimmer(1.2), (810 + 10) * F, 0.3, bus='sfx_extra')  # logo contact
+add(pop(650), (810 + 34) * F, 0.45, pan=-0.3, bus='sfx_extra')  # QR Wave
+add(pop(750), (810 + 44) * F, 0.45, pan=0.3, bus='sfx_extra')  # QR Orange Money
+for k in range(17):  # chiffres du numéro
+    add(tick(), (810 + 96 + k * 1.6) * F, 0.25, pan=-0.5 + k / 16, bus='sfx_extra')
+add(shimmer(1.4), (810 + 150) * F, 0.35, bus='sfx_extra')  # reflet du numéro
+add(shimmer(2.0), (1050 + 4) * F, 0.35, bus='sfx_extra')  # logo final
+
 fade = np.interp(t, [0, 0.3, 38.6, 40], [0, 1, 1, 0])
-mix = np.stack([Lw, Rw], 1) * fade[:, None]
-rms = np.sqrt((mix ** 2).mean())
-mix *= 10 ** (-16 / 20) / rms  # niveau moyen ≈ -16 dBFS RMS
-mix = 0.89 * np.tanh(mix / 0.89)  # limiteur doux : crête < -1 dBFS
-pcm = (np.clip(mix, -1, 1) * 32767).astype('<i2')
-with wave.open('public/audio/bande-son.wav', 'wb') as w:
-    w.setnchannels(2)
-    w.setsampwidth(2)
-    w.setframerate(SR)
-    w.writeframes(pcm.tobytes())
-print('bande-son.wav OK', pcm.shape, 'peak', np.abs(mix).max())
+
+
+def master(buses, path, mode):
+    L = sum(BUS[b][0] for b in buses)
+    R = sum(BUS[b][1] for b in buses)
+    Lw, Rw = L + 0.28 * conv(L), R + 0.28 * conv(np.roll(R, 371))
+    mix = np.stack([Lw, Rw], 1) * fade[:, None]
+    if mode == 'rms':  # piste continue : niveau moyen ≈ -16 dBFS RMS
+        mix *= 10 ** (-16 / 20) / np.sqrt((mix ** 2).mean())
+    else:  # piste ponctuelle : normalisation sur la crête
+        mix *= 1.05 / np.abs(mix).max()
+    mix = 0.89 * np.tanh(mix / 0.89)  # limiteur doux : crête < -1 dBFS
+    pcm = (np.clip(mix, -1, 1) * 32767).astype('<i2')
+    with wave.open(path, 'wb') as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes(pcm.tobytes())
+    print(path, 'OK', 'peak', round(float(np.abs(mix).max()), 3))
+
+
+master(['music', 'sfx'], 'public/audio/bande-son.wav', 'rms')
+master(['sfx', 'sfx_extra'], 'public/audio/bruitages.wav', 'peak')

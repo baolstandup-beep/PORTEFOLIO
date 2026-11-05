@@ -7,7 +7,7 @@ Publicité verticale 9:16, 1080×1920, 30 fps, 40 s, H.264, faite avec React et 
 ```bash
 npm install
 npm run studio   # aperçu interactif (Remotion Studio)
-npm run audio    # régénère public/audio/bande-son.wav
+npm run audio    # régénère bande-son.wav (musique + bruitages) et bruitages.wav (bruitages seuls)
 npm run render   # rend toutes les versions dans out/
 ```
 
@@ -17,6 +17,8 @@ npm run render   # rend toutes les versions dans out/
 |---|---|
 | `daara-tanneef_master_1080x1920.mp4` | Master haute qualité (CRF 16), avec musique |
 | `daara-tanneef_sans-musique_1080x1920.mp4` | Même image, piste audio silencieuse |
+| `daara-tanneef_bruitages-sans-musique_1080x1920.mp4` | Bruitages seuls, sans musique : whooshes, impacts, montée, pops, tics du compteur |
+| `daara-tanneef_bruitages_reseaux-sociaux.mp4` / `…_bruitages_whatsapp_720x1280.mp4` | Version bruitages déclinée pour les réseaux et WhatsApp |
 | `daara-tanneef_reseaux-sociaux_instagram-tiktok-facebook.mp4` | Reels, TikTok, Facebook : H.264 High 4.1, ≤ 8 Mb/s, faststart |
 | `daara-tanneef_whatsapp_720x1280.mp4` | WhatsApp (statut et envoi) : 720p, ~11 Mo, sous la limite de 16 Mo |
 

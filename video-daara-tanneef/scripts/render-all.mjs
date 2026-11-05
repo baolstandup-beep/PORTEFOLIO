@@ -51,16 +51,22 @@ const tmp = path.join(out, 'tmp-silent.mp4');
 ff(['-i', silent, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', '-movflags', '+faststart', tmp]);
 fs.renameSync(tmp, silent);
 
-// Instagram Reels / TikTok / Facebook Reels : 1080x1920, H.264 High 4.1, ~8 Mb/s, AAC 48 kHz, faststart
-ff(['-i', master, '-c:v', 'libx264', '-profile:v', 'high', '-level', '4.1', '-preset', 'slow', '-crf', '19',
-  '-maxrate', '8M', '-bufsize', '16M', '-pix_fmt', 'yuv420p', '-r', '30', '-g', '60',
-  '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart',
-  path.join(out, 'daara-tanneef_reseaux-sociaux_instagram-tiktok-facebook.mp4')]);
+// Version bruitages seuls (sans musique) : même image, piste public/audio/bruitages.wav
+const sfx = path.join(out, 'daara-tanneef_bruitages-sans-musique_1080x1920.mp4');
+ff(['-i', silent, '-i', path.resolve('public/audio/bruitages.wav'), '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+  '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', sfx]);
 
-// WhatsApp (statut + envoi) : 720x1280, H.264 Main, < 16 Mo, AAC 128k
-ff(['-i', master, '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264', '-profile:v', 'main', '-level', '3.1',
+const social = (src, dst) => ff(['-i', src, '-c:v', 'libx264', '-profile:v', 'high', '-level', '4.1', '-preset', 'slow', '-crf', '19',
+  '-maxrate', '8M', '-bufsize', '16M', '-pix_fmt', 'yuv420p', '-r', '30', '-g', '60',
+  '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', path.join(out, dst)]);
+const whatsapp = (src, dst) => ff(['-i', src, '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264', '-profile:v', 'main', '-level', '3.1',
   '-preset', 'slow', '-b:v', '2200k', '-maxrate', '2600k', '-bufsize', '5M', '-pix_fmt', 'yuv420p', '-r', '30',
-  '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-movflags', '+faststart',
-  path.join(out, 'daara-tanneef_whatsapp_720x1280.mp4')]);
+  '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-movflags', '+faststart', path.join(out, dst)]);
+
+social(master, 'daara-tanneef_reseaux-sociaux_instagram-tiktok-facebook.mp4');
+whatsapp(master, 'daara-tanneef_whatsapp_720x1280.mp4');
+social(sfx, 'daara-tanneef_bruitages_reseaux-sociaux.mp4');
+whatsapp(sfx, 'daara-tanneef_bruitages_whatsapp_720x1280.mp4');
+
 
 console.log('Terminé :', fs.readdirSync(out).join(', '));
