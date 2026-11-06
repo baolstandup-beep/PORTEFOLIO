@@ -16,3 +16,8 @@ Format vertical 1080×1920, 30 i/s, durée calée sur le clip source (24,8 s).
 4. `npm run render` → `out/hook-reel.mp4`
 
 Changer de clip : ajuster `DURATION` dans `src/Root.tsx` et les temps `PUNCHES` dans `src/HookReel.tsx`.
+
+## Reel « Routes de Sadio »
+Composition `SadioRoutes` : déposer le clip dans `public/sadio.mp4`, extraire `public/sadio-audio.wav` comme ci-dessus, puis
+`npx remotion render src/index.ts SadioRoutes out/sadio-routes.mp4`.
+Les textes, la taille du titre (`titleSize`) et les zooms (`punches`) se règlent dans `src/Root.tsx`.

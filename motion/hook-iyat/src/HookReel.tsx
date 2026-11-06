@@ -18,7 +18,20 @@ import { FontLoader } from './FontLoader';
  * Tout le texte est piloté par les props : changer le titre ici
  * (ou dans Remotion Studio) suffit, pas besoin de toucher l'animation.
  */
+export type Punch = { at: number; scale: number };
+
 export type HookReelProps = {
+  /** Clip source et piste audio (dans public/). */
+  videoSrc: string;
+  audioSrc: string;
+  /** Durée du clip source, en secondes (fixe la durée de la composition). */
+  durationInSeconds: number;
+  /** Zooms « punch-in » calés sur les temps forts. */
+  punches: Punch[];
+  /** Sur-titre facultatif au-dessus du titre (ex. qui parle). */
+  kicker?: string;
+  /** Taille du titre en px (122 par défaut) : à réduire pour les titres longs. */
+  titleSize?: number;
   /** Lignes du titre d'accroche, une entrée par ligne. */
   hookLines: string[];
   /** Mots du titre à surligner (comparaison insensible à la casse). */
@@ -32,6 +45,16 @@ export type HookReelProps = {
 };
 
 export const hookReelSchema: HookReelProps = {
+  videoSrc: 'source.mp4',
+  audioSrc: 'source-audio.wav',
+  durationInSeconds: 24.82,
+  punches: [
+    { at: 2.7, scale: 1.08 }, // « Facilement »
+    { at: 13.2, scale: 1.12 },
+    { at: 16.4, scale: 1.18 }, // gestes appuyés
+    { at: 19.3, scale: 1.12 },
+    { at: 23.3, scale: 1.06 },
+  ],
   hookLines: ['Écoutez bien', "ce qu'il dit", 'en direct'],
   highlight: ['dit', 'direct'],
   badge: 'En direct · IYAT TV',
@@ -56,20 +79,11 @@ const VIDEO_W = 1080;
 const VIDEO_H = Math.round((VIDEO_W * 9) / 16); // 608
 const VIDEO_TOP = 780;
 
-/** Petits zooms « punch-in » calés sur les moments où l'orateur s'anime. */
-const PUNCHES: { at: number; scale: number }[] = [
-  { at: 2.7, scale: 1.08 }, // « Facilement »
-  { at: 13.2, scale: 1.12 },
-  { at: 16.4, scale: 1.18 }, // gestes appuyés
-  { at: 19.3, scale: 1.12 },
-  { at: 23.3, scale: 1.06 },
-];
-
-const usePunchScale = () => {
+const usePunchScale = (punches: Punch[]) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   let scale = 1;
-  for (const p of PUNCHES) {
+  for (const p of punches) {
     const start = Math.round(p.at * fps);
     if (frame < start) continue;
     const s = spring({ frame: frame - start, fps, config: { damping: 14, stiffness: 180 } });
@@ -83,13 +97,14 @@ const usePunchScale = () => {
   return scale;
 };
 
-const Background: React.FC = () => {
+const Background: React.FC<{ src: string }> = ({ src }) => {
   const frame = useCurrentFrame();
-  const drift = interpolate(frame, [0, 750], [1.35, 1.5]);
+  const { durationInFrames } = useVideoConfig();
+  const drift = interpolate(frame, [0, durationInFrames], [1.35, 1.5]);
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <AbsoluteFill style={{ transform: `scale(${drift})`, filter: 'blur(42px) saturate(1.3)', opacity: 0.55 }}>
-        <OffthreadVideo src={staticFile('source.mp4')} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <OffthreadVideo src={staticFile(src)} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </AbsoluteFill>
       <AbsoluteFill
         style={{
@@ -103,7 +118,41 @@ const Background: React.FC = () => {
 
 const normalize = (w: string) => w.toLowerCase().replace(/[’]/g, "'");
 
-const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, highlight }) => {
+const Kicker: React.FC<{ text: string }> = ({ text }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const s = spring({ frame: frame - 2, fps, config: { damping: 16, stiffness: 140 } });
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 338,
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        opacity: s,
+        transform: `translateY(${(1 - s) * -24}px)`,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: 'Manrope',
+          fontWeight: 700,
+          fontSize: 46,
+          color: C.ink,
+          padding: '8px 28px',
+          borderRadius: 12,
+          background: C.blue,
+          boxShadow: `0 8px 30px ${C.navy}aa`,
+        }}
+      >
+        {text}
+      </div>
+    </div>
+  );
+};
+
+const HookTitle: React.FC<{ lines: string[]; highlight: string[]; top: number; size: number }> = ({ lines, highlight, top, size }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const hl = new Set(highlight.map(normalize));
@@ -116,7 +165,7 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
     <div
       style={{
         position: 'absolute',
-        top: 330,
+        top,
         left: 60,
         right: 60,
         display: 'flex',
@@ -143,7 +192,7 @@ const HookTitle: React.FC<{ lines: string[]; highlight: string[] }> = ({ lines, 
                   fontFamily: 'Archivo',
                   fontWeight: 900,
                   fontStretch: '75%',
-                  fontSize: 122,
+                  fontSize: size,
                   lineHeight: 1.02,
                   letterSpacing: '-0.01em',
                   textTransform: 'uppercase',
@@ -202,11 +251,11 @@ const Logo: React.FC = () => {
   );
 };
 
-const VideoCard: React.FC = () => {
+const VideoCard: React.FC<{ src: string; punches: Punch[] }> = ({ src, punches }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const enter = spring({ frame: frame - 2, fps, config: { damping: 16, stiffness: 120 } });
-  const punch = usePunchScale();
+  const punch = usePunchScale(punches);
   const glow = 0.35 + 0.25 * Math.sin((frame / fps) * Math.PI * 2 * 0.5);
 
   return (
@@ -226,7 +275,7 @@ const VideoCard: React.FC = () => {
       }}
     >
       <OffthreadVideo
-        src={staticFile('source.mp4')}
+        src={staticFile(src)}
         style={{ width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${punch})` }}
       />
     </div>
@@ -273,10 +322,10 @@ const Badge: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-const Waveform: React.FC = () => {
+const Waveform: React.FC<{ src: string }> = ({ src }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const audio = useAudioData(staticFile('source-audio.wav'));
+  const audio = useAudioData(staticFile(src));
   if (!audio) return null;
   const bars = visualizeAudio({ fps, frame, audioData: audio, numberOfSamples: 16, smoothing: true });
   const mirrored = [...bars.slice().reverse(), ...bars];
@@ -371,12 +420,13 @@ export const HookReel: React.FC<HookReelProps> = (props) => {
   return (
     <AbsoluteFill>
       <FontLoader />
-      <Background />
+      <Background src={props.videoSrc} />
       <Logo />
-      <HookTitle lines={props.hookLines} highlight={props.highlight} />
-      <VideoCard />
+      {props.kicker && <Kicker text={props.kicker} />}
+      <HookTitle lines={props.hookLines} highlight={props.highlight} top={props.kicker ? 418 : 330} size={props.titleSize ?? 122} />
+      <VideoCard src={props.videoSrc} punches={props.punches} />
       <Badge text={props.badge} />
-      <Waveform />
+      <Waveform src={props.audioSrc} />
       <Sequence durationInFrames={ctaFrom}>
         <Teaser text={props.teaser} />
       </Sequence>
