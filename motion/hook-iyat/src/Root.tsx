@@ -46,12 +46,12 @@ const siege: HookReelProps = {
     { at: 123.0, scale: 1.12 },
   ],
   kicker: 'Qui paie le siège ?',
-  hookLines: ['Le financement', 'du siège', 'de PAS-PAS'],
-  highlight: ['financement', 'PAS-PAS'],
+  hookLines: ['Le financement', 'du siège', 'de «\u202fPAS-PAS\u202f»'],
+  highlight: ['financement', '«\u202fPAS-PAS\u202f»'],
   titleSize: 104,
   badge: 'En direct · IYAT TV',
   teaser: 'La réponse en vidéo 👀',
-  cta: 'Suivez PAS-PAS',
+  cta: 'Suivez «\u202fPAS-PAS\u202f»',
 };
 
 export const RemotionRoot: React.FC = () => (
