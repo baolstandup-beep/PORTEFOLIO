@@ -21,3 +21,6 @@ Changer de clip : ajuster `DURATION` dans `src/Root.tsx` et les temps `PUNCHES` 
 Composition `SadioRoutes` : déposer le clip dans `public/sadio.mp4`, extraire `public/sadio-audio.wav` comme ci-dessus, puis
 `npx remotion render src/index.ts SadioRoutes out/sadio-routes.mp4`.
 Les textes, la taille du titre (`titleSize`) et les zooms (`punches`) se règlent dans `src/Root.tsx`.
+
+## Reel « Financement du siège »
+Composition `SiegeFinancement` (134,3 s) : clip `public/siege.mp4`, audio `public/siege-audio.wav`.

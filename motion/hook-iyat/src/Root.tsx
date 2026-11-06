@@ -31,6 +31,29 @@ const sadio: HookReelProps = {
   cta: 'Suivez PAS-PAS',
 };
 
+const siege: HookReelProps = {
+  videoSrc: 'siege.mp4',
+  audioSrc: 'siege-audio.wav',
+  durationInSeconds: 134.3,
+  // Pics d'énergie de la voix (fenêtres de 0,5 s, espacés de 12 s minimum)
+  punches: [
+    { at: 20.0, scale: 1.1 },
+    { at: 38.5, scale: 1.12 },
+    { at: 50.5, scale: 1.1 },
+    { at: 66.5, scale: 1.14 },
+    { at: 88.5, scale: 1.12 },
+    { at: 109.0, scale: 1.14 },
+    { at: 123.0, scale: 1.12 },
+  ],
+  kicker: 'Qui paie le siège ?',
+  hookLines: ['Le financement', 'du siège', 'de PAS-PAS'],
+  highlight: ['financement', 'PAS-PAS'],
+  titleSize: 104,
+  badge: 'En direct · IYAT TV',
+  teaser: 'La réponse en vidéo 👀',
+  cta: 'Suivez PAS-PAS',
+};
+
 export const RemotionRoot: React.FC = () => (
   <>
     <Composition
@@ -51,6 +74,16 @@ export const RemotionRoot: React.FC = () => (
       width={1080}
       height={1920}
       defaultProps={sadio}
+      calculateMetadata={fromSource}
+    />
+    <Composition
+      id="SiegeFinancement"
+      component={HookReel}
+      durationInFrames={Math.ceil(siege.durationInSeconds * FPS)}
+      fps={FPS}
+      width={1080}
+      height={1920}
+      defaultProps={siege}
       calculateMetadata={fromSource}
     />
   </>
