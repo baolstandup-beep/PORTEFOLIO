@@ -11,15 +11,15 @@ export const PARTNER_TYPES = [
 /** Offres du dossier officiel GRAPHIA (montants indicatifs). */
 export const PACKS = [
   {
-    value: 'or', name: 'Pack Or', tag: 'Partenaire majeur', amount: 'À partir de 1 000 000 FCFA',
+    value: 'or', name: 'Pack Or', tag: 'Partenaire majeur', amount: 'À partir de 300 000 FCFA',
     perks: ['Statut de partenaire majeur', 'Logo en position prioritaire sur les principaux supports', 'Visibilité aux cérémonies d’ouverture et de clôture', 'Mention dans les principales communications', 'Possibilité de prise de parole', 'Stand ou espace partenaire, selon les possibilités', 'Visibilité sur les contenus photo et vidéo'],
   },
   {
-    value: 'argent', name: 'Pack Argent', tag: 'Partenaire officiel', amount: '500 000 à 999 000 FCFA',
+    value: 'argent', name: 'Pack Argent', tag: 'Partenaire officiel', amount: '200 000 à 299 000 FCFA',
     perks: ['Logo sur les supports officiels', 'Mention sur les communications digitales', 'Visibilité pendant le Bootcamp', 'Présence lors de la cérémonie finale', 'Participation aux activités de networking'],
   },
   {
-    value: 'bronze', name: 'Pack Bronze', tag: 'Partenaire soutien', amount: '200 000 à 499 000 FCFA',
+    value: 'bronze', name: 'Pack Bronze', tag: 'Partenaire soutien', amount: '100 000 à 199 000 FCFA',
     perks: ['Logo sur une sélection de supports', 'Mention sur certaines publications digitales', 'Reconnaissance lors de la clôture', 'Association à une action de soutien aux compétences créatives'],
   },
   {
