@@ -145,3 +145,23 @@ export async function notify(c: Recipient, type: NotificationType, adminId: stri
   }
   return results;
 }
+
+export const STATUS_NOTIFICATION: Record<string, NotificationType | undefined> = {
+  preselectionne: 'preselection',
+  retenu: 'selection',
+  non_retenu: 'non_selection',
+};
+
+/** Envoi automatique au changement de statut (désactivable avec AUTO_NOTIFY_STATUS=false). */
+export function autoNotifyEnabled() {
+  return process.env.AUTO_NOTIFY_STATUS !== 'false' && (whatsappConfigured() || emailConfigured());
+}
+
+/** N'envoie pas deux fois le même message à un candidat. */
+export async function alreadySent(candidateId: string, type: NotificationType) {
+  const { rows } = await query<{ n: number }>(
+    `SELECT count(*)::int AS n FROM notifications WHERE candidate_id = $1 AND notification_type = $2 AND status = 'sent'`,
+    [candidateId, type],
+  );
+  return rows[0].n > 0;
+}

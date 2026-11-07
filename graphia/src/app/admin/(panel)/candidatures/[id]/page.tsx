@@ -8,7 +8,7 @@ import { buttonClass, Card } from '@/components/ui';
 import { can, requireAdminPage } from '@/lib/auth';
 import { candidateToValues } from '@/lib/candidate-values';
 import { getAttachments, getCandidate, getNotifications, getStats } from '@/lib/candidates';
-import { emailConfigured, NOTIFICATION_LABELS, whatsappConfigured, type NotificationType } from '@/lib/notifications';
+import { autoNotifyEnabled, emailConfigured, NOTIFICATION_LABELS, whatsappConfigured, type NotificationType } from '@/lib/notifications';
 import { formatPhone } from '@/lib/phone';
 import { formatDate } from '@/lib/utils';
 
@@ -101,7 +101,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ id: 
         <aside className="space-y-6">
           <Card className="p-5">
             <h2 className="mb-3 font-bold">Décision</h2>
-            <StatusControl id={c.id} status={c.status} canEdit={can(admin, 'status')} retenus={stats.retenu} max={stats.max} />
+            <StatusControl id={c.id} status={c.status} canEdit={can(admin, 'status')} retenus={stats.retenu} max={stats.max} autoNotify={autoNotifyEnabled()} />
           </Card>
           <Card className="p-5">
             <h2 className="mb-3 font-bold">Évaluation</h2>

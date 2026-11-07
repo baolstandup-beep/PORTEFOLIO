@@ -97,12 +97,26 @@ Rien n'est simulé : sans service configuré, chaque tentative est enregistrée 
 
 **E-mail (Resend)** : créer un compte sur resend.com, vérifier un domaine, puis définir `RESEND_API_KEY` et `EMAIL_FROM` (ex. `GRAPHIA <candidatures@votre-domaine.com>`). Seuls les candidats ayant saisi un e-mail le reçoivent.
 
-**WhatsApp (WhatsApp Business Cloud API de Meta)** : WhatsApp interdit d'écrire en premier avec un texte libre ; il faut des **modèles de message approuvés**.
-1. Créer une app Meta Business, ajouter WhatsApp, enregistrer un numéro professionnel.
-2. Dans le WhatsApp Manager, créer 4 modèles (catégorie « Utility », langue « French ») avec deux variables : `{{1}}` = prénom, `{{2}}` = numéro de candidature. Exemple : « Bonjour {{1}}, votre candidature GRAPHIA ({{2}}) a bien été reçue… ».
-3. Définir `WHATSAPP_TOKEN` (jeton permanent d'utilisateur système), `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_TEMPLATE_LANG=fr` et les noms des modèles : `WHATSAPP_TEMPLATE_CONFIRMATION`, `WHATSAPP_TEMPLATE_PRESELECTION`, `WHATSAPP_TEMPLATE_SELECTION`, `WHATSAPP_TEMPLATE_NON_SELECTION`.
+**Envois automatiques** : la confirmation part à l'inscription ; les messages de présélection, sélection et non-sélection partent **automatiquement au changement de statut** (une confirmation est demandée avant), une seule fois par type et par candidat. Pour revenir à l'envoi manuel : `AUTO_NOTIFY_STATUS=false`.
 
-L'approbation des modèles par Meta prend de quelques minutes à quelques jours.
+**WhatsApp (WhatsApp Business Cloud API de Meta)** — WhatsApp interdit d'écrire en premier en texte libre : il faut des **modèles approuvés** par Meta.
+
+1. Sur business.facebook.com, créer (ou utiliser) le compte Business « Baol Up Graphic ».
+2. Sur developers.facebook.com : **Créer une app** → type « Business » → ajouter le produit **WhatsApp**.
+3. Dans WhatsApp → Configuration de l'API : **ajouter un numéro de téléphone** professionnel. Ce numéro ne doit pas être utilisé dans l'application WhatsApp du téléphone (prendre une puce dédiée), puis le vérifier par SMS. Noter son **Phone number ID**.
+4. Créer un **jeton permanent** : Paramètres de l'entreprise → Utilisateurs système → ajouter un utilisateur système (Admin) → lui assigner l'app et le compte WhatsApp → **Générer un jeton** avec les permissions `whatsapp_business_messaging` et `whatsapp_business_management`.
+5. Dans le WhatsApp Manager → **Modèles de message** → créer 4 modèles, catégorie **Utilitaire**, langue **Français**, avec deux variables `{{1}}` (prénom) et `{{2}}` (numéro de candidature) :
+
+| Nom du modèle | Texte proposé |
+|---|---|
+| `graphia_confirmation` | Bonjour {{1}}, nous avons bien reçu votre candidature au Bootcamp GRAPHIA (n° {{2}}). Elle sera étudiée par notre équipe ; les candidats retenus seront contactés. L'envoi ne vaut pas sélection. |
+| `graphia_preselection` | Bonjour {{1}}, bonne nouvelle : votre candidature GRAPHIA (n° {{2}}) est présélectionnée. Notre équipe vous contactera prochainement pour la suite. |
+| `graphia_selection` | Félicitations {{1}} ! Vous êtes retenu(e) pour le Bootcamp GRAPHIA (n° {{2}}). Nous vous enverrons les dates et informations pratiques. Merci de confirmer votre présence en répondant à ce message. |
+| `graphia_non_selection` | Bonjour {{1}}, merci pour votre candidature GRAPHIA (n° {{2}}). Les places étant limitées à 50, elle n'a pas été retenue pour cette édition. Continuez à créer, et à bientôt pour la prochaine. |
+
+6. Dans Vercel → projet → Settings → Environment Variables (Production), ajouter : `WHATSAPP_TOKEN` (type Sensitive), `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_TEMPLATE_LANG=fr`, `WHATSAPP_TEMPLATE_CONFIRMATION=graphia_confirmation`, `WHATSAPP_TEMPLATE_PRESELECTION=graphia_preselection`, `WHATSAPP_TEMPLATE_SELECTION=graphia_selection`, `WHATSAPP_TEMPLATE_NON_SELECTION=graphia_non_selection`, puis **Redeploy**.
+
+L'approbation des modèles prend de quelques minutes à quelques jours. Meta offre un quota de conversations « utilitaires » gratuites puis facture à l'usage : vérifier la grille tarifaire pour le Sénégal et ajouter un moyen de paiement dans le WhatsApp Manager. Chaque envoi (réussi ou en échec, avec l'erreur de Meta) apparaît dans l'historique de la fiche candidat.
 
 ## Déploiement (Vercel + PostgreSQL hébergé)
 

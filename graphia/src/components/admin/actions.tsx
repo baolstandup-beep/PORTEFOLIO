@@ -26,7 +26,7 @@ function Msg({ kind, text }: { kind: 'ok' | 'err'; text: string }) {
   );
 }
 
-export function StatusControl({ id, status, canEdit, retenus, max }: { id: string; status: string; canEdit: boolean; retenus: number; max: number }) {
+export function StatusControl({ id, status, canEdit, retenus, max, autoNotify = false }: { id: string; status: string; canEdit: boolean; retenus: number; max: number; autoNotify?: boolean }) {
   const router = useRouter();
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null);
@@ -38,11 +38,18 @@ export function StatusControl({ id, status, canEdit, retenus, max }: { id: strin
   };
   async function change(s: string) {
     if (s === status) return;
+    const label = STATUSES.find((x) => x.value === s)?.label ?? s;
+    if (autoNotify && s !== 'en_attente' && !window.confirm(`Passer en « ${label} » ?\n\nLe candidat recevra automatiquement le message correspondant (WhatsApp / e-mail). Cette action ne peut pas être annulée.`)) return;
     setBusy(s);
     setMsg(null);
     try {
-      await call(`/api/admin/candidates/${id}/status`, 'POST', { status: s });
-      setMsg({ kind: 'ok', text: 'Statut mis à jour. Pensez à notifier le candidat si nécessaire.' });
+      const data = await call(`/api/admin/candidates/${id}/status`, 'POST', { status: s });
+      setMsg({
+        kind: 'ok',
+        text: data.notified
+          ? 'Statut mis à jour. Le message au candidat part automatiquement (résultat dans l’historique des notifications).'
+          : 'Statut mis à jour. Aucun envoi automatique : contactez le candidat si nécessaire.',
+      });
       router.refresh();
     } catch (e) {
       setMsg({ kind: 'err', text: (e as Error).message });
