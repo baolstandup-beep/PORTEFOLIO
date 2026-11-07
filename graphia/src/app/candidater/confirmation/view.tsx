@@ -78,7 +78,7 @@ export function ConfirmationView() {
       {data.recap && (
         <section>
           <div className="mb-4 hidden items-center justify-between print:flex">
-            <Logo className="text-2xl" />
+            <Logo />
             <span className="text-sm">Récapitulatif de candidature · {data.applicationNumber}</span>
           </div>
           <h2 className="mb-4 text-xl font-bold">Récapitulatif de vos réponses</h2>

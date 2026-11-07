@@ -16,7 +16,7 @@ export function SiteHeader({ cta = true }: { cta?: boolean }) {
     <header className="no-print sticky top-0 z-40 border-b border-ink/5 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="text-2xl" aria-label="GRAPHIA, accueil">
-          <Logo />
+          <Logo priority />
         </Link>
         <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (

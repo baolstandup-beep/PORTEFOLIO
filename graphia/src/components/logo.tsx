@@ -1,19 +1,30 @@
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-/** Logotype GRAPHIA d'après l'affiche officielle : « g » vert, « RAPH » noir, « IA » sur pavé jaune. */
-export function Logo({ className, light = false, tagline = false }: { className?: string; light?: boolean; tagline?: boolean }) {
-  return (
-    <span className={cn('inline-flex flex-col leading-none', className)} aria-label="GRAPHIA">
-      <span className="inline-flex items-end font-black tracking-tight" aria-hidden>
-        <span className="text-[1.45em] leading-[0.8] text-brand">g</span>
-        <span className={cn('text-[1em]', light ? 'text-white' : 'text-ink')}>RAPH</span>
-        <span className="ml-0.5 rounded-[3px] bg-sun px-1 text-[1em] text-ink">IA</span>
-      </span>
-      {tagline && (
-        <span className={cn('mt-1 text-[0.36em] font-semibold tracking-wide', light ? 'text-white/80' : 'text-brand')} aria-hidden>
-          Créer · Innover · Transformer
-        </span>
-      )}
-    </span>
+const SIZES = { sm: 'h-9', md: 'h-11', lg: 'h-16', xl: 'h-20' } as const;
+
+/** Logo officiel GRAPHIA (public/logo-graphia.png). Sur fond sombre (`light`), posé sur un pavé blanc. */
+export function Logo({
+  className,
+  light = false,
+  size = 'md',
+  priority = false,
+}: {
+  className?: string;
+  light?: boolean;
+  size?: keyof typeof SIZES;
+  priority?: boolean;
+}) {
+  const img = (
+    <Image
+      src="/logo-graphia.png"
+      alt="GRAPHIA — Créer, Innover, Transformer"
+      width={569}
+      height={175}
+      priority={priority}
+      className={cn(SIZES[size], 'w-auto', !light && className)}
+    />
   );
+  if (!light) return img;
+  return <span className={cn('inline-flex rounded-xl bg-white px-2.5 py-1.5', className)}>{img}</span>;
 }

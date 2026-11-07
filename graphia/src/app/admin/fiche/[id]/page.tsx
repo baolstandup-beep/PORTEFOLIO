@@ -24,7 +24,7 @@ export default async function FichePage({ params }: { params: Promise<{ id: stri
       </div>
       <header className="mb-6 flex items-start justify-between gap-4 border-b-4 border-brand pb-4">
         <div>
-          <Logo className="text-3xl" />
+          <Logo size="lg" />
           <p className="mt-2 text-xs uppercase tracking-wider text-ink/55">Fiche de candidature · document confidentiel</p>
         </div>
         <div className="text-right">

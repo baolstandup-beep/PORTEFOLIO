@@ -15,7 +15,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
           <div className="flex items-center gap-6">
             <Link href="/admin" className="text-xl" aria-label="Tableau de bord">
-              <Logo light />
+              <Logo light size="sm" />
             </Link>
             <nav className="flex items-center gap-1 text-sm" aria-label="Administration">
               <Link href="/admin" className="inline-flex items-center gap-2 rounded-full px-3 py-2 font-medium text-white/75 hover:bg-white/10 hover:text-white">

@@ -13,7 +13,7 @@ export default async function LoginPage() {
     <main className="flex min-h-dvh items-center justify-center bg-ink px-4 py-10">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <Logo light className="text-4xl" />
+          <Logo light size="xl" priority />
           <p className="mt-3 text-sm text-white/60">Espace organisation · accès réservé</p>
         </div>
         <div className="rounded-3xl bg-white p-6 shadow-2xl sm:p-8">

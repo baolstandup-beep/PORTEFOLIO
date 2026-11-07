@@ -9,7 +9,7 @@ export function SiteFooter() {
     <footer className="no-print bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div className="space-y-4">
-          <Logo light tagline className="text-3xl" />
+          <Logo light size="lg" />
           <p className="max-w-xs text-sm leading-relaxed text-white/65">
             Bootcamp de renforcement de capacités en infographie et intelligence artificielle, 80 % gratuit.
           </p>
