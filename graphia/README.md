@@ -59,6 +59,10 @@ Tables : `candidates`, `candidate_attachments`, `administrators`, `notifications
 
 ## Créer le premier administrateur
 
+**Sur Vercel, sans ligne de commande** : définir `ADMIN_BOOTSTRAP_EMAIL` et `ADMIN_BOOTSTRAP_PASSWORD` (12 caractères min., et `ADMIN_BOOTSTRAP_NAME` si besoin) dans les variables du projet. À chaque déploiement, `scripts/migrate.mjs` applique le schéma puis `scripts/bootstrap-admin.mjs` crée ce compte **uniquement si aucun administrateur n'existe**. Se connecter, puis changer le mot de passe dans « Mon compte » (clic sur son nom en haut à droite).
+
+**En ligne de commande** :
+
 ```bash
 npm run admin:create -- --email vous@exemple.com --name "Prénom Nom" --role superadmin
 ```

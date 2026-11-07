@@ -4,8 +4,13 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import pg from 'pg';
 
-const url = process.env.DATABASE_URL;
+// Connexion directe de préférence (Neon fournit DATABASE_URL_UNPOOLED)
+const url = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
 if (!url) {
+  if (process.env.VERCEL) {
+    console.warn('[migrate] DATABASE_URL absent : migrations ignorées pour ce déploiement.');
+    process.exit(0);
+  }
   console.error('DATABASE_URL manquant (voir .env.example).');
   process.exit(1);
 }

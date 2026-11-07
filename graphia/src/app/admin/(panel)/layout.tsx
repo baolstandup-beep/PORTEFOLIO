@@ -27,10 +27,10 @@ export default async function PanelLayout({ children }: { children: React.ReactN
             </nav>
           </div>
           <div className="flex items-center gap-3">
-            <div className="hidden text-right text-xs leading-tight md:block">
+            <Link href="/admin/compte" className="hidden rounded-lg px-2 py-1 text-right text-xs leading-tight hover:bg-white/10 md:block" title="Mon compte">
               <p className="font-semibold">{admin.name}</p>
               <p className="text-white/55">{ROLE_LABELS[admin.role]}</p>
-            </div>
+            </Link>
             <LogoutButton />
           </div>
         </div>
