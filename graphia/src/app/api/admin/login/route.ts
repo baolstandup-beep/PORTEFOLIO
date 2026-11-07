@@ -12,6 +12,15 @@ export const runtime = 'nodejs';
 const DUMMY_HASH = bcrypt.hashSync('graphia-dummy-password', 12);
 
 export async function POST(req: Request) {
+  try {
+    return await handle(req);
+  } catch (err) {
+    console.error('[admin] connexion', err);
+    return jsonError('Service momentanément indisponible (base de données injoignable).', 503);
+  }
+}
+
+async function handle(req: Request) {
   if (!sameOrigin(req)) return jsonError('Requête refusée.', 403);
   const parsed = loginSchema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return jsonError('Identifiant ou mot de passe incorrect.', 400);

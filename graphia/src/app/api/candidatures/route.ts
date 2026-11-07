@@ -16,6 +16,19 @@ const MIN_FILL_MS = 15_000; // un humain met plus de 15 s à remplir 6 étapes
 type Created = { id: string; application_number: string; created_at: Date; first_name: string; last_name: string };
 
 export async function POST(req: Request) {
+  try {
+    return await handle(req);
+  } catch (err) {
+    // Base injoignable ou non configurée : message clair, les réponses restent sur l'appareil.
+    console.error('[candidature] erreur serveur', err);
+    return jsonError(
+      "Le service d'inscription est momentanément indisponible. Vos réponses sont conservées sur cet appareil : réessayez dans quelques minutes.",
+      503,
+    );
+  }
+}
+
+async function handle(req: Request) {
   if (!sameOrigin(req)) return jsonError('Requête refusée.', 403);
   if (applicationsClosed()) return jsonError('Les candidatures sont closes.', 410);
 
