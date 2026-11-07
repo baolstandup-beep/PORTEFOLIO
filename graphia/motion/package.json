@@ -1,0 +1,13 @@
+{
+  "name": "graphia-motion",
+  "private": true,
+  "description": "Séquences HyperFrames du site GRAPHIA (rendues en vidéo dans ../public/motion)",
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "gsap": "^3.15.0",
+    "hyperframes": "0.9.20"
+  }
+}

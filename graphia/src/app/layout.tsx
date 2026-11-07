@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { MotionRoot } from '@/components/motion/motion-root';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -19,8 +20,19 @@ export const viewport: Viewport = { themeColor: '#078D43', width: 'device-width'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
-      <body className="min-h-dvh antialiased">{children}</body>
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        {/* Active les animations avant le premier rendu (évite le clignotement) ; rien si l'utilisateur réduit les animations */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}",
+          }}
+        />
+      </head>
+      <body className="min-h-dvh antialiased">
+        {children}
+        <MotionRoot />
+      </body>
     </html>
   );
 }

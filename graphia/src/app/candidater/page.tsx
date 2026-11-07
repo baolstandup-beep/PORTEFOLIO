@@ -16,7 +16,7 @@ export default function CandidaterPage() {
       <SiteHeader cta={false} />
       <main className="bg-gradient-to-b from-mist to-white">
         <div className="mx-auto max-w-3xl px-4 pb-20 pt-8 sm:px-6 sm:pt-12">
-          <header className="mb-8">
+          <header className="hero-in mb-8">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand">Candidature · GRAPHIA</p>
             <h1 className="mt-2 text-3xl font-black leading-tight sm:text-4xl">Rejoignez les 50 talents de GRAPHIA</h1>
             <ul className="mt-5 flex flex-wrap gap-2 text-sm">

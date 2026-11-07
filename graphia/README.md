@@ -138,6 +138,13 @@ npm run db:backup
 
 Écrit un fichier `backups/graphia-<date>.dump` (nécessite `pg_dump`). Restauration : `pg_restore --clean --no-owner -d "$DATABASE_URL" <fichier>`. Copier les sauvegardes hors du serveur. Les hébergeurs managés (Neon, Supabase) proposent aussi des sauvegardes automatiques : activez-les.
 
+## Motion design
+
+- `src/components/motion/` : un module par type d'animation — `motion-root` (un seul IntersectionObserver pour les apparitions au défilement), `words` (titres mot à mot), `count-up` (compteurs), `parallax` (parallaxe et inclinaison au pointeur), `programme-gallery` (galerie des 5 jours + grand format), `community-network` (réseau SVG animé), `motion-video` (séquences HyperFrames, chargées à l'approche de l'écran et mises en pause hors écran).
+- Les effets sont déclarés dans le HTML par attribut (`data-reveal="up|scale|left|right|blur|mask"`, `--d` pour le délai) et animés en CSS (`globals.css`, transform/opacity uniquement).
+- `prefers-reduced-motion` : tout est affiché immédiatement, sans parallaxe ni vidéo (image fixe à la place). Sans JavaScript, rien n'est masqué.
+- Séquences vidéo : voir `motion/README.md` (HyperFrames).
+
 ## Sécurité
 
 - Pages et API `/admin` protégées deux fois : par le proxy (jeton signé) puis par une vérification du compte en base à chaque requête (rôle, session révoquée).

@@ -43,7 +43,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       )}
 
       {/* Compteur de places */}
-      <Card className="overflow-hidden">
+      <Card data-reveal="scale" className="overflow-hidden">
         <div className="grid gap-6 bg-ink p-6 text-white sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-sun">Participants retenus</p>
@@ -67,7 +67,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
 
       <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-6">
         {cards.map((c) => (
-          <Link key={c.label} href={c.href} className="group rounded-2xl border border-ink/8 bg-white p-4 shadow-card transition-transform hover:-translate-y-0.5 sm:p-5">
+          <Link key={c.label} href={c.href} data-reveal="up" style={{ ['--d' as string]: cards.indexOf(c) * 60 }} className="group rounded-2xl border border-ink/8 bg-white p-4 shadow-card transition-transform hover:-translate-y-0.5 sm:p-5">
             <c.icon className="h-5 w-5 text-brand" />
             <p className="mt-3 text-3xl font-black tabular-nums">{c.value}</p>
             <p className="mt-1 text-sm text-ink/60">{c.label}</p>

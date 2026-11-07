@@ -27,6 +27,7 @@
 }
 
 @layer base {
+  html, body { overflow-x: clip; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); }
   ::selection { background: var(--color-sun); color: var(--color-ink); }
@@ -44,3 +45,88 @@
   .print-break { break-inside: avoid; }
   @page { margin: 14mm; }
 }
+
+/* ───────────────────────── Motion design ─────────────────────────
+   Les éléments [data-reveal] ne sont masqués que si le JS de mouvement est actif
+   (classe .motion posée sur <html>) : sans JS ou avec « réduire les animations », tout reste visible. */
+@layer components {
+  .motion [data-reveal]:not([data-shown]) { opacity: 0; }
+  .motion [data-reveal='up']:not([data-shown]) { transform: translateY(28px); }
+  .motion [data-reveal='scale']:not([data-shown]) { transform: scale(0.92); }
+  .motion [data-reveal='left']:not([data-shown]) { transform: translateX(-36px); }
+  .motion [data-reveal='right']:not([data-shown]) { transform: translateX(36px); }
+  .motion [data-reveal='blur']:not([data-shown]) { filter: blur(10px); }
+  /* Révélation par rideau aux couleurs de la marque (l'élément reste visible pour l'IntersectionObserver) */
+  .motion [data-reveal='mask'] { position: relative; }
+  .motion [data-reveal='mask']:not([data-shown]) { opacity: 1; }
+  .motion [data-reveal='mask']::after {
+    content: ''; position: absolute; inset: 0; z-index: 5; pointer-events: none;
+    background: linear-gradient(180deg, var(--color-brand), var(--color-brand-dark));
+    transform-origin: bottom; transition: transform 1.1s cubic-bezier(0.7, 0, 0.2, 1) 0.15s;
+  }
+  .motion [data-reveal='mask'][data-shown]::after { transform: scaleY(0); }
+  .motion [data-reveal] {
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.7s ease-out, clip-path 1s cubic-bezier(0.7, 0, 0.2, 1);
+    transition-delay: calc(var(--d, 0) * 1ms);
+  }
+
+  /* Révélation mot par mot d'un titre */
+  .word { display: inline-block; }
+  .motion [data-words]:not([data-shown]) .word { opacity: 0; transform: translateY(0.45em); filter: blur(6px); }
+  .motion [data-words] .word {
+    transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease-out;
+    transition-delay: calc(var(--d, 0) * 1ms + var(--i) * 70ms);
+  }
+
+  /* Hero : entrée au chargement (sans attendre le défilement) */
+  .hero-in { animation: hero-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(var(--d, 0) * 1ms); }
+  .hero-word { display: inline-block; animation: hero-word 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(120ms + var(--i) * 90ms); }
+
+  /* Fonds animés : uniquement transform/opacity (composités par le GPU) */
+  .blob { position: absolute; border-radius: 9999px; filter: blur(60px); opacity: 0.55; will-change: transform; animation: drift 18s ease-in-out infinite alternate; }
+
+  /* Micro-interactions */
+  .btn-shine { position: relative; overflow: hidden; isolation: isolate; }
+  .btn-shine::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+    transform: translateX(-120%); transition: transform 0.7s ease;
+  }
+  .btn-shine:hover::after { transform: translateX(120%); }
+  .lift { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease; }
+  .lift:hover { transform: translateY(-6px); box-shadow: 0 22px 40px -22px rgb(8 8 8 / 0.35); }
+
+  /* Réseau de la communauté (SVG) */
+  .net-line { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+  [data-shown] .net-line { stroke-dashoffset: 0; transition: stroke-dashoffset 1.2s cubic-bezier(0.65, 0, 0.35, 1); transition-delay: calc(var(--i) * 90ms); }
+  .net-node { opacity: 0; transform: scale(0.4); transform-box: fill-box; transform-origin: center; }
+  [data-shown] .net-node { opacity: 1; transform: scale(1); transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); transition-delay: calc(400ms + var(--i) * 90ms); }
+  .net-pulse { animation: pulse 2.8s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+
+  /* Étapes du parcours */
+
+  /* FAQ : ouverture fluide (navigateurs récents) */
+  details::details-content { transition: content-visibility 0.35s allow-discrete, height 0.35s ease; height: 0; overflow: clip; }
+  details[open]::details-content { height: auto; }
+}
+
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+}
+
+@keyframes hero-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes hero-word { from { opacity: 0; transform: translateY(0.5em) rotate(2deg); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(40px, -30px, 0) scale(1.15); } }
+@keyframes float-y { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+@keyframes pulse { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(2.2); } }
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob, .net-pulse, .float { animation: none !important; }
+  .hero-in, .hero-word { animation: none !important; }
+}
+
+/* Hors @layer : doit l'emporter sur les utilitaires Tailwind de la pastille */
+.step-dot { transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+[data-shown] > .step-dot { transition-delay: calc(var(--d, 0) * 1ms + 250ms); background: var(--color-brand); border-color: var(--color-brand); color: #fff; transform: scale(1.08); }
