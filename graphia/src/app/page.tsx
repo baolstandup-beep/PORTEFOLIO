@@ -212,10 +212,10 @@ export default function HomePage() {
               <span aria-hidden className="float absolute -right-3 top-[52%] z-10 hidden rounded-2xl bg-ink px-3 py-2 text-xs font-bold text-sun shadow-xl sm:block" style={{ animation: 'float-y 3.8s ease-in-out -1.2s infinite alternate', transform: 'translateZ(60px)' }}>Design · Branding</span>
               <span aria-hidden className="float absolute -left-2 bottom-[10%] z-10 hidden rounded-2xl bg-sun px-3 py-2 text-xs font-bold shadow-xl sm:block" style={{ animation: 'float-y 3.5s ease-in-out -2s infinite alternate', transform: 'translateZ(50px)' }}>Portfolio pro</span>
               <Image
-                src="/affiche-graphia-2026.webp"
-                alt="Affiche officielle GRAPHIA : Un nouveau chapitre s’ouvre. 50 talents, 5 jours, 1 ambition."
-                width={819}
-                height={1024}
+                src="/visuel-graphia.webp"
+                alt="Visuel GRAPHIA : une main tient la barre d’outils de Photoshop, entourée des logos Illustrator, Photoshop, ChatGPT, Claude Code, Gemini et Veo 3, devant le minaret de la Grande Mosquée de Touba."
+                width={1608}
+                height={2000}
                 priority
                 sizes="(min-width: 768px) 40vw, 90vw"
                 className="h-auto w-full rounded-3xl shadow-2xl shadow-ink/20"
