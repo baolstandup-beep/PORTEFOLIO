@@ -52,7 +52,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-white/50 sm:px-6">
-          © 2026 {site.organizer}. GRAPHIA 2026 — Créer · Innover · Transformer.
+          © {new Date().getFullYear()} {site.organizer}. GRAPHIA — Créer · Innover · Transformer.
         </p>
       </div>
     </footer>

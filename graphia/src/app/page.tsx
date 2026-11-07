@@ -92,7 +92,7 @@ const CONDITIONS = [
 const FAQ = [
   {
     q: 'La formation est-elle vraiment gratuite ?',
-    a: 'Oui. La participation à GRAPHIA 2026 est 100 % gratuite pour les 50 participants retenus. Aucun paiement ne vous sera demandé pour candidater ou participer.',
+    a: 'Oui. La participation à GRAPHIA est 100 % gratuite pour les 50 participants retenus. Aucun paiement ne vous sera demandé pour candidater ou participer.',
   },
   {
     q: 'Est-ce que je suis sélectionné dès que j’envoie le formulaire ?',
@@ -116,7 +116,7 @@ const FAQ = [
   },
   {
     q: 'Que deviennent mes données personnelles ?',
-    a: 'Elles servent uniquement à la gestion des candidatures GRAPHIA 2026, sont accessibles seulement à l’équipe d’organisation et ne sont jamais publiées ni revendues.',
+    a: 'Elles servent uniquement à la gestion des candidatures GRAPHIA, sont accessibles seulement à l’équipe d’organisation et ne sont jamais publiées ni revendues.',
   },
 ];
 
@@ -140,7 +140,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 pt-10 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:pb-20 md:pt-16">
             <div className="animate-rise">
               <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-ink/70 shadow-sm ring-1 ring-ink/5">
-                <span className="h-2 w-2 rounded-full bg-brand" /> Bootcamp Infographie &amp; IA · Novembre 2026
+                <span className="h-2 w-2 rounded-full bg-brand" /> Bootcamp Infographie &amp; IA · Touba et Mbacké
               </p>
               <h1 className="text-[2.6rem] font-black uppercase leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
                 Un nouveau <span className="text-brand">chapitre</span> s’ouvre.
@@ -164,7 +164,7 @@ export default function HomePage() {
               <div className="absolute -inset-3 -z-10 rotate-2 rounded-[2rem] bg-brand/10" />
               <Image
                 src="/affiche-graphia-2026.webp"
-                alt="Affiche officielle GRAPHIA 2026 : Un nouveau chapitre s’ouvre. 50 talents, 5 jours, 1 ambition."
+                alt="Affiche officielle GRAPHIA : Un nouveau chapitre s’ouvre. 50 talents, 5 jours, 1 ambition."
                 width={819}
                 height={1024}
                 priority
@@ -205,7 +205,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4 text-ink/75 sm:text-lg">
               <p>
-                GRAPHIA 2026 est un programme de renforcement de capacités conçu pour accompagner les infographistes,
+                GRAPHIA est un programme de renforcement de capacités conçu pour accompagner les infographistes,
                 designers et jeunes créatifs de Touba et Mbacké face aux transformations rapides de la création graphique
                 et du numérique.
               </p>
@@ -217,7 +217,7 @@ export default function HomePage() {
               <ul className="grid gap-3 pt-2 text-[15px] sm:grid-cols-2">
                 {[
                   { i: MapPin, t: 'Touba, Sénégal' },
-                  { i: CalendarDays, t: 'Novembre 2026 · 5 jours' },
+                  { i: CalendarDays, t: '5 jours de formation' },
                   { i: Users, t: '50 participants' },
                   { i: Gift, t: 'Participation gratuite' },
                 ].map(({ i: I, t }) => (

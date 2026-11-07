@@ -31,7 +31,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-2xl font-extrabold sm:text-3xl">Bonjour {admin.name.split(' ')[0]}</h1>
-          <p className="text-ink/60">Suivi des candidatures GRAPHIA 2026</p>
+          <p className="text-ink/60">Suivi des candidatures GRAPHIA</p>
         </div>
         <AutoRefresh />
       </div>

@@ -48,7 +48,7 @@ export default async function FichePage({ params }: { params: Promise<{ id: stri
           <p className="whitespace-pre-line">{c.admin_notes}</p>
         </section>
       )}
-      <p className="mt-8 text-center text-xs text-ink/45">Imprimé le {formatDate(new Date())} · GRAPHIA 2026 · Baol Up Graphic</p>
+      <p className="mt-8 text-center text-xs text-ink/45">Imprimé le {formatDate(new Date())} · GRAPHIA · Baol Up Graphic</p>
     </main>
   );
 }

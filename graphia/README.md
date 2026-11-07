@@ -1,6 +1,6 @@
-# GRAPHIA 2026 — Plateforme de candidature
+# GRAPHIA — Plateforme de candidature
 
-Site public (présentation + formulaire en 6 étapes) et espace d'administration sécurisé pour sélectionner les 50 participants du Bootcamp GRAPHIA 2026 (Baol Up Graphic, Touba).
+Site public (présentation + formulaire en 6 étapes) et espace d'administration sécurisé pour sélectionner les 50 participants du Bootcamp GRAPHIA (Baol Up Graphic, Touba).
 
 **Stack** : Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · PostgreSQL (`pg`, requêtes paramétrées) · Zod · jose (sessions JWT) · bcrypt · ExcelJS · jsPDF.
 
@@ -55,7 +55,7 @@ Appliquer le schéma (idempotent, à relancer après chaque mise à jour) :
 npm run db:migrate
 ```
 
-Tables : `candidates`, `candidate_attachments`, `administrators`, `notifications`, `rate_limits`, `audit_log`. Le schéma est dans `db/migrations/001_init.sql` (contraintes, index, unicité du téléphone normalisé et de l'e-mail, séquence des numéros `GRA26-0001`).
+Tables : `candidates`, `candidate_attachments`, `administrators`, `notifications`, `rate_limits`, `audit_log`. Le schéma est dans `db/migrations/001_init.sql` (contraintes, index, unicité du téléphone normalisé et de l'e-mail, séquence des numéros `GRA-0001`).
 
 ## Créer le premier administrateur
 
@@ -91,11 +91,11 @@ npm run lint && npm test
 
 Rien n'est simulé : sans service configuré, chaque tentative est enregistrée avec le statut « service non configuré » et le tableau de bord l'indique. La confirmation d'inscription part automatiquement ; les messages de présélection, sélection et non-sélection sont envoyés **manuellement** depuis la fiche du candidat (un statut peut encore changer).
 
-**E-mail (Resend)** : créer un compte sur resend.com, vérifier un domaine, puis définir `RESEND_API_KEY` et `EMAIL_FROM` (ex. `GRAPHIA 2026 <candidatures@votre-domaine.com>`). Seuls les candidats ayant saisi un e-mail le reçoivent.
+**E-mail (Resend)** : créer un compte sur resend.com, vérifier un domaine, puis définir `RESEND_API_KEY` et `EMAIL_FROM` (ex. `GRAPHIA <candidatures@votre-domaine.com>`). Seuls les candidats ayant saisi un e-mail le reçoivent.
 
 **WhatsApp (WhatsApp Business Cloud API de Meta)** : WhatsApp interdit d'écrire en premier avec un texte libre ; il faut des **modèles de message approuvés**.
 1. Créer une app Meta Business, ajouter WhatsApp, enregistrer un numéro professionnel.
-2. Dans le WhatsApp Manager, créer 4 modèles (catégorie « Utility », langue « French ») avec deux variables : `{{1}}` = prénom, `{{2}}` = numéro de candidature. Exemple : « Bonjour {{1}}, votre candidature GRAPHIA 2026 ({{2}}) a bien été reçue… ».
+2. Dans le WhatsApp Manager, créer 4 modèles (catégorie « Utility », langue « French ») avec deux variables : `{{1}}` = prénom, `{{2}}` = numéro de candidature. Exemple : « Bonjour {{1}}, votre candidature GRAPHIA ({{2}}) a bien été reçue… ».
 3. Définir `WHATSAPP_TOKEN` (jeton permanent d'utilisateur système), `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_TEMPLATE_LANG=fr` et les noms des modèles : `WHATSAPP_TEMPLATE_CONFIRMATION`, `WHATSAPP_TEMPLATE_PRESELECTION`, `WHATSAPP_TEMPLATE_SELECTION`, `WHATSAPP_TEMPLATE_NON_SELECTION`.
 
 L'approbation des modèles par Meta prend de quelques minutes à quelques jours.

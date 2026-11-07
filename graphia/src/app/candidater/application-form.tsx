@@ -451,7 +451,7 @@ export function ApplicationForm() {
             {step === 3 && (
               <>
                 {[
-                  ['motivation', 'Pourquoi souhaitez-vous participer à GRAPHIA 2026 ?'],
+                  ['motivation', 'Pourquoi souhaitez-vous participer à GRAPHIA ?'],
                   ['expectations', 'Qu’attendez-vous de cette formation ?'],
                   ['professional_ambition', 'Quelles sont vos ambitions professionnelles dans le domaine créatif ?'],
                   ['knowledge_usage', 'Comment comptez-vous utiliser les connaissances acquises après la formation ?'],
@@ -528,7 +528,7 @@ export function ApplicationForm() {
                   </p>
                 )}
                 <ChoiceGroup
-                  label="Êtes-vous prêt à participer activement aux ateliers pratiques et aux activités de GRAPHIA 2026 ?"
+                  label="Êtes-vous prêt à participer activement aux ateliers pratiques et aux activités de GRAPHIA ?"
                   name="commitment"
                   required
                   options={[{ value: 'oui', label: 'Oui' }, { value: 'non', label: 'Non' }]}
@@ -561,7 +561,7 @@ export function ApplicationForm() {
                     />
                     <span className="text-[15px] leading-relaxed">
                       Je certifie que les informations fournies sont exactes et j’accepte que mes informations soient utilisées par
-                      l’équipe d’organisation dans le cadre de la gestion des candidatures GRAPHIA 2026.{' '}
+                      l’équipe d’organisation dans le cadre de la gestion des candidatures GRAPHIA.{' '}
                       <a href="/confidentialite" target="_blank" className="font-semibold text-brand underline">En savoir plus</a>
                       <span className="text-red-600"> *</span>
                     </span>

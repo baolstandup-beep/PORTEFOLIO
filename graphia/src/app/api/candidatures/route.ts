@@ -87,7 +87,7 @@ async function handle(req: Request) {
   try {
     created = await transaction(async (c) => {
       const cols = ['application_number', 'submission_token', ...CANDIDATE_COLUMNS, 'consent'];
-      const placeholders = cols.map((_, i) => (i === 0 ? `'GRA26-' || lpad(nextval('application_number_seq')::text, 4, '0')` : `$${i}`));
+      const placeholders = cols.map((_, i) => (i === 0 ? `'GRA-' || lpad(nextval('application_number_seq')::text, 4, '0')` : `$${i}`));
       const params = [submission_token, ...CANDIDATE_COLUMNS.map((k) => row[k]), true];
       const ins = await c.query<Created>(
         `INSERT INTO candidates (${cols.join(', ')}) VALUES (${placeholders.join(', ')})

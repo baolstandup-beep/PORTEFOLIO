@@ -1,6 +1,6 @@
 /** Coordonnées publiques de l'organisation : affichées seulement si elles sont renseignées. */
 export const site = {
-  name: 'GRAPHIA 2026',
+  name: 'GRAPHIA',
   slogan: 'Créer – Innover – Transformer',
   organizer: 'Baol Up Graphic – Agence Digitale',
   location: 'Touba, Sénégal',

@@ -1,4 +1,4 @@
--- GRAPHIA 2026 : schéma initial
+-- GRAPHIA : schéma initial
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 DO $$ BEGIN

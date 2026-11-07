@@ -43,7 +43,7 @@ export function ConfirmationView() {
         </div>
         <div className="space-y-6 p-6 sm:p-10">
           <p className="text-[15px] leading-relaxed text-ink/80 sm:text-base">
-            Merci de votre intérêt pour GRAPHIA 2026. Votre candidature sera étudiée par notre équipe de sélection.
+            Merci de votre intérêt pour GRAPHIA. Votre candidature sera étudiée par notre équipe de sélection.
             Les candidats retenus seront contactés par téléphone ou WhatsApp.
           </p>
           <dl className="grid gap-3 sm:grid-cols-3">

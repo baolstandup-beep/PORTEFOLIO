@@ -41,24 +41,24 @@ function whatsappTemplate(type: NotificationType): string | undefined {
 
 export function buildMessage(type: NotificationType, c: Pick<Recipient, 'first_name' | 'application_number'>) {
   const hello = `Bonjour ${c.first_name},`;
-  const sign = "L'équipe GRAPHIA 2026 — Baol Up Graphic";
+  const sign = "L'équipe GRAPHIA — Baol Up Graphic";
   const ref = `Numéro de candidature : ${c.application_number}`;
   const bodies: Record<NotificationType, { subject: string; text: string }> = {
     confirmation: {
-      subject: `GRAPHIA 2026 — Candidature reçue (${c.application_number})`,
-      text: `${hello}\n\nNous avons bien reçu votre candidature au Bootcamp GRAPHIA 2026.\n${ref}\n\nVotre dossier sera étudié par notre équipe de sélection. L'envoi du formulaire ne vaut pas sélection : les candidats retenus seront contactés par téléphone ou WhatsApp.\n\n${sign}`,
+      subject: `GRAPHIA — Candidature reçue (${c.application_number})`,
+      text: `${hello}\n\nNous avons bien reçu votre candidature au Bootcamp GRAPHIA.\n${ref}\n\nVotre dossier sera étudié par notre équipe de sélection. L'envoi du formulaire ne vaut pas sélection : les candidats retenus seront contactés par téléphone ou WhatsApp.\n\n${sign}`,
     },
     preselection: {
-      subject: 'GRAPHIA 2026 — Vous êtes présélectionné(e)',
-      text: `${hello}\n\nBonne nouvelle : votre candidature à GRAPHIA 2026 a été présélectionnée.\n${ref}\n\nNotre équipe vous contactera prochainement pour la suite de la sélection. Gardez votre téléphone et WhatsApp disponibles.\n\n${sign}`,
+      subject: 'GRAPHIA — Vous êtes présélectionné(e)',
+      text: `${hello}\n\nBonne nouvelle : votre candidature à GRAPHIA a été présélectionnée.\n${ref}\n\nNotre équipe vous contactera prochainement pour la suite de la sélection. Gardez votre téléphone et WhatsApp disponibles.\n\n${sign}`,
     },
     selection: {
-      subject: 'GRAPHIA 2026 — Félicitations, vous êtes retenu(e) !',
-      text: `${hello}\n\nFélicitations ! Vous faites partie des 50 participants retenus pour le Bootcamp GRAPHIA 2026 (5 jours, Touba, novembre 2026).\n${ref}\n\nNous vous communiquerons les dates, le lieu et les informations pratiques. Merci de confirmer votre présence en répondant à ce message.\n\n${sign}`,
+      subject: 'GRAPHIA — Félicitations, vous êtes retenu(e) !',
+      text: `${hello}\n\nFélicitations ! Vous faites partie des 50 participants retenus pour le Bootcamp GRAPHIA (5 jours, Touba).\n${ref}\n\nNous vous communiquerons les dates, le lieu et les informations pratiques. Merci de confirmer votre présence en répondant à ce message.\n\n${sign}`,
     },
     non_selection: {
-      subject: 'GRAPHIA 2026 — Réponse à votre candidature',
-      text: `${hello}\n\nMerci pour l'intérêt que vous portez à GRAPHIA 2026. Le nombre de places étant limité à 50, nous ne pouvons pas retenir votre candidature pour cette édition.\n${ref}\n\nNous vous encourageons à continuer à créer et à postuler aux prochaines éditions.\n\n${sign}`,
+      subject: 'GRAPHIA — Réponse à votre candidature',
+      text: `${hello}\n\nMerci pour l'intérêt que vous portez à GRAPHIA. Le nombre de places étant limité à 50, nous ne pouvons pas retenir votre candidature pour cette édition.\n${ref}\n\nNous vous encourageons à continuer à créer et à postuler aux prochaines éditions.\n\n${sign}`,
     },
   };
   return bodies[type];
@@ -69,7 +69,7 @@ const escapeHtml = (s: string) =>
 
 async function sendEmail(to: string, subject: string, text: string): Promise<{ ok: boolean; error?: string }> {
   const html = `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#080808;max-width:560px">
-<div style="background:#078D43;color:#fff;padding:16px 20px;font-weight:bold;font-size:18px">GRAPHIA 2026</div>
+<div style="background:#078D43;color:#fff;padding:16px 20px;font-weight:bold;font-size:18px">GRAPHIA</div>
 <div style="padding:20px;border:1px solid #e5e5e5;border-top:0">${escapeHtml(text).replace(/\n/g, '<br>')}</div>
 <p style="font-size:12px;color:#666">${escapeHtml(siteUrl())}</p></div>`;
   const res = await fetch('https://api.resend.com/emails', {

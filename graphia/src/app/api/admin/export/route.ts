@@ -37,7 +37,7 @@ export async function GET(req: Request) {
 
   if (format === 'xlsx') {
     const wb = new ExcelJS.Workbook();
-    wb.creator = 'GRAPHIA 2026';
+    wb.creator = 'GRAPHIA';
     const ws = wb.addWorksheet('Candidatures', { views: [{ state: 'frozen', ySplit: 1 }] });
     ws.columns = [
       { header: 'N° candidature', key: 'num', width: 14 },
@@ -131,7 +131,7 @@ export async function GET(req: Request) {
     return new Response(new Uint8Array(buf as ArrayBuffer), {
       headers: {
         'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'Content-Disposition': `attachment; filename="graphia-2026-candidatures-${stamp}.xlsx"`,
+        'Content-Disposition': `attachment; filename="graphia-candidatures-${stamp}.xlsx"`,
         'Cache-Control': 'no-store',
       },
     });
@@ -141,7 +141,7 @@ export async function GET(req: Request) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(15);
   doc.setTextColor(7, 141, 67);
-  doc.text('GRAPHIA 2026 — Liste des candidatures', 14, 15);
+  doc.text('GRAPHIA — Liste des candidatures', 14, 15);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.setTextColor(80);
@@ -174,7 +174,7 @@ export async function GET(req: Request) {
   return new Response(new Uint8Array(pdf), {
     headers: {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename="graphia-2026-candidatures-${stamp}.pdf"`,
+      'Content-Disposition': `attachment; filename="graphia-candidatures-${stamp}.pdf"`,
       'Cache-Control': 'no-store',
     },
   });
