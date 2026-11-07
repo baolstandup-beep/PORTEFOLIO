@@ -43,6 +43,7 @@ export function SiteFooter() {
           <h2 className="font-bold uppercase tracking-wide text-sun">Liens</h2>
           <ul className="space-y-2 text-white/70">
             <li><Link href="/candidater" className="hover:text-white">Déposer ma candidature</Link></li>
+            <li><Link href="/partenaires" className="hover:text-white">Devenir partenaire</Link></li>
             <li><Link href="/#faq" className="hover:text-white">Questions fréquentes</Link></li>
             <li><Link href="/confidentialite" className="hover:text-white">Protection des données</Link></li>
             {site.facebook && <li><a href={site.facebook} className="hover:text-white" rel="noopener">Facebook</a></li>}

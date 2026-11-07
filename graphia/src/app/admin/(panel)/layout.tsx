@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LayoutDashboard, Users } from 'lucide-react';
+import { Handshake, LayoutDashboard, Users } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { LogoutButton } from '@/components/admin/logout-button';
 import { ROLE_LABELS, requireAdminPage } from '@/lib/auth';
@@ -23,6 +23,9 @@ export default async function PanelLayout({ children }: { children: React.ReactN
               </Link>
               <Link href="/admin/candidatures" className="inline-flex items-center gap-2 rounded-full px-3 py-2 font-medium text-white/75 hover:bg-white/10 hover:text-white">
                 <Users className="h-4 w-4" /> <span className="hidden sm:inline">Candidatures</span>
+              </Link>
+              <Link href="/admin/partenaires" className="inline-flex items-center gap-2 rounded-full px-3 py-2 font-medium text-white/75 hover:bg-white/10 hover:text-white">
+                <Handshake className="h-4 w-4" /> <span className="hidden sm:inline">Partenaires</span>
               </Link>
             </nav>
           </div>

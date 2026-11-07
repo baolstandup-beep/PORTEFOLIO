@@ -8,11 +8,17 @@ import { getStats, listCandidates } from '@/lib/candidates';
 import { PROFILES, labelOf } from '@/lib/constants';
 import { emailConfigured, whatsappConfigured } from '@/lib/notifications';
 import { formatDate } from '@/lib/utils';
+import { query } from '@/lib/db';
 
 export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ refus?: string }> }) {
   const admin = await requireAdminPage();
   const sp = await searchParams;
-  const [stats, latest] = await Promise.all([getStats(), listCandidates({ perPage: 8 })]);
+  const [stats, latest, partners] = await Promise.all([
+    getStats(),
+    listCandidates({ perPage: 8 }),
+    query<{ total: number; nouveaux: number }>(`SELECT count(*)::int AS total, count(*) FILTER (WHERE status = 'nouveau')::int AS nouveaux FROM partner_requests`),
+  ]);
+  const pr = partners.rows[0];
   const pct = Math.round((stats.retenu / stats.max) * 100);
   const mail = emailConfigured();
   const wa = whatsappConfigured();
@@ -112,6 +118,15 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
             <Breakdown title="Par profil" items={stats.byProfile.map((x) => ({ ...x, label: labelOf(PROFILES, x.label) }))} total={stats.total} />
             <p className="mt-4 text-sm text-ink/55">{stats.scored} candidature(s) notée(s) sur {stats.total}.</p>
           </Card>
+          <Link href="/admin/partenaires" className="block">
+            <Card className="lift p-5 sm:p-6">
+              <h2 className="text-lg font-bold">Partenariats</h2>
+              <p className="mt-1 text-sm text-ink/60">
+                <strong className="text-2xl font-black text-ink">{pr.total}</strong> demande{pr.total > 1 ? 's' : ''}
+                {pr.nouveaux > 0 && <span className="ml-2 rounded-full bg-sun px-2 py-0.5 text-xs font-bold text-ink">{pr.nouveaux} nouvelle{pr.nouveaux > 1 ? 's' : ''}</span>}
+              </p>
+            </Card>
+          </Link>
           <Card className="p-5 sm:p-6">
             <h2 className="mb-3 text-lg font-bold">Notifications</h2>
             <ul className="space-y-2 text-sm">

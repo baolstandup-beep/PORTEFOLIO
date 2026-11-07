@@ -25,6 +25,7 @@ import { MotionVideo } from '@/components/motion/motion-video';
 import { Parallax } from '@/components/motion/parallax';
 import { ProgrammeGallery } from '@/components/motion/programme-gallery';
 import { Words } from '@/components/motion/words';
+import { PartnerPacks } from '@/components/partners/packs';
 
 export const dynamic = 'force-dynamic';
 
@@ -407,8 +408,25 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Partenaires ──────────────────────────────── */}
+        <section id="partenaires" className="scroll-mt-20 bg-mist py-16 sm:py-24">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p data-reveal="up" className="text-sm font-bold uppercase tracking-[0.18em] text-brand">Partenaires</p>
+                <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl"><Words text="Soutenez la nouvelle génération de créatifs." /></h2>
+                <p data-reveal="up" style={{ ['--d' as string]: 120 }} className="mt-3 max-w-2xl text-ink/65">Institutions, entreprises, acteurs techniques et médias : associez votre nom à GRAPHIA.</p>
+              </div>
+              <Link href="/partenaires" data-reveal="up" className={buttonClass('dark', 'lg', 'btn-shine shrink-0')}>
+                Devenir partenaire <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+            <div className="mt-10"><PartnerPacks /></div>
+          </div>
+        </section>
+
         {/* ── FAQ ──────────────────────────────────────── */}
-        <section id="faq" className="scroll-mt-20 bg-mist py-16 sm:py-24">
+        <section id="faq" className="scroll-mt-20 py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <p data-reveal="up" className="text-sm font-bold uppercase tracking-[0.18em] text-brand">FAQ</p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl"><Words text="Questions fréquentes" /></h2>
