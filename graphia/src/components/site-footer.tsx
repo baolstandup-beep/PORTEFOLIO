@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div className="space-y-4">
           <Logo light tagline className="text-3xl" />
           <p className="max-w-xs text-sm leading-relaxed text-white/65">
-            Bootcamp gratuit de renforcement de capacités en infographie et intelligence artificielle.
+            Bootcamp de renforcement de capacités en infographie et intelligence artificielle, 80 % gratuit.
           </p>
         </div>
         <div className="space-y-3 text-sm">

@@ -21,7 +21,7 @@ export default function CandidaterPage() {
             <h1 className="mt-2 text-3xl font-black leading-tight sm:text-4xl">Rejoignez les 50 talents de GRAPHIA</h1>
             <ul className="mt-5 flex flex-wrap gap-2 text-sm">
               <li className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-medium shadow-sm ring-1 ring-ink/5"><Clock className="h-4 w-4 text-brand" /> Environ 10 minutes</li>
-              <li className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-medium shadow-sm ring-1 ring-ink/5"><Gift className="h-4 w-4 text-brand" /> 100 % gratuit</li>
+              <li className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-medium shadow-sm ring-1 ring-ink/5"><Gift className="h-4 w-4 text-brand" /> 80 % gratuit</li>
               <li className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-medium shadow-sm ring-1 ring-ink/5"><ShieldCheck className="h-4 w-4 text-brand" /> Données protégées</li>
             </ul>
           </header>

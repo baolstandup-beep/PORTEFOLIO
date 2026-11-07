@@ -91,8 +91,8 @@ const CONDITIONS = [
 
 const FAQ = [
   {
-    q: 'La formation est-elle vraiment gratuite ?',
-    a: 'Oui. La participation à GRAPHIA est 100 % gratuite pour les 50 participants retenus. Aucun paiement ne vous sera demandé pour candidater ou participer.',
+    q: 'La formation est-elle gratuite ?',
+    a: 'La formation est 80 % gratuite : l’essentiel du coût est pris en charge par l’organisation. Une participation aux frais sera demandée aux candidats retenus ; son montant leur sera communiqué au moment de la sélection. Candidater est gratuit et ne vous engage à rien.',
   },
   {
     q: 'Est-ce que je suis sélectionné dès que j’envoie le formulaire ?',
@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 {cta}
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-brand">
-                  <Gift className="h-4 w-4" /> Participation 100 % gratuite
+                  <Gift className="h-4 w-4" /> Formation 80 % gratuite
                 </span>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function HomePage() {
                   { i: MapPin, t: 'Touba, Sénégal' },
                   { i: CalendarDays, t: '5 jours de formation' },
                   { i: Users, t: '50 participants' },
-                  { i: Gift, t: 'Participation gratuite' },
+                  { i: Gift, t: 'Formation 80 % gratuite' },
                 ].map(({ i: I, t }) => (
                   <li key={t} className="flex items-center gap-3 rounded-2xl bg-mist px-4 py-3 font-semibold text-ink">
                     <I className="h-5 w-5 text-brand" /> {t}
