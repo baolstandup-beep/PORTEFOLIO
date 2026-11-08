@@ -432,7 +432,7 @@ def build(name):
     mix = mus + fx + vo_st
     mix = np.tanh(mix * 1.1) / 1.1
     out_dir = os.path.join(PUB, "audio")
-    stems = os.path.join(out_dir, "stems")
+    stems = os.path.join(ROOT, "exports", "audio_stems")
     os.makedirs(stems, exist_ok=True)
     write_wav(os.path.join(stems, f"music_{name}.wav"), mus)
     write_wav(os.path.join(stems, f"sfx_{name}.wav"), fx)
