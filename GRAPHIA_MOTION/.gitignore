@@ -1,0 +1,6 @@
+node_modules
+out/
+.renders/
+# Régénérables avec `npm run audio`
+public/audio/stems/
+public/audio/*.wav
