@@ -87,7 +87,7 @@ export const Scene06Transformation: React.FC<SceneProps> = ({ dur, cues }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const { v, W, H, u } = useFormat();
+  const { v, W, u } = useFormat();
   const nodes: number[] = cues.nodes;
   const profs: number[] = cues.profiles;
 

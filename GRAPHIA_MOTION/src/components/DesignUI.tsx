@@ -1,21 +1,26 @@
 import React from 'react';
 import { C, FONT } from '../theme';
 
-/** Boîte de sélection type « transformation » (poignées carrées) : clin d'œil aux logiciels de création. */
-export const SelectionBox: React.FC<{ x: number; y: number; w: number; h: number; p: number; color?: string; label?: string; scale?: number }> = ({
+/**
+ * Boîte de sélection type « transformation » (poignées carrées) : clin d'œil aux logiciels de création.
+ * Sans x/y/w/h, elle remplit son parent (position: relative) : à utiliser autour d'un bloc de texte
+ * déjà entouré d'une marge intérieure, pour que le texte ne touche jamais le cadre.
+ */
+export const SelectionBox: React.FC<{ x?: number; y?: number; w?: number; h?: number; p: number; color?: string; label?: string; scale?: number }> = ({
   x, y, w, h, p, color = C.sun, label, scale = 1,
 }) => {
   if (p <= 0) return null;
   const hs = 12 * scale;
   const pts = [[0, 0], [0.5, 0], [1, 0], [1, 0.5], [1, 1], [0.5, 1], [0, 1], [0, 0.5]];
+  const fill = w === undefined;
   return (
-    <div style={{ position: 'absolute', left: x, top: y, width: w, height: h, opacity: Math.min(1, p * 1.5), pointerEvents: 'none' }}>
+    <div style={{ position: 'absolute', ...(fill ? { inset: 0 } : { left: x, top: y, width: w, height: h }), opacity: Math.min(1, p * 1.5), pointerEvents: 'none' }}>
       <div style={{ position: 'absolute', inset: 0, border: `${2 * scale}px solid ${color}`, clipPath: `inset(0 ${(1 - p) * 100}% 0 0)` }} />
       {pts.map(([px, py], i) => (
         <div
           key={i}
           style={{
-            position: 'absolute', left: px * w - hs / 2, top: py * h - hs / 2, width: hs, height: hs,
+            position: 'absolute', left: `${px * 100}%`, top: `${py * 100}%`, width: hs, height: hs, marginLeft: -hs / 2, marginTop: -hs / 2,
             background: C.paper, border: `${2 * scale}px solid ${color}`, transform: `scale(${Math.min(1, Math.max(0, p * 8 - i * 0.6))})`,
           }}
         />
@@ -30,7 +35,7 @@ export const SelectionBox: React.FC<{ x: number; y: number; w: number; h: number
 };
 
 /** Curseur flèche. */
-export const Cursor: React.FC<{ x: number; y: number; scale?: number; press?: number; opacity?: number }> = ({ x, y, scale = 1, press = 0, opacity = 1 }) => (
+export const Cursor: React.FC<{ x: number | string; y: number | string; scale?: number; press?: number; opacity?: number }> = ({ x, y, scale = 1, press = 0, opacity = 1 }) => (
   <svg
     width={36 * scale} height={36 * scale} viewBox="0 0 24 24"
     style={{ position: 'absolute', left: x, top: y, transform: `scale(${1 - press * 0.15})`, transformOrigin: '0 0', opacity, filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.45))' }}

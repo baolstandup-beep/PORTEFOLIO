@@ -349,6 +349,9 @@ def load_audio(path):
 
 
 def vo_track(cut, duration):
+    if not cut["vo"]:
+        print("  (aucune voix off placée pour ce montage : musique + SFX seulement)")
+        return np.zeros(int(duration * SR))
     src = load_audio(os.path.join(PUB, cut["voFile"]))
     src = sos_filter(src, "high", 75)
     out = np.zeros(int(duration * SR))
@@ -381,6 +384,11 @@ def envelope(x, attack=0.02, release=0.3):
 SECTIONS = {
     "long": [("intro", 0, 6), ("groove_light", 6, 20), ("groove_kalimba", 20, 32), ("digital", 32, 42),
              ("groove_light", 42, 48), ("build", 48, 50), ("groove", 50, 58), ("outro", 58, 60)],
+    "full": [("intro", 0, 6), ("groove_light", 6, 20), ("groove_kalimba", 20, 32), ("digital", 32, 42),
+             ("groove_light", 42, 48), ("build", 48, 50), ("groove_light", 50, 70), ("groove", 70, 78),
+             ("groove_kalimba", 78, 90), ("outro", 90, 92)],
+    "candidater": [("groove_light", 0, 20), ("groove", 20, 26), ("outro", 26, 28)],
+    "partenaires": [("groove_kalimba", 0, 12), ("outro", 12, 14)],
     "short": [("intro", 0, 4), ("groove_light", 4, 18), ("digital", 18, 22), ("groove", 22, 28),
               ("outro", 28, 30)],
 }

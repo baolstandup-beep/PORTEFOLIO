@@ -54,3 +54,36 @@ Les temps de placement viennent d'une **détection de silences**, pas d'une tran
 - la prononciation de l'adresse du site.
 
 Pour corriger, il suffit de décaler la valeur `at` concernée dans `src/timeline.json`.
+
+---
+
+## Version 2 — voix « cheikh awq » + Comment candidater + Partenaires (EN ATTENTE DE CRÉDITS)
+
+- **Voix** : clone ElevenLabs « cheikh awq » (`RGg7er9jBMCMqqe7ArTY`), modèle `eleven_multilingual_v2`.
+- **Blocage** : la génération a été refusée par ElevenLabs. Il faut 1 379 crédits pour la version longue (et environ 500 pour le 30 s), alors que l'espace de travail n'en a plus que 92 sur un quota de 40 000. Rien n'a été facturé.
+- **Fichier attendu** : `public/audio/vo/vo_full_cheikh.mp3`, utilisé par les montages `full`, `candidater` et `partenaires` de `src/timeline.json` (liste `vo` vide en attendant la prise).
+
+### Script version longue (≈ 90 s)
+
+> Le monde de la création évolue… Et les opportunités aussi.
+> Découvrez GRAPHIA 2026 : le bootcamp dédié aux créatifs de Touba et Mbacké.
+> Avec 70 % de pratique, 50 participants, et une formation prise en charge à 80 %.
+> Cinq jours pour apprendre, expérimenter, et développer de nouvelles compétences.
+> Au programme : design graphique, création numérique, intelligence artificielle, entrepreneuriat, et ateliers pratiques.
+> Aujourd'hui, le design graphique rencontre l'intelligence artificielle, pour repousser les limites de la créativité.
+> Que vous soyez designer, infographiste, étudiant ou jeune passionné, c'est le moment de faire évoluer votre potentiel.
+> Votre créativité mérite de nouvelles opportunités.
+> **Pour candidater, c'est simple. Rendez-vous sur graphia-2026.vercel.app, et cliquez sur « Candidater ».**
+> **Remplissez le formulaire en six étapes : environ dix minutes, depuis votre téléphone.**
+> **L'équipe étudie chaque dossier. Les cinquante retenus sont contactés par téléphone ou WhatsApp.**
+> GRAPHIA 2026. Créez le futur. Candidatez maintenant.
+> **Entreprises, institutions, médias : devenez partenaire, et investissez dans les talents créatifs de Touba et Mbacké.**
+> **Pack Or, Argent, Bronze, ou contribution technique : rendez-vous sur la page Partenaires du site.**
+
+Chaque phrase vient du site : les 6 étapes du formulaire, les 10 minutes, le contact par téléphone ou WhatsApp, les 4 offres et les 4 types de partenaires.
+
+### Après la génération
+
+1. Télécharger la prise dans `public/audio/vo/vo_full_cheikh.mp3`.
+2. Repérer les pauses, puis remplir `cuts.full.vo` dans `src/timeline.json` (même format que `cuts.long.vo`) et ajuster les `cues` des scènes S08 et S09.
+3. Lancer `npm run audio`, puis `node scripts/render-all.mjs GRAPHIA-LONG-H GRAPHIA-LONG-V …`.

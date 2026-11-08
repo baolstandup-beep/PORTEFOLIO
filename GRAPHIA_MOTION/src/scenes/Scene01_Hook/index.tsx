@@ -50,16 +50,12 @@ export const Scene01Hook: React.FC<SceneProps> = ({ dur, cues }) => {
   const outP = prog(t, cues.out, dur - cues.out, [0.6, 0, 0.4, 1]);
 
   const size1 = v ? 132 * u : 128 * u;
-  const size2 = v ? 104 * u : 96 * u;
+  const size2 = v ? 96 * u : 88 * u;
   const glowP = prog(t, 0, 2.5, EASE.rise);
 
   // sélection + curseur sur la 2e ligne
   const selP = prog(t, l2 + 0.75, 0.5, EASE.out);
   const curIn = prog(t, l2 + 0.5, 0.7, EASE.out);
-  const boxW = v ? 900 * u : 1400 * u;
-  const boxH = v ? 420 * u : 230 * u;
-  const boxX = (W - boxW) / 2;
-  const boxY = H / 2 - boxH / 2 + (v ? 20 : 0);
 
   return (
     <AbsoluteFill style={{ background: C.ink, overflow: 'hidden' }}>
@@ -99,24 +95,27 @@ export const Scene01Hook: React.FC<SceneProps> = ({ dur, cues }) => {
               )}
             />
           ) : (
-            <Glitch
-              amount={Math.max(0, 1 - Math.abs(t - l2) / 0.12) * 0.6}
-              frame={frame}
-              render={(col) => (
-                <Kinetic
-                  text={"ET SI VOUS EN FAISIEZ PARTIE\u00A0?"}
-                  t={t} at={l2} size={size2} weight={800} mode="rise" stagger={0.08} dur={0.7}
-                  color={col ?? C.paper} accent={col ? {} : { 5: C.sun }} maxWidth={v ? 860 * u : 1500 * u}
-                />
-              )}
-            />
+            // Le cadre de sélection entoure le texte AVEC une marge : il ne touche jamais les lettres.
+            <div style={{ position: 'relative', padding: `${size2 * 0.42}px ${size2 * 0.6}px` }}>
+              <Glitch
+                amount={Math.max(0, 1 - Math.abs(t - l2) / 0.12) * 0.6}
+                frame={frame}
+                render={(col) => (
+                  <Kinetic
+                    text={"ET SI VOUS EN FAISIEZ PARTIE\u00A0?"}
+                    t={t} at={l2} size={size2} weight={800} mode="rise" stagger={0.08} dur={0.7}
+                    color={col ?? C.paper} accent={col ? {} : { 5: C.sun }} maxWidth={v ? 760 * u : 1400 * u}
+                  />
+                )}
+              />
+              <SelectionBox p={selP * (1 - outP)} color={C.sun} scale={u * 1.2} />
+              <Cursor
+                x={`calc(${lerp(140, 100, curIn)}% - ${20 * u}px)`} y={`calc(${lerp(160, 100, curIn)}% - ${20 * u}px)`}
+                scale={u * 1.6} opacity={curIn * (1 - outP)} press={prog(t, l2 + 1.15, 0.1) - prog(t, l2 + 1.3, 0.15)}
+              />
+            </div>
           )}
         </AbsoluteFill>
-        <SelectionBox x={boxX} y={boxY} w={boxW} h={boxH} p={selP * (1 - outP)} color={C.sun} scale={u * 1.2} />
-        <Cursor
-          x={lerp(W * 0.92, boxX + boxW - 40 * u, curIn)} y={lerp(H * 0.95, boxY + boxH - 20 * u, curIn)}
-          scale={u * 1.6} opacity={curIn * (1 - outP)} press={prog(t, l2 + 1.15, 0.1) - prog(t, l2 + 1.3, 0.15)}
-        />
       </div>
       <Vignette strength={0.75} />
       <Grain frame={frame} opacity={0.07} />
