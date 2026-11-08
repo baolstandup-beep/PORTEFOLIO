@@ -101,7 +101,7 @@
         "S02": { "logo": 0.1, "tag": 0.7, "sub": 1.4, "visual": 2.0, "place": 4.0, "out": 5.5 },
         "S03": { "jours": 0.52, "pratique": 2.5, "participants": 1.32, "prise": 4.12, "out": 7.5 },
         "S05": { "short": true, "prompt": 0.15, "gen": 1.0, "retouch": 99, "workflow": 99, "line1": 99, "line2": [2.4, 2.9, 3.4], "out": 3.7 },
-        "S07": { "places": 0.32, "opportunite": 1.43, "logo": 2.3, "join": 2.9, "button": 2.6, "url": 3.0, "click": 4.9, "end": 6.6 }
+        "S07": { "places": 0.32, "opportunite": 1.43, "logo": 2.1, "join": 2.45, "button": 2.75, "url": 3.1, "click": 4.9, "end": 6.6 }
       },
       "sfx": [
         { "type": "impact", "at": 0.4, "gain": 0.9 },
@@ -124,7 +124,7 @@
         { "type": "hit", "at": 21.4, "gain": 0.7 },
         { "type": "impact", "at": 22.0, "gain": 1.0 },
         { "type": "hit", "at": 23.43, "gain": 0.45 },
-        { "type": "shine", "at": 24.3, "gain": 0.4 },
+        { "type": "shine", "at": 24.1, "gain": 0.4 },
         { "type": "type", "at": 25.0, "len": 1.2, "gain": 0.16 },
         { "type": "click", "at": 26.9, "gain": 0.5 },
         { "type": "shine", "at": 26.95, "gain": 0.35 },
