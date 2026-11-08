@@ -35,3 +35,10 @@ remux() {
     -c:a aac -b:a 160k -ar 48000 -movflags +faststart exports/whatsapp/GRAPHIA2026_WhatsApp-Statut_30s_1080x1920.mp4
   echo "→ exports/whatsapp/GRAPHIA2026_WhatsApp-Statut_30s_1080x1920.mp4"
 }
+# Clips autonomes (sans voix off : musique, SFX et textes à l'écran)
+mkdir -p exports/candidater exports/partenaires
+[ -f out/GRAPHIA-CANDIDATER-H.mp4 ] && remux out/GRAPHIA-CANDIDATER-H.mp4 exports/candidater/GRAPHIA2026_Comment-candidater_28s_1920x1080.mp4
+[ -f out/GRAPHIA-CANDIDATER-V.mp4 ] && remux out/GRAPHIA-CANDIDATER-V.mp4 exports/candidater/GRAPHIA2026_Comment-candidater_28s_1080x1920.mp4
+[ -f out/GRAPHIA-PARTENAIRES-H.mp4 ] && remux out/GRAPHIA-PARTENAIRES-H.mp4 exports/partenaires/GRAPHIA2026_Partenaires_14s_1920x1080.mp4
+[ -f out/GRAPHIA-PARTENAIRES-V.mp4 ] && remux out/GRAPHIA-PARTENAIRES-V.mp4 exports/partenaires/GRAPHIA2026_Partenaires_14s_1080x1920.mp4
+exit 0

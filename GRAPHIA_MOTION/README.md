@@ -13,6 +13,8 @@ Il est construit en code avec Remotion, aux couleurs, typographie et courbes de 
 | Instagram Reels | `instagram/GRAPHIA2026_Reels_60s_1080x1920.mp4` (+ 30 s) |
 | Statut WhatsApp | `whatsapp/GRAPHIA2026_WhatsApp-Statut_30s_1080x1920.mp4` |
 | Version courte 30 s | `short/GRAPHIA2026_Court_30s_1920x1080.mp4` · `short/…_1080x1920.mp4` |
+| Comment candidater (28 s, sans voix off) | `candidater/GRAPHIA2026_Comment-candidater_28s_1920x1080.mp4` · `…_1080x1920.mp4` |
+| Partenaires (14 s, sans voix off) | `partenaires/GRAPHIA2026_Partenaires_14s_1920x1080.mp4` · `…_1080x1920.mp4` |
 
 Spécifications : MP4 H.264, 30 i/s, AAC 48 kHz, −14 LUFS.
 

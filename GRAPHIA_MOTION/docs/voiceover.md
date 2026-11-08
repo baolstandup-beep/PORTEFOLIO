@@ -57,7 +57,7 @@ Pour corriger, il suffit de décaler la valeur `at` concernée dans `src/timelin
 
 ---
 
-## Version 2 — voix « cheikh awq » + Comment candidater + Partenaires (EN ATTENTE DE CRÉDITS)
+## Version 2 — voix « cheikh awq » (ABANDONNÉE à la demande du client : la voix « Tony » est conservée)
 
 - **Voix** : clone ElevenLabs « cheikh awq » (`RGg7er9jBMCMqqe7ArTY`), modèle `eleven_multilingual_v2`.
 - **Blocage** : la génération a été refusée par ElevenLabs. Il faut 1 379 crédits pour la version longue (et environ 500 pour le 30 s), alors que l'espace de travail n'en a plus que 92 sur un quota de 40 000. Rien n'a été facturé.
