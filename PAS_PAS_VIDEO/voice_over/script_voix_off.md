@@ -1,4 +1,8 @@
-# Voix off — script d'enregistrement
+# Voix off — script d'enregistrement (optionnel)
+
+> Choix validé : la vidéo est diffusée **sans voix off** (musique + textes à l'écran).
+> Ce script sert uniquement si une voix est ajoutée plus tard. L'essai de la scène 01 est archivé
+> dans `archive/` (déplacez-le dans ce dossier pour le réactiver).
 
 Voix masculine francophone, grave, posée, chaleureuse. Ton institutionnel, humain, sans dramatisation.
 Respecter les « … » (silences). Un fichier par scène, nommé exactement comme ci-dessous,
@@ -8,7 +12,7 @@ Prononciation : « Pas-Pas » (comme « pas »), Lompoul, Kébémer, Léona, Thi
 
 | Fichier | Fenêtre | Texte |
 |---|---|---|
-| `vo_scene_01_intro.mp3` ✅ fourni | 2,0 → 5,5 s | Mouvement Pas-Pas. … Communiqué officiel. |
+| `vo_scene_01_intro.mp3` (essai archivé) | 2,0 → 5,5 s | Mouvement Pas-Pas. … Communiqué officiel. |
 | `vo_scene_02_naufrage.mp3` | 7,0 → 13,5 s | Le Mouvement Pas-Pas a appris, avec une profonde tristesse, le naufrage d'une pirogue au large de Lompoul, dans le département de Kébémer. |
 | `vo_scene_03_hommage.mp3` | 14,6 → 26,5 s | Il s'incline devant la mémoire des victimes, et présente ses sincères condoléances aux familles endeuillées. … Il exprime sa solidarité au rescapé, aux proches qui attendent encore des nouvelles, et aux populations de Léona et de Thiéppe. |
 | `vo_scene_04_solidarite.mp3` | 27,6 → 38,5 s | Le Mouvement salue la mobilisation des riverains et des équipes de secours. … La poursuite des recherches, l'identification des victimes et l'information régulière des familles doivent rester prioritaires. |

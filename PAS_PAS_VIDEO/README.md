@@ -14,9 +14,9 @@ silhouettes anonymes sont dessinées et volontairement symboliques.
 | `exports/instagram/PAS-PAS_naufrage_Lompoul_Reels_1080x1920.mp4` | Instagram Reels |
 | `exports/whatsapp/PAS-PAS_naufrage_Lompoul_Status_1080x1920.mp4` | Statut WhatsApp (fichier allégé) |
 | `exports/horizontal/PAS-PAS_naufrage_Lompoul_1920x1080.mp4` | YouTube, Facebook, écrans |
-| `assets/audio/bande_son_master.flac` | bande-son mixée et masterisée (-14 LUFS, -1 dBTP) |
-| `sound_design/music.wav` | musique seule (sans voix) |
-| `voice_over/` | voix off (scène 01) + script complet des 6 scènes |
+| `assets/audio/bande_son_master.flac` | bande-son masterisée (-14 LUFS, -1 dBTP) |
+| `sound_design/music.wav` | musique originale |
+| `voice_over/` | version actuelle **sans voix off** ; script prêt si une voix est ajoutée plus tard |
 
 ### Architecture (équivalent d'un projet After Effects)
 ```
